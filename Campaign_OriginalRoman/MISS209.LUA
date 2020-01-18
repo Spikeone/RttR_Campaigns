@@ -29,10 +29,10 @@ rttr:RegisterTranslations(
         Diary   = 'Diary',
 
         msg1    = 'The air is filled with anticipation and even a little\nreluctance, as we prepare to embark on the final and\nmost dangerous chapter of our long journey home. Will\nwe ever see Rome again?\nWe must summon all our strength because this island\nseems to be our best chance...',
-        msg1h   = 'Be careful. Do not attack until you are sure you can\ndefeat both enemies.',
+        msgh1   = 'Be careful. Do not attack until you are sure you can\ndefeat both enemies.',
 
         msg2    = 'The 17th Day of the Sixth Month of the 10th Year.\n\nRomans are actually standing in front of the tenth\ngateway. They are not at all friendly. Perhaps they\nare the other side of the coin, the enemy brother\nRemus. Maybe their gateway is the one that will take\nus back to our beloved Rome.\nAs the old legend says:\n\"For the sake of Rome brother shall fight against\nbrother.\" For almost ten years we have been\nconstantly dreaming of our homeland. We shall not\ngive up now.',
-        msg2h   = 'Muster all of your forces in order to break through!\nCapture the gateway!',
+        msgh2   = 'Muster all of your forces in order to break through!\nCapture the gateway!',
 
         msg99   = 'Last Day of the 10th Year.\nLast entry of Octavius in this Diary\n\nWe have succeeded. Tomorrow we shall return to Rome\nexactly ten years after becoming castaways on this\nisland. Ten years during which we traveled in the\nfootsteps of our forefathers. Ten years during which\nwe learned what made Rome so great. We shall offer a\ngreat feast of thanks to the gods and will see our\nfamilies and friends again.\nI can hardly wait.',
         msgh99  = 'You have succeeded!'
