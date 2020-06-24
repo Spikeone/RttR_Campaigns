@@ -1,0 +1,93 @@
+
+                   Oktavianus' Reise - Kampagne von Patrick Winzer 2004
+                   ====================================================
+
+
+
+
+  1 - Zur Kampagne
+  2 - Installation 
+  3 - Die Hintergrundgeschichte
+  4 - Haftung
+  5 - Danksagung
+
+
+
+====
+
+ 1 - Zur Kampagne
+
+ Diese Kampagne ist zwar funktionstüchtig, doch sie wurde nie vollständig getestet.
+ Das bedeutet, dass sie zwar rein technisch funktioniert, es aber vorkommen kann, dass
+ es an manchen Stellen des Spiels kein Weiterkommen gibt. In solchen Fällen bitte
+ einfach eine E-Mail an mich!
+
+ Die Missionen sind nicht wie in der BlueByte-Originalkampagne zunehmend schwerer, sondern
+ etwa gleich. Das ist mein subjektiver Eindruck, es kann sein, dass manchen der beste
+ Weg nicht einleuchtet und sie einen schwereren bestreiten. In jeder Mission (außer in der
+ ersten) muss man eine Aufgabe lösen, um zum Ziel zu gelangen. Insgesamt ist die Kampagne
+ recht einfach, sodass Anfänger wie Profis hoffentlich Spaß daran finden werden. 
+
+====
+
+ 2 - Installation
+
+ Diese Kampagne wird installiert, indem Originaldateien ersetzt weden.
+ Legen Sie einen neuen Ordner an, in den Sie folgende Ordner/Dateien verschieben:
+
+ - ...\Data\Maps                                    - Ordner mit Original-Missionskarten
+ - ...\Data\Missions\MIS_0000.rtx bis MIS_0009.rtx  - wichtige Missionsdateien
+ - ...\Data\Txt                                     - Ordner mit Textausgaben
+ - ...\Save\mission.dat                             - Spielstand-Datei
+
+
+ An die Stellen werden die neuen Ordner und Dateien kopiert.
+
+====
+
+ 3 - Die Hintergrundgeschichte
+
+ Folgende Geschichte liegt der Kampagne zugrunde:
+
+
+ Oktavianus und seine Männer sind, nachdem sie die zehn römischen Missionen erfüllt
+ haben, wieder nach Rom zurückgekehrt. Oktavianus besucht seinen Großvater, der trotz
+ hohem Alters noch lebt. Dieser erzählt ihm folgende Geschichte:
+
+ "Mein lieber tapferer Enkel! Nachdem du dich durch so viele fremde Länder geschlagen
+ hast, sollst du wissen, dass die Götter den tapfersten und erfolgreichsten Siedlern
+ die Unsterblichkeit verleihen. Du musst in der Nacht des Jupiters aufs offene Meer
+ hinausfahren und dem hellen Nebel im Südwesten folgen! Du wirst dann nicht mehr Herr
+ deiner Sinne sein und an einem dir fremden Strand aufwachen. Dort musst du das Tor
+ suchen. Hast du es erreicht und aktiviert, beginnen neun Prüfungen, eine schwerer als
+ die andere. Aber, mein Kind, ich weiß, du wirst Erfolg haben!"
+
+ Kurz darauf verstarb er. Oktavianus rief all seine Männer zusammen und berichtete von
+ diesem Vorfall. Einstimmig wurde entschieden, dass man sich dieser Aufgabe zu Ehre des
+ Alten annehmen wolle.
+
+ Schon begann das Abenteuer...
+
+====
+
+ 4 - Haftung
+
+ Diese Zusatzkampagne wurde von einem Siedler-2-Fan erstellt und ist somit keine ori-
+ ginal Bluebyte-Software. Installation erfolgt auf eigenes Risiko, der Programmierer
+ übernimmt keinerlei Haftung bei Schäden.
+
+====
+
+ 5 - Danksagung
+
+ Mein Dank gilt allen Siedler-Fans und besonders Achim, die mir im Siedler-Forum
+ alle Fragen rund um das Erstellen einer Kampagne beantworteten. Danke auch an 
+ Jürgen Nagel und Jörg Scholl für ihre äußerst hilfreichen Tools. Mein letzter Dank
+ gebührt Volki, der mich mit zahlreichen Ideen unterstützte.
+
+
+
+
+ Bei Fragen, Anregungen und Kritik bitte E-Mail an patrick_winzer@web.de
+
+ Frohes Siedeln, Patrick Winzer
