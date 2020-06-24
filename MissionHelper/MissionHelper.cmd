@@ -1,0 +1,1 @@
+powershell .\MissionHelper.ps1
