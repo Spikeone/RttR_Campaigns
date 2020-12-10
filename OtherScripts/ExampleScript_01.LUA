@@ -1,3 +1,11 @@
+------------------------------------------------------------------------------
+-- LUA-Script which sets building restrictions /wares for players           --
+--                                                                          --
+-- Author: Spikeone                                                         --
+-- Change:                                                                  --
+--                                                                          --
+------------------------------------------------------------------------------
+
 function getRequiredLuaVersion()
     return 1.3
 end
