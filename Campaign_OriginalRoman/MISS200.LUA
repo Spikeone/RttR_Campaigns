@@ -24,144 +24,145 @@ eIdx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 99}
 
 rttr:RegisterTranslations(
 { 
-    en = 
-    { 
-        Diary   = 'Diary',
-    
-        msg1    = 'Diary of Octavius:\n\n\nFourth Day After Shipwreck.\n\n\nYesterday all the survivors met in order to discuss\nthe situation. Because there is no prospect of\nearly rescue, we decided to settle on this foreign\nisland. The items salvaged from the ship will be a\ngreat help to us. The most important thing is to\nmake use of the raw materials on the island in order\nto establish a settlement. We urgently need \naccommodations for a woodcutter, carpenter and \nstonemason.', 
-        msgh1   = 'Build accommodations for a woodcutter, carpenter and\nstonemason.',
-        
-        msg2    = 'Eighth Day After Shipwreck.\n\n\nThe basic requirements for building up our\nsettlement have been met. However, the supply of\ntrees in this region will not last long. We need a\nforester to ensure a long-term supply of timber.',
-        msgh2   = 'Build a forester\'s cabin.',
-        
-        msg3    = 'Eleventh Day of Second Month After Shipwreck.\n\n\nWe are still not sure whether we are the only\npersons on this island. As a precautionary measure\nwe should erect a barracks on our exposed border\ntowards the interior of the island.',
-        msgh3   = 'Build a barracks on the northern\nborder of your settlement.',
-        
-        msg4    = 'Fifth Day of Third Month.\n\n\nOur territory has spread as far as the mountain in\nthe north. Our geologist will carry out a land\nsurvey there. In the long term we need fuel and\nbuilding materials as well as weapons and coined\ngold. We must therefore find iron ore, gold, coal\nand granite.',
-        msgh4   = 'Build a road to the mountain and\nsend your geologist there.',
-        
-        msg5    = 'Sixteenth Day of Sixth Month.\n\n\nWe have found iron ore and are now able to produce\nweapons. There will then be no obstacles to further\nexploration of the island. First of all we must\nbuild an iron mine and an iron smelter for it. An\narmorer can then start to produce swords and\nshields. We must also provide the miners with food,\nour stocks are almost exhausted. We need hunters and\nfishermen!',
-        msgh5   = 'Build an iron mine, an iron smelter and a smithy.',
+  cs = 
+  { 
+    Diary   = 'Deník',
 
-        msg6    = 'Last Day of Eighth Month After Coming Ashore.\n\n\nThere is an open, fertile plain to the north of our\nnew border post. This will provide lots of new\nopportunities for expanding our settlement but we\nneed more soldiers to do this.',
-        msgh6   = 'Go to the northern plain and\ncontinue fortifying the border.',
+    msg1    = 'Deník Oktaviána:\n\n\nČtvrtý den po ztroskotání lodi.\n\n\nVčera se všichni přeživší setkali, aby diskutovali o situaci. Protože jsme nenašli žádné východisko na včasnou záchranu, rozhodli jsme se usadit na tomto cizím ostrově. Zachráněné zboží z lodi nám bude velkou pomocí do začátku. Nejdůležitější věcí je využití místních suroviny k založení osady. Naléhavě potřebujeme vybudovat dílnu pro dřevorubce, pilaře a kameníka.', 
+    msgh1   = 'Postav dílnu pro dřevorubce, tesaře a kameníka.',
     
-        msg7    = 'Twelfth Day of Ninth Month.\n\n\nAfter advancing further north we have finally found\nenough space to build larger buildings and farms. We\nnow intend to prospect for raw materials in the\nsurrounding mountains.',
-        msgh7   = 'Search for new raw materials and secure a supply of\nfood. Explore the entire island.',
+    msg2    = 'Osmý den po ztroskotání.\n\n\nZákladní požadavky na vybudování naší osady byly splněny. Množství stromů v této oblasti nám však nevydrží na dlouho. Potřebujeme lesníka, abychom zajistili dlouhodobé dodávky dřeva.',
+    msgh2   = 'Postav lesnickou chatu.',
     
-        msg8    = 'Our geologist has found a spring. We are now able\nto supply fresh water from it.',
+    msg3    = 'Jedenáctý den druhého měsíce po ztroskotání.\n\n\nStále si nejsme jisti, zda jsme na tomto ostrově sami. Pro jsitotu bychom měli poslat vojsko k severní hranici.',
+    msgh3   = 'Postav kasárna u severní hranice našeho území.',
     
-        msg9    = 'We have ensured a fuel supply for the metalworks by\nfinding coal in the western mountains. Now we can\nprocess our metal ores with no problems. Everything\nis going extremely well.',
+    msg4    = 'Pátý den třetího měsíce.\n\n\nNaše území se rozšířilo až k horám na severu. Náš geolog tam provede terénní průzkum. Z dlouhodobého hlediska potřebujeme uhlí a stavební materiály, stejně jako zbraně a zlato. Musíme tedy najít železnou rudu, zlato, uhlí a kámen.',
+    msgh4   = 'Postav cestu do hor a pošli tam našeho geologa.',
     
-        msg10   = 'Geologists have found granite deposits in the\nmountains and this will provide a fresh supply of\nstone for the time being.',
-        
-        msg11   = 'We have discovered a gold vein\nand can now produce valuable coins in a mint. This\nwill make life here almost as comfortable as at home.',
-    
-        msg12   = 'We have minted the first gold coins and can now pay\nfor the training of our soldiers.',
+    msg5    = 'Šestnáctý den šestého měsíce.\n\n\nNašli jsme železnou rudu a nyní jsme schopni vyrábět nzbraně. Poté můžeme bezpečně provést další průzkum ostrova. Nejprve musíme postavit důl na železnou rudu a huť. Zbrojíř pak může začít vyrábět meče a štíty. Horníkům musíme také poskytnout jídlo, zásoby jsou téměř vyčerpané. Potřebujeme lovce a rybáře!',
+    msgh5   = 'Postav důl na železnou rudu, huť a zbrojírnu.',
 
-        msg13   = 'Construction of our first grain farm has been\ncompleted. The grain can be processed into flour in\na mill or fed to pigs. The food supply situation\nshould now continue to improve.',
+    msg6    = 'Poslední den osmého měsíce po příchodu k břehům.\n\n\nSeverně od naší nové hranice se rozléhá úrodná nížina. Ta poskytne spoustu nových možností pro rozšíření naší osady, ale k tomu potřebujeme více vojáků.',
+    msgh6   = 'Rozšiř severní teritórium a pokračuj v opevňování hranic.',
 
-        msg14   = 'Our new pig farm can supply slaughtered animals to a\nbutcher.',
+    msg7    = 'Dvanáctý den devátého měsíce.\n\n\nPo dalším postupu dále na sever jsme konečně našli dostatek prostoru pro stavbu větších budov a farem. Nyní bychom měli hledat suroviny v okolních horách.',
+    msgh7   = 'Hledej nové suroviny a zajisti dodávky potravin. Prozkoumej celý ostrov.',
 
-        msg15   = 'The windmill can supply a baker with sufficient\nflour for baking bread.',
+    msg8    = 'Náš geolog našel pramen vody. Nyní jsme schopni čerpat pitnou vodu.',
 
-        msg16   = 'Our geologists have discovered a strange object. It\nlooks like a gateway. We are obviously not the first\nhumans on this island. They have even found an\ninscription on the gateway in Latin. It is bizarre\nand contradictory, perhaps it is a riddle:\n\'Consiste ut procederas!\' - \'Settle down in order to make progress!\'.\nWhat can this mean?!',
+    msg9    = 'Nalezením uhlí v západních horách jsme si zajistili dodávky paliva pto naše hutě a zrojnice. Nyní bez problémů můžeme začít zpracovávat železnou rudu. Všechno jde velmi dobře.',
 
-        msg99   = 'Second Day of Thirteenth Month After Coming Ashore.\n\n\nThe second year began yesterday and we seem to have\nsucceeded in settling this island. The geologists\nreport strange goings on near the gateway. It\nappears that a path has opened up that can lead us\nfrom this island. This seems to be the meaning of\nthe riddle: we must settle in order to move on. We\nshall take a look, perhaps all roads really do lead\nto Rome.',
-        msgh99  = 'You have completed this mission. The second Chapter\nawaits you...\n\nYou can begin the next mission from the main menu\nwhenever you want.',
-    },
-    cs = 
-    { 
-      Diary   = 'Deník',
-  
-      msg1    = 'Deník Oktaviána:\n\n\nČtvrtý den po ztroskotání lodi.\n\n\nVčera se všichni přeživší setkali, aby diskutovali o situaci. Protože nenašli žádné východisko na včasnou záchranu, rozhodli se usadit na tomto cizím ostrově. Zachráněné zboží z lodi nám bude velkou pomocí do začátku. Nejdůležitější věcí je využití místních suroviny k založení osady. Naléhavě potřebujeme vybudovat dílnu pro dřevorubce, pilaře a kameníka.', 
-      msgh1   = 'Postavte dílnu pro dřevorubce, tesaře a kameníka.',
-      
-      msg2    = 'Osmý den po ztroskotání.\n\n\nZákladní požadavky na vybudování naší osady byly splněny. Množství stromů v této oblasti nám však nevydrží na dlouho. Potřebujeme lesníka, abychom zajistili dlouhodobé dodávky dřeva.',
-      msgh2   = 'Postavte lesnickou chatu.',
-      
-      msg3    = 'Jedenáctý den druhého měsíce po ztroskotání.\n\n\nStále si nejsme jisti, zda jsme na tomto ostrově sami. Pro jsitotu bychom měli poslat vojsko k severní hranici.',
-      msgh3   = 'Postavte kasárna u severní hranice našeho území.',
-      
-      msg4    = 'Pátý den třetího měsíce.\n\n\nNaše území se rozšířilo až k horám na severu. Náš geolog tam provede terénní průzkum. Z dlouhodobého hlediska potřebujeme uhlí a stavební materiály, stejně jako zbraně a zlato. Musíme tedy najít železnou rudu, zlato, uhlí a kámen.',
-      msgh4   = 'Postavte cestu do hor a \npošlete tam našeho geologa.',
-      
-      msg5    = 'Šestnáctý den šestého měsíce.\n\n\nNašli jsme železnou rudu a nyní jsme schopni vyrábět nzbraně. Poté můžeme bezpečně provést další průzkum ostrova. Nejprve musíme postavit důl na železnou rudu a slévárnu. Zbrojíř pak může začít vyrábět meče a štíty. Horníkům musíme také poskytnout jídlo, zásoby jsou téměř vyčerpané. Potřebujeme lovce a rybáře!',
-      msgh5   = 'Postavte důl na železnou rudu, slévárnu a zbrojírnu.',
+    msg10   = 'Geologové našli v horninách žulové usazeniny, což nám poskytne nový zdroj kamene.',
+    
+    msg11   = 'Objevili jsme zlatou žílu a nyní můžeme v mincovně vyrábět mince. Díky tomu bude život téměř tak pohodlný jako doma.',
 
-      msg6    = 'Poslední den osmého měsíce po příchodu k břehům.\n\n\nSeverně od naší nové hranice se rozléhá úrodná planina. Ta poskytne spoustu nových příležitostí pro rozšíření naší osady, ale k tomu potřebujeme více vojáků.',
-      msgh6   = 'Rozšiř severní teritórium a pokračuj v opevňování hranic.',
-  
-      msg7    = 'Dvanáctý den devátého měsíce.\n\n\nPo dalším postupu dále na sever jsme konečně našli dostatek prostoru pro stavbu větších budov a farem. Nyní bychom měli hledat suroviny v okolních horách.',
-      msgh7   = 'Hledejte nové suroviny a zajistěte dodávky potravin. Prozkoumej celý ostrov.',
-  
-      msg8    = 'Náš geolog našel pramen vody. Nyní jsme schopni čerpat pitnou vodu.',
-  
-      msg9    = 'Nalezením uhlí v západních horách jsme si zajistili dodávky paliva pto naše slévárny a zrojnice. Nyní bez problémů můžeme začít zpracovávat železnou rudu. Všechno jde velmi dobře.',
-  
-      msg10   = 'Geologové našli v horninách žulové usazeniny, což prozatím poskytne nový zdroj kamene.',
-      
-      msg11   = 'Objevili jsme zlatou žílu a nyní můžeme v mincovně vyrábět mince. Díky tomu bude život téměř tak pohodlný jako doma.',
-  
-      msg12   = 'Varizili jsme první zlaté mince a nyní můžeme platit za výcvik našich vojáků.',
+    msg12   = 'Vyrazili jsme první zlaté mince a nyní můžeme platit za výcvik našich vojáků.',
 
-      msg13   = 'Stavba naší první farmy na obilí byla dokončena. Obilí lze zpracovat na mouku v mlýně, nebo použít jako krmivo pro prasata. Zásobování potravinami by se nyní mělo nadále zlepšovat.',
+    msg13   = 'Stavba naší první farmy na obilí byla dokončena. Obilí lze zpracovat na mouku ve mlýně, nebo použít jako krmivo pro prasata. Zásobování potravinami by se nyní mělo nadále zlepšovat.',
 
-      msg14   = 'Náš nový vepřín může dodávat poražené vepře řezníkovi na jatka.',
+    msg14   = 'Náš nový vepřín může dodávat poražené vepře řezníkovi na jatka.',
 
-      msg15   = 'Větrný mlýn může poskytnout pekaři dostatek mouky pro pečení chleba.',
+    msg15   = 'Větrný mlýn může poskytnout pekaři dostatek mouky pro pečení chleba.',
 
-      msg16   = 'Naši učenci objevili podivný monument. Vypadá to jako brána. Zjevně nejsme první obyvatelé tohoto ostrova. Na bráně dokonce našli nápis v latině „Consiste ut procederas!“ - „Usaď te se, abyste dosáhli pokroku!“. Je to bizarní a rozporuplné. Co to může znamenat?!',
+    msg16   = 'Naši učenci objevili podivný monument. Vypadá to jako brána. Zjevně nejsme první obyvatelé tohoto ostrova. Na bráně dokonce našli nápis v latině „Consiste ut procederas!“ - „Usaď te se, abyste dosáhli pokroku!“. Je to bizarní a rozporuplné. Co to může znamenat?!',
 
-      msg99   = 'Druhý den třináctého měsíce po stroskotání u břehů tohoto ostrova.\n\n\nVčera začal druhý rok a zdá se, že se nám tento ostrov podařilo osídlit. Naši učenci hlásí podivné události u brány. Vypadá to, že se brána otevřela a může nás zavést na cestu, která nás vyvede z tohoto ostrova. Významem hádanky byl zřejmě takovýto: „Aby se člověk dostal dál musí oběvovat a osidlovat nové území“. No uvydíme, snad skutečně všechny cesty vedou do Říma.',
-      msgh99  = 'Dokončili jste tuto misi. Čeká na tebe druhá kapitola...\n\nDalší misi můžeš zahájit z hlavní nabídky kdykoli budeš chtít.',
-    },
-    de = 
-    {
-        Diary   = 'Tagebuch',
-    
-        msg1    = 'Tagebuch des Octavius:\n\n\nVierter Tag nach dem Schiffbruch.\n\n\nGestern fanden sich alle Überlebenden zusammen, um\ndie Lage zu beraten. Da keine Aussicht auf eine\nbaldige Rettung besteht, beschlossen wir, uns auf\ndieser fremden Insel niederzulassen. Dabei werden\nuns die geretteten Güter aus dem Schiff eine große\nHilfe sein. Das Wichtigste ist, die Rohstoffe der\nInsel für den Aufbau einer Siedlung nutzbar zu\nmachen. Wir benötigen dringend Unterkünfte für einen\nHolzfäller, Schreiner und den Steinmetz.',
-        msgh1   = 'Bauen Sie Unterkünfte für einen Holzfäller,\nSchreiner und Steinmetz.',
-        
-        msg2    = 'Achter Tag nach dem Schiffbruch.\n\n\nDie Grundlagen für den Aufbau unserer Siedlung sind\ngeschaffen. Der Baumbestand in diesem Gebiet wird\naber nicht lange vorhalten. Um die langfristige\nVersorgung mit Holz zu gewährleisten, benötigen wir\neinen Förster.',
-        msgh2   = 'Bauen Sie ein Forsthaus.',
-        
-        msg3    = 'Elfter Tag im zweiten Monat nach dem Schiffbruch.\n\n\nWir wissen immer noch nicht, ob wir alleine auf\ndieser Insel sind. Vorsichtshalber sollten wir einen\nWachposten an den offenen Grenzen zum Landesinneren\nerrichten.',
-        msgh3   = 'Bauen Sie eine Baracke an der nördlichen Grenze\nIhrer Siedlung.',
-        
-        msg4    = 'Fünfter Tag im dritten Monat.\n\n\nDurch die Ausbreitung unseres Landes haben wir den\nBerg im Norden erreicht. Unser Gelehrter sollte sich\ndort den Boden mal anschauen. Langfristig brauchen\nwir Brennstoff, Baumaterial und natürlich auch\nWaffen und gemünztes Gold. Wir müssen also Eisenerz,\nGold, Kohle und Granit finden.',
-        msgh4   = 'Bauen Sie einen Weg auf den Berg und schicken Sie\nIhren Gelehrten dorthin.',
-        
-        msg5    = 'Sechzehnter Tag im sechsten Monat.\n\n\nWir haben Eisenerz gefunden und wären jetzt in der\nLage, Waffen zu produzieren. Der weiteren Erkundung\nder Insel stünde dann nichts mehr im Wege. Dazu\nmüssen wir aber erst ein Eisenbergwerk und die\ndazugehörige Eisenschmelze bauen. Eine\nWaffenschmiede könnte dann die Produktion von\nSchwertern und Schilden übernehmen. Wir müssen aber\nauch die Bergarbeiter mit Nahrungsmitteln versorgen.\nUnsere Vorräte sind fast aufgebraucht. Wir brauchen\nJäger und Fischer!',
-        msgh5   = 'Bauen Sie ein Eisenbergwerk, eine Eisenschmelze und\neine Waffenschmiede.',
+    msg99   = 'Druhý den třináctého měsíce po stroskotání u břehů tohoto ostrova.\n\n\nVčera začal druhý rok a zdá se, že se nám tento ostrov podařilo osídlit. Naši učenci hlásí podivné události u brány. Vypadá to, že se brána otevřela a může nám poskytnout cestu pryč z tohoto ostrova. Významem hádanky byl zřejmě takovýto: „Aby se člověk dostal dál musí oběvovat a osidlovat nové území“. No uvydíme, snad skutečně všechny cesty vedou do Říma.',
+    msgh99  = 'Dokončili jsi tuto misi. Čeká na tebe druhá kapitola...\n\nDalší misi můžeš zahájit z hlavní nabídky kdykoli budeš chtít.',
+  },
+  de = 
+  {
+    Diary   = 'Tagebuch',
 
-        msg6    = 'Letzter Tag im achten Monat nach der Landung.\n\n\nNördlich unseres neuen Außenpostens liegt eine\nweite, fruchtbare Ebene. Dort ergeben sich ganz neue\nMöglichkeiten, unsere Siedlung zu erweitern. Dazu\nbrauchen wir allerdings Soldaten.',
-        msgh6   = 'Erreichen Sie die nördliche Ebene, indem Sie an der\nNordgrenze weitere Baracken bauen.',
+    msg1    = 'Tagebuch des Octavius:\n\n\nVierter Tag nach dem Schiffbruch.\n\n\nGestern fanden sich alle Überlebenden zusammen, um\ndie Lage zu beraten. Da keine Aussicht auf eine\nbaldige Rettung besteht, beschlossen wir, uns auf\ndieser fremden Insel niederzulassen. Dabei werden\nuns die geretteten Güter aus dem Schiff eine große\nHilfe sein. Das Wichtigste ist, die Rohstoffe der\nInsel für den Aufbau einer Siedlung nutzbar zu\nmachen. Wir benötigen dringend Unterkünfte für einen\nHolzfäller, Schreiner und den Steinmetz.',
+    msgh1   = 'Bauen Sie Unterkünfte für einen Holzfäller,\nSchreiner und Steinmetz.',
     
-        msg7    = 'Zwölfter Tag des neunten Monats.\n\n\nNachdem wir weiter nach Norden vorgedrungen sind,\nhaben wir endlich genug Platz, um größere Gebäude\nund Bauernhöfe errichten zu können. Jetzt wollen wir\ndas umliegende Gebirge nach Rohstoffen absuchen.',
-        msgh7   = 'Suchen Sie nach neuen Rohstoffen und sichern Sie die\nNahrungsversorgung. Erkunden Sie die Insel\nvollständig.',
+    msg2    = 'Achter Tag nach dem Schiffbruch.\n\n\nDie Grundlagen für den Aufbau unserer Siedlung sind\ngeschaffen. Der Baumbestand in diesem Gebiet wird\naber nicht lange vorhalten. Um die langfristige\nVersorgung mit Holz zu gewährleisten, benötigen wir\neinen Förster.',
+    msgh2   = 'Bauen Sie ein Forsthaus.',
     
-        msg8    = 'Unser Gelehrter hat eine Wasserader gefunden. Nun\nwären wir in der Lage mit einem Brunnen Wasser zu\nfördern.',
+    msg3    = 'Elfter Tag im zweiten Monat nach dem Schiffbruch.\n\n\nWir wissen immer noch nicht, ob wir alleine auf\ndieser Insel sind. Vorsichtshalber sollten wir einen\nWachposten an den offenen Grenzen zum Landesinneren\nerrichten.',
+    msgh3   = 'Bauen Sie eine Baracke an der nördlichen Grenze\nIhrer Siedlung.',
     
-        msg9    = 'Die Versorgung der Schmelzereien ist gewährleistet,\ndenn wir haben Kohle im westlichen Gebirge gefunden.\nNun können wir unsere Metallerze problemlos\nweiterverarbeiten. Alles entwickelt sich sehr gut.',
+    msg4    = 'Fünfter Tag im dritten Monat.\n\n\nDurch die Ausbreitung unseres Landes haben wir den\nBerg im Norden erreicht. Unser Gelehrter sollte sich\ndort den Boden mal anschauen. Langfristig brauchen\nwir Brennstoff, Baumaterial und natürlich auch\nWaffen und gemünztes Gold. Wir müssen also Eisenerz,\nGold, Kohle und Granit finden.',
+    msgh4   = 'Bauen Sie einen Weg auf den Berg und schicken Sie\nIhren Gelehrten dorthin.',
     
-        msg10   = 'Da Gelehrte Granitvorkommen in den Bergen gefunden\nhaben, ist der Nachschub an Steinen bis auf weiteres\ngesichert.',
+    msg5    = 'Sechzehnter Tag im sechsten Monat.\n\n\nWir haben Eisenerz gefunden und wären jetzt in der\nLage, Waffen zu produzieren. Der weiteren Erkundung\nder Insel stünde dann nichts mehr im Wege. Dazu\nmüssen wir aber erst ein Eisenbergwerk und die\ndazugehörige Eisenschmelze bauen. Eine\nWaffenschmiede könnte dann die Produktion von\nSchwertern und Schilden übernehmen. Wir müssen aber\nauch die Bergarbeiter mit Nahrungsmitteln versorgen.\nUnsere Vorräte sind fast aufgebraucht. Wir brauchen\nJäger und Fischer!',
+    msgh5   = 'Bauen Sie ein Eisenbergwerk, eine Eisenschmelze und\neine Waffenschmiede.',
+
+    msg6    = 'Letzter Tag im achten Monat nach der Landung.\n\n\nNördlich unseres neuen Außenpostens liegt eine\nweite, fruchtbare Ebene. Dort ergeben sich ganz neue\nMöglichkeiten, unsere Siedlung zu erweitern. Dazu\nbrauchen wir allerdings Soldaten.',
+    msgh6   = 'Erreichen Sie die nördliche Ebene, indem Sie an der\nNordgrenze weitere Baracken bauen.',
+
+    msg7    = 'Zwölfter Tag des neunten Monats.\n\n\nNachdem wir weiter nach Norden vorgedrungen sind,\nhaben wir endlich genug Platz, um größere Gebäude\nund Bauernhöfe errichten zu können. Jetzt wollen wir\ndas umliegende Gebirge nach Rohstoffen absuchen.',
+    msgh7   = 'Suchen Sie nach neuen Rohstoffen und sichern Sie die\nNahrungsversorgung. Erkunden Sie die Insel\nvollständig.',
+
+    msg8    = 'Unser Gelehrter hat eine Wasserader gefunden. Nun\nwären wir in der Lage mit einem Brunnen Wasser zu\nfördern.',
+
+    msg9    = 'Die Versorgung der Schmelzereien ist gewährleistet,\ndenn wir haben Kohle im westlichen Gebirge gefunden.\nNun können wir unsere Metallerze problemlos\nweiterverarbeiten. Alles entwickelt sich sehr gut.',
+
+    msg10   = 'Da Gelehrte Granitvorkommen in den Bergen gefunden\nhaben, ist der Nachschub an Steinen bis auf weiteres\ngesichert.',
+
+    msg11   = 'Wir haben eine Goldader erschlossen und wären nun in\nder Lage, in einer Münzprägerei kostbare Münzen\nherzustellen. So langsam wird das Leben hier beinahe\nheimisch komfortabel.',
+
+    msg12   = 'Wir haben die ersten Goldmünzen geprägt und können\njetzt die Ausbildung unserer Soldaten bezahlen.',
+
+    msg13   = 'Der Bau unserer ersten Getreidefarm ist\nabgeschlossen. Das Getreide könnte nun in einer\nMühle zu Mehl verarbeitet oder auf einem Schweinehof\nverfüttert werden. Die Versorgungslage würde dann\nimmer besser.',
+
+    msg14   = 'Unser neue Schweinehof könnte nun eine Metzgerei mit\nSchlachtvieh versorgen.',
+
+    msg15   = 'Die Windmühle könnte eine Bäckerei mit ausreichend\nMehl versorgen.',
+
+    msg16   = 'Ein seltsames Ding haben unsere Gelehrten entdeckt.\nEs sieht aus wie ein Tor. Offensichtlich waren also\ndoch bereits Menschen vor uns auf dieser Insel.\nSogar eine Inschrift in latinischen Buchstaben\nentdeckten sie auf dem Tor. Sie ist sehr seltsam und\nwidersprüchlich, vielleicht ein Rätsel: \'Consiste ut\nprocederas!\' \'Laß Dich nieder, um fortzuschreiten!\'\nWer weiß, was das bedeutet?!',
+
+    msg99   = 'Zweiter Tag des dreizehnten Monats nach der Landung.\n\n\nGestern begann das zweite Jahr, und wir scheinen es\ngeschafft zu haben. Die Gelehrten berichten von\nseltsamen Aktivitäten am Tor. Es sieht so aus, als\nhabe sich ein Weg geöffnet, der uns von dieser Insel\nwegführen kann. Das scheint der Sinn des Rätsels zu\nsein: Man muß sich niederlassen und siedeln, um\nweiterzukommen. Mal sehen. Vielleicht führen ja\nwirklich alle Wege nach Rom.',
+    msgh99  = 'Sie haben diese Mission erfüllt. Das zweite Kapitel\nwartet schon auf Sie... \n\nWann immer Sie wollen, können Sie im Hauptmenü die\nnächste Mission starten.'
+  },
+  en = 
+  { 
+    Diary   = 'Diary',
+
+    msg1    = 'Diary of Octavius:\n\n\nFourth Day After Shipwreck.\n\n\nYesterday all the survivors met in order to discuss\nthe situation. Because there is no prospect of\nearly rescue, we decided to settle on this foreign\nisland. The items salvaged from the ship will be a\ngreat help to us. The most important thing is to\nmake use of the raw materials on the island in order\nto establish a settlement. We urgently need \naccommodations for a woodcutter, carpenter and \nstonemason.', 
+    msgh1   = 'Build accommodations for a woodcutter, carpenter and\nstonemason.',
     
-        msg11   = 'Wir haben eine Goldader erschlossen und wären nun in\nder Lage, in einer Münzprägerei kostbare Münzen\nherzustellen. So langsam wird das Leben hier beinahe\nheimisch komfortabel.',
+    msg2    = 'Eighth Day After Shipwreck.\n\n\nThe basic requirements for building up our\nsettlement have been met. However, the supply of\ntrees in this region will not last long. We need a\nforester to ensure a long-term supply of timber.',
+    msgh2   = 'Build a forester\'s cabin.',
     
-        msg12   = 'Wir haben die ersten Goldmünzen geprägt und können\njetzt die Ausbildung unserer Soldaten bezahlen.',
+    msg3    = 'Eleventh Day of Second Month After Shipwreck.\n\n\nWe are still not sure whether we are the only\npersons on this island. As a precautionary measure\nwe should erect a barracks on our exposed border\ntowards the interior of the island.',
+    msgh3   = 'Build a barracks on the northern\nborder of your settlement.',
     
-        msg13   = 'Der Bau unserer ersten Getreidefarm ist\nabgeschlossen. Das Getreide könnte nun in einer\nMühle zu Mehl verarbeitet oder auf einem Schweinehof\nverfüttert werden. Die Versorgungslage würde dann\nimmer besser.',
+    msg4    = 'Fifth Day of Third Month.\n\n\nOur territory has spread as far as the mountain in\nthe north. Our geologist will carry out a land\nsurvey there. In the long term we need fuel and\nbuilding materials as well as weapons and coined\ngold. We must therefore find iron ore, gold, coal\nand granite.',
+    msgh4   = 'Build a road to the mountain and\nsend your geologist there.',
     
-        msg14   = 'Unser neue Schweinehof könnte nun eine Metzgerei mit\nSchlachtvieh versorgen.',
+    msg5    = 'Sixteenth Day of Sixth Month.\n\n\nWe have found iron ore and are now able to produce\nweapons. There will then be no obstacles to further\nexploration of the island. First of all we must\nbuild an iron mine and an iron smelter for it. An\narmorer can then start to produce swords and\nshields. We must also provide the miners with food,\nour stocks are almost exhausted. We need hunters and\nfishermen!',
+    msgh5   = 'Build an iron mine, an iron smelter and a smithy.',
+
+    msg6    = 'Last Day of Eighth Month After Coming Ashore.\n\n\nThere is an open, fertile plain to the north of our\nnew border post. This will provide lots of new\nopportunities for expanding our settlement but we\nneed more soldiers to do this.',
+    msgh6   = 'Go to the northern plain and\ncontinue fortifying the border.',
+
+    msg7    = 'Twelfth Day of Ninth Month.\n\n\nAfter advancing further north we have finally found\nenough space to build larger buildings and farms. We\nnow intend to prospect for raw materials in the\nsurrounding mountains.',
+    msgh7   = 'Search for new raw materials and secure a supply of\nfood. Explore the entire island.',
+
+    msg8    = 'Our geologist has found a spring. We are now able\nto supply fresh water from it.',
+
+    msg9    = 'We have ensured a fuel supply for the metalworks by\nfinding coal in the western mountains. Now we can\nprocess our metal ores with no problems. Everything\nis going extremely well.',
+
+    msg10   = 'Geologists have found granite deposits in the\nmountains and this will provide a fresh supply of\nstone for the time being.',
     
-        msg15   = 'Die Windmühle könnte eine Bäckerei mit ausreichend\nMehl versorgen.',
-    
-        msg16   = 'Ein seltsames Ding haben unsere Gelehrten entdeckt.\nEs sieht aus wie ein Tor. Offensichtlich waren also\ndoch bereits Menschen vor uns auf dieser Insel.\nSogar eine Inschrift in latinischen Buchstaben\nentdeckten sie auf dem Tor. Sie ist sehr seltsam und\nwidersprüchlich, vielleicht ein Rätsel: \'Consiste ut\nprocederas!\' \'Laß Dich nieder, um fortzuschreiten!\'\nWer weiß, was das bedeutet?!',
-    
-        msg99   = 'Zweiter Tag des dreizehnten Monats nach der Landung.\n\n\nGestern begann das zweite Jahr, und wir scheinen es\ngeschafft zu haben. Die Gelehrten berichten von\nseltsamen Aktivitäten am Tor. Es sieht so aus, als\nhabe sich ein Weg geöffnet, der uns von dieser Insel\nwegführen kann. Das scheint der Sinn des Rätsels zu\nsein: Man muß sich niederlassen und siedeln, um\nweiterzukommen. Mal sehen. Vielleicht führen ja\nwirklich alle Wege nach Rom.',
-        msgh99  = 'Sie haben diese Mission erfüllt. Das zweite Kapitel\nwartet schon auf Sie... \n\nWann immer Sie wollen, können Sie im Hauptmenü die\nnächste Mission starten.'
-} })
+    msg11   = 'We have discovered a gold vein\nand can now produce valuable coins in a mint. This\nwill make life here almost as comfortable as at home.',
+
+    msg12   = 'We have minted the first gold coins and can now pay\nfor the training of our soldiers.',
+
+    msg13   = 'Construction of our first grain farm has been\ncompleted. The grain can be processed into flour in\na mill or fed to pigs. The food supply situation\nshould now continue to improve.',
+
+    msg14   = 'Our new pig farm can supply slaughtered animals to a\nbutcher.',
+
+    msg15   = 'The windmill can supply a baker with sufficient\nflour for baking bread.',
+
+    msg16   = 'Our geologists have discovered a strange object. It\nlooks like a gateway. We are obviously not the first\nhumans on this island. They have even found an\ninscription on the gateway in Latin. It is bizarre\nand contradictory, perhaps it is a riddle:\n\'Consiste ut procederas!\' - \'Settle down in order to make progress!\'.\nWhat can this mean?!',
+
+    msg99   = 'Second Day of Thirteenth Month After Coming Ashore.\n\n\nThe second year began yesterday and we seem to have\nsucceeded in settling this island. The geologists\nreport strange goings on near the gateway. It\nappears that a path has opened up that can lead us\nfrom this island. This seems to be the meaning of\nthe riddle: we must settle in order to move on. We\nshall take a look, perhaps all roads really do lead\nto Rome.',
+    msgh99  = 'You have completed this mission. The second Chapter\nawaits you...\n\nYou can begin the next mission from the main menu\nwhenever you want.',
+  } 
+})
 
 -- format mission texts
 -- BUG:     NewLine at the end is wrongly interpreted, adding 2x Space resolves this issue
