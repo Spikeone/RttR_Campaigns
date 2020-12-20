@@ -24,73 +24,108 @@ end
 eIdx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 98, 99}
 
 rttr:RegisterTranslations(
-{ 
-    en = 
-    { 
-        Diary   = 'Diary',
-        
-        msg1    = 'Third Day of the Second Year.\n\n\nWe have reached a second island which appears to be\nuninhabited. The stock of tools belonging to the\ngood old Tortius is slowly being used up. We\ndesperately need a metalworks to make new tools.',
-        msgh1   = 'Build a metalworks and move into the interior of the\nisland. Pay close attention to the supply of\nprovisions and raw materials.',
+{
+  cs = 
+  { 
+    Diary   = 'Deník',
+
+    msg1    = 'Třetí den druhého roku.\n\n\nDostali jsme se na druhý ostrov, zdá se, že je neobydlený. Zásoby nástrojů starého dobrého Tortiase pomalu dochází. Zoufale potřebujeme postavit nářaďovnu k výrobě nových nástrojů.',
+    msgh1   = 'Postav nářaďovnu a rozšiř naše území do vnitrozemí. Věnuj zvláštní pozornost dodávkám stavebního materiálu a zásob.',
 
 
-        msg2    = 'We advanced a short distance northward and came\nacross a fellow countryman. He was the only survivor\nof another shipwreck and he is very happy to see\nother humans again. We were also pleased; the man is\na brewer. If we ever get into warlike disputes, beer\nwill lift the courage of our people. A soldier needs\nmuch more than just a shield and a sword!\n\nThe man also tells us of ruins that he has\ndiscovered on the island. I fear that before long we\nwill need to be more careful.',
-        msgh2   = 'Advance into the interior of the island. Pay close\nattention to the supply of provisions and raw\nmaterials.',
+    msg2    = 'Postoupili jsme zase o kousek na sever a narazili jsme na krajana. Byl jediný, kdo přežil další ztroskotání lodi, a je velmi šťastný, že znovu vidí lidskou tvář. Také nás to potěšilo. Máme veliké štěstí, ten muž je sládek. Pokud se někdy dostaneme do válečného konfliktu, pivo se nám bude hodit pro verbování nových vojáků. Voják potřebuje mnohem víc než jen štít a meč!\n\nMuž nám také vypráví o ruinách, které objevil na ostrově. Obávám se, že to budeme dlouho trvat a budeme muset být opatrnější.',
+    msgh2   = 'Postupuj do vnitrozemí ostrova. Věnuj zvláštní pozornost dodávkám stavebního materiálu a zásob.',
 
 
-        msg3    = 'We have found the ruins. They contained building\nplans for a guardhouse. Now we should consider\nbuilding fortifications. I am more convinced than\never that we are not alone on this island.',
-        msgh3   = 'Advance into the interior of the island. Pay close\nattention to the supply of provisions and raw\nmaterials.',
+    msg3    = 'Objevili jsme ruiny stavby. Obsahovaly plány na stavbu strážnice. Nyní bychom měli zvážit stavbu opevnění. Jsem více než kdy jindy přesvědčen, že na tomto ostrově nejsme sami.',
+    msgh3   = 'Postupuj do vnitrozemí ostrova. Věnuj zvláštní pozornost dodávkám stavebního materiálu a zásob.',
 
-        msg4    = 'We have found the ruins. They contained building\nplans for a watchtower. What is the origin of these\nstructures? Who built them? I fear that peace will\nsoon be at an end.',
-        msgh4   = 'Advance into the interior of the island. Pay close\nattention to the supply of provisions and raw\nmaterials.',
+    msg4    = 'Našli jsme ruiny. Obsahovaly stavební plány pro stavbu strážní věže. Jaký je původ těchto staveb? Kdo je postavil? Obávám se, že mír brzy skončí.',
+    msgh4   = 'Postupuj do vnitrozemí ostrova. Věnuj zvláštní pozornost dodávkám stavebního materiálu a zásob.',
 
-        msg5    = 'Whoever is or was on this island knows all about the\nbuilding trade. We found the ruins of a mighty\nfortress of exemplary construction. Our architects\nhave already drawn up a building plan.',
-        msgh5   = 'Advance into the interior of the island. Pay close\nattention to the supply of provisions and raw\nmaterials.',
+    msg5    = 'Kdokoli byl, nebo stále je na tomto ostrově, ví hodně o stavitelství. Našli jsme ruiny mohutné pevnosti. Naši architekti již vypracovali stavební plány.',
+    msgh5   = 'Postupuj do vnitrozemí ostrova. Věnuj zvláštní pozornost dodávkám stavebního materiálu a zásob.',
 
-        msg6    = '26th Day of the Third Month of the Second Year.\n\n\nMy fears have been given further confirmation. My\nmen found a rag doll and two spear tips of the type\ncustomarily associated with the Nubian tribes. These\nartifacts do not appear to be very old.',
+    msg6    = '26. den třetího měsíce druhého roku.\n\n\nMé obavy se naplnili. Moji muži našli hadrovou panenku a dva hroty kopí typické pro Núbijské domorodce. Vypadá to, že tyto artefakty nejsou příliš staré. Jak je ale možné, že rujny jsou římského stylu?',
 
-        msg7    = 'Our territory is expanding and transportation routes\nare becoming longer and longer. We must build a\nstorehouse so that we can respond more quickly to\nthe needs of our people.',
+    msg7    = 'Naše území se rozšiřuje a dopravní trasy se prodlužují. Musíme postavit skladiště, abychom mohli rychleji reagovat na potřeby našich lidí.',
 
-        msg8    = 'Diary of Octavius.\n\nFourth Day of the Fourth Month of the Second Year.\n\nIt was only to be expected: we came across the\nNubians. At first everything was very friendly. They\neven told us about their holy relic and it quickly\nbecame obvious that it was one of the gateways. They\ndenied us access to their holy relic, we shall have\nto fight to obtain access.',
-        msgh8   = 'Attack the Nubians and gain access to their gateway.',
+    msg8    = 'Deník Oktaviána.\n\nČtvrtý den čtvrtého měsíce druhého roku.\n\nTo se dalo čekat: narazili jsme na Núbijce. Zpočátku bylo všechno přátelské. Vyprávěli nám o svaté relikivi a jak se později ukázalo jedná se o jednu z bran. K bráně nás ale nechtějí pustit. Přístup si budeme muset vybojovat.',
+    msgh8   = 'Zaútoč na Núbijce a získej přístup k bráně.',
 
-        msg9    = 'The Nubians are lousy fighters but they have a\ncatapult, which we must destroy. Perhaps then we\nshall be able to capture plans showing how to build\nsuch a weapon.',
-        msgh9   = 'Capture the catapult and then gain access to the\ngateway.',
+    msg9    = 'Núbijci jsou mizerní bojovníci, ale mají katapult, který musíme zničit. Doufejme, že naši architekti z trosek budou schopni zjistit, jak takovou zbraň postavit.',
+    msgh9   = 'Zajmi katapult a poté získáte přístup k bráně.',
 
-        msg99   = '27th Day of the Ninth Month.\n\n\nWe were victorious in battle and the island is ours.\nThe gateway has become active again. I am excited by\nthe prospect of where our journey will take us now.\nThe inscription on the gateway is in Latin. I hope\nthat we will retrace the steps of our\nlegendary predecessors when they journeyed to Rome...',
-        msgh99  = 'You have completed this mission. The third Chapter\nawaits you...',
-    },
-    de = 
-    {
-        Diary   = 'Tagebuch',
-    
-        msg1    = 'Dritter Tag des zweiten Jahres.\n\n\nWir haben offensichtlich eine zweite Insel erreicht.\nAuch diese scheint unbewohnt zu sein. So langsam\ngehen aber die Werkzeugvorräte der guten alten\nTortius zu Ende. Wir brauchen also eine Schlosserei.',
-        msgh1   = 'Errichten Sie eine Schlosserei und dringen Sie ins\nInnere der Insel vor. Denken Sie an die Versorgung\nmit Nahrungsmitteln und Rohstoffen.',
+    msg99   = '27. den devátého měsíce.\n\n\nVítěztví v bitvě je naše a ostrov jsme osídlili. Brána se znovu aktivovala. Jsem nadšený z vyhlídky, na jakou cestu nás zavede.Teď už o tom nemůže být pochyb, svědší o tom i latinské nápisi na bráně a objevené rujny které jsou římské architektury. Před námi tu musely být Římané. Kde ale jsou, jak se sem dostali, proč odešli, je tu mnoho otázek. Dozvíme se na ně někdy odpovědí? Doufám, že vystopujeme kroky našich legendárních předků.',
+    msgh99  = 'Dokončil jsi tuto misi. Třetí kapitola čeká na tebe ...',
+  },
+  de = 
+  {
+    Diary   = 'Tagebuch',
 
-        msg2    = 'Wir stießen ein wenig nach Norden vor und dabei auf\neinen Landsmann. Er ist der einzige Überlebende\neines Schiffsunglücks und natürlich sehr froh,\nwieder Menschen zu begegnen. Aber auch wir hatten\nGlück dabei: Der Mann ist Brauer. Falls es doch\neinmal zu kriegerischen Auseinandersetzungen kommen\nsollte, wird das Bier den Mut unserer Leute schon\nheben. Zu einem Soldaten gehört halt mehr als ein\nSchild und ein Schwert!\n\nDer Mann berichtete uns auch von Ruinen, die er auf\nder Insel entdeckt hat. Wir müssen, fürchte ich,\ndemnächst vorsichtiger sein.',
-        msgh2   = 'Dringen Sie ins Innere der Insel vor. Denken Sie an\ndie Versorgung mit Nahrungsmitteln und Rohstoffen.',
+    msg1    = 'Dritter Tag des zweiten Jahres.\n\n\nWir haben offensichtlich eine zweite Insel erreicht.\nAuch diese scheint unbewohnt zu sein. So langsam\ngehen aber die Werkzeugvorräte der guten alten\nTortius zu Ende. Wir brauchen also eine Schlosserei.',
+    msgh1   = 'Errichten Sie eine Schlosserei und dringen Sie ins\nInnere der Insel vor. Denken Sie an die Versorgung\nmit Nahrungsmitteln und Rohstoffen.',
 
-        msg3    = 'Wir haben eine Ruine entdeckt. Darin befanden sich\nBaupläne für eine Wachhütte. Jetzt können und\nsollten wir möglichst ebenfalls Befestigungen bauen.\nIch habe immer mehr das Gefühl, daß wir nicht allein\nauf dieser Insel sind.',
-        msgh3   = 'Dringen Sie ins Innere der Insel vor. Denken Sie an\ndie Versorgung mit Nahrungsmitteln und Rohstoffen.',
+    msg2    = 'Wir stießen ein wenig nach Norden vor und dabei auf\neinen Landsmann. Er ist der einzige Überlebende\neines Schiffsunglücks und natürlich sehr froh,\nwieder Menschen zu begegnen. Aber auch wir hatten\nGlück dabei: Der Mann ist Brauer. Falls es doch\neinmal zu kriegerischen Auseinandersetzungen kommen\nsollte, wird das Bier den Mut unserer Leute schon\nheben. Zu einem Soldaten gehört halt mehr als ein\nSchild und ein Schwert!\n\nDer Mann berichtete uns auch von Ruinen, die er auf\nder Insel entdeckt hat. Wir müssen, fürchte ich,\ndemnächst vorsichtiger sein.',
+    msgh2   = 'Dringen Sie ins Innere der Insel vor. Denken Sie an\ndie Versorgung mit Nahrungsmitteln und Rohstoffen.',
 
-        msg4    = 'In der Ruine eines Wachturms fanden wir die\ndazugehörigen Baupläne. Wo kommen diese Bauwerke\nher? Wer errichtete sie? Ich fürchte, mit dem\nFrieden ist es bald vorbei.',
-        msgh4   = 'Dringen Sie ins Innere der Insel vor. Denken Sie an\ndie Versorgung mit Nahrungsmitteln und Rohstoffen.',
+    msg3    = 'Wir haben eine Ruine entdeckt. Darin befanden sich\nBaupläne für eine Wachhütte. Jetzt können und\nsollten wir möglichst ebenfalls Befestigungen bauen.\nIch habe immer mehr das Gefühl, daß wir nicht allein\nauf dieser Insel sind.',
+    msgh3   = 'Dringen Sie ins Innere der Insel vor. Denken Sie an\ndie Versorgung mit Nahrungsmitteln und Rohstoffen.',
 
-        msg5    = 'Wer auch immer sich auf dieser Insel befindet oder\nbefand, er versteht das Bauhandwerk. Wir fanden die\nRuine einer gewaltigen Festung, deren Konstruktion\nhöchst nachahmenswert erscheint. Unsere Gelehrten\nhaben bereits einen Bauplan entworfen.',
-        msgh5   = 'Dringen Sie ins Innere der Insel vor. Denken Sie an\ndie Versorgung mit Nahrungsmitteln und Rohstoffen.',
+    msg4    = 'In der Ruine eines Wachturms fanden wir die\ndazugehörigen Baupläne. Wo kommen diese Bauwerke\nher? Wer errichtete sie? Ich fürchte, mit dem\nFrieden ist es bald vorbei.',
+    msgh4   = 'Dringen Sie ins Innere der Insel vor. Denken Sie an\ndie Versorgung mit Nahrungsmitteln und Rohstoffen.',
 
-        msg6    = '26. Tag des 3. Monats.\n\n\nMeine Befürchtungen haben weitere Nahrung erhalten.\nMeine Leute fanden eine Stoffpuppe und zwei\nSpeerspitzen, wie sie bei nubischen Völkern üblich\nsind. Und diese Artefakte sehen nicht sehr alt aus.',
+    msg5    = 'Wer auch immer sich auf dieser Insel befindet oder\nbefand, er versteht das Bauhandwerk. Wir fanden die\nRuine einer gewaltigen Festung, deren Konstruktion\nhöchst nachahmenswert erscheint. Unsere Gelehrten\nhaben bereits einen Bauplan entworfen.',
+    msgh5   = 'Dringen Sie ins Innere der Insel vor. Denken Sie an\ndie Versorgung mit Nahrungsmitteln und Rohstoffen.',
 
-        msg7    = 'Unser Reich wächst und die Transportwege werden\nimmer länger. Wir sollten ein Lagerhaus bauen, um\nschneller reagieren zu können.',
+    msg6    = '26. Tag des 3. Monats.\n\n\nMeine Befürchtungen haben weitere Nahrung erhalten.\nMeine Leute fanden eine Stoffpuppe und zwei\nSpeerspitzen, wie sie bei nubischen Völkern üblich\nsind. Und diese Artefakte sehen nicht sehr alt aus.',
 
-        msg8    = 'Tagebuch des Octavius.\n\nVierter Tag im vierten Monat des zweiten Jahres.\n\nEs war zu erwarten: Wir sind auf ein nubisches Volk\ngetroffen. Zunächst verlief alles sehr friedlich.\nSie erzählten uns sogar von ihrem Heiligtum, und\nschnell wurde klar, daß es sich dabei um eines\ndieser Tore handelt. Aber sie weigern sich, uns\nZutritt zu ihrem Heiligtum zu gewähren. Wir werden\ndarum kämpfen müssen.',
-        msgh8   = 'Greifen Sie die Nubier an und suchen sie nach deren\nTor.',
+    msg7    = 'Unser Reich wächst und die Transportwege werden\nimmer länger. Wir sollten ein Lagerhaus bauen, um\nschneller reagieren zu können.',
 
-        msg9    = 'Die Nubier sind lausige Kämpfer, aber sie haben\ndieses Katapult. Wir müssen es zerstören. Vielleicht\nkommen wir dann auch an die Pläne, wie man so etwas\nbaut.',
-        msgh9   = 'Erobern Sie das Katapult und suchen Sie dann weiter\nnach dem Tor.',
+    msg8    = 'Tagebuch des Octavius.\n\nVierter Tag im vierten Monat des zweiten Jahres.\n\nEs war zu erwarten: Wir sind auf ein nubisches Volk\ngetroffen. Zunächst verlief alles sehr friedlich.\nSie erzählten uns sogar von ihrem Heiligtum, und\nschnell wurde klar, daß es sich dabei um eines\ndieser Tore handelt. Aber sie weigern sich, uns\nZutritt zu ihrem Heiligtum zu gewähren. Wir werden\ndarum kämpfen müssen.',
+    msgh8   = 'Greifen Sie die Nubier an und suchen sie nach deren\nTor.',
 
-        msg99   = '27. Tag im neunten Monat.\n\n\nWir haben den Kampf gewonnen und die Insel ist\nunser. Und wieder ist das Tor aktiv geworden. Ich\nbin gespannt, wohin die Reise jetzt geht. Aber die\nInschrift auf diesem Tor ist wieder latinisch, und\nso hoffe ich, daß wir vielleicht auf jenem Pfad\nwandern, den unsere sagenhaften Vorfahren gingen,\nbis sie nach Rom kamen...',
-        msgh99  = 'Sie haben diese Mission erfüllt. Das dritte Kapitel\nwartet schon auf Sie...'
-} })
+    msg9    = 'Die Nubier sind lausige Kämpfer, aber sie haben\ndieses Katapult. Wir müssen es zerstören. Vielleicht\nkommen wir dann auch an die Pläne, wie man so etwas\nbaut.',
+    msgh9   = 'Erobern Sie das Katapult und suchen Sie dann weiter\nnach dem Tor.',
+
+    msg99   = '27. Tag im neunten Monat.\n\n\nWir haben den Kampf gewonnen und die Insel ist\nunser. Und wieder ist das Tor aktiv geworden. Ich\nbin gespannt, wohin die Reise jetzt geht. Aber die\nInschrift auf diesem Tor ist wieder latinisch, und\nso hoffe ich, daß wir vielleicht auf jenem Pfad\nwandern, den unsere sagenhaften Vorfahren gingen,\nbis sie nach Rom kamen...',
+    msgh99  = 'Sie haben diese Mission erfüllt. Das dritte Kapitel\nwartet schon auf Sie...'
+  },
+  en = 
+  { 
+    Diary   = 'Diary',
+
+    msg1    = 'Third Day of the Second Year.\n\n\nWe have reached a second island which appears to be\nuninhabited. The stock of tools belonging to the\ngood old Tortius is slowly being used up. We\ndesperately need a metalworks to make new tools.',
+    msgh1   = 'Build a metalworks and move into the interior of the\nisland. Pay close attention to the supply of\nprovisions and raw materials.',
+
+
+    msg2    = 'We advanced a short distance northward and came\nacross a fellow countryman. He was the only survivor\nof another shipwreck and he is very happy to see\nother humans again. We were also pleased; the man is\na brewer. If we ever get into warlike disputes, beer\nwill lift the courage of our people. A soldier needs\nmuch more than just a shield and a sword!\n\nThe man also tells us of ruins that he has\ndiscovered on the island. I fear that before long we\nwill need to be more careful.',
+    msgh2   = 'Advance into the interior of the island. Pay close\nattention to the supply of provisions and raw\nmaterials.',
+
+
+    msg3    = 'We have found the ruins. They contained building\nplans for a guardhouse. Now we should consider\nbuilding fortifications. I am more convinced than\never that we are not alone on this island.',
+    msgh3   = 'Advance into the interior of the island. Pay close\nattention to the supply of provisions and raw\nmaterials.',
+
+    msg4    = 'We have found the ruins. They contained building\nplans for a watchtower. What is the origin of these\nstructures? Who built them? I fear that peace will\nsoon be at an end.',
+    msgh4   = 'Advance into the interior of the island. Pay close\nattention to the supply of provisions and raw\nmaterials.',
+
+    msg5    = 'Whoever is or was on this island knows all about the\nbuilding trade. We found the ruins of a mighty\nfortress of exemplary construction. Our architects\nhave already drawn up a building plan.',
+    msgh5   = 'Advance into the interior of the island. Pay close\nattention to the supply of provisions and raw\nmaterials.',
+
+    msg6    = '26th Day of the Third Month of the Second Year.\n\n\nMy fears have been given further confirmation. My\nmen found a rag doll and two spear tips of the type\ncustomarily associated with the Nubian tribes. These\nartifacts do not appear to be very old.',
+
+    msg7    = 'Our territory is expanding and transportation routes\nare becoming longer and longer. We must build a\nstorehouse so that we can respond more quickly to\nthe needs of our people.',
+
+    msg8    = 'Diary of Octavius.\n\nFourth Day of the Fourth Month of the Second Year.\n\nIt was only to be expected: we came across the\nNubians. At first everything was very friendly. They\neven told us about their holy relic and it quickly\nbecame obvious that it was one of the gateways. They\ndenied us access to their holy relic, we shall have\nto fight to obtain access.',
+    msgh8   = 'Attack the Nubians and gain access to their gateway.',
+
+    msg9    = 'The Nubians are lousy fighters but they have a\ncatapult, which we must destroy. Perhaps then we\nshall be able to capture plans showing how to build\nsuch a weapon.',
+    msgh9   = 'Capture the catapult and then gain access to the\ngateway.',
+
+    msg99   = '27th Day of the Ninth Month.\n\n\nWe were victorious in battle and the island is ours.\nThe gateway has become active again. I am excited by\nthe prospect of where our journey will take us now.\nThe inscription on the gateway is in Latin. I hope\nthat we will retrace the steps of our\nlegendary predecessors when they journeyed to Rome...',
+    msgh99  = 'You have completed this mission. The third Chapter\nawaits you...',
+  }
+})
 
 -- format mission texts
 function MissionText(e)
