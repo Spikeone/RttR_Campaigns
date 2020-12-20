@@ -23,39 +23,56 @@ end
 eIdx = {1, 2, 3, 98, 99}
 
 rttr:RegisterTranslations(
-{ 
-    en = 
-    { 
-        Diary   = 'Diary',
+{
+  cs = 
+  { 
+    Diary   = 'Deník',
 
-        msg1    = '17th Day of the Third Month of the 3rd Year.\n\nWe have now created something of a routine in\nestablishing a viable settlement. Everything should\nnow work like clockwork.\n\nWe came across another castaway. He warned us against\nhostile Nubian tribes in the east of the island. The\nmountains in the east also allegedly have large\nquantities of gold. The man knew nothing about a\ngateway but he was only familiar with a small part\nof the island.',
-        msgh1   = 'Move eastwards.',
+    msg1    = '17. den třetího měsíce 3. roku.\n\nBudování životaschopné osady se stalo rutinou. Všechno by teď mělo šlapat jako hodinky.\n\nNarazili jsme na dalšího trosečníka. Varoval nás před nepřátelskými núbijskými kmeny na východě ostrova. Vyprávěl také o horách na východě ve kterých by se údajně měla nacházet veliká naleziště zlata. Ptali jsme se ho na bránu, o té nic neví, zná jen malou část ostrovsa.',
+    msgh1   = 'Přesuň se na východ.',
 
-        msg2    = '23rd Day of the 12th Month of the 3rd Year.\n\nWe came into contact with the Nubians. Their behavior\nis very threatening but not openly aggressive. Their\nbehavior will probably change before long. We should\nbuild a lookout tower so that we can keep a closer eye\non their lands.\n\nThe reports of rich gold deposits seem to be true.\nThe Nubian chieftain struts around in his gold\njewelry like a peacock.',
-        msgh2   = 'Search for the gateway.',
+    msg2    = '23. den 12. měsíce 3. roku.\n\nPřišli jsme do kontaktu s Núbijci. Jejich postoj je výhružný, ale ne otevřeně agresivní. To ale pravděpodobně nevydrží dlouho. Měli bychom postavit rozhlednu, abychom mohli lépe sledovat jejich území.\n\nZprávy o bohatých nalezištích zlata se zdají být pravdivé. Núbijský náčelník se se svími zlatými šperky natřásá jako páv.',
+    msgh2   = 'Hledej bránu.',
 
-        msg3    = 'First Day of the Second Month\nof the 4th Year of Coming Ashore.\n\nThe tribe in the north is blocking our path to\nanother gateway. They also regard it as their holy\nrelic. We have no alternative but to fight.',
-        msgh3   = 'Obtain access to the gateway in the north. ',
+    msg3    = 'První den druhého měsíce 4. roku stroskotání.\n\nNarazli jsme na další Núbijský kmen. Ptali jsme se jich na bránu a mluví o ní jako o svaté relikvii která je na posvátem místě kam mohou jen jejich šamani. Nikdy nás k ní nepustí. Nemáme jinou možnost, než boj.',
+    msgh3   = 'Získejte přístup k bráně na severu.',
 
-        msg99   = 'We have reached the gateway and activated it. We\nknow not where our next step will take us, but we\nshall go on.',
-        msgh99  = 'You have completed this mission.\nThe next Chapter awaits you... '
-    },
-    de = 
-    {
-        Diary   = 'Tagebuch',
+    msg99   = 'Dostali jsme se k bráně a aktivovali ji. Nevíme, kam nás zavede, ale projdeme srze bránu a uvydíme kam nás zavede.',
+    msgh99  = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
+  },
+  de = 
+  {
+    Diary   = 'Tagebuch',
 
-        msg1    = '17.Tag im dritten Monat des 3.Jahres.\n\nInzwischen haben wir eine gewisse Routine im Aufbau\neiner lebensfähigen Siedlung entwickelt. Es sollte\neigentlich alles wie am Schnürchen klappen.\n\nWir sind wieder auf einen Schiffbrüchigen getroffen.\nEr warnt uns vor aggressiven nubischen Stämmen im\nOsten der Insel. Dort gibt es ein Gebirge, in dem\nman angeblich große Mengen Gold finden kann. Von\neinem Tor wußte der Mann allerdings nichts. Er kennt\naber auch nur einen kleinen Teil der Insel.',
-        msgh1   = 'Rücken Sie weiter nach Osten vor.',
+    msg1    = '17.Tag im dritten Monat des 3.Jahres.\n\nInzwischen haben wir eine gewisse Routine im Aufbau\neiner lebensfähigen Siedlung entwickelt. Es sollte\neigentlich alles wie am Schnürchen klappen.\n\nWir sind wieder auf einen Schiffbrüchigen getroffen.\nEr warnt uns vor aggressiven nubischen Stämmen im\nOsten der Insel. Dort gibt es ein Gebirge, in dem\nman angeblich große Mengen Gold finden kann. Von\neinem Tor wußte der Mann allerdings nichts. Er kennt\naber auch nur einen kleinen Teil der Insel.',
+    msgh1   = 'Rücken Sie weiter nach Osten vor.',
 
-        msg2    = '23.Tag im 12.Monat des 3.Jahres.\n\nWir sind auf die Nubier getroffen. Sie verhalten\nsich sehr drohend, aber noch nicht offen aggressiv.\nDas wird wahrscheinlich nicht lange so bleiben. Wir\nsollten einen Spähturm bauen, um ihr Land besser\nüberwachen zu können.\n\nDie Berichte von den reichen Goldvorkommen scheinen\nzu stimmen. Ihr Häuptling stolziert in seinem\nGoldschmuck einher wie ein Pfau.',
-        msgh2   = 'Suchen Sie nach dem Tor.',
+    msg2    = '23.Tag im 12.Monat des 3.Jahres.\n\nWir sind auf die Nubier getroffen. Sie verhalten\nsich sehr drohend, aber noch nicht offen aggressiv.\nDas wird wahrscheinlich nicht lange so bleiben. Wir\nsollten einen Spähturm bauen, um ihr Land besser\nüberwachen zu können.\n\nDie Berichte von den reichen Goldvorkommen scheinen\nzu stimmen. Ihr Häuptling stolziert in seinem\nGoldschmuck einher wie ein Pfau.',
+    msgh2   = 'Suchen Sie nach dem Tor.',
 
-        msg3    = 'Erster Tag des zweiten Monats \nim 4.Jahr der Landung. \n\nDer Stamm im Norden versperrt uns den Weg zu einem\nweiteren Tor. Auch er betrachtet dieses als sein\nHeiligtum. Uns bleibt wieder nichts anderes übrig,\nals zu kämpfen.',
-        msgh3   = 'Suchen Sie nach dem Tor im Norden.',
+    msg3    = 'Erster Tag des zweiten Monats \nim 4.Jahr der Landung. \n\nDer Stamm im Norden versperrt uns den Weg zu einem\nweiteren Tor. Auch er betrachtet dieses als sein\nHeiligtum. Uns bleibt wieder nichts anderes übrig,\nals zu kämpfen.',
+    msgh3   = 'Suchen Sie nach dem Tor im Norden.',
 
-        msg99   = 'Wir haben das Tor erreicht und aktiviert. Wir wissen\nnicht, wohin uns der nächste Schritt führt, aber wir\nwerden ihn gehen.',
-        msgh99  = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet schon auf Sie...'
-} })
+    msg99   = 'Wir haben das Tor erreicht und aktiviert. Wir wissen\nnicht, wohin uns der nächste Schritt führt, aber wir\nwerden ihn gehen.',
+    msgh99  = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet schon auf Sie...'
+  },
+  en = 
+  { 
+    Diary   = 'Diary',
+
+    msg1    = '17th Day of the Third Month of the 3rd Year.\n\nWe have now created something of a routine in\nestablishing a viable settlement. Everything should\nnow work like clockwork.\n\nWe came across another castaway. He warned us against\nhostile Nubian tribes in the east of the island. The\nmountains in the east also allegedly have large\nquantities of gold. The man knew nothing about a\ngateway but he was only familiar with a small part\nof the island.',
+    msgh1   = 'Move eastwards.',
+
+    msg2    = '23rd Day of the 12th Month of the 3rd Year.\n\nWe came into contact with the Nubians. Their behavior\nis very threatening but not openly aggressive. Their\nbehavior will probably change before long. We should\nbuild a lookout tower so that we can keep a closer eye\non their lands.\n\nThe reports of rich gold deposits seem to be true.\nThe Nubian chieftain struts around in his gold\njewelry like a peacock.',
+    msgh2   = 'Search for the gateway.',
+
+    msg3    = 'First Day of the Second Month\nof the 4th Year of Coming Ashore.\n\nThe tribe in the north is blocking our path to\nanother gateway. They also regard it as their holy\nrelic. We have no alternative but to fight.',
+    msgh3   = 'Obtain access to the gateway in the north. ',
+
+    msg99   = 'We have reached the gateway and activated it. We\nknow not where our next step will take us, but we\nshall go on.',
+    msgh99  = 'You have completed this mission.\nThe next Chapter awaits you... '
+}
+})
 
 
 -- format mission texts
