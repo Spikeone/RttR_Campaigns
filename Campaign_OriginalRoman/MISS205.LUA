@@ -24,19 +24,19 @@ eIdx = {1, 2, 3, 98, 99}
 
 rttr:RegisterTranslations(
 { 
-    en = 
+    cs = 
     { 
-        Diary   = 'Diary',
+        Diary   = 'Deník',
 
-        msg1    = 'Last Day of the Fifth Year.\n\nRock carvings suggest there is an island in the\nsouthwest. It appears there are large gold deposits\nthere.',
-        msgh1   = 'Find and occupy the gateway! Check out the\nopportunities for building a harbor.',
+        msg1    = 'Poslední den pátého roku.\n\nSkalní rytiny naznačují, že na jihozápadě je ostrov. Zdá se, že tam jsou velká ložiska zlata.',
+        msgh1   = 'Najděte a obsaďte bránu! porozhlédněte se po možnostech výstavby přístavu.',
         
-        msg2    = 'The Vikings have a settlement behind the large\nmountain range on the east of our island. From the\npeaks of the mountains, one can see another very\nlarge land mass in the northeast.\n\n\n\nWe have not yet found any trace of a gateway and the\nprisoners of war claim they know of no such thing,\nbut they are poor liars.',
+        msg2    = 'Vikingové mají osadu za velkým pohořím na východě našeho ostrova. Z vrcholů hor je na severovýchodě vidět další velká pevnina.\n\n\n\nDosud jsme nenašli žádné stopy po bráně a váleční zajatci tvrdí, že o ničem takovém neslyšeli jsou to ale chabí lháři.',
         
-        msg3    = 'We have captured the small area of land beyond the\nmountain chain from the Vikings.\nWe took further prisoners who told us where the\ngateway is. As we already suspected, it is in the far\nnortheast.\nApart from a small area in the south of the land\nmass, it is entirely in the hands of the Vikings. We\nmust quickly build a harbor there and acquire fresh\nsupplies.',
+        msg3    = 'Za hosrkým hřebenem jsme obsadili malou část země poblíž Vikingů. Zajali jsme další vězně, kteří nám řekli, kde je brána. Jak jsme již tušili, je to na dalekém severovýchodě. Kromě malé oblasti na jihu je pevnina zcela v rukou Vikingů. Musíme tam rychle připlout, postavit přístav a získat nové zásoby.',
         
-        msg99   = 'We have found the gateway and occupied it.',
-        msgh99  = 'You have completed this mission. The next Chapter\nawaits you...'
+        msg99   = 'Našli jsme bránu a obsadili ji.',
+        msgh99  = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
     de = 
     {
@@ -51,7 +51,22 @@ rttr:RegisterTranslations(
 
         msg99   = 'Wir haben das Tor gefunden und besetzt.',
         msgh99  = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet auf Sie...'
-} })
+    }, 
+    en = 
+    { 
+        Diary   = 'Diary',
+
+        msg1    = 'Last Day of the Fifth Year.\n\nRock carvings suggest there is an island in the\nsouthwest. It appears there are large gold deposits\nthere.',
+        msgh1   = 'Find and occupy the gateway! Check out the\nopportunities for building a harbor.',
+        
+        msg2    = 'The Vikings have a settlement behind the large\nmountain range on the east of our island. From the\npeaks of the mountains, one can see another very\nlarge land mass in the northeast.\n\n\n\nWe have not yet found any trace of a gateway and the\nprisoners of war claim they know of no such thing,\nbut they are poor liars.',
+        
+        msg3    = 'We have captured the small area of land beyond the\nmountain chain from the Vikings.\nWe took further prisoners who told us where the\ngateway is. As we already suspected, it is in the far\nnortheast.\nApart from a small area in the south of the land\nmass, it is entirely in the hands of the Vikings. We\nmust quickly build a harbor there and acquire fresh\nsupplies.',
+        
+        msg99   = 'We have found the gateway and occupied it.',
+        msgh99  = 'You have completed this mission. The next Chapter\nawaits you...'
+    }
+})
 
 -- format mission texts
 function MissionText(e)
