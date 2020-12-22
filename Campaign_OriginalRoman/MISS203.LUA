@@ -24,21 +24,21 @@ eIdx = {1, 2, 3, 98, 99}
 
 rttr:RegisterTranslations(
 { 
-    en = 
+    cs = 
     { 
-        Diary   = 'Diary',
+        Diary   = 'Deník',
 
-        msg1    = 'The Ninth Day of the Ninth Month of the Fourth Year.\n\nYesterday we met a stranger of truly frightening\nappearance. He is huge in size, has light blue eyes\nand glowing golden hair. Long ago in a Roman harbor\ntavern I once heard stories of such people who live\nin the far north. How did he get here? He is\nsuspicious and refuses to talk to us. We shall treat\nhim as our guest for a few days (the poor fellow\nappears to be starving). Perhaps then he will change\nhis attitude.',
-        msgh1   = 'Explore the surrounding area.',
+        msg1    = 'Devátý den devátého měsíce čtvrtého roku.\n\nVčera jsme potkali cizince se skutečně děsivým vzhledem. Vypadá jako obr, má světle modré oči a zářící žluté vlasy. Kdysi dávno jsem v jedné krčmě v římském přístavu slyšel vyprávění od starého mořského vlka o obrech žijíchích na severu se světlou pletí, modrými oči a vlasech ze zlata. No, ty histroky byly trochu přehnané, ale jinak ten popis dost odpovídá. Jak se sem asi dostal? Je hodně podezíravý a odmítá s námi mluvit. Zkusíme se k němu chovat jako k našemu hostovi a za pár dní třeba změní svůj postoj. Zdá se, že je hladový, chudák.',
+        msgh1   = 'Prozkoumej okolí.',
 
-        msg2    = '16th Day of the Ninth Month of the Fourth Year.\n\nWell, what wonders a little generosity can achieve.\nThe blond giant told us that he is a member of a\nrace that calls itself the \"Vikings\". He says that\nthey lived on a large island not far to the east but\nthey were conquered by a hostile tribe. His name is\nErik. What a strange name! If we are to believe him,\nhe is a shipwright by trade. My heart beats faster\nat the prospect of soon being able to board a ship\nagain, hearing the waves under the keel, the cries\nof the seagulls and the wind in the sails...\n\nBut first of all we must construct a shipyard and a\nharbor.',
-        msgh2   = 'Build a harbor and a shipyard. In the shipyard build\na large trading ship and organize an expedition from\nthe harbor.',
+        msg2    = '16. den devátého měsíce čtvrtého roku.\n\nNo vida, čeho se dá dosáhnout s trochou štědrosti. Blonďatý obr nám řekl, že je členem národa žijícího na severu. Říká že jeho národu mnozí říkají různě, jako třeba Normané, Dánové, Ascomané, Varjagové ale nejspíš je budeme znát pod jménem Vikingové. Říká, že žil na velkém zeleném ostrově nedaleko na západě. Jmenuje se Erik. Jaké divné jméno! Pokud mu máme věřit, je stavitel lodí. Moje srdce bije rychleji při vyhlídce, že bych brzy mohl znovu nastoupit na loď, slyšet hukot vln pod kýlem, výkřiky racků a vítr v plachtách ...\n\nNejprve ale musíme postavit loděnici a přístav.',
+        msgh2   = 'Postav přístav a loděnici. V loděnici postav velkou obchodní loď a v přístavu zahaj přípravy na expedici.',
 
-        msg3    = 'On a small island in the middle of a archipelago, we\ndiscovered an enormous whale graveyard, in which\nthere were hundreds of gigantic skeletons. What an\nimposing sight. At first we were unable to\nunderstand how these creatures got there. Erik\nexplained that his people lived off these creatures\nand worshipped them as holy animals. This was why\ntheir bones were brought to this sacred place after\nthey were caught. Erik is uneasy, he wants to leave\nbecause he is afraid of the spirits of the dead\ncreatures.',
-        msgh3   = 'Explore the island further. Search for the next\ngateway.',
+        msg3    = 'Na malém ostrově uprostřed souostroví jsme objevili obrovský hřbitov velryb, kde jsou stovky gigantických koster. Jak impozantní pohled. Z počátku jsme nebili schopni pochopit, jak se tam ti tvorové dostali. Erik nám vysvětlil, že jeho lidé žijí z těchto tvorů a uctívali je jako svatá zvířata. Proto byly jejich kosti přeneseny na toto posvátné místo poté, co byly chyceny. Erik je nesvůj, chce odejít, protože se bojí duchů mrtvých tvorů.',
+        msgh3   = 'Prozkoumej ostrov dál do vnitrozemí. Hledej další bránu.',
 
-        msg99   = 'We have reached the gateway and activated it. The\nway is now clear.',
-        msgh99  = 'You have completed this mission. The next Chapter\nawaits you...'
+        msg99   = 'Dostali jsme se k bráně a aktivovali ji. Cesta je volná.',
+        msgh99  = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
     de = 
     {
@@ -55,7 +55,24 @@ rttr:RegisterTranslations(
 
         msg99   = 'Wir haben das Tor erreicht und aktiviert. Der Weg\nist frei.\n\n\n\n\n',
         msgh99  = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet schon auf Sie...'
-} })
+    },
+    en = 
+    { 
+        Diary   = 'Diary',
+
+        msg1    = 'The Ninth Day of the Ninth Month of the Fourth Year.\n\nYesterday we met a stranger of truly frightening\nappearance. He is huge in size, has light blue eyes\nand glowing golden hair. Long ago in a Roman harbor\ntavern I once heard stories of such people who live\nin the far north. How did he get here? He is\nsuspicious and refuses to talk to us. We shall treat\nhim as our guest for a few days (the poor fellow\nappears to be starving). Perhaps then he will change\nhis attitude.',
+        msgh1   = 'Explore the surrounding area.',
+
+        msg2    = '16th Day of the Ninth Month of the Fourth Year.\n\nWell, what wonders a little generosity can achieve.\nThe blond giant told us that he is a member of a\nrace that calls itself the \"Vikings\". He says that\nthey lived on a large island not far to the east but\nthey were conquered by a hostile tribe. His name is\nErik. What a strange name! If we are to believe him,\nhe is a shipwright by trade. My heart beats faster\nat the prospect of soon being able to board a ship\nagain, hearing the waves under the keel, the cries\nof the seagulls and the wind in the sails...\n\nBut first of all we must construct a shipyard and a\nharbor.',
+        msgh2   = 'Build a harbor and a shipyard. In the shipyard build\na large trading ship and organize an expedition from\nthe harbor.',
+
+        msg3    = 'On a small island in the middle of a archipelago, we\ndiscovered an enormous whale graveyard, in which\nthere were hundreds of gigantic skeletons. What an\nimposing sight. At first we were unable to\nunderstand how these creatures got there. Erik\nexplained that his people lived off these creatures\nand worshipped them as holy animals. This was why\ntheir bones were brought to this sacred place after\nthey were caught. Erik is uneasy, he wants to leave\nbecause he is afraid of the spirits of the dead\ncreatures.',
+        msgh3   = 'Explore the island further. Search for the next\ngateway.',
+
+        msg99   = 'We have reached the gateway and activated it. The\nway is now clear.',
+        msgh99  = 'You have completed this mission. The next Chapter\nawaits you...'
+    }
+})
 
 -- format mission texts
 function MissionText(e)
