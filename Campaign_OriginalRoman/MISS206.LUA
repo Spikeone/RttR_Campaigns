@@ -24,19 +24,19 @@ eIdx = {1, 2, 3, 98, 99}
 
 rttr:RegisterTranslations(
 { 
-    en = 
+    cs = 
     { 
-        Diary   = 'Diary',
+        Diary   = 'Deník',
 
-        msg1    = 'The Fourth Day of the 11th Month of the Sixth Year.\n\nIt appears that our peninsula is linked to the rest\nof the continent only by two narrow valleys. Tracks\nsuggest there is a barbarian race of Vikings in the\nsouth.',
-        msgh1   = 'Search for the gateway.',
+        msg1    = 'Čtvrtý den 11. měsíce šestého roku.\n\nNaší skouti přinesli zprávy o tom že jsme na poloostrově, který je spojen se zbytkem pevniny dvěmy úzkýmy údolímy. Stopy naznačují, že se na jihu nalézá barbarská rasa Vikingů.',
+        msgh1   = 'Vyhledejte bránu.',
 
-        msg2    = 'A captured Viking told us that another extremely\nwealthy tribe lives on the peninsula to the west of\nus. They have large stocks of Gold. Access to their\nregion to the west of the large bay is heavily\nfortified. More precise details could not be\nobtained.',
+        msg2    = 'Zajatý Viking nám řekl, že na poloostrově západně od nás žije další nesmírně bohatý kmen. Mají velké zásoby zlata. Přístup do jejich oblasti na západ od velké zátoky je silně opevněný. Přesnější podrobnosti se nám nepodařilo získat.',
 
-        msg3    = '19th Day of the Fourth Month of the Seventh Year\n\nThe Vikings appear to be extremely strong. Somehow we\nmust gain access to their fortress.\nIt is interesting that this tribe also has a whale\ngraveyard on a small peninsula to the north of their\ngold mines. I wonder if they are afraid of the\nspirits of the whales as well?',
+        msg3    = '19. den čtvrtého měsíce sedmého roku\n\nVikingové se zdají být extrémně silní. Nějak musíme získat přístup do jejich pevnosti. Je zajímavé, že tento kmen má na malém poloostrově severně od jejich zlatých dolů hřbitov velryb. Zajímalo by mě, jestli se bojí také duchů velryb?',
 
-        msg99   = 'We have found the gateway and occupied it.',
-        msgh99  = 'You have completed this mission. The next Chapter\nawaits you...'
+        msg99   = 'Našli jsme bránu a obsadili ji.',
+        msgh99  = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
     de = 
     {
@@ -51,7 +51,22 @@ rttr:RegisterTranslations(
 
         msg99   = 'Wir haben das Tor gefunden und besetzt.',
         msgh99  = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet auf Sie...'
-} })
+    },
+    en = 
+    { 
+        Diary   = 'Diary',
+
+        msg1    = 'The Fourth Day of the 11th Month of the Sixth Year.\n\nIt appears that our peninsula is linked to the rest\nof the continent only by two narrow valleys. Tracks\nsuggest there is a barbarian race of Vikings in the\nsouth.',
+        msgh1   = 'Search for the gateway.',
+
+        msg2    = 'A captured Viking told us that another extremely\nwealthy tribe lives on the peninsula to the west of\nus. They have large stocks of Gold. Access to their\nregion to the west of the large bay is heavily\nfortified. More precise details could not be\nobtained.',
+
+        msg3    = '19th Day of the Fourth Month of the Seventh Year\n\nThe Vikings appear to be extremely strong. Somehow we\nmust gain access to their fortress.\nIt is interesting that this tribe also has a whale\ngraveyard on a small peninsula to the north of their\ngold mines. I wonder if they are afraid of the\nspirits of the whales as well?',
+
+        msg99   = 'We have found the gateway and occupied it.',
+        msgh99  = 'You have completed this mission. The next Chapter\nawaits you...'
+    }
+})
 
 -- format mission texts
 function MissionText(e)
