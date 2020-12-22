@@ -24,19 +24,19 @@ eIdx = {1, 2, 3, 99}
 
 rttr:RegisterTranslations(
 { 
-    en = 
+    cs = 
     { 
-        Diary   = 'Diary',
+        Diary   = 'Deník',
 
-        msg1    = 'We are surrounded by nothing but\nbarren wilderness. The edges of this world seem to\nbe either impenetrable mountains or lava flows.\n\nIt is impossible to keep track of time here. A dim,\nperpetual twilight hangs over everything and there\nis neither sunlight nor starlight.\n\nWhat wonders and dangers lie hidden here?',
-        msgh1   = 'Keep looking for the gateway. There is limited space\nfor buildings; carefully consider how to exploit\nyour resources.',
+        msg1    = 'Jsme obklopeni pustou divočinou. Zdá se,že tento svět obklopují neproniknutelné hory nebo lávové proudy.\n\nJe zde nemožné sledovat čas. Vše halí věčný soumrak, není zde sluneční svit ani světlo hvězd.\n\nJaké asi zázraky nebo nebezpečí tady na nás čekají?',
+        msgh1   = 'Stále hledejte bránu. Pro budovy je zde omezený prostor; pečlivě zvaž, jak využiješ své zdroje.',
 
-        msg2    = 'We have met humans of much stranger appearance than\nour Viking shipwright.\nThey call themselves \"Sons of Nippon.\" They are\nshort and thin but obviously skilled and tenacious.\nTheir strangest feature is their skin color. It is\nyellow ochre and their eyes are just small slits.\nThey act in a friendly manner although they are\nunsettling to behold because of their strange\nappearance.',
+        msg2    = 'Potkali jsme lidi mnohem podivnějšího vzhledu než je náš vikingský přítel Erik. Říkají si „Synové Nipponu.“ Jsou malí a hubení, ale zjevně zruční a houževnatí. Jejich nejpodivnějším rysem je barva pleti. Je to žlutý okr a jejich oči jsou jen malé štěrbinky. Chovají se přátelsky, i když nás kvůli smému vzhledu znempokojují.',
 
-        msg3    = 'The \"Sons of Nippon\" in the south have relatives in\nthe north. Their relationship with each other\nappears very friendly. War with one race means war\nwith the other. We must consider the prospect of war\ncarefully...',
+        msg3    = '„Synové Nipponu“ žijící na jihu mají na severu příbuzné. Jejich vzájemný vztah vypadá velmi přátelský. Válka s jednou rasou znamená válku s druhou. Případný konflikt musíme pečlivě zvážit ...',
 
-        msg99   = 'We have found the gateway and occupied it. We can go\nthrough it whenever we want!',
-        msgh99  = 'You have completed this mission. The next Chapter\nawaits you...'
+        msg99   = 'Našli jsme bránu a obsadili ji. Můžeme skrze ní kdykolv projít!',
+        msgh99  = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
     de = 
     {
@@ -51,7 +51,22 @@ rttr:RegisterTranslations(
 
         msg99   = 'Wir haben das Tor gefunden und besetzt. Wir können\nes betreten, wann immer wir wollen!',
         msgh99  = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet schon auf Sie... '
-} })
+    },
+    en = 
+    { 
+        Diary   = 'Diary',
+
+        msg1    = 'We are surrounded by nothing but\nbarren wilderness. The edges of this world seem to\nbe either impenetrable mountains or lava flows.\n\nIt is impossible to keep track of time here. A dim,\nperpetual twilight hangs over everything and there\nis neither sunlight nor starlight.\n\nWhat wonders and dangers lie hidden here?',
+        msgh1   = 'Keep looking for the gateway. There is limited space\nfor buildings; carefully consider how to exploit\nyour resources.',
+
+        msg2    = 'We have met humans of much stranger appearance than\nour Viking shipwright.\nThey call themselves \"Sons of Nippon.\" They are\nshort and thin but obviously skilled and tenacious.\nTheir strangest feature is their skin color. It is\nyellow ochre and their eyes are just small slits.\nThey act in a friendly manner although they are\nunsettling to behold because of their strange\nappearance.',
+
+        msg3    = 'The \"Sons of Nippon\" in the south have relatives in\nthe north. Their relationship with each other\nappears very friendly. War with one race means war\nwith the other. We must consider the prospect of war\ncarefully...',
+
+        msg99   = 'We have found the gateway and occupied it. We can go\nthrough it whenever we want!',
+        msgh99  = 'You have completed this mission. The next Chapter\nawaits you...'
+    }
+})
 
 -- format mission texts
 function MissionText(e)
