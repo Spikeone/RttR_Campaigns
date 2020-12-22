@@ -24,18 +24,18 @@ eIdx = {1, 2, 98, 99}
 
 rttr:RegisterTranslations(
 { 
-    en = 
+    cs = 
     { 
-        Diary   = 'Diary',
+        Diary   = 'Deník',
 
-        msg1    = 'The air is filled with anticipation and even a little\nreluctance, as we prepare to embark on the final and\nmost dangerous chapter of our long journey home. Will\nwe ever see Rome again?\nWe must summon all our strength because this island\nseems to be our best chance...',
-        msgh1   = 'Be careful. Do not attack until you are sure you can\ndefeat both enemies.',
+        msg1    = 'Když se schiluje k poslední a nejnebezpečnější kapitole naší dlouhé cesty domů, vzduch je cítit očekávání a dokonce i malá neochota. Uvidíme ještě někdy Řím? Musíme zmobilizovat všechny své síly, protože tento ostrov se zdá být naší nejlepší šancí ...',
+        msgh1   = 'Buď opatrný. Neútoč, dokud si nebudeš jist zda můžeš porazit oba nepřátele.',
 
-        msg2    = 'The 17th Day of the Sixth Month of the 10th Year.\n\nRomans are actually standing in front of the tenth\ngateway. They are not at all friendly. Perhaps they\nare the other side of the coin, the enemy brother\nRemus. Maybe their gateway is the one that will take\nus back to our beloved Rome.\nAs the old legend says:\n\"For the sake of Rome brother shall fight against\nbrother.\" For almost ten years we have been\nconstantly dreaming of our homeland. We shall not\ngive up now.',
-        msgh2   = 'Muster all of your forces in order to break through!\nCapture the gateway!',
+        msg2    = '17. den šestého měsíce 10. roku.\n\nVe skutečnosti to jsou římané kdo nám stojí v cestě k desáté bráně. Nejsou vůbec přátelští. Možná to je druhá strana mince, nepřátelský bratr Remus. Možná je jejich brána ta, která nás konečně zavede zpět do našeho milovaného Říma. Jak říká stará legenda: „Kvůli Římu bude bratr bojovat proti bratrovi.“ Téměř deset let neustále sníme o své vlasti. Teď se nevzdáme.',
+        msgh2   = 'Shromážděte všechny své síly, abyste je mohli prorazit! Zajměte bránu!',
 
-        msg99   = 'Last Day of the 10th Year.\nLast entry of Octavius in this Diary\n\nWe have succeeded. Tomorrow we shall return to Rome\nexactly ten years after becoming castaways on this\nisland. Ten years during which we traveled in the\nfootsteps of our forefathers. Ten years during which\nwe learned what made Rome so great. We shall offer a\ngreat feast of thanks to the gods and will see our\nfamilies and friends again.\nI can hardly wait.',
-        msgh99  = 'You have succeeded!'
+        msg99   = 'Poslední den 10. roku. Poslední záznam Oktaviána v tomto deníku\n\nUspěli jsme. Zítra se vracíme do Říma přesně deset let poté, co jsme se stali trosečníky na tomto ostrově. Deset let, během nichž jsme cestovali ve stopách našich předků. Deset let, během nichž jsme se dozvěděli, co dělalo Řím tak skvělým. Nabídneme bohům velkou hostinu a znovu uvidíme naše rodiny a přátele. Už se nemůžu dočkat.',
+        msgh99  = 'Uspěl jsi!'
     },
     de = 
     {
@@ -49,7 +49,21 @@ rttr:RegisterTranslations(
 
         msg99   = 'Letzter Tag des 10.Jahres.\nDes Octavius letzter Eintrag in dieses Tagebuch\n\nWir haben es geschafft. Morgen werden wir nach Rom\nzurückkehren. Genau zehn Jahre, nachdem es uns in\ndiese Inselwelt verschlagen hat. Zehn Jahre, in\ndenen wir auf den Spuren unserer Väter wandelten.\nZehn Jahre, in denen wir lernten, was Rom groß\ngemacht hat. Wir werden den Göttern ein großes\nDankesfest bieten und unsere Familien und Freunde\nwiedersehen.\nIch kann es kaum erwarten.',
         msgh99  = 'Sie haben es geschafft!'
-} })
+    }, 
+    en = 
+    { 
+        Diary   = 'Diary',
+
+        msg1    = 'The air is filled with anticipation and even a little\nreluctance, as we prepare to embark on the final and\nmost dangerous chapter of our long journey home. Will\nwe ever see Rome again?\nWe must summon all our strength because this island\nseems to be our best chance...',
+        msgh1   = 'Be careful. Do not attack until you are sure you can\ndefeat both enemies.',
+
+        msg2    = 'The 17th Day of the Sixth Month of the 10th Year.\n\nRomans are actually standing in front of the tenth\ngateway. They are not at all friendly. Perhaps they\nare the other side of the coin, the enemy brother\nRemus. Maybe their gateway is the one that will take\nus back to our beloved Rome.\nAs the old legend says:\n\"For the sake of Rome brother shall fight against\nbrother.\" For almost ten years we have been\nconstantly dreaming of our homeland. We shall not\ngive up now.',
+        msgh2   = 'Muster all of your forces in order to break through!\nCapture the gateway!',
+
+        msg99   = 'Last Day of the 10th Year.\nLast entry of Octavius in this Diary\n\nWe have succeeded. Tomorrow we shall return to Rome\nexactly ten years after becoming castaways on this\nisland. Ten years during which we traveled in the\nfootsteps of our forefathers. Ten years during which\nwe learned what made Rome so great. We shall offer a\ngreat feast of thanks to the gods and will see our\nfamilies and friends again.\nI can hardly wait.',
+        msgh99  = 'You have succeeded!'
+    }
+})
 
 -- format mission texts
 function MissionText(e)
