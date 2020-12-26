@@ -24,15 +24,15 @@ eIdx = {1, 98, 99}
 
 rttr:RegisterTranslations(
 { 
-    en = 
+    cs = 
     { 
-        Diary   = 'Diary',
+        Diary   = 'deník',
 
-        msg1    = 'Scouts have told me of a mighty enemy in the west. We\nmust try and stay here as long as possible. In an\nemergency we can always escape to the east or by\nsea...',
-        msgh1   = 'Search for a gateway. Consider opportunities to build\na harbor.',
+        msg1    = 'Skauti mi řekli o mocném nepříteli na západě. Musíme se tu pokusit zůstat co nejdéle. V případě nouze můžeme vždy uniknout na východ nebo po moři ...',
+        msgh1   = 'Vyhledej bránu. Zvaž vhodné příležitosti k vybudování přístavu.',
         
-        msg99   = 'We have found the gateway and occupied it. When will\nwe reach our destination?',
-        msg99   = 'You have completed this mission. The next Chapter\nawaits you...'
+        msg99   = 'Našli jsme bránu a obsadili ji. Kdy dorazíme do cíle?',
+        msg99   = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
     de = 
     {
@@ -43,7 +43,18 @@ rttr:RegisterTranslations(
         
         msg99   = 'Wir haben das Tor gefunden und besetzt. Wann werden\nwir unser Ziel wohl erreichen?',
         msg99   = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet auf Sie...'
-} })
+    },
+    en = 
+    { 
+        Diary   = 'Diary',
+
+        msg1    = 'Scouts have told me of a mighty enemy in the west. We\nmust try and stay here as long as possible. In an\nemergency we can always escape to the east or by\nsea...',
+        msgh1   = 'Search for a gateway. Consider opportunities to build\na harbor.',
+        
+        msg99   = 'We have found the gateway and occupied it. When will\nwe reach our destination?',
+        msg99   = 'You have completed this mission. The next Chapter\nawaits you...'
+    }
+})
 
 -- format mission texts
 function MissionText(e)
