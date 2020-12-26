@@ -24,15 +24,15 @@ eIdx = {1, 98, 99}
 
 rttr:RegisterTranslations(
 { 
-    en = 
+    cs = 
     { 
-        Diary   = 'Diary',
+        Diary   = 'Deník',
 
-        msg1    = 'Once again we find ourselves in a world that consists\nof ash and lava. The atmosphere carries the putrid\nsmell of sulphur. It all originates from the nearby\nvolcano which bellows out its vile contents across\nthe land.\n\nMy men are insisting we leave soon; I can only hope\nthat the gods will guide our steps.',
-        msgh1   = 'Find and occupy the gateway! Consider opportunities\nto build a harbor.',
+        msg1    = 'Opět se ocitáme ve světě, který se skládá z popela a lávy. Vzduchem se nese hnilobný zápach síry. Všechno pochází z nedaleké sopky, která chrlí svůj odporný obsah po celé zemi.\n\nMoji muži trvají na tom aby jsme brzy odešli; Mohu jen doufat, že bohové povedou naše kroky správnám směrem.',
+        msgh1   = 'Najdi a obsaďt bránu! Zvaž vhodné příležitosti k vybudování přístavu.',
         
-        msg99   = 'We have found the gateway and occupied it. Let us\nremain here no longer than is necessary.',
-        msg99   = 'You have completed this mission. The next Chapter\nawaits you...'
+        msg99   = 'Našli jsme bránu a obsadili ji. Nezůstávejme tady déle, než je nezbytně nutné.',
+        msg99   = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
     de = 
     {
@@ -43,7 +43,18 @@ rttr:RegisterTranslations(
 
         msg99   = 'Wir haben das Tor gefunden und besetzt. Laßt uns\nhier nicht länger bleiben als nötig.',
         msgh99  = 'Sie haben diese Mission erfüllt. Das letzte Kapitel\nwartet jetzt auf Sie...'
-} })
+    },
+    en = 
+    { 
+        Diary   = 'Diary',
+
+        msg1    = 'Once again we find ourselves in a world that consists\nof ash and lava. The atmosphere carries the putrid\nsmell of sulphur. It all originates from the nearby\nvolcano which bellows out its vile contents across\nthe land.\n\nMy men are insisting we leave soon; I can only hope\nthat the gods will guide our steps.',
+        msgh1   = 'Find and occupy the gateway! Consider opportunities\nto build a harbor.',
+        
+        msg99   = 'We have found the gateway and occupied it. Let us\nremain here no longer than is necessary.',
+        msg99   = 'You have completed this mission. The next Chapter\nawaits you...'
+    }
+})
 
 -- format mission texts
 function MissionText(e)
