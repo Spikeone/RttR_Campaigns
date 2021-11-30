@@ -70,6 +70,52 @@ rttr:RegisterTranslations(
         msg99   = 'Second Day of Thirteenth Month After Coming Ashore.\n\n\nThe second year began yesterday and we seem to have\nsucceeded in settling this island. The geologists\nreport strange goings on near the gateway. It\nappears that a path has opened up that can lead us\nfrom this island. This seems to be the meaning of\nthe riddle: we must settle in order to move on. We\nshall take a look, perhaps all roads really do lead\nto Rome.',
         msgh99  = 'You have completed this mission. The second Chapter\nawaits you...\n\nYou can begin the next mission from the main menu\nwhenever you want.',
     },
+    cs = 
+    { 
+      Diary   = 'Deník',
+  
+      msg1    = 'Deník Oktaviána:\n\n\nČtvrtý den po ztroskotání lodi.\n\n\nVčera se všichni přeživší setkali, aby diskutovali o situaci. Protože nenašli žádné východisko na včasnou záchranu, rozhodli se usadit na tomto cizím ostrově. Zachráněné zboží z lodi nám bude velkou pomocí do začátku. Nejdůležitější věcí je využití místních suroviny k založení osady. Naléhavě potřebujeme vybudovat dílnu pro dřevorubce, pilaře a kameníka.', 
+      msgh1   = 'Postavte dílnu pro dřevorubce, tesaře a kameníka.',
+      
+      msg2    = 'Osmý den po ztroskotání.\n\n\nZákladní požadavky na vybudování naší osady byly splněny. Množství stromů v této oblasti nám však nevydrží na dlouho. Potřebujeme lesníka, abychom zajistili dlouhodobé dodávky dřeva.',
+      msgh2   = 'Postavte lesnickou chatu.',
+      
+      msg3    = 'Jedenáctý den druhého měsíce po ztroskotání.\n\n\nStále si nejsme jisti, zda jsme na tomto ostrově sami. Pro jsitotu bychom měli poslat vojsko k severní hranici.',
+      msgh3   = 'Postavte kasárna u severní hranice našeho území.',
+      
+      msg4    = 'Pátý den třetího měsíce.\n\n\nNaše území se rozšířilo až k horám na severu. Náš geolog tam provede terénní průzkum. Z dlouhodobého hlediska potřebujeme uhlí a stavební materiály, stejně jako zbraně a zlato. Musíme tedy najít železnou rudu, zlato, uhlí a kámen.',
+      msgh4   = 'Postavte cestu do hor a \npošlete tam našeho geologa.',
+      
+      msg5    = 'Šestnáctý den šestého měsíce.\n\n\nNašli jsme železnou rudu a nyní jsme schopni vyrábět nzbraně. Poté můžeme bezpečně provést další průzkum ostrova. Nejprve musíme postavit důl na železnou rudu a slévárnu. Zbrojíř pak může začít vyrábět meče a štíty. Horníkům musíme také poskytnout jídlo, zásoby jsou téměř vyčerpané. Potřebujeme lovce a rybáře!',
+      msgh5   = 'Postavte důl na železnou rudu, slévárnu a zbrojírnu.',
+
+      msg6    = 'Poslední den osmého měsíce po příchodu k břehům.\n\n\nSeverně od naší nové hranice se rozléhá úrodná planina. Ta poskytne spoustu nových příležitostí pro rozšíření naší osady, ale k tomu potřebujeme více vojáků.',
+      msgh6   = 'Rozšiř severní teritórium a pokračuj v opevňování hranic.',
+  
+      msg7    = 'Dvanáctý den devátého měsíce.\n\n\nPo dalším postupu dále na sever jsme konečně našli dostatek prostoru pro stavbu větších budov a farem. Nyní bychom měli hledat suroviny v okolních horách.',
+      msgh7   = 'Hledejte nové suroviny a zajistěte dodávky potravin. Prozkoumej celý ostrov.',
+  
+      msg8    = 'Náš geolog našel pramen vody. Nyní jsme schopni čerpat pitnou vodu.',
+  
+      msg9    = 'Nalezením uhlí v západních horách jsme si zajistili dodávky paliva pto naše slévárny a zrojnice. Nyní bez problémů můžeme začít zpracovávat železnou rudu. Všechno jde velmi dobře.',
+  
+      msg10   = 'Geologové našli v horninách žulové usazeniny, což prozatím poskytne nový zdroj kamene.',
+      
+      msg11   = 'Objevili jsme zlatou žílu a nyní můžeme v mincovně vyrábět mince. Díky tomu bude život téměř tak pohodlný jako doma.',
+  
+      msg12   = 'Varizili jsme první zlaté mince a nyní můžeme platit za výcvik našich vojáků.',
+
+      msg13   = 'Stavba naší první farmy na obilí byla dokončena. Obilí lze zpracovat na mouku v mlýně, nebo použít jako krmivo pro prasata. Zásobování potravinami by se nyní mělo nadále zlepšovat.',
+
+      msg14   = 'Náš nový vepřín může dodávat poražené vepře řezníkovi na jatka.',
+
+      msg15   = 'Větrný mlýn může poskytnout pekaři dostatek mouky pro pečení chleba.',
+
+      msg16   = 'Naši učenci objevili podivný monument. Vypadá to jako brána. Zjevně nejsme první obyvatelé tohoto ostrova. Na bráně dokonce našli nápis v latině „Consiste ut procederas!“ - „Usaď te se, abyste dosáhli pokroku!“. Je to bizarní a rozporuplné. Co to může znamenat?!',
+
+      msg99   = 'Druhý den třináctého měsíce po stroskotání u břehů tohoto ostrova.\n\n\nVčera začal druhý rok a zdá se, že se nám tento ostrov podařilo osídlit. Naši učenci hlásí podivné události u brány. Vypadá to, že se brána otevřela a může nás zavést na cestu, která nás vyvede z tohoto ostrova. Významem hádanky byl zřejmě takovýto: „Aby se člověk dostal dál musí oběvovat a osidlovat nové území“. No uvydíme, snad skutečně všechny cesty vedou do Říma.',
+      msgh99  = 'Dokončili jste tuto misi. Čeká na tebe druhá kapitola...\n\nDalší misi můžeš zahájit z hlavní nabídky kdykoli budeš chtít.',
+    },
     de = 
     {
         Diary   = 'Tagebuch',
