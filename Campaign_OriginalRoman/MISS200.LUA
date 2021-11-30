@@ -154,10 +154,10 @@ function getAllowedChanges()
         ["ownNation"]   = false,
         ["ownColor"]    = false,
         ["ownTeam"]     = false,
-        ["aiNation"]    = false, 
+        ["aiNation"]    = false,
         ["aiColor"]     = false,
         ["aiTeam"]      = false
-            }    
+    }
 end
 
 -- start callback
