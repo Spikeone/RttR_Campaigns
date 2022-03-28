@@ -1,133 +1,81 @@
 ------------------------------------------------------------------------------
--- LUA-Script for MISS200.WLD (mission 1 of the original "Roman Campaign"   --
 --                                                                          --
--- Author: CrazyL   (v0.4)                                                  --
+--                                                                          --
+--                                                                          --
 ------------------------------------------------------------------------------
 
 
 -------------------------------- TODO -----------------------------------------
 -- EnableNextMissions()
 -- Set Portraits
--- Set AI Agression Level
 -------------------------------------------------------------------------------
 
 
 -------------------------------- Lua Version used -----------------------------
 function getRequiredLuaVersion()
-    return 1.3
+    return 1
 end
 
 
 -------------------------------- mission events and texts ---------------------
--- Message-Window (mission statement and hints): 52 chars wide
-eIdx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 99}
+eIdx = {1, 2, 3, 4, 99}
 
 rttr:RegisterTranslations(
 { 
     en = 
     { 
         Diary   = 'Diary',
-    
-        msg1    = 'Diary of Octavius:\n\n\nFourth Day After Shipwreck.\n\n\nYesterday all the survivors met in order to discuss\nthe situation. Because there is no prospect of\nearly rescue, we decided to settle on this foreign\nisland. The items salvaged from the ship will be a\ngreat help to us. The most important thing is to\nmake use of the raw materials on the island in order\nto establish a settlement. We urgently need \naccommodations for a woodcutter, carpenter and \nstonemason.', 
-        msgh1   = 'Build accommodations for a woodcutter, carpenter and\nstonemason.',
+
+        msg1    = 'Erster Tag.\n\nEs ist alles so eingetroffen, wie es mir mein weiser\nGroßvater immer erzählt hat. Wir folgten in der Nacht\ndes Jupiter dem hellen Licht am Horizont. Doch meine\nMänner erzählten mir, als ich mich bereits zur Ruhe\nlegte, dass auch sie plötzlich alle müde wurden und\neinschliefen.\nDas Nächste, woran wir uns erinnerten, ist, dass wir auf dieser Sanddüne gelandet sind. Das Schiff ist untüchtig, aber wir haben genug Rohstoffe dabei, um eine Siedlung aufzubauen und nach dem ersten Tor zu suchen.',
+        msgh1   = 'Bauen Sie wie gewohnt Ihre Siedlung auf.',
+
+        msg2    = '4.Tag im 1.Monat.\n\nUnsere Erkunder berichten von einem weiten,\nunbebauten Land im Westen. Dieses werden wir\nbrauchen, um eine schlagkräftige Siedlung aufzubauen.\nZusätzlich sollten wir Schiffe bauen und nach\nrohstoffreichen Inseln Ausschau halten. Vielleicht\nkönnen wir auch so den Gegnern in den Rücken fallen.',
+        msgh2   = 'Bauen Sie einen Hafen und starten Sie eine\nExpedition.',
+
+        msg3    = '11. Tag im 6. Monat.\n\nWir haben eine Insel entdeckt. Auf ihr befinden sich vielversprechende Gebirge. Mit etwas Glück gibt es Goldvorkommen, sodass wir unsere Soldaten befördern können.',
+        msg3h   = 'Bauen Sie die Rohstoffe ab und suchen Sie nach dem\nTor.',
         
-        msg2    = 'Eighth Day After Shipwreck.\n\n\nThe basic requirements for building up our\nsettlement have been met. However, the supply of\ntrees in this region will not last long. We need a\nforester to ensure a long-term supply of timber.',
-        msgh2   = 'Build a forester\'s cabin.',
-        
-        msg3    = 'Eleventh Day of Second Month After Shipwreck.\n\n\nWe are still not sure whether we are the only\npersons on this island. As a precautionary measure\nwe should erect a barracks on our exposed border\ntowards the interior of the island.',
-        msgh3   = 'Build a barracks on the northern\nborder of your settlement.',
-        
-        msg4    = 'Fifth Day of Third Month.\n\n\nOur territory has spread as far as the mountain in\nthe north. Our geologist will carry out a land\nsurvey there. In the long term we need fuel and\nbuilding materials as well as weapons and coined\ngold. We must therefore find iron ore, gold, coal\nand granite.',
-        msgh4   = 'Build a road to the mountain and\nsend your geologist there.',
-        
-        msg5    = 'Sixteenth Day of Sixth Month.\n\n\nWe have found iron ore and are now able to produce\nweapons. There will then be no obstacles to further\nexploration of the island. First of all we must\nbuild an iron mine and an iron smelter for it. An\narmorer can then start to produce swords and\nshields. We must also provide the miners with food,\nour stocks are almost exhausted. We need hunters and\nfishermen!',
-        msgh5   = 'Build an iron mine, an iron smelter and a smithy.',
+        msg4    = '9. Tag im 11. Monat.\n\nFeindkontakt! Es sind ebenfalls Römer. Die Frage ist\nnur, ob sie auch nach dem Tor suchen. Jedenfalls\nscheinen sie uns nicht wohlgesonnen zu sein. Wir\nhaben einen Erkunder ausgeschickt, um mit den Römern\nin Kontakt zu treten. Doch als er nicht wiederkam,\nsendeten wir einen zweiten aus, der nur noch die\nMütze des ersten fand. Er berichtete weiterhin, dass\nhinter einem kleinen Gebirge auffällig viele Soldaten\nund Gelehrte umherirrten. Er vermutet, dass sich dort\ndas Tor befindet.',
+        msg4h   = 'Dringen Sie weiter nach Westen vor und besetzen Sie\ndas Tor!',
 
-        msg6    = 'Last Day of Eighth Month After Coming Ashore.\n\n\nThere is an open, fertile plain to the north of our\nnew border post. This will provide lots of new\nopportunities for expanding our settlement but we\nneed more soldiers to do this.',
-        msgh6   = 'Go to the northern plain and\ncontinue fortifying the border.',
-    
-        msg7    = 'Twelfth Day of Ninth Month.\n\n\nAfter advancing further north we have finally found\nenough space to build larger buildings and farms. We\nnow intend to prospect for raw materials in the\nsurrounding mountains.',
-        msgh7   = 'Search for new raw materials and secure a supply of\nfood. Explore the entire island.',
-    
-        msg8    = 'Our geologist has found a spring. We are now able\nto supply fresh water from it.',
-    
-        msg9    = 'We have ensured a fuel supply for the metalworks by\nfinding coal in the western mountains. Now we can\nprocess our metal ores with no problems. Everything\nis going extremely well.',
-    
-        msg10   = 'Geologists have found granite deposits in the\nmountains and this will provide a fresh supply of\nstone for the time being.',
-        
-        msg11   = 'We have discovered a gold vein\nand can now produce valuable coins in a mint. This\nwill make life here almost as comfortable as at home.',
-    
-        msg12   = 'We have minted the first gold coins and can now pay\nfor the training of our soldiers.',
-
-        msg13   = 'Construction of our first grain farm has been\ncompleted. The grain can be processed into flour in\na mill or fed to pigs. The food supply situation\nshould now continue to improve.',
-
-        msg14   = 'Our new pig farm can supply slaughtered animals to a\nbutcher.',
-
-        msg15   = 'The windmill can supply a baker with sufficient\nflour for baking bread.',
-
-        msg16   = 'Our geologists have discovered a strange object. It\nlooks like a gateway. We are obviously not the first\nhumans on this island. They have even found an\ninscription on the gateway in Latin. It is bizarre\nand contradictory, perhaps it is a riddle:\n\'Consiste ut procederas!\' - \'Settle down in order to make progress!\'.\nWhat can this mean?!',
-
-        msg99   = 'Second Day of Thirteenth Month After Coming Ashore.\n\n\nThe second year began yesterday and we seem to have\nsucceeded in settling this island. The geologists\nreport strange goings on near the gateway. It\nappears that a path has opened up that can lead us\nfrom this island. This seems to be the meaning of\nthe riddle: we must settle in order to move on. We\nshall take a look, perhaps all roads really do lead\nto Rome.',
-        msgh99  = 'You have completed this mission. The second Chapter\nawaits you...\n\nYou can begin the next mission from the main menu\nwhenever you want.',
+        msg99   = '1. Tag im 5. Monat des 2. Jahres.\n\nWir haben das Tor gefunden und in unseren Besitz\ngebracht! Glücklicherweise wussten unsere Feinde\nnicht, wie man es aktiviert, sonst wäre es für uns\nwohl zu spät gewesen.\n\nNun bin ich sehr gespannt, welche Prüfungen uns die\nGötter auferlegen werden. Ich bin zuversichtlich,\ndass wir erfolgreich sein werden.',
+        msg99h  = 'Auf gehts in das nächste Kapitel!',
     },
     de = 
     {
         Diary   = 'Tagebuch',
-    
-        msg1    = 'Tagebuch des Octavius:\n\n\nVierter Tag nach dem Schiffbruch.\n\n\nGestern fanden sich alle Überlebenden zusammen, um\ndie Lage zu beraten. Da keine Aussicht auf eine\nbaldige Rettung besteht, beschlossen wir, uns auf\ndieser fremden Insel niederzulassen. Dabei werden\nuns die geretteten Güter aus dem Schiff eine große\nHilfe sein. Das Wichtigste ist, die Rohstoffe der\nInsel für den Aufbau einer Siedlung nutzbar zu\nmachen. Wir benötigen dringend Unterkünfte für einen\nHolzfäller, Schreiner und den Steinmetz.',
-        msgh1   = 'Bauen Sie Unterkünfte für einen Holzfäller,\nSchreiner und Steinmetz.',
-        
-        msg2    = 'Achter Tag nach dem Schiffbruch.\n\n\nDie Grundlagen für den Aufbau unserer Siedlung sind\ngeschaffen. Der Baumbestand in diesem Gebiet wird\naber nicht lange vorhalten. Um die langfristige\nVersorgung mit Holz zu gewährleisten, benötigen wir\neinen Förster.',
-        msgh2   = 'Bauen Sie ein Forsthaus.',
-        
-        msg3    = 'Elfter Tag im zweiten Monat nach dem Schiffbruch.\n\n\nWir wissen immer noch nicht, ob wir alleine auf\ndieser Insel sind. Vorsichtshalber sollten wir einen\nWachposten an den offenen Grenzen zum Landesinneren\nerrichten.',
-        msgh3   = 'Bauen Sie eine Baracke an der nördlichen Grenze\nIhrer Siedlung.',
-        
-        msg4    = 'Fünfter Tag im dritten Monat.\n\n\nDurch die Ausbreitung unseres Landes haben wir den\nBerg im Norden erreicht. Unser Gelehrter sollte sich\ndort den Boden mal anschauen. Langfristig brauchen\nwir Brennstoff, Baumaterial und natürlich auch\nWaffen und gemünztes Gold. Wir müssen also Eisenerz,\nGold, Kohle und Granit finden.',
-        msgh4   = 'Bauen Sie einen Weg auf den Berg und schicken Sie\nIhren Gelehrten dorthin.',
-        
-        msg5    = 'Sechzehnter Tag im sechsten Monat.\n\n\nWir haben Eisenerz gefunden und wären jetzt in der\nLage, Waffen zu produzieren. Der weiteren Erkundung\nder Insel stünde dann nichts mehr im Wege. Dazu\nmüssen wir aber erst ein Eisenbergwerk und die\ndazugehörige Eisenschmelze bauen. Eine\nWaffenschmiede könnte dann die Produktion von\nSchwertern und Schilden übernehmen. Wir müssen aber\nauch die Bergarbeiter mit Nahrungsmitteln versorgen.\nUnsere Vorräte sind fast aufgebraucht. Wir brauchen\nJäger und Fischer!',
-        msgh5   = 'Bauen Sie ein Eisenbergwerk, eine Eisenschmelze und\neine Waffenschmiede.',
 
-        msg6    = 'Letzter Tag im achten Monat nach der Landung.\n\n\nNördlich unseres neuen Außenpostens liegt eine\nweite, fruchtbare Ebene. Dort ergeben sich ganz neue\nMöglichkeiten, unsere Siedlung zu erweitern. Dazu\nbrauchen wir allerdings Soldaten.',
-        msgh6   = 'Erreichen Sie die nördliche Ebene, indem Sie an der\nNordgrenze weitere Baracken bauen.',
-    
-        msg7    = 'Zwölfter Tag des neunten Monats.\n\n\nNachdem wir weiter nach Norden vorgedrungen sind,\nhaben wir endlich genug Platz, um größere Gebäude\nund Bauernhöfe errichten zu können. Jetzt wollen wir\ndas umliegende Gebirge nach Rohstoffen absuchen.',
-        msgh7   = 'Suchen Sie nach neuen Rohstoffen und sichern Sie die\nNahrungsversorgung. Erkunden Sie die Insel\nvollständig.',
-    
-        msg8    = 'Unser Gelehrter hat eine Wasserader gefunden. Nun\nwären wir in der Lage mit einem Brunnen Wasser zu\nfördern.',
-    
-        msg9    = 'Die Versorgung der Schmelzereien ist gewährleistet,\ndenn wir haben Kohle im westlichen Gebirge gefunden.\nNun können wir unsere Metallerze problemlos\nweiterverarbeiten. Alles entwickelt sich sehr gut.',
-    
-        msg10   = 'Da Gelehrte Granitvorkommen in den Bergen gefunden\nhaben, ist der Nachschub an Steinen bis auf weiteres\ngesichert.',
-    
-        msg11   = 'Wir haben eine Goldader erschlossen und wären nun in\nder Lage, in einer Münzprägerei kostbare Münzen\nherzustellen. So langsam wird das Leben hier beinahe\nheimisch komfortabel.',
-    
-        msg12   = 'Wir haben die ersten Goldmünzen geprägt und können\njetzt die Ausbildung unserer Soldaten bezahlen.',
-    
-        msg13   = 'Der Bau unserer ersten Getreidefarm ist\nabgeschlossen. Das Getreide könnte nun in einer\nMühle zu Mehl verarbeitet oder auf einem Schweinehof\nverfüttert werden. Die Versorgungslage würde dann\nimmer besser.',
-    
-        msg14   = 'Unser neue Schweinehof könnte nun eine Metzgerei mit\nSchlachtvieh versorgen.',
-    
-        msg15   = 'Die Windmühle könnte eine Bäckerei mit ausreichend\nMehl versorgen.',
-    
-        msg16   = 'Ein seltsames Ding haben unsere Gelehrten entdeckt.\nEs sieht aus wie ein Tor. Offensichtlich waren also\ndoch bereits Menschen vor uns auf dieser Insel.\nSogar eine Inschrift in latinischen Buchstaben\nentdeckten sie auf dem Tor. Sie ist sehr seltsam und\nwidersprüchlich, vielleicht ein Rätsel: \'Consiste ut\nprocederas!\' \'Laß Dich nieder, um fortzuschreiten!\'\nWer weiß, was das bedeutet?!',
-    
-        msg99   = 'Zweiter Tag des dreizehnten Monats nach der Landung.\n\n\nGestern begann das zweite Jahr, und wir scheinen es\ngeschafft zu haben. Die Gelehrten berichten von\nseltsamen Aktivitäten am Tor. Es sieht so aus, als\nhabe sich ein Weg geöffnet, der uns von dieser Insel\nwegführen kann. Das scheint der Sinn des Rätsels zu\nsein: Man muß sich niederlassen und siedeln, um\nweiterzukommen. Mal sehen. Vielleicht führen ja\nwirklich alle Wege nach Rom.',
-        msgh99  = 'Sie haben diese Mission erfüllt. Das zweite Kapitel\nwartet schon auf Sie... \n\nWann immer Sie wollen, können Sie im Hauptmenü die\nnächste Mission starten.'
-} })
+        msg1    = 'Erster Tag.\n\nEs ist alles so eingetroffen, wie es mir mein weiser\nGroßvater immer erzählt hat. Wir folgten in der Nacht\ndes Jupiter dem hellen Licht am Horizont. Doch meine\nMänner erzählten mir, als ich mich bereits zur Ruhe\nlegte, dass auch sie plötzlich alle müde wurden und\neinschliefen.\nDas Nächste, woran wir uns erinnerten, ist, dass wir auf dieser Sanddüne gelandet sind. Das Schiff ist untüchtig, aber wir haben genug Rohstoffe dabei, um eine Siedlung aufzubauen und nach dem ersten Tor zu suchen.',
+        msgh1   = 'Bauen Sie wie gewohnt Ihre Siedlung auf.',
+
+        msg2    = '4.Tag im 1.Monat.\n\nUnsere Erkunder berichten von einem weiten,\nunbebauten Land im Westen. Dieses werden wir\nbrauchen, um eine schlagkräftige Siedlung aufzubauen.\nZusätzlich sollten wir Schiffe bauen und nach\nrohstoffreichen Inseln Ausschau halten. Vielleicht\nkönnen wir auch so den Gegnern in den Rücken fallen.',
+        msgh2   = 'Bauen Sie einen Hafen und starten Sie eine\nExpedition.',
+
+        msg3    = '11. Tag im 6. Monat.\n\nWir haben eine Insel entdeckt. Auf ihr befinden sich vielversprechende Gebirge. Mit etwas Glück gibt es Goldvorkommen, sodass wir unsere Soldaten befördern können.',
+        msg3h   = 'Bauen Sie die Rohstoffe ab und suchen Sie nach dem\nTor.',
+        
+        msg4    = '9. Tag im 11. Monat.\n\nFeindkontakt! Es sind ebenfalls Römer. Die Frage ist\nnur, ob sie auch nach dem Tor suchen. Jedenfalls\nscheinen sie uns nicht wohlgesonnen zu sein. Wir\nhaben einen Erkunder ausgeschickt, um mit den Römern\nin Kontakt zu treten. Doch als er nicht wiederkam,\nsendeten wir einen zweiten aus, der nur noch die\nMütze des ersten fand. Er berichtete weiterhin, dass\nhinter einem kleinen Gebirge auffällig viele Soldaten\nund Gelehrte umherirrten. Er vermutet, dass sich dort\ndas Tor befindet.',
+        msg4h   = 'Dringen Sie weiter nach Westen vor und besetzen Sie\ndas Tor!',
+
+        msg99   = '1. Tag im 5. Monat des 2. Jahres.\n\nWir haben das Tor gefunden und in unseren Besitz\ngebracht! Glücklicherweise wussten unsere Feinde\nnicht, wie man es aktiviert, sonst wäre es für uns\nwohl zu spät gewesen.\n\nNun bin ich sehr gespannt, welche Prüfungen uns die\nGötter auferlegen werden. Ich bin zuversichtlich,\ndass wir erfolgreich sein werden.',
+        msg99h  = 'Auf gehts in das nächste Kapitel!',
+    }
+})
 
 -- format mission texts
--- BUG:     NewLine at the end is wrongly interpreted, adding 2x Space resolves this issue
-function MissionText(e)
+function MissionText(e, silent)
     local msg = _('msg' .. tostring(e))
     local msgh = _('msgh'.. tostring(e))
 
     if(msg ~= ('msg' .. tostring(e)) and msgh ~= ('msgh'.. tostring(e))) then
-        rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n' ..msgh.. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+        if not silent then
+            rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n' ..msgh.. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+        end
         rttr:SetMissionGoal(0, msgh)
     elseif(msg ~= ('msg' .. tostring(e))) then
-        rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+        if not silent then
+            rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+        end
     else
         rttr:Log("Error: no Translation found!" .. _('msg1'))
     end
@@ -136,16 +84,39 @@ end
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
     rttr:Log("-----------------------\n MISS200.lua loaded... \n-----------------------\n")
-    rttr:ResetAddons()                          -- S2-settings
+    rttr:ResetAddons()
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
-    rttr:SetGameSettings({                      -- TEST
+    rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
         ["lockedTeams"] = false
     })
 
     rttr:GetPlayer(0):SetNation(NAT_ROMANS)     -- nation
-    rttr:GetPlayer(0):SetColor(0)               -- 0:blue, 1:read, 2:yellow, 
+    rttr:GetPlayer(0):SetColor(0)               -- 0:blue, 1:red, 2:yellow
+    rttr:GetPlayer(0):SetName('Octavianus')     -- Enemy Name
+
+    -- !GLOBAL_ADD_COMPUTER_PLAYER 1 1
+    rttr:GetPlayer(1):SetAI(3)              -- hard AI
+    rttr:GetPlayer(1):SetNation(NAT_ROMANS) -- nation
+    rttr:GetPlayer(1):SetColor(1)           -- yellow
+    rttr:GetPlayer(1):SetName('Julius')     -- Enemy Name
+
+    -- !GLOBAL_ADD_COMPUTER_PLAYER 2 2
+    rttr:GetPlayer(2):SetAI(3)              -- hard AI
+    rttr:GetPlayer(2):SetNation(NAT_ROMANS) -- nation
+    rttr:GetPlayer(2):SetColor(2)           -- red
+    rttr:GetPlayer(2):SetName('Brutus')     -- Enemy Name
+
+    --!GLOBAL_SET_COMPUTER_ALLIANCE 1  2
+    --!GLOBAL_SET_COMPUTER_ALLIANCE 2  1
+    rttr:GetPlayer(1):SetTeam(TM_TEAM1)
+    rttr:GetPlayer(2):SetTeam(TM_TEAM1)
+
+    -- Setting HQs is not done via script (use mapeditor)
+    --!SET_HOUSE 24  111   31
+    --!SET_HOUSE 24  32   32
+    --!SET_HOUSE 24  44   53
 end
 
 function getAllowedChanges()    
@@ -162,16 +133,24 @@ end
 
 -- start callback
 function onStart(isFirstStart)
-    rttr:GetPlayer(0):ModifyHQ(1)               -- tent
-    addPlayerRes(0, not isFirstStart)           -- set resources
-    addPlayerBld(0, not isFirstStart)
+    --!GLOBAL_SET_HQ_BOBS	 6, 7, 0
+    rttr:GetPlayer(0):ModifyHQ(1)
+
+    addPlayerRes(0, not isFirstStart)
+    addPlayerBld(0, not isFirstStart) --!DISABLE_HOUSE 23
+
+    addPlayerRes(1, not isFirstStart)
+    addPlayerBld(1, not isFirstStart) --!DISABLE_HOUSE 23
+
+    addPlayerRes(2, not isFirstStart)
+    addPlayerBld(2, not isFirstStart) --!DISABLE_HOUSE 23
 
     eState = {}                                 -- disable all events
     for _, i in ipairs(eIdx) do
         eState[i] = 0
     end
 
-    for _, i in ipairs({1, 8, 9, 10, 11, 99}) do-- set events as active
+    for _, i in ipairs({1, 2, 3, 4, 99}) do -- set events as active
         eState[i] = 1
     end
 
@@ -179,18 +158,8 @@ function onStart(isFirstStart)
         for i = 1, eHist["n"] do
             MissionEvent(eHist[i], true)        -- call events without mission text to activate all achievements
         end
-
     else
         eHist = {["n"] = 0}
-        MissionEvent(1)                         -- initial event / start screen
-    end
-    
-    if isFirstStart then
-        rttr:GetWorld():AddAnimal(41, 44, SPEC_DUCK)
-        rttr:GetWorld():AddAnimal(41, 44, SPEC_DUCK)
-        rttr:GetWorld():AddAnimal(41, 44, SPEC_DUCK)
-        rttr:GetWorld():AddAnimal(30, 36, SPEC_RABBITWHITE)
-        rttr:GetWorld():AddAnimal(28, 37, SPEC_RABBITGREY)
     end
 end
 
@@ -215,105 +184,119 @@ end
 
 -------------------------------- set buildings --------------------------------
 function addPlayerBld(p, onLoad)
-    -- set buildings for all players
-    if(p == 0) then
-        rttr:GetPlayer(p):DisableAllBuildings()
-        rttr:GetPlayer(p):EnableBuilding(BLD_WOODCUTTER,    false)
-        rttr:GetPlayer(p):EnableBuilding(BLD_QUARRY,        false)
-        rttr:GetPlayer(p):EnableBuilding(BLD_SAWMILL,       false)
+    --!DISABLE_HOUSE 23
+    rttr:GetPlayer(p):DisableBuilding(BLD_HARBORBUILDING)
+    
+    --!GLOBAL_SET_COMPUTER_BARRIER 15 70   35
+    -- 15: Radius
+    -- 70: X
+    -- 35: Y
+    if (p ~= 0) then
+        rttr:GetPlayer(p):SetRestrictedArea(
+            nil, nil,       -- enable the whole map
+                0,   0,
+                0,   96,
+                128, 96,
+                128, 0,
+            nil, nil,
+                55, 35,
+                63, 20,
+                77, 20,
+                85, 35,
+                78, 50,
+                63, 50,
+            nil, nil
+        )
     end
 end
 
 -------------------------------- set resources --------------------------------
--- Don't add goods/people onLoad!
 function addPlayerRes(p, onLoad)
     if onLoad then return end
 
-    if(p == 0) then                 -- Map activates 7 players!
-        -- goods
-        rttr:GetPlayer(p):ClearResources()
-        rttr:GetPlayer(p):AddWares({
-            [GD_BEER      ] = 12,
-            [GD_TONGS     ] = 0,
-            [GD_HAMMER    ] = 0,
-            [GD_AXE       ] = 0,
-            [GD_SAW       ] = 0,
-            [GD_PICKAXE   ] = 0,
-            [GD_SHOVEL    ] = 0,
-            [GD_CRUCIBLE  ] = 0,
-            [GD_RODANDLINE] = 0,
-            [GD_SCYTHE    ] = 0,
-            [GD_WATER     ] = 12,
-            [GD_CLEAVER   ] = 0,
-            [GD_ROLLINGPIN] = 0,
-            [GD_BOW       ] = 0,
-            [GD_BOAT      ] = 0,
-            [GD_SWORD     ] = 0,
-            [GD_IRON      ] = 0,
-            [GD_FLOUR     ] = 0,
-            [GD_FISH      ] = 2,
-            [GD_BREAD     ] = 4,
-            [GD_SHIELD    ] = 0,
-            [GD_WOOD      ] = 0,
-            [GD_BOARDS    ] = 15,
-            [GD_STONES    ] = 12,
-            [GD_GRAIN     ] = 0,
-            [GD_COINS     ] = 0,
-            [GD_GOLD      ] = 0,
-            [GD_IRONORE   ] = 0,
-            [GD_COAL      ] = 20,
-            [GD_MEAT      ] = 2,
-            [GD_HAM       ] = 0
-        })
+    rttr:GetPlayer(p):ClearResources()
+    rttr:GetPlayer(p):AddWares({
+        [GD_WOOD        ] = 24,
+        [GD_BOARDS      ] = 44,
+        [GD_STONES      ] = 68,
+        [GD_HAM         ] = 0 ,
+        [GD_GRAIN       ] = 0 ,
+        [GD_FLOUR       ] = 0 ,
+        [GD_FISH        ] = 4 ,
+        [GD_MEAT        ] = 6 ,
+        [GD_BREAD       ] = 8 ,
+        [GD_WATER       ] = 0 ,
+        [GD_BEER        ] = 6 ,
+        [GD_COAL        ] = 16,
+        [GD_IRONORE     ] = 16,
+        [GD_GOLD        ] = 0 ,
+        [GD_IRON        ] = 0 ,
+        [GD_COINS       ] = 0 ,
+        [GD_TONGS       ] = 0 ,
+        [GD_AXE         ] = 6 ,
+        [GD_SAW         ] = 2 ,
+        [GD_PICKAXE     ] = 2 ,
+        [GD_HAMMER      ] = 16,
+        [GD_SHOVEL      ] = 4 ,
+        [GD_CRUCIBLE    ] = 4 ,
+        [GD_RODANDLINE  ] = 6 ,
+        [GD_SCYTHE      ] = 8 ,
+        [GD_CLEAVER     ] = 2 ,
+        [GD_ROLLINGPIN  ] = 2 ,
+        [GD_BOW         ] = 2 ,
+        [GD_SWORD       ] = 6 ,
+        [GD_SHIELD      ] = 6 ,
+        [GD_BOAT        ] = 12
+    })
 
-        -- people
-        rttr:GetPlayer(p):AddPeople({
-        [JOB_HELPER             ] = 40,
-        [JOB_WOODCUTTER         ] = 8,
-        [JOB_FISHER             ] = 4,
-        [JOB_FORESTER           ] = 4,
-        [JOB_CARPENTER          ] = 3,
-        [JOB_STONEMASON         ] = 4,
-        [JOB_HUNTER             ] = 4,
-        [JOB_FARMER             ] = 6,
-        [JOB_MILLER             ] = 3,
-        [JOB_BAKER              ] = 3,
-        [JOB_BUTCHER            ] = 3,
-        [JOB_MINER              ] = 8,
-        [JOB_BREWER             ] = 0,
-        [JOB_PIGBREEDER         ] = 4,
-        [JOB_DONKEYBREEDER      ] = 0,
-        [JOB_IRONFOUNDER        ] = 4,
-        [JOB_MINTER             ] = 4,
-        [JOB_METALWORKER        ] = 4,
-        [JOB_ARMORER            ] = 4,
-        [JOB_BUILDER            ] = 4,
-        [JOB_PLANER             ] = 4,
-        [JOB_GEOLOGIST          ] = 4,
-        [JOB_PRIVATE            ] = 8,
-        [JOB_PRIVATEFIRSTCLASS  ] = 0,
-        [JOB_SERGEANT           ] = 0,
-        [JOB_OFFICER            ] = 0,
-        [JOB_GENERAL            ] = 0,
-        [JOB_SCOUT              ] = 8,
-        [JOB_SHIPWRIGHT         ] = 0,
-        [JOB_PACKDONKEY         ] = 15,
+    -- people
+    rttr:GetPlayer(p):AddPeople({
+        [JOB_HELPER             ] = 52,
+        [JOB_WOODCUTTER         ] = 8 ,
+        [JOB_FISHER             ] = 0 ,
+        [JOB_FORESTER           ] = 4 ,
+        [JOB_CARPENTER          ] = 4 ,
+        [JOB_STONEMASON         ] = 4 ,
+        [JOB_HUNTER             ] = 2 ,
+        [JOB_FARMER             ] = 0 ,
+        [JOB_MILLER             ] = 0 ,
+        [JOB_BAKER              ] = 0 ,
+        [JOB_BUTCHER            ] = 0 ,
+        [JOB_MINER              ] = 10,
+        [JOB_BREWER             ] = 0 ,
+        [JOB_PIGBREEDER         ] = 0 ,
+        [JOB_DONKEYBREEDER      ] = 0 ,
+        [JOB_IRONFOUNDER        ] = 0 ,
+        [JOB_MINTER             ] = 0 ,
+        [JOB_METALWORKER        ] = 2 ,
+        [JOB_ARMORER            ] = 4 ,
+        [JOB_BUILDER            ] = 10,
+        [JOB_PLANER             ] = 6 ,
+        [JOB_GEOLOGIST          ] = 6 ,
+        [JOB_PRIVATE            ] = 46,
+        [JOB_PRIVATEFIRSTCLASS  ] = 0 ,
+        [JOB_SERGEANT           ] = 0 ,
+        [JOB_OFFICER            ] = 0 ,
+        [JOB_GENERAL            ] = 0 ,
+        [JOB_SCOUT              ] = 2 ,
+        [JOB_SHIPWRIGHT         ] = 0 ,
+        [JOB_PACKDONKEY         ] = 8 ,
+        [JOB_BOATCARRIER        ] = 0 ,
         [JOB_CHARBURNER         ] = 0
-        })
-    end
+    })
 end
 
 
 -------------------------------- mission events -------------------------------
 function onGameFrame(gf)
-    -- events called by GetBuildingCount(), GetWareCount() or GetPeopleCount()
-    MissionEvent(2)
-    MissionEvent(3)
-    MissionEvent(6)
-    MissionEvent(12)
-    MissionEvent(13)
-    MissionEvent(14)
-    MissionEvent(15)
+    if (gf == 20) then
+        --!MET_DIRECT_EVENT 0 255 0 -1
+        -- 0: Event ID
+        -- 255: No Endevent
+        -- 0: Message 0
+        -- -1: No Sound
+        MissionEvent(1)
+    end
 end
 
 function onOccupied(p, x, y)
@@ -322,126 +305,107 @@ function onOccupied(p, x, y)
         return
     end
 
-    if(     (x == 34) and (y == 28) ) then MissionEvent(4) -- RttR calls onOccupied once a pole is on that spot, SettlersII called the function once the spot is really owned
-    elseif( (x == 39) and (y == 19) ) then MissionEvent(7)
-    elseif( (x == 14) and (y ==  8) ) then MissionEvent(99)
+    --!MET_POSITION_OCCUPIED     4    99     40   40               -1    -1         1
+    -- 4: EventID
+    -- 99: EndEvent -> trigger this event
+    -- 40: X
+    -- 40: Y
+    -- -1: No Message
+    -- -1: No SampleID
+    -- 1: GotoFlag -> Doesnt seem to work
+
+    --!MET_END_EVENT         99   255    1    98 255 255 255     8     -1
+    -- 99: EventID
+    -- 255: No EndEvent
+    -- 1: WinPoints?
+    -- 98: Enable Event -> Trigger
+    -- 255: No Event
+    -- 8: Message 8
+    -- -1: No SampleID
+
+    --!MET_SET_FINAL_EVENT   99     1  255  255
+    -- 99: EventID
+    -- 1: Unknown, enable mission 1?
+    -- 255: no event
+    -- 255: no event
+
+    --!MET_SET_MAP_ELEMENT   98 40   40 23
+    -- 98: Event ID
+    -- 40: X
+    -- 40: Y
+    -- 23: opened Gate
+
+    if((x == 40) and (y == 40)) then
+        MissionEvent(99)
     end
 end
 
-function onExplored(p, x, y)
+function onExplored(p, x, y, owner)
     if(p ~= 0) then
         return
     end
 
-    -- onExplored events
-    if(     (x == 14) and (y ==  8) ) then MissionEvent(16)
+    --!MET_POSITION_EXPLORED     1     255    98   28              2    29           1
+    -- 1: Event ID
+    -- 255: No Endevent
+    -- 98: X
+    -- 29: Y
+    -- 2: Message 2
+    -- 29: Sample 29? -> doesn't seem to work
+    -- 1: GoTo point -> doesn't seem to work
+
+    --!MET_HOUSE_ENABLING        1	 23	 255 255 255 255 255
+    -- 1: Event ID (triggers this)
+    -- 23: Harbor building
+    if((x == 98) and (y == 28)) then
+        MissionEvent(2)
+    end
+
+    --!MET_POSITION_EXPLORED     2     255    101   76              4    29           1
+    -- 2: EventID
+    -- 255: No Endevent
+    -- 101: X
+    -- 76: Y
+    -- 4: Message 4
+    -- 29: SampleID 29? -> doesnt seem to work
+    -- 1: GoTo? -> doesnt seem to work
+    if((x == 101) and (y == 76)) then
+        MissionEvent(3)
+    end
+
+    --!MET_CONTACT_TO_PLAYER     3    255       2            6     35
+    -- 3: ID Event
+    -- 255: No EndEvent
+    -- 2: Target PlayerID
+    -- 6: Message 6
+    -- 35: Trigger Event 35?
+    if(owner == 1 or owner == 2) then
+        MissionEvent(4)
     end
 end
 
-function onResourceFound(p, x, y, rIdx, q)
-    -- only check human player
-    if(p ~= 0) then
-        return
-    end
-
-    if(rIdx == RES_IRON) then           MissionEvent(5)
-    elseif(rIdx == RES_WATER) then      MissionEvent(8)
-    elseif(rIdx == RES_COAL) then       MissionEvent(9)
-    elseif(rIdx == RES_GRANITE) then    MissionEvent(10)
-    elseif(rIdx == RES_GOLD) then       MissionEvent(11)
-    end
-end
 
 -- execute mission events, e == 1 is initial event, e == 99 is final event
 function MissionEvent(e, onLoad)
     -- event e is inactive
     if(eState[e] <= 0) then
+        rttr:Log("State less or equal 0")
         return
     end
 
-    -- call side effects for active events, check "eState[e] == 1" for multiple call events!
     if(e == 1) then
-        eState[2] = 1
-    
+        -- nothing happening, initial message
     elseif(e == 2) then
-        if not( (rttr:GetPlayer(0):GetBuildingCount(BLD_WOODCUTTER) > 0)
-            and (rttr:GetPlayer(0):GetBuildingCount(BLD_QUARRY) > 0) 
-            and (rttr:GetPlayer(0):GetBuildingCount(BLD_SAWMILL) > 0)
-        ) then return end
-        rttr:GetPlayer(0):EnableBuilding(BLD_FORESTER, not onLoad)
-        eState[3] = 1
-
+        -- enable harbor
+        rttr:GetPlayer(0):EnableBuilding(BLD_HARBORBUILDING, not onLoad)
     elseif(e == 3) then
-        if not( (rttr:GetPlayer(0):GetBuildingCount(BLD_FORESTER) > 0)
-        ) then return end
-        rttr:GetPlayer(0):EnableBuilding(BLD_BARRACKS, not onLoad)
-        eState[4] = 1
-
+        -- nothing
     elseif(e == 4) then
-        rttr:GetPlayer(0):DisableBuilding(BLD_BARRACKS, not onLoad)
-        eState[5] = 1
-
-    elseif(e == 5) then
-        rttr:GetPlayer(0):EnableBuilding(BLD_IRONMINE, not onLoad)
-        rttr:GetPlayer(0):EnableBuilding(BLD_IRONSMELTER, not onLoad)
-        rttr:GetPlayer(0):EnableBuilding(BLD_ARMORY, not onLoad)
-        rttr:GetPlayer(0):EnableBuilding(BLD_HUNTER, not onLoad)
-        rttr:GetPlayer(0):EnableBuilding(BLD_FISHERY, not onLoad)
-        eState[6] = 1
-
-    elseif(e == 6) then
-        if not( (rttr:GetPlayer(0):GetBuildingCount(BLD_IRONSMELTER) > 0)
-            and (rttr:GetPlayer(0):GetBuildingCount(BLD_ARMORY) > 0)
-            and (rttr:GetPlayer(0):GetBuildingCount(BLD_IRONMINE) > 0)
-            ) then return end
-        rttr:GetPlayer(0):EnableBuilding(BLD_BARRACKS, not onLoad)
-        eState[7] = 1
-
-    elseif(e == 7) then
-        rttr:GetPlayer(0):EnableBuilding(BLD_FARM, not onLoad)
-        eState[13] = 1
-        eState[16] = 1
-
-    elseif(e == 8) then
-        rttr:GetPlayer(0):EnableBuilding(BLD_WELL, not onLoad)
-        
-    elseif(e == 9) then
-        rttr:GetPlayer(0):EnableBuilding(BLD_COALMINE, not onLoad)
-
-    elseif(e == 10) then
-        rttr:GetPlayer(0):EnableBuilding(BLD_GRANITEMINE, not onLoad)
-
-    elseif(e == 11) then
-        rttr:GetPlayer(0):EnableBuilding(BLD_MINT, not onLoad)
-        rttr:GetPlayer(0):EnableBuilding(BLD_GOLDMINE, not onLoad)
-        eState[12] = 1
-
-    elseif(e == 12) then
-        if not( (rttr:GetPlayer(0):GetWareCount(GD_COINS) > 0)
-        ) then return end
-
-    elseif(e == 13) then
-        if not( (rttr:GetPlayer(0):GetBuildingCount(BLD_FARM) > 0)
-        ) then return end
-        rttr:GetPlayer(0):EnableBuilding(BLD_PIGFARM, not onLoad)
-        rttr:GetPlayer(0):EnableBuilding(BLD_MILL, not onLoad)
-        eState[14] = 1
-        eState[15] = 1
-
-    elseif(e == 14) then
-        if not( (rttr:GetPlayer(0):GetBuildingCount(BLD_PIGFARM) > 0)
-        ) then return end
-        rttr:GetPlayer(0):EnableBuilding(BLD_SLAUGHTERHOUSE, not onLoad)
-
-    elseif(e == 15) then
-        if not ( (rttr:GetPlayer(0):GetBuildingCount(BLD_MILL) > 0)
-        ) then return end
-        rttr:GetPlayer(0):EnableBuilding(BLD_BAKERY, not onLoad)
-
+        -- lift restrictions so no strange things happen
+        rttr:GetPlayer(1):SetRestrictedArea()
+        rttr:GetPlayer(2):SetRestrictedArea()
     elseif(e == 99) then
-        -- TODO: EnableNextMissions()
-        -- Show opened arc
-        rttr:GetWorld():AddStaticObject(14, 8, 561, 0xFFFF, 2)
+        rttr:GetWorld():AddStaticObject(40, 40, 561, 0xFFFF, 2)
     end
 
     -- update event state
@@ -449,9 +413,10 @@ function MissionEvent(e, onLoad)
 
     -- no history update or mission texts while loading
     if not onLoad then
-        rttr:Log(">> Event: " .. e .. ",\teState[" .. e .. "] = " .. eState[e])         -- TEST
+        rttr:Log(">> Event: " .. e .. ",\teState[" .. e .. "] = " .. eState[e])
         eHist["n"] = eHist["n"] + 1
         eHist[eHist["n"]] = e
-        MissionText(e)
     end
+
+    MissionText(e, onLoad)
 end
