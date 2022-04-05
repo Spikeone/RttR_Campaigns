@@ -309,7 +309,7 @@ function addPlayerRes(p, onLoad)
             [GD_BREAD       ] = 20,
             [GD_SHIELD      ] = 10,
             [GD_WOOD        ] =  0,
-            [GD_BOARDS      ] = 500,
+            [GD_BOARDS      ] = 50,
             [GD_STONES      ] = 50,
             [GD_GRAIN       ] =  0,
             [GD_COINS       ] =  0,
