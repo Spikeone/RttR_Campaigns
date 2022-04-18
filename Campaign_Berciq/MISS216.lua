@@ -1,26 +1,20 @@
 ------------------------------------------------------------------------------
--- LUA-Script for MISS206.WLD (mission 7 of the Berciq "Roman Campaign II"  --
+-- LUA-Script for MISS216.WLD (mission 7 of the Berciq "Roman Campaign II"  --
 --                                                                          --
--- Author: (basing on CrazyL (v0.4)) by Berciq                                                  --
+-- Author: (basing on CrazyL (v0.4)) by Berciq                              --
 ------------------------------------------------------------------------------
 
-
 -------------------------------- TODO -----------------------------------------
--- disable sawmills when there are more than 2 (maybe create AI level 4 for missions?)
 -- consider fixing always opened gateways
--- there is no ending 
--- pl translation
-
 -- Set Portraits
 -- EnableNextMissions()
+-- Set AI Agression Level -> enemy should attach first
 -------------------------------------------------------------------------------
-
 
 -------------------------------- Lua Version used -----------------------------
 function getRequiredLuaVersion()
-    return 1.3
+    return 1.0
 end
-
 
 -------------------------------- mission events and texts ---------------------
 -- Message-Window (mission statement and hints): 52 chars wide
@@ -32,7 +26,7 @@ rttr:RegisterTranslations(
     {
         Diary   = 'Diary',
 
-        msg1    = 'Unbearable moist coming from swamps nearby, insects everywhere. Each day looks the same, after midday comes rainfall and temperatures slightly changes. \n\nBuilding ship is pointless, sea currents, wind and reef barrier won\'t allow us to leave. \n\nHuge problem is lack of any stone around. We haven\'t faced such a problem yet. \n\nIt is hard to say if the bay has salt or fresh water, I would say it is little salty.. I think that huge river must inflow to ocean nearby.',
+        msg1    = 'Unbearable moist coming from swamps nearby, insects everywhere. Each day looks the same, after midday comes rainfall and temperatures slightly changes. Rain also helps reducing time required to put down fire.  \n\nBuilding ship is pointless, sea currents, wind and reef barrier won\'t allow us to leave. \n\nHuge problem is lack of any stone around. We haven\'t faced such a problem yet. \n\nIt is hard to say if the bay has salt or fresh water, I would say it is little salty.. I think that huge river must inflow to ocean nearby.',
         msgh1   = 'Let\'s wade this thick rain forest and see what to do next.',
 
         msg2    = 'We\'ve found lignite, it is poor version of coal, we can see some fossils inside. Anyway it will help us to smelt ore.',
@@ -85,7 +79,7 @@ rttr:RegisterTranslations(
     {
         Diary   = 'Dziennik',
 
-        msg1    = 'Niemiłosierna duchota, robactwo w każdym zakamarku. Każdy dzień wygląda tu podobnie, temperatury prawie się nie zmieniają a niedługo po południu zaczynają się ulewy. \n\nBudowa statku jest skazana na porażkę. Prądy morskie, wiatr i bariera z rafy koralowej uniemożliwiają opuszczenie tego miejsca. \n\nProblem jest też pozyskanie kamienia, nie spotkaliśmy się z takim problemem wcześniej. \n\nNie jestem nawet w stanie powiedzieć czy woda w morzu jest słodka czy słona. Powiedziałbym, że jest słonawa a to musi oznaczać olbrzymią rzekę która wpadającą nieopodal. ',
+        msg1    = 'Niemiłosierna duchota, robactwo w każdym zakamarku. Każdy dzień wygląda tu podobnie, temperatury prawie się nie zmieniają a niedługo po południu zaczynają się ulewy, które pomagają dogaszać płomienie. \n\nBudowa statku jest skazana na porażkę. Prądy morskie, wiatr i bariera z rafy koralowej uniemożliwiają opuszczenie tego miejsca. \n\nProblem jest też pozyskanie kamienia, nie spotkaliśmy się z takim problemem wcześniej. \n\nNie jestem nawet w stanie powiedzieć czy woda w morzu jest słodka czy słona. Powiedziałbym, że jest słonawa a to musi oznaczać olbrzymią rzekę która wpadającą nieopodal. ',
         msgh1   = 'Przeprawmy się przez serce gęstej puszczy i zobaczmy co dalej',
 
         msg2    = 'Znaleźliśmy warstwę brunatnego węgla, wyraźnie widać w nim odbite liście i łodygi. Mimo marnej jakości nada się do przetopu rudy.',
@@ -148,28 +142,30 @@ function MissionText(e)
     elseif(msg ~= ('msg' .. tostring(e))) then
         rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
     end
-
 end
 
 
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
-    rttr:Log("-----------------------\n MISS206.lua loaded... \n-----------------------\n")
+    rttr:Log("-----------------------\n MISS216.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_MILITARY_HITPOINTS, true)	
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
     rttr:SetAddon(ADDON_CATAPULT_GRAPHICS, true)
 	rttr:SetAddon(ADDON_MILITARY_AID, true)		
+	rttr:SetAddon(ADDON_REFUND_MATERIALS, 2, true)		
     rttr:SetAddon(ADDON_TOOL_ORDERING, true)	
     rttr:SetAddon(ADDON_METALWORKSBEHAVIORONZERO, true)	
 	rttr:SetAddon(ADDON_DEMOLITION_PROHIBITION, true)
     rttr:SetAddon(ADDON_MILITARY_CONTROL, true)	
     rttr:SetAddon(ADDON_MORE_ANIMALS, true)
     rttr:SetAddon(ADDON_CHARBURNER, true)	
+    rttr:SetAddon(ADDON_BURN_DURATION, 3, true)	
     --rttr:SetAddon(ADDON_EXHAUSTIBLE_WATER, true)	
 	--rttr:SetAddon(ADDON_REFUND_MATERIALS, true)	
     --rttr:SetAddon(ADDON_DEMOLISH_BLD_WO_RES, true)
     --rttr:SetAddon(ADDON_SEA_ATTACK, true)	
+	
     rttr:SetGameSettings({                      -- TEST
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
@@ -257,11 +253,38 @@ function onLoad(saveGame)
     return true
 end
 
+function enforceBuildingCount(player, building, limit, notify)
+    local sumBuildings = rttr:GetPlayer(player):GetNumBuildings(building) + rttr:GetPlayer(player):GetNumBuildingSites(building)
+
+    if (sumBuildings >= limit) then
+        rttr:GetPlayer(player):DisableBuilding(building)
+    else
+        rttr:GetPlayer(player):EnableBuilding(building, notify)
+    end
+end
+	 
+function onGameFrame(gf)
+	enforceBuildingCount(1, BLD_FORESTER, 1, false)	
+	enforceBuildingCount(1, BLD_SAWMILL, 2, false)
+	enforceBuildingCount(1, BLD_METALWORKS, 1, false)
+	
+	enforceBuildingCount(2, BLD_FORESTER, 1, false)		
+	enforceBuildingCount(2, BLD_SAWMILL, 2, false)
+	enforceBuildingCount(2, BLD_METALWORKS, 1, false)
+	
+	enforceBuildingCount(3, BLD_FORESTER, 1, false)		
+	enforceBuildingCount(3, BLD_SAWMILL, 2, false)
+	enforceBuildingCount(3, BLD_METALWORKS, 1, false)
+end
 
 -------------------------------- set buildings --------------------------------
 function addPlayerBld(p, onLoad)
     -- set buildings for all players
     rttr:GetPlayer(p):EnableAllBuildings()
+	
+    if(p == 0) then
+        rttr:GetPlayer(p):DisableBuilding(BLD_CATAPULT, false)
+	end		
 	
     if(p == 1) then
         rttr:GetPlayer(p):DisableBuilding(BLD_GOLDMINE, false)
@@ -272,10 +295,6 @@ function addPlayerBld(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_WATCHTOWER, false)		
         rttr:GetPlayer(p):DisableBuilding(BLD_METALWORKS, false)		
         rttr:GetPlayer(p):DisableBuilding(BLD_ARMORY, false)				
-	elseif(p == 1) then
-        if not( (rttr:GetPlayer(p):GetBuildingCount(BLD_SAWMILL) > 2)) 	
-		then return end
-        rttr:GetPlayer(p):DisableBuilding(BLD_SAWMILL, not onLoad)	
 	end	
 	
     if(p == 2) then
@@ -283,10 +302,6 @@ function addPlayerBld(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_IRONMINE, false)
         rttr:GetPlayer(p):DisableBuilding(BLD_GRANITEMINE, false)	
         rttr:GetPlayer(p):DisableBuilding(BLD_FORTRESS, false)		
-	elseif(p == 2) then
-        if not( (rttr:GetPlayer(p):GetBuildingCount(BLD_SAWMILL) > 2)) 	
-		then return end
-        rttr:GetPlayer(p):DisableBuilding(BLD_SAWMILL, not onLoad)	
 	elseif(p == 2) then
         rttr:GetPlayer(p):SetRestrictedArea(
             nil, nil,       -- enable the whole map
@@ -306,11 +321,7 @@ function addPlayerBld(p, onLoad)
         )		
 	end	
 	
-    if(p == 3) then
-        if not( (rttr:GetPlayer(p):GetBuildingCount(BLD_SAWMILL) > 2)) 	
-		then return end
-        rttr:GetPlayer(p):DisableBuilding(BLD_SAWMILL, not onLoad)	
-	end
+	-- Building orders	
 		
         if(p == 1) then
             if onLoad then return end
@@ -319,46 +330,46 @@ function addPlayerBld(p, onLoad)
             rttr:GetPlayer(p):AIConstructionOrder(113, 60, BLD_FARM)		
             rttr:GetPlayer(p):AIConstructionOrder(111, 65, BLD_FARM)		
             rttr:GetPlayer(p):AIConstructionOrder(106, 55, BLD_FARM)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(109, 52, BLD_FORTRESS)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(104, 58, BLD_WATCHTOWER)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(107, 60, BLD_SAWMILL)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(107, 62, BLD_SLAUGHTERHOUSE)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(105, 60, BLD_WELL)				
-        --    rttr:GetPlayer(p):AIConstructionOrder(109, 62, BLD_BAKERY)		
-        --    rttr:GetPlayer(p):AIConstructionOrder(108, 64, BLD_MILL)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(108, 66, BLD_WELL)				
+            rttr:GetPlayer(p):AIConstructionOrder(109, 52, BLD_FORTRESS)	
+            rttr:GetPlayer(p):AIConstructionOrder(104, 58, BLD_WATCHTOWER)	
+            rttr:GetPlayer(p):AIConstructionOrder(107, 60, BLD_SAWMILL)	
+            rttr:GetPlayer(p):AIConstructionOrder(107, 62, BLD_SLAUGHTERHOUSE)	
+            rttr:GetPlayer(p):AIConstructionOrder(105, 60, BLD_WELL)				
+            rttr:GetPlayer(p):AIConstructionOrder(109, 62, BLD_BAKERY)		
+            rttr:GetPlayer(p):AIConstructionOrder(108, 64, BLD_MILL)	
+            rttr:GetPlayer(p):AIConstructionOrder(108, 66, BLD_WELL)				
         end		
 		
         if(p == 2) then
             if onLoad then return end
             rttr:GetPlayer(p):AIConstructionOrder(97, 18, BLD_WATCHTOWER)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(89, 19, BLD_SAWMILL)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(94, 17, BLD_FARM)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(92, 21, BLD_MINT)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(88, 24, BLD_WELL)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(85, 17, BLD_FARM)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(85, 19, BLD_MILL)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(85, 21, BLD_BAKERY)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(84, 18, BLD_QUARRY)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(86, 23, BLD_WOODCUTTER)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(94, 21, BLD_WOODCUTTER)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(93, 19, BLD_QUARRY)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(95, 19, BLD_QUARRY)				
+            rttr:GetPlayer(p):AIConstructionOrder(89, 19, BLD_SAWMILL)	
+            rttr:GetPlayer(p):AIConstructionOrder(94, 17, BLD_FARM)	
+            rttr:GetPlayer(p):AIConstructionOrder(92, 21, BLD_MINT)	
+            rttr:GetPlayer(p):AIConstructionOrder(88, 24, BLD_WELL)	
+            rttr:GetPlayer(p):AIConstructionOrder(85, 17, BLD_FARM)	
+            rttr:GetPlayer(p):AIConstructionOrder(85, 19, BLD_MILL)	
+            rttr:GetPlayer(p):AIConstructionOrder(85, 21, BLD_BAKERY)	
+            rttr:GetPlayer(p):AIConstructionOrder(84, 18, BLD_QUARRY)	
+            rttr:GetPlayer(p):AIConstructionOrder(86, 23, BLD_WOODCUTTER)	
+            rttr:GetPlayer(p):AIConstructionOrder(94, 21, BLD_WOODCUTTER)	
+            rttr:GetPlayer(p):AIConstructionOrder(93, 19, BLD_QUARRY)	
+            rttr:GetPlayer(p):AIConstructionOrder(95, 19, BLD_QUARRY)				
         end		
 
         if(p == 3) then
             if onLoad then return end
-        --    rttr:GetPlayer(p):AIConstructionOrder(16, 19, BLD_BREWERY)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(17, 21, BLD_MINT)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(19, 22, BLD_BAKERY)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(18, 24, BLD_MILL)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(14, 25, BLD_IRONSMELTER)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(13, 22, BLD_PIGFARM)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(14, 23, BLD_SLAUGHTERHOUSE)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(19, 27, BLD_WELL)		
-        --    rttr:GetPlayer(p):AIConstructionOrder(18, 28, BLD_WOODCUTTER)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(18, 26, BLD_WATCHTOWER)	
-        --    rttr:GetPlayer(p):AIConstructionOrder(16, 25, BLD_SAWMILL)				
+            rttr:GetPlayer(p):AIConstructionOrder(16, 19, BLD_BREWERY)	
+            rttr:GetPlayer(p):AIConstructionOrder(17, 21, BLD_MINT)	
+            rttr:GetPlayer(p):AIConstructionOrder(19, 22, BLD_BAKERY)	
+            rttr:GetPlayer(p):AIConstructionOrder(18, 24, BLD_MILL)	
+            rttr:GetPlayer(p):AIConstructionOrder(14, 25, BLD_IRONSMELTER)	
+            rttr:GetPlayer(p):AIConstructionOrder(13, 22, BLD_PIGFARM)	
+            rttr:GetPlayer(p):AIConstructionOrder(14, 23, BLD_SLAUGHTERHOUSE)	
+            rttr:GetPlayer(p):AIConstructionOrder(19, 27, BLD_WELL)		
+            rttr:GetPlayer(p):AIConstructionOrder(18, 28, BLD_WOODCUTTER)	
+            rttr:GetPlayer(p):AIConstructionOrder(18, 26, BLD_WATCHTOWER)	
+            rttr:GetPlayer(p):AIConstructionOrder(16, 25, BLD_SAWMILL)				
         end				
     end
 
@@ -724,7 +735,8 @@ function MissionEvent(e, onLoad)
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
 
     if(e == 1) then
-        rttr:GetPlayer(0):DisableBuilding(BLD_CHARBURNER, onLoad)	
+        rttr:GetPlayer(0):DisableBuilding(BLD_CHARBURNER, onLoad)
+        rttr:GetWorld():AddStaticObject(16, 23, 560, 0xFFFF, 1)        -- Show arc		
 	end	
 	
     if(e == 22) then
@@ -738,7 +750,7 @@ function MissionEvent(e, onLoad)
     if(e == 99) then
         -- TODO: EnableNextMissions()
         -- Show opened arc
-        rttr:GetWorld():AddStaticObject(14, 18, 561, 0xFFFF, 2)
+        rttr:GetWorld():AddStaticObject(16, 23, 561, 0xFFFF, 1)        -- Open arc
     end
 
 

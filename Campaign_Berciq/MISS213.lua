@@ -1,28 +1,18 @@
 ------------------------------------------------------------------------------
--- LUA-Script for MISS203.WLD (mission 4 of the Berciq "Roman Campaign II"  --
+-- LUA-Script for MISS213.WLD (mission 4 of the Berciq "Roman Campaign II"  --
 --                                                                          --
--- Author: (basing on CrazyL (v0.4)) by Berciq                                                  --
+-- Author: (basing on CrazyL (v0.4)) by Berciq                              --
 ------------------------------------------------------------------------------
 
-
 -------------------------------- TODO -----------------------------------------
--- Force enemy to build catapult 51, 80
--- Force to build buildings in x, y
--- consider fixing always opened gateways
--- there is no ending 
--- pl translation
-
 -- EnableNextMissions()
 -- Set Portraits
--- Set AI Agression Level
 -------------------------------------------------------------------------------
-
 
 -------------------------------- Lua Version used -----------------------------
 function getRequiredLuaVersion()
-    return 1.3
+    return 1.0
 end
-
 
 -------------------------------- mission events and texts ---------------------
 -- Message-Window (mission statement and hints): 52 chars wide
@@ -34,7 +24,7 @@ rttr:RegisterTranslations(
     {
         Diary   = 'Diary',
 
-        msg1    = 'How unbearable frost! \n\nPortal thrown our ship in the middle of the sea. During night the sea has frozen over, and our ship has been destroyed. Fortunately we were in short distance from land. \n\nDays are really short and lack of the sun is affecting each one of us. \n\nClose to sea temperature isn\'t changing that quickly so lets keep close to coastline. Here is little of space to build anything but we must manage somehow... In this narrow land pass even wood supply will not be obvious. \n\nRoad to warmer south is blocked by huge mountain range and dangerous glaciers, if we don\'t secure the path people will not be willing to walk there.',
+        msg1    = 'How unbearable frost! \n\nPortal thrown our ship in the middle of the sea. During night the sea has frozen over, and our ship has been destroyed. Fortunately we were in short distance from land. \n\nDays are really short and lack of the sun is affecting each one of us. Close to sea temperature isn\'t changing that quickly so lets keep close to coastline. Here is little of space to build anything but we must manage somehow... In this narrow land pass even wood supply will not be obvious. Road to warmer south is blocked by huge mountain range and dangerous glaciers, if we don\'t secure the path people will not be willing to walk there. \n\nBuilders improved many projects. We can now restore almost half of building materials before burning it!',
         msgh1   = 'Let\'s find a place to build harbor and head south.',
 
         msg2    = 'We hardly recognized coal. It is covered with white frost layer.',
@@ -58,7 +48,7 @@ rttr:RegisterTranslations(
 		msg11	= 'This molten badlands, meaningful message from our gods',
 
 		msg12	= 'They have catapult! But they lack in accuracy. What is more our geologist says that their stone supply will end soon! I understand their anxiety but if we show our determination and tenacity they will tolerate our temporary presence here.. I hope..',
-		msgh12	= 'Hold our position! At all cost! Avoid conflict! Survive!',
+		msgh12	= 'Hold our position! At all cost! Avoid conflict! Survive! Then push slowly to south',
 
 		msg13	= 'Good decision, this floating icebergs would smash our ship! We will have to go further by our feets..',	
 
@@ -79,7 +69,7 @@ rttr:RegisterTranslations(
     {
         Diary   = 'Dziennik',
 
-        msg1    = 'Mróz nie do zniesienia. \n\nPortal wciągnął nas z całym statkiem i wyrzucił pośrodku morza. Płyneliśmy aż nastała noc i całe morze zamarzło niszcząc nas okręt. Szcęśliwie ląd był niedaleko. \n\nDni sa tutaj bardzo krótkie a niedobór słońca przybija każdego. \n\nNad brzegiem, temperatury nie wachają się tak drastycznie dlatego lepiej będzie podążać wzdłóż wybrzeża. Stoki gór odrazu toną w zatoce, przez co jest niewiele miejsca na budowę czegokolwiek ale jakoś musimy sobie z tym poradzić. Nawet z drewnem będzie tu kłopot. \n\nDrogę na cieplejsze południe blokują wysokie góry i niebezpieczny lodowiec. Dopóki nie zabezpieczymy drogi przy lodowcu dopóty nasi ludzie nie będą tamtendy chodzić',
+        msg1    = 'Mróz nie do zniesienia. \n\nPortal wciągnął nas z całym statkiem i wyrzucił pośrodku morza. Płyneliśmy aż nastała noc i całe morze zamarzło niszcząc nas okręt. Szcęśliwie ląd był niedaleko. \n\nDni sa tutaj bardzo krótkie a niedobór słońca przybija każdego. \n\nNad brzegiem, temperatury nie wachają się tak drastycznie dlatego lepiej będzie podążać wzdłóż wybrzeża. Stoki gór odrazu toną w zatoce, przez co jest niewiele miejsca na budowę czegokolwiek ale jakoś musimy sobie z tym poradzić. Nawet z drewnem będzie tu kłopot. \n\nDrogę na cieplejsze południe blokują wysokie góry i niebezpieczny lodowiec. Dopóki nie zabezpieczymy drogi przy lodowcu dopóty nasi ludzie nie będą tamtendy chodzić \n\nNasz architekt zmienił plany budowli dzięki czemu możemy odzyskać blisko połowę zużytych materiałów przed zniszczeniem!',
         msgh1   = 'Znajdź dogodne miejsce na port i płyń na południe',
 
         msg2    = 'Ledwie rozpoznaliśmy pokryty białym szronem węgiel',
@@ -103,7 +93,7 @@ rttr:RegisterTranslations(
 		msg11	= 'Rozżarzone pustkowie, jakby bogowie starali się nam coś przekazać..',
 
 		msg12	= 'Mają katapultę! Brakuje im co prawda celności i niedługo skończą się zapasy kamienia! Musimy pokazać, że nigdzie się stąd nie ruszymy, to być może nas tu zaakceptują.. Taką mam nadzieję..',
-		msgh12	= 'Utrzymuj pozycję! Wszelkimi możliwymi środkami, Nie atakuj, przetrwaj!',
+		msgh12	= 'Utrzymuj pozycję! Wszelkimi możliwymi środkami, Nie atakuj, przetrwaj! Jeśli się powiedzie udaj się dalej na południe',
 
 		msg13	= 'Dobra decyzja, te góry lodowe zmiażdżyłyby nasz statek, dalej pójdziemy pieszo..',	
 
@@ -139,12 +129,13 @@ end
 
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
-    rttr:Log("-----------------------\n MISS203.lua loaded... \n-----------------------\n")
+    rttr:Log("-----------------------\n MISS213.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_MILITARY_HITPOINTS, true)	
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
     rttr:SetAddon(ADDON_CATAPULT_GRAPHICS, true)
 	rttr:SetAddon(ADDON_MILITARY_AID, true)		
+	rttr:SetAddon(ADDON_REFUND_MATERIALS, 2, true)		
     --rttr:SetAddon(ADDON_TOOL_ORDERING, true)	
     --rttr:SetAddon(ADDON_METALWORKSBEHAVIORONZERO, true)	
 	--rttr:SetAddon(ADDON_DEMOLITION_PROHIBITION, true)
@@ -230,6 +221,24 @@ function onLoad(saveGame)
         eHist[i] = saveGame:PopInt()
     end
     return true
+end
+
+function enforceBuildingCount(player, building, limit, notify)
+    local sumBuildings = rttr:GetPlayer(player):GetNumBuildings(building) + rttr:GetPlayer(player):GetNumBuildingSites(building)
+
+    if (sumBuildings >= limit) then
+        rttr:GetPlayer(player):DisableBuilding(building)
+    else
+        rttr:GetPlayer(player):EnableBuilding(building, notify)
+    end
+end
+	 
+function onGameFrame(gf)
+	enforceBuildingCount(1, BLD_WOODCUTTER, 1, false)	
+	enforceBuildingCount(1, BLD_FORESTER, 1, false)	
+	enforceBuildingCount(1, BLD_SAWMILL, 1, false)
+	enforceBuildingCount(1, BLD_METALWORKS, 1, false)
+	enforceBuildingCount(1, BLD_CATAPULT, 1, false)	
 end
 
 
@@ -486,17 +495,17 @@ function MissionEvent(e, onLoad)
 
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
         
-    if(e == 6) then
-        rttr:GetPlayer(0):EnableBuilding(BLD_CATAPULT, not onLoad)	
+    if(e == 1) then
+        rttr:GetWorld():AddStaticObject(24, 107, 560, 0xFFFF, 2)        -- Show arc
+	end	
+	  
+    if(e == 98) then
+        rttr:GetPlayer(1):SetRestrictedArea()
+	end	
 	
-	elseif(e == 98) then
-        rttr:GetPlayer(1):SetRestrictedArea()	
-
-    elseif(e == 99) then
-        -- TODO: EnableNextMissions()
-        -- Show opened arc
-        rttr:GetWorld():AddStaticObject(24, 107, 561, 0xFFFF, 2)
-    end
+    if(e == 99) then
+        rttr:GetWorld():AddStaticObject(24, 107, 561, 0xFFFF, 2)        -- Open arc
+    end			
 
     -- update event state
     eState[e] = eState[e] - 1

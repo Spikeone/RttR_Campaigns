@@ -1,29 +1,20 @@
 ------------------------------------------------------------------------------
--- LUA-Script for MISS205.WLD (mission 6 of the Berciq "Roman Campaign II"  --
+-- LUA-Script for MISS215.WLD (mission 6 of the Berciq "Roman Campaign II"  --
 --                                                                          --
--- Author: (basing on CrazyL (v0.4)) by Berciq                                                  --
+-- Author: (basing on CrazyL (v0.4)) by Berciq                              --
 ------------------------------------------------------------------------------
 
-
 -------------------------------- TODO -----------------------------------------
--- disable sawmills when there are more than 2
--- Force to build buildings in x, y
--- erase additional restricted ares
 -- consider fixing always opened gateways
--- there is no ending 
--- pl translation
-
 -- EnableNextMissions()
 -- Set Portraits
--- Set AI Agression Level
+-- Set AI Agression Level -> enemy should attach first
 -------------------------------------------------------------------------------
-
 
 -------------------------------- Lua Version used -----------------------------
 function getRequiredLuaVersion()
-    return 1.3
+    return 1.0
 end
-
 
 -------------------------------- mission events and texts ---------------------
 -- Message-Window (mission statement and hints): 52 chars wide
@@ -75,12 +66,13 @@ end
 
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
-    rttr:Log("-----------------------\n MISS205.lua loaded... \n-----------------------\n")
+    rttr:Log("-----------------------\n MISS215.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_MILITARY_HITPOINTS, true)	
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
     rttr:SetAddon(ADDON_CATAPULT_GRAPHICS, true)
 	rttr:SetAddon(ADDON_MILITARY_AID, true)		
+	rttr:SetAddon(ADDON_REFUND_MATERIALS, 2, true)		
     rttr:SetAddon(ADDON_TOOL_ORDERING, true)	
     rttr:SetAddon(ADDON_METALWORKSBEHAVIORONZERO, true)	
 	rttr:SetAddon(ADDON_DEMOLITION_PROHIBITION, true)
@@ -187,6 +179,7 @@ function addPlayerBld(p, onLoad)
 	
     if(p == 0) then
         rttr:GetPlayer(p):DisableBuilding(BLD_CHARBURNER, false)
+        rttr:GetPlayer(p):DisableBuilding(BLD_CATAPULT, false)		
 	end
 	
     if not(p == 0) then
@@ -200,27 +193,19 @@ function addPlayerBld(p, onLoad)
                 0,   112,
                 112, 112,
                 112, 0,
-            nil, nil,       -- R=6, 	X=9, 	Y=9
-                 3,  9,		-- West	 	X-R		Y
-                15,  9,		-- Eeast	X+R 	Y
-                 6,  15,	-- NW		X-1/2R	Y+R
-                12,  15,	-- NE		X+1/2R	Y+R
-                 6,  3,		-- SW		X-1/2R	Y-R
-                12,  3,		-- SE		X+1/2R	Y-R
-				 3,  9,		-- Close
             nil, nil
         )
 		
         if(p == 1) then
             if onLoad then return end
             rttr:GetPlayer(p):AIConstructionOrder(43, 27, BLD_FORTRESS)	
-            rttr:GetPlayer(p):AIConstructionOrder(42, 22, BLD_MILL)	
-            rttr:GetPlayer(p):AIConstructionOrder(43, 23, BLD_BAKERY)	
-            rttr:GetPlayer(p):AIConstructionOrder(39, 20, BLD_SAWMILL)	
-            rttr:GetPlayer(p):AIConstructionOrder(39, 16, BLD_FARM)		
-            rttr:GetPlayer(p):AIConstructionOrder(36, 19, BLD_FARM)		
+            --rttr:GetPlayer(p):AIConstructionOrder(42, 22, BLD_MILL)	
+            --rttr:GetPlayer(p):AIConstructionOrder(43, 23, BLD_BAKERY)	
+            --rttr:GetPlayer(p):AIConstructionOrder(39, 20, BLD_SAWMILL)	
+            --rttr:GetPlayer(p):AIConstructionOrder(39, 16, BLD_FARM)		
+            --rttr:GetPlayer(p):AIConstructionOrder(36, 19, BLD_FARM)		
             rttr:GetPlayer(p):AIConstructionOrder(36, 24, BLD_WATCHTOWER)		
-            rttr:GetPlayer(p):AIConstructionOrder(36, 22, BLD_WELL)				
+            --rttr:GetPlayer(p):AIConstructionOrder(36, 22, BLD_WELL)				
         end		
 		
         if(p == 2) then
@@ -229,31 +214,31 @@ function addPlayerBld(p, onLoad)
             rttr:GetPlayer(p):AIConstructionOrder(67, 28, BLD_FORTRESS)
             rttr:GetPlayer(p):AIConstructionOrder(60, 20, BLD_FARM)	
             rttr:GetPlayer(p):AIConstructionOrder(67, 25, BLD_FARM)		
-            rttr:GetPlayer(p):AIConstructionOrder(72, 19, BLD_IRONSMELTER)	
-            rttr:GetPlayer(p):AIConstructionOrder(72, 21, BLD_ARMORY)	
-            rttr:GetPlayer(p):AIConstructionOrder(71, 21, BLD_MINT)	
-            rttr:GetPlayer(p):AIConstructionOrder(66, 18, BLD_PIGFARM)	
+            --rttr:GetPlayer(p):AIConstructionOrder(72, 19, BLD_IRONSMELTER)	
+            --rttr:GetPlayer(p):AIConstructionOrder(72, 21, BLD_ARMORY)	
+            --rttr:GetPlayer(p):AIConstructionOrder(71, 21, BLD_MINT)	
+            --rttr:GetPlayer(p):AIConstructionOrder(66, 18, BLD_PIGFARM)	
             rttr:GetPlayer(p):AIConstructionOrder(65, 23, BLD_QUARRY)	
-            rttr:GetPlayer(p):AIConstructionOrder(61, 23, BLD_BREWERY)	
+            --rttr:GetPlayer(p):AIConstructionOrder(61, 23, BLD_BREWERY)	
             rttr:GetPlayer(p):AIConstructionOrder(61, 25, BLD_WATCHTOWER)	
-            rttr:GetPlayer(p):AIConstructionOrder(60, 24, BLD_SAWMILL)	
-            rttr:GetPlayer(p):AIConstructionOrder(62, 21, BLD_WELL)	
+            --rttr:GetPlayer(p):AIConstructionOrder(60, 24, BLD_SAWMILL)	
+            --rttr:GetPlayer(p):AIConstructionOrder(62, 21, BLD_WELL)	
         end		
 
         if(p == 3) then
             if onLoad then return end	
             rttr:GetPlayer(p):AIConstructionOrder(95, 47, BLD_FORTRESS)	
             rttr:GetPlayer(p):AIConstructionOrder(89, 36, BLD_FORTRESS)	
-            rttr:GetPlayer(p):AIConstructionOrder(90, 40, BLD_SAWMILL)	
-            rttr:GetPlayer(p):AIConstructionOrder(94, 37, BLD_PIGFARM)	
-            rttr:GetPlayer(p):AIConstructionOrder(94, 40, BLD_SLAUGHTERHOUSE)	
-            rttr:GetPlayer(p):AIConstructionOrder(95, 42, BLD_IRONSMELTER)	
-            rttr:GetPlayer(p):AIConstructionOrder(95, 44, BLD_ARMORY)	
-            rttr:GetPlayer(p):AIConstructionOrder(92, 44, BLD_FARM)	
-        end				
+            --rttr:GetPlayer(p):AIConstructionOrder(90, 40, BLD_SAWMILL)	
+            --rttr:GetPlayer(p):AIConstructionOrder(94, 37, BLD_PIGFARM)	
+            --rttr:GetPlayer(p):AIConstructionOrder(94, 40, BLD_SLAUGHTERHOUSE)	
+            --rttr:GetPlayer(p):AIConstructionOrder(95, 42, BLD_IRONSMELTER)	
+            --rttr:GetPlayer(p):AIConstructionOrder(95, 44, BLD_ARMORY)	
+            --rttr:GetPlayer(p):AIConstructionOrder(92, 44, BLD_FARM)	
+        end		
+	end
+end 
 		
-    end
-end
 
 
 -------------------------------- set resources --------------------------------
@@ -583,13 +568,16 @@ function MissionEvent(e, onLoad)
 
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
 	
+    if(e == 1) then
+        rttr:GetWorld():AddStaticObject(97, 40, 560, 0xFFFF, 2)        -- Show arc
+	end		
+	
 	if(e == 98) then
-        rttr:GetPlayer(1):SetRestrictedArea()	
+        rttr:GetPlayer(1):SetRestrictedArea()
+	end
 
-    elseif(e == 99) then
-        -- TODO: EnableNextMissions()
-        -- Show opened arc
-        rttr:GetWorld():AddStaticObject(97, 40, 561, 0xFFFF, 2)
+    if(e == 99) then
+        rttr:GetWorld():AddStaticObject(97, 40, 561, 0xFFFF, 2)        -- Open arc
     end
 
     -- update event state

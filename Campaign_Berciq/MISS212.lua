@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
--- LUA-Script for MISS202.WLD (mission 3 of the Berciq "Roman Campaign II"  --
+-- LUA-Script for MISS212.WLD (mission 3 of the Berciq "Roman Campaign II"  --
 --                                                                          --
 -- Author: (basing on CrazyL (v0.4)) by Berciq                              --
 ------------------------------------------------------------------------------
@@ -11,7 +11,7 @@
 
 -------------------------------- Lua Version used -----------------------------
 function getRequiredLuaVersion()
-    return 1.3
+    return 1.0
 end
 
 -------------------------------- mission events and texts ---------------------
@@ -120,7 +120,7 @@ end
 
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
-    rttr:Log("-----------------------\n MISS202.lua loaded... \n-----------------------\n")
+    rttr:Log("-----------------------\n MISS212.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_MILITARY_HITPOINTS, true)	
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
@@ -632,17 +632,20 @@ function MissionEvent(e, onLoad)
     end
 
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
-        
+      
+    if(e == 1) then
+        rttr:GetWorld():AddStaticObject(9, 55, 560, 0xFFFF, 2)        -- Show arc
+	end
+	  
     if(e == 98) then
         rttr:GetPlayer(1):SetRestrictedArea()
         rttr:GetPlayer(2):SetRestrictedArea()
-        rttr:GetPlayer(3):SetRestrictedArea()		
-
-    elseif(e == 99) then
-        -- TODO: EnableNextMissions()
-        -- Show opened arc
-        rttr:GetWorld():AddStaticObject(9, 55, 561, 0xFFFF, 2)
-    end
+        rttr:GetPlayer(3):SetRestrictedArea()	
+	end	
+	
+    if(e == 99) then
+        rttr:GetWorld():AddStaticObject(9, 55, 561, 0xFFFF, 2)        -- Open arc
+    end		
 
     -- update event state
     eState[e] = eState[e] - 1

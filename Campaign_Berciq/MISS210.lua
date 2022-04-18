@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
--- LUA-Script for MISS200.WLD (mission 1 of the Berciq "Roman Campaign II"  --
+-- LUA-Script for MISS210.WLD (mission 1 of the Berciq "Roman Campaign II"  --
 --                                                                          --
 -- Author: (basing on CrazyL (v0.4)) by Berciq                              --
 ------------------------------------------------------------------------------
@@ -11,7 +11,7 @@
 
 -------------------------------- Lua Version used -----------------------------
 function getRequiredLuaVersion()
-    return 1.3
+    return 1.0
 end
 
 -------------------------------- mission events and texts ---------------------
@@ -90,7 +90,7 @@ end
 
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
-    rttr:Log("-----------------------\n MISS200.lua loaded... \n-----------------------\n")
+    rttr:Log("-----------------------\n MISS210.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_MILITARY_HITPOINTS, true)	
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
@@ -403,12 +403,6 @@ function MissionEvent(e, onLoad)
         
     if(e == 98) then
         rttr:GetPlayer(1):SetRestrictedArea()
-        rttr:GetPlayer(2):SetRestrictedArea()		
-
-    elseif(e == 99) then
-        -- TODO: EnableNextMissions()
-        -- Show opened arc
-        rttr:GetWorld():AddStaticObject(52, 23, 561, 0xFFFF, 2)
     end
 
     -- update event state

@@ -1,24 +1,18 @@
 ------------------------------------------------------------------------------
--- LUA-Script for MISS204.WLD (mission 5 of the Berciq "Roman Campaign II"  --
+-- LUA-Script for MISS214.WLD (mission 5 of the Berciq "Roman Campaign II"  --
 --                                                                          --
--- Author: (basing on CrazyL (v0.4)) by Berciq                                                  --
+-- Author: (basing on CrazyL (v0.4)) by Berciq                              --
 ------------------------------------------------------------------------------
 
 -------------------------------- TODO -----------------------------------------
--- disable sawmills when there are more than 2
--- Force to build buildings in x, y
--- erase additional restricted ares
--- consider fixing always opened gateways
--- there is no ending 
--- pl translation
-
 -- EnableNextMissions()
 -- Set Portraits
+-- Set AI Agression Level -> enemy should attach first
 -------------------------------------------------------------------------------
 
 -------------------------------- Lua Version used -----------------------------
 function getRequiredLuaVersion()
-    return 1.3
+    return 1.0
 end
 
 -------------------------------- mission events and texts ---------------------
@@ -138,12 +132,13 @@ end
 
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
-    rttr:Log("-----------------------\n MISS204.lua loaded... \n-----------------------\n")
+    rttr:Log("-----------------------\n MISS214.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_MILITARY_HITPOINTS, true)	
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
     rttr:SetAddon(ADDON_CATAPULT_GRAPHICS, true)
 	rttr:SetAddon(ADDON_MILITARY_AID, true)		
+	rttr:SetAddon(ADDON_REFUND_MATERIALS, 2, true)		
     rttr:SetAddon(ADDON_TOOL_ORDERING, true)	
     rttr:SetAddon(ADDON_METALWORKSBEHAVIORONZERO, true)	
 	--rttr:SetAddon(ADDON_DEMOLITION_PROHIBITION, true)
@@ -246,6 +241,29 @@ function onLoad(saveGame)
     return true
 end
 
+function enforceBuildingCount(player, building, limit, notify)
+    local sumBuildings = rttr:GetPlayer(player):GetNumBuildings(building) + rttr:GetPlayer(player):GetNumBuildingSites(building)
+
+    if (sumBuildings >= limit) then
+        rttr:GetPlayer(player):DisableBuilding(building)
+    else
+        rttr:GetPlayer(player):EnableBuilding(building, notify)
+    end
+end
+	 
+function onGameFrame(gf)
+	enforceBuildingCount(1, BLD_FORESTER, 1, false)	
+	enforceBuildingCount(1, BLD_SAWMILL, 2, false)
+	enforceBuildingCount(1, BLD_METALWORKS, 1, false)
+	
+	enforceBuildingCount(2, BLD_FORESTER, 1, false)		
+	enforceBuildingCount(2, BLD_SAWMILL, 2, false)
+	enforceBuildingCount(2, BLD_METALWORKS, 1, false)
+	
+	enforceBuildingCount(3, BLD_FORESTER, 1, false)		
+	enforceBuildingCount(3, BLD_SAWMILL, 2, false)
+	enforceBuildingCount(3, BLD_METALWORKS, 1, false)
+end
 
 -------------------------------- set buildings --------------------------------
 function addPlayerBld(p, onLoad)
@@ -253,6 +271,7 @@ function addPlayerBld(p, onLoad)
     rttr:GetPlayer(p):EnableAllBuildings()
 	
     if(p == 0) then
+		rttr:GetPlayer(p):DisableBuilding(BLD_CATAPULT, false)		
         rttr:GetPlayer(p):DisableBuilding(BLD_CHARBURNER, false)
 	end
 	
@@ -744,13 +763,16 @@ function MissionEvent(e, onLoad)
 
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
 	
+    if(e == 1) then
+        rttr:GetWorld():AddStaticObject(95, 34, 560, 0xFFFF, 2)        -- Show arc
+	end		
+	
 	if(e == 98) then
-        rttr:GetPlayer(1):SetRestrictedArea()	
+        rttr:GetPlayer(1):SetRestrictedArea()
+	end
 
-    elseif(e == 99) then
-        -- TODO: EnableNextMissions()
-        -- Show opened arc
-        rttr:GetWorld():AddStaticObject(95, 34, 561, 0xFFFF, 2)
+    if(e == 99) then
+        rttr:GetWorld():AddStaticObject(95, 34, 561, 0xFFFF, 2)        -- Open arc
     end
 
     -- update event state

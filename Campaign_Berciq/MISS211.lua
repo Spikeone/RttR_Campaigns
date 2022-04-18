@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
--- LUA-Script for MISS201.WLD (mission 2 of the Berciq "Roman Campaign II"  --
+-- LUA-Script for MISS211.WLD (mission 2 of the Berciq "Roman Campaign II"  --
 --                                                                          --
 -- Author: (basing on CrazyL (v0.4)) by Berciq                              --
 ------------------------------------------------------------------------------
@@ -11,7 +11,7 @@
 
 -------------------------------- Lua Version used -----------------------------
 function getRequiredLuaVersion()
-    return 1.3
+    return 1.0
 end
 
 -------------------------------- mission events and texts ---------------------
@@ -109,7 +109,7 @@ end
 
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
-    rttr:Log("-----------------------\n MISS201.lua loaded... \n-----------------------\n")
+    rttr:Log("-----------------------\n MISS211.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_MILITARY_HITPOINTS, true)	
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
