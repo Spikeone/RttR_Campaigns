@@ -660,7 +660,7 @@ function onGameFrame(gf)
         MissionEvent(16)
     end
     
-    if(eState[18] == 1 and rttr:GetPlayer(0):GetNumBuildings(BLD_HARBORBUILDING) > 1) then
+    if(eState[18] == 1 and rttr:GetPlayer(0):GetNumBuildings(BLD_HARBORBUILDING) > 0) then
         MissionEvent(18)
     end
     
