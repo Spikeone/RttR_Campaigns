@@ -298,6 +298,8 @@ function MissionText_FormatInput()
             $charCount = $charCount + $arrInput[$i].Length
         }
 
+        $strOutput = $strOutput.Replace("'", "\'")
+
         $txfText_MissionTextOut.Text = $strOutput
     }
     else
