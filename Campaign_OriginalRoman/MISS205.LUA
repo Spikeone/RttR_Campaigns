@@ -526,6 +526,7 @@ function MissionEvent(e, onLoad)
     end
 
     if(e == 98) then
+        rttr:Log("liftRestrictions")
         rttr:GetPlayer(1):SetRestrictedArea()
         rttr:GetPlayer(2):SetRestrictedArea()
     
