@@ -7,82 +7,166 @@ rttr:RegisterTranslations(
     en =
     {
         nameAI = 'Unknown faction',
-        textLogbook = 'Check your logbook for updates.',
+        textLogbook = 'In the logbook you will find information about the current task(s).',
     
-        salvageCoal = 'You salvaged 20 pieces of coal',
+        salvageCoal = 'There were 20 coal salvaged',
 
-        lookhere = 'Have a look here',
+        lookhere = 'Place of the event',
 
-        tasks_main = "Main Goal(s):",
-        tasks_sub = "Secondary Goal(s):",
-        tasks_hint = "[?] = Keep playing to discover this task\n[ ] = This task is not finished\n[+] = This task has been finished",
+        tasks_main = "Main objective(s):",
+        tasks_sub = "Secondary objective(s):",
+        tasks_hint = "[?] = Hidden or undiscovered objective\n[ ] = Objective not yet completed\n[+] = Objective was completed",
         tasks_legend = "Legend:",
 
         task1_1 = "[ ] Catch up with the thief",
         task1_2 = "[ ] Defeat the guards and search the camp",
-        task1_3 = "[+] Follow the thief to the north (next mission)",
+        task1_3 = "[+] Follow the thief north (next mission)",
 
-        task2_1 = "[ ] Salvage the ships",
-        task2_2 = "[+] The ships have been salvaged",
+        task2_1 = "[ ] Dismantle the ships",
+        task2_2 = "[+] The ships were dismantled",
 
         task3_101 = "[ ] Build at least two samills",
 
-        task4_101 = "[ ] Keep exploring",
+        task4_101 = "[ ] Explore further",
         
         task5_1 = "[ ] Recruit a larger army",
-        task5_2 = "[+] Your army is growing",
+        task5_2 = "[+] The army is growing",
 
-        task6_101 = "[ ] Search for food",
+        task6_101 = "[ ] Search for food source",
         task6_102 = "[ ] Find a way to get fish from the fishing village",
-        task6_103 = "[+] You befriended the fishing village",
-        task6_104 = "[+] You pillaged the fishing village",
+        task6_103 = "[+] The fishing village became friends",
+        task6_104 = "[+] The fishing village was looted",
 
-        task7_101 = "[ ] Brew some beer",
-        task7_102 = "[+] You are brewing beer",
+        task7_101 = "[ ] Brew beer",
+        task7_102 = "[+] Beer is brewed",
 
-        task8_101 = "[ ] Find traces of iron and mine it",
-        task8_102 = "[+] You are mining iron",
+        task8_101 = "[ ] Find and mine traces of iron",
+        task8_102 = "[+] Iron is mined",
 
-        task9_101 = "[ ] Build an armory and iron smelter",
-        task9_102 = "[+] You are capable of smithing weapons",
+        task9_101 = "[ ] Build iron smelting and armory",
+        task9_102 = "[+] Weapons can be forged",
 
         task10_101 = "[ ] Build a harbor for supplies",
-        task10_102 = "[+] You received a supply shipping",
+        task10_102 = "[+] Replenishment was delivered",
 
         task11_101 = "[ ] Find more charcoal",
 
         title   = 'The Chase',
 
-        msg1    = 'Event 1\n\nIntroduction, follow thief, need some resources, stole ring from king',
-        msg2    = 'Event 2\n\nSome resources for quickly following, note destroyed building nearby',
-        msg3    = 'Event 3\n\nBurned camp found, trace seems cold wrong direction, Tools found, wait till they are in your HQ',
-        msg4    = 'Event 4\n\nSome fallen trees, need to go east, tools finally arrived, new buildings may reach areas not anble before, salvage coal from burnt buildings',
-        msg5    = 'Event 5\n\nA pillaged farm, we cant help the people but use the grain, brutal need more soldiers, grain for beer, build army, find iron',
-        msg6    = 'Event 6\n\nTrail got cold, nothing but mountains, crossroads need to decide left or right',
-        msg7    = 'Event 7\n\nFound fishing village, seem neutral so far, maybe we can find a way to obtain food',
-        msg8    = 'Event 8\n\nfishing village seems interested, but not under the given conditions',
-        msg9    = 'Event 9\n\nthey are happy the men of the king finally show up, they hope we get rid of bandits, sent us all food they could spare, warm winter also spare some coal',
-        msg10   = 'Event10\n\nThese peasants should obey, I\'m here in the name of the king, showed them who to follow',
-        msg11   = 'Event11\n\nPretty advanced for bandits, seems not to function though, where did they get the technology from? maybe king right to send me',
-        msg12   = 'Event12\n\nThe thief is not hiding here, no bandits at all, we can use some coal',
-        msg13   = 'Event13\n\nWe can finally produce some weapons, charcoal from pillaging or burnt buildings',
-        msg14   = 'Event14\n\nFinally some beer, will increase moral and we can train soldiers',
-        msg15   = 'Event15\n\nWe will now produce tools, tools of war, having steady iron and coal supply is important, never forget beer',
-        msg16   = 'Event16\n\nWe will have some new recruits soon, bandits can throw whatever they want at us',
-        msg17   = 'Event17\n\nshallow cove, build harbor, some supplies',
-        msg18   = 'Event18\n\nLooks like I can only get a Contubernium to help me fight, king doesn\'t see need for more resources',
-        msg19   = 'Event19\n\nLooking like rich bandits, they have been paid gold, maybe thief cam through here, carefull maybe strong',
-        msg20   = 'Event20\n\nWrong, thief not came through here, some more peasants who seem to be lucky with some gold, still some coal and coins',
-        msg21   = 'Event21\n\nThats their camp, destroy it and catch the thief alive, they rebuilt old watchtowers here, strong fortification',
-        msg22   = 'Event22\n\nLooks like produced huge amount of weapons, luckily we were fast enough they can\'t recruit',
-        msg23   = 'Event23\n\nSearched the whole camp, didn\'t find the theif nor the stolen ring, must have fled north, can\'t follow now need some more preparation for harsh winter',
-        msg24   = 'Event24\n\nLooks like a pagan ritual, wonder what they sacrificed',
-        msg25   = 'Event25\n\nAnother pillaged camp, those animals don\'t stop before anything',
-        msg26   = 'Event26\n\nWhat happened here, I still know this place as guardpost, yet it seems pillaged',
-        msg27   = 'Event27\n\nTransporting material takes quite long, didn\'t remember these mountains so large, may build some camps to hasten up',
+        title2  = 'Commanding officer\'s log',
+
+        msg1    = 'The king has sent me out to catch a thief. Allegedly,\na ring was stolen from his private property. I\nfollowed the suspect to this remote country where I\nsaw his destroyed ship lying on the coast. Our ship\nalso ran aground next to it and we were on our own.\nSome important tools that would have been useful in\nthis endeavor are now lying at the bottom of the sea.\n\nI still don\'t know why I am being sent for a single\nstolen ring. This task is far below my abilities, I\nwonder if there is more to it.\n\nNow is not the time to brood over it, we need some\nconstruction material to start the pursuit. For this\nwe can dismantle the old ships and process them into\nvaluable building material.',
+        msg2    = 'Now we have some resources to quickly follow the\nthief. I used the time to look around a bit. I could\ndiscover some traces of destroyed buildings. This\ntrace leads to the west. The ash is still warm. I am\nconfident that this task will be completed quickly.',
+        msg3    = 'There was a camp here not long ago. However, the\nfires have been extinguished for a long time. I\nfollowed the trail in the wrong direction, to the\neast the tracks must be fresher. Fortunately, some\ntools were left behind. With their help, I can create\nnew trails to make faster progress. I will send some\nof my men out to retrieve the tools.\n\nUntil then, I should keep looking in the east.',
+        msg4    = 'Fallen trees and tracks. A larger group has passed\nthrough here. I am now sure that the way east is the\nright one. From the tracks I can\'t tell exactly how\nbig the unit itself is. I should proceed carefully so\nas not to be surprised in the dense forest.\n\nThe tools have finally arrived at our camp. Improving\nthe transport routes should have top priority. But\nperhaps this land offers more than meets the eye at\nfirst.\n\nWe have also been able to extract some charcoal from\nthe burned buildings. Even if we don\'t need it at the\nmoment, we should collect every raw material that is\navailable to us.',
+        msg5    = 'A looted farm? We can\'t help the former inhabitants\nand I can\'t find any bodies. Perhaps they were able\nto escape before something worse happened to them.\n\nTo devastate a royal farm in such a short time\nrequires a good number of men. I really need to build\nup a small army to avoid being overrun myself.\nFortunately for us, the fields are still tilled and\nwe can use the wheat. We cannot gain enough to\nproduce food, but we should be able to brew a little\nbeer. The land seems very dry, I don\'t know how\nproductive our low wells are.\n\nSince we only went out light, we don\'t have the\nproper tools for geological exploration. I hope we\ncan find traces of iron, a few picks for miners we\ncould secure. The work in the mines is arduous, we\nneed to find a source of food.',
+        msg6    = 'The trail has become cold by now, we are too slow.\nHere there is nothing but mountains as far as the eye\ncan see. At the fork in the trail we have to decide\nin which direction to continue.',
+        msg7    = 'From a distance I could see a fisherman on the shore.\nHe seems to have noticed me, but paid me no further\nattention. His small fishing village seems to be\nneutral towards us. Neither we are welcomed with open\narms nor pursued with swords.\n\nMaybe there is a possibility to secure the food\nsupply in one way OR the other.',
+        msg8    = 'The fishing village is probably interested, but not\non the terms offered. They want a permanent security\nthat we will not raid them.',
+        msg9    = 'When I revealed myself as the king\'s commander, the\njoy in the fishing village was great. Although I have\nthe feeling that something unspoken is in the air.\nHowever, for my task the concerns of the peasant\nbumpkins are not important.\n\nGenerously we received a delivery of fish which was destined for the markets in Serdica. Since the last winter has been particularly mild, they have left us some charcoal. These raw materials bring me closer to the fulfillment of my task.',
+        msg10   = 'When I revealed myself as the king\'s commander, the\nfear in the fishing village was great. Some of these\npeasant louts took up arms, but they were not a\nserious challenge.\n\nWe seized a shipment of fish destined for the markets\nin Serdica. We also managed to extract some charcoal\nfrom the remains of the buildings. These raw\nmaterials bring me closer to the fulfillment of my\ntask.',
+        msg11   = 'These bandits have advanced technologies. However,\nthe device does not seem to be operational yet. From\nwhom could they capture such advanced plans?\n\nPerhaps the king was right to entrust me with this\ntask. I must proceed with caution.',
+        msg12   = 'The thief was not hiding here. Overall, the camp did\nnot look like that of a bandit group. I could not\nlocate any stolen treasure. Also, the armament was\nmore like that of normal peasants than bandits.\n\nEven though we couldn\'t salvage much from the flames,\nthe extinct buildings provided some charcoal.',
+        msg13   = 'With this iron we could make weapons. Since there is\nno coal in the mountains, we have to make do with\ncharcoal from burned buildings.',
+        msg14   = 'The first sip of beer on this trip, a real relief.\nThe morale of my men will be unbroken and we can\ntrain some new recruits. If only drinks were always\navailable iced. A magic cupboard where it\'s cold. I\nguess that\'s the beer talking\n\n*hiccups*',
+        msg15   = 'Now we can produce tools, tools of war. A constant\nsupply of iron and coal is important to keep the\nforge fire going. Also the beer should not be\nforgotten.',
+        msg16   = 'Soon we will be able to add new recruits to our\nranks. These bandits can oppose me all they want, but\nin the end I will win.\n\nI\'m beginning to like this job. Normally, I only take\ncare of the troops, not the infrastructure.',
+        msg17   = 'What a beautiful bay. The ruin shows that the thief\nmust have landed here and the ship just drifted. I\nshould build a harbor and establish a supply line.',
+        msg18   = 'It looks like I will not receive the expected\nsupport. The king has only provided me with a\ncontubernium. Moreover, he finds fault with the fact\nthat the task has not yet been completed and that I\nhave wasted valuable time building a harbor instead.\nI must hurry, no one has yet survived the wrath of\nthe ruler.',
+        msg19   = 'These bandits look very rich. The thief probably came\nthis way and paid them handsomely to get passage. I\nhave to be careful, many swords can be hired for the\nright pay. There may be another route I could take.',
+        msg20   = 'As much as I tortured the prisoners, they could tell\nme little about a thief. He doesn\'t seem to have come\nthis way. In the end, is it true that these peasants\nmerely had some luck and struck gold? Even if they\nhad, they would have had to cooperate with a\ncommander of the king.\n\nAt least I was able to secure some coal and a few\ngold coins.',
+        msg21   = 'This is the thief\'s camp! Finally, the fulfillment of\nmy task is near. I must destroy it and catch the\nthief. The king demands that I hand him over alive.\n\nIt looks like they have partially rebuilt the\nwatchtowers. The fortifications have not been manned\nfor a long time, since the north has been subdued.\nHardly a soul can survive in the barren mountains.',
+        msg22   = 'A large amount of weapons were made here. This is the\norigin of the markings for iron that we could\ndiscover again and again on our way. Apparently they\nonly removed the upper, quickly accessible layers.\nFortunately, we were fast enough and they could not\nupgrade any farmers with the weapons.',
+        msg23   = 'We\'ve turned over every stone in this damn place and\nfound no trace. The thief must have simply fled to\nthe north. He must continue to carry the ring with\nhim because there is no trace of it either. With our\nequipment, however, we can\'t follow into the cold of\nthe north. The ashcord mountain is treacherous and\nnotorious for the disappearance of unwary hikers.',
+        msg24   = 'Looks like a pagan ritual. I wonder what was\nsacrificed here. Man, animal or even both. Let the\npeasants believe what they want, I believe in the\nstrength of my sword arm.',
+        msg25   = 'Another looted camp. These animals will stop at\nnothing. Here, too, there are no bodies to be found -\nor they are buried under the rubble.',
+        msg26   = 'What happened here. Actually, there should be a small\nguard post here. Is the thief\'s unit so big that they\ncan overrun a royal garrison? There are no bodies\nhere either.',
+        msg27   = 'Hauling the material up the mountains is arduous and\ntakes a lot of time. i should make some improvements\nand set up camps along the way. This should allow me\nto move faster and give me a tactical advantage.',
 
         hosttitle = 'Important',
         hosthint = 'Please check the addon settings. You are allowed to change some of them. This may result in a difficulty change which leads to a different experience than expected.\n\n\nReport any bugs you encounter!\n'
+    },
+    de =
+    {
+        nameAI = 'Unbekannte Fraktion',
+
+        textLogbook = 'Im Logbuch finden sich Hinweise zur aktuellen Aufgabe(n).',
+        salvageCoal = 'Es wurden 20 Kohle geborgen.',
+
+        lookhere    = 'Ort des Geschehens',
+
+        tasks_main  = "Hauptziel(e):",
+        tasks_sub   = "Nebenziel(e):",
+        tasks_hint  = "[?] = Verstecktes oder unentdecktes Ziel\n[ ] = Aufgabe noch nicht abgeschlossen\n[+] = Aufgabe wurde abgeschlossen",
+        tasks_legend = "Legende:",
+
+        task1_1 = "[ ] Den Dieb einholen",
+        task1_2 = "[ ] Die Wachen besiegen und das Lager durchsuchen",
+        task1_3 = "[+] Dem Dieb Richtung Norden folgen (Nächste Mission)",
+
+        task2_1 = "[ ] Die Schiffe Zerlegen",
+        task2_2 = "[+] Die Schiffe wurden zerlegt",
+
+        task3_101 = "[ ] Mindestens zwei Sägemühlen bauen",
+
+        task4_101 = "[ ] Weiter Erkunden",
+        
+        task5_1 = "[ ] Eine größere Armee rekrutieren",
+        task5_2 = "[+] Die Armee wächst",
+
+        task6_101 = "[ ] Nahrungsquelle suchen",
+        task6_102 = "[ ] Einen Weg finden vom Fischerdorf Fisch zu erhalten",
+        task6_103 = "[+] Das Fischerdorf wurde befreundet",
+        task6_104 = "[+] Das Fischerdorf wurde geplündert",
+
+        task7_101 = "[ ] Bier brauen",
+        task7_102 = "[+] Bier wird gebraut",
+
+        task8_101 = "[ ] Spuren von Eisen finden und abbauen",
+        task8_102 = "[+] Eisen wird abgebaut",
+
+        task9_101 = "[ ] Eisenschmelze und Schmiede bauen",
+        task9_102 = "[+] Waffen können geschmiedet werden",
+
+        task10_101 = "[ ] Einen Hafen bauen für Nachschub",
+        task10_102 = "[+] Nachschub wurde geliefert",
+
+        task11_101 = "[ ] Mehr Holzkohle finden",
+
+        title   = 'Die Verfolgungsjagd',
+
+        title2  = 'Logbuch des kommandierenden Offiziers',
+
+        msg1    = 'Der König hat mich ausgesendet um einen Dieb zu\nstellen. Angeblich wurde ein Ring aus dem\nPrivatbesitz geraubt. Ich bin dem Verdächtigen bis in\ndieses abgelegene Land gefolgt wo ich sein zerstörtes\nSchiff an der Küste liegen sah. Auch unser Schiff ist\ndaneben auf Grund gelaufen und wir sind auf uns\nalleine gestellt. Einige wichtige Werkzeuge die bei\ndiesem Unterfangen nützlich gewesen wären liegen nun\nauf dem Grund des Meeres.\n\nIch weiß noch immer nicht warum ich für einen\neinzelnen gestohlenen Ring entsendet werde. Diese\nAufgabe liegt doch weit unter meinen Fähigkeiten, ich\nfrage mich ob mehr dahinter steckt.\n\nJetzt ist nicht der richtige Zeitpunkt um darüber zu\ngrübeln, wir benötigen etwas Baumaterial um die\nVerfolgung aufnehmen zu können. Dazu können wir die\nalten Schiffe zerlegen und zu wertvollem Baumaterial\nverarbeiten.',
+        msg2    = 'Nun haben wir einige Ressourcen um dem Dieb schnell\nzu folgen. Ich habe die Zeit genutzt um mich ein\nwenig umzusehen. Ich konnte einige Spuren zerstörter\nGebäude entdecken. Diese Spur führt in den Westen.\nDie Asche ist noch warm. Ich bin zuversichtlich, dass\ndiese Aufgabe schnell erledigt ist.',
+        msg3    = 'Hier befand sich noch vor kurzem ein Lager. Die Feuer\nsind jedoch schon lange erloschen. Ich bin der Spur\nin die falsche Richtung gefolgt, im Osten müssen die\nSpuren frischer sein. Glücklicherweise wurden einige\nWerkzeuge zurückgelassen. Mit deren Hilfe kann ich\nneue Pfade schaffen um schneller voran zu kommen. Ich\nwerde einige meiner Männer aussenden um die Werkzeuge\nzu bergen.\n\nBis dahin sollte ich im Osten weiter Ausschau halten.',
+        msg4    = 'Umgestürzte Bäume und Spuren. Hier ist eine größere\nGruppe durchgezogen. Ich bin mir nun sicher, dass der\nWeg Richtung Osten der richtige ist. Anhand der\nSpuren kann ich nicht genau feststellen, wie groß die\nEinheit selbst ist. Ich sollte vorsichtig vorgehen um\nnicht im dichten Wald überrascht zu werden.\n\nDie Werkzeuge sind endlich in unserem Lager\nangekommen. Die Verbesserung der Transportwege sollte\noberste Priorität haben. Vielleicht bietet dieses\nLand aber noch mehr als das Auge zunächst offenlegt.\n\nWir haben außerdem etwas Holzkohle aus den\nabgebrannten Gebäuden gewinnen können. Auch wenn wir\ndiese derzeit nicht benötigen, so sollten wir doch\njeden Rohstoff sammeln der uns zur Verfügung steht.',
+        msg5    = 'Eine geplünderte Farm? Wir können den einstigen\nBewohnern nicht mehr helfen und ich vermag auch keine\nLeichen ausfindig machen. Vielleicht konnten sie\nfliehen bevor ihnen schlimmeres widerfahren ist.\n\nUm einen königlichen Bauernhof in so kurzer Zeit\ndermaßen zu verwüsten ist eine ordentliche Mannstärke\nvonnöten. Ich muss unbedingt eine kleine Armee\naufbauen um nicht selbst übermannt zu werden. Zu\nunserem Glück sind die Felder noch bestellt und wir\nkönnen den Weizen nutzen. Zur Produktion von Nahrung\nkönnen wir nicht genügend gewinnen, ein wenig Bier\nsollten wir jedoch brauen können. Das Land wirkt sehr\ntrocken, ich weiß nicht wie ergiebig unsere niedrigen\nBrunnen sind.\n\nDa wir nur mit leichtem Gepäck ausgezogen sind, haben\nwir nicht die richtigen Werkzeuge für geologische\nUntersuchungen. Ich hoffe wir können Spuren von Eisen\nfinden, ein paar Spitzhacken für Bergarbeiter konnten\nwir sicherstellen. Die Arbeit in den Minen ist\nbeschwerlich, wir müssen eine Quelle für Nahrung\nfinden',
+        msg6    = 'Die Spur ist mittlerweile kalt geworden, wir sind zu\nlangsam. Hier gibt es nichts als Berge soweit das\nAuge reicht. An der Weggabelung müssen wir uns\nentscheiden in welche Richtung wir weiter vordringen.',
+        msg7    = 'Aus der Ferne habe ich einen Fischer am Ufer sehen\nkönnen. Er scheint mich bemerkt zu haben, schenkte\nmir aber keine weitere Beachtung. Sein kleines\nFischerdorf scheint uns neutral gegenüber zu stehen.\nWeder werden wir mit offenen Armen empfangen noch mit\nSchwertern verfolgt.\n\nVielleicht gibt es eine Möglichkeit auf dem Einen\nODER Anderen Weg die Nahrungsmittelversorgung\nsicherzustellen.',
+        msg8    = 'Das Fischerdorf ist wohl interessiert, aber nicht zu\nden angebotenen Bedingungen. Sie wünschen sich eine\ndauerhafte Sicherheit, dass wir sie nicht überfallen\nwerden.',
+        msg9    = 'Als ich mich als Kommandant des Königs zu erkennen\ngab war die Freude im Fischerdorf groß. Obwohl ich\ndas Gefühl habe, dass etwas unausgesprochenes in der\nLuft liegt. Für meine Aufgabe sind die Belange der\nBauernlümmel aber auch nicht weiter Wichtig.\n\nGroßzügig haben wir eine Lieferung Fisch erhalten\nwelche für die Märkte in Serdica bestimmt waren. Da\nder letzte Winter wohl besonders mild ausgefallen\nist, haben sie uns noch etwas Holzkohle überlassen.\nDiese Rohstoffe bringen mich der Erfüllung meiner\nAufgabe näher.',
+        msg10   = 'Als ich mich als Kommandant des Königs zu erkennen\ngab war die Angst im Fischerdorf groß. Einige dieser\nBauernlümmel griffen zu den Waffen, sie waren aber\nkeine ernstzunehmende Herausforderung.\n\nWir haben eine Fischlieferung beschlagnahmt welche\nfür die Märkte in Serdica bestimmt waren. Außerdem\nhaben wir aus den Überresten der Gebäude etwas\nHolzkohle gewinnen können. Diese Rohstoffe bringen\nmich der Erfüllung meiner Aufgabe näher.',
+        msg11   = 'Diese Banditen besitzen fortschrittliche\nTechnologien. Allerdings scheint das Gerät noch nicht\neinsatzfähig. Von wem konnten sie derart\nfortschrittliche Pläne erbeuten?\n\nVielleicht hat der König richtig entschieden mich mit\ndieser Aufgabe zu betrauen. Ich muss vorsichtig\nvorgehen.',
+        msg12   = 'Der Dieb hat sich hier nicht versteckt. Insgesamt\nwirkte das Lager nicht wie das einer Banditen Gruppe.\nIch konnte keinen gestohlenen Schätze ausfindig\nmachen. Auch die Bewaffnung glich eher der von\nnormalen Bauern als Banditen.\n\nAuch wenn wir nicht viel aus den Flammen retten\nkonnten, so lieferten die erloschenen Gebäude etwas\nHolzkohle.',
+        msg13   = 'Mit diesem Eisen könnten wir Waffen herstellen. Da es\nin den Bergen keine Kohle gibt müssen wir mit\nHolzkohle aus abgebrannten Gebäuden auskommen.',
+        msg14   = 'Der erste Schluck Bier auf dieser Reise, eine wahre\nWohltat. Die Moral meiner Männer wird ungebrochen\nsein und wir können einige neue Rekruten ausbilden.\nWenn man doch nur immer Getränke eisgekühlt zur\nVerfügung hätte. Ein magischer Schrank in dem es kalt\nist. Da spricht wohl das Bier aus mir.\n\n*hicks*',
+        msg15   = 'Jetzt können wir Werkzeuge herstellen,\nKriegswerkzeuge. Ein konstanter Nachschub an Eisen\nund Kohle ist wichtig um das Schmiedefeuer am laufen\nzu halten. Auch das Bier sollte nicht in\nVergessenheit geraten.',
+        msg16   = 'Bald schon werden wir neue Rekruten in unsere Reihen\naufnehmen können. Diese Banditen können sich mir\nentgegen stellen wie sie wollen, schlussendlich werde\nich siegen.\n\nLangsam finde ich Gefallen an diesem Auftrag.\nNormalerweise kümmere ich mich nur um die Truppen,\nnicht aber um die Infrastruktur.',
+        msg17   = 'Welch wunderschöne Bucht. Die Ruine zeigt, dass der\nDieb wohl hier gelandet ist und das Schiff nur\nabgetrieben ist. Ich sollte einen Hafen bauen und\neine Versorgungslinie aufbauen.',
+        msg18   = 'Es sieht so aus, als würde ich nicht die erwartete\nUnterstützung erhalten. Der König hat mir lediglich\nein Contubernium zur Verfügung gestellt. Außerdem\nbemängelt er, dass die Aufgabe noch nicht erfüllt ist\nund ich stattdessen wertvolle Zeit mit dem Bau eines\nHafens verschwendet habe. Ich muss mich beeilen, den\nZorn des Herrschers hat noch keiner überlebt.',
+        msg19   = 'Diese Banditen sehen sehr reich aus. Der Dieb kam\nwohl hier entlang und bezahlte sie großzügig um\nDurchlass zu erhalten. Ich muss vorsichtig sein,\nviele Schwerter lassen sich für den richtigen Lohn\nanheuern. Möglicherweise gibt es einen anderen Weg\nden ich einschlagen könnte.',
+        msg20   = 'So sehr ich die Gefangenen auch gefoltert habe, so\nwenig konnten sie mir über einen Dieb berichten. Er\nscheint nicht hier entlang gekommen zu sein. Soll es\nam Ende stimmen, dass diese Bauern lediglich etwas\nGlück hatten und auf Gold gestoßen sind? Selbst wenn,\nso hätten sie mit einem Kommandanten des Königs\nkooperieren müssen.\n\nImmerhin konnte ich etwas Kohle und ein paar\nGoldmünzen sicherstellen.',
+        msg21   = 'Das ist das Lager des Diebes! Endlich ist die\nErfüllung meiner Aufgabe nahe. Ich muss es zerstören\nund den Dieb fangen. Der König verlangt, dass ich ihn\nlebend übergebe.\n\nEs sieht so aus, als hätten sie die Wachtürme\nteilweise wieder aufgebaut. Die Wehranlagen sind\nlange nicht mehr besetzt, seit der Norden sich\nunterworfen hat. In den kargen Bergen kann auch kaum\neine Menschenseele überleben.',
+        msg22   = 'Hier wurde eine große Menge an Waffen hergestellt.\nDaher stammen die Markierungen für Eisen die wir auf\nunserem Weg immer wieder entdecken konnten. Scheinbar\nhaben sie nur die oberen, schnell erreichbaren\nSchichten abgetragen. Zum Glück waren wir schnell\ngenug und sie konnten mit den Waffen keine Bauern\naufrüsten.',
+        msg23   = 'Wir haben jeden Stein an diesem verdammten Ort\numgedreht und keine Spur gefunden. Der Dieb muss\neinfach in den Norden geflohen sein. Er muss den Ring\nweiter bei sich tragen denn auch von diesem fehlt\njede Spur. Mit unserer Ausrüstung können wir jedoch\nnicht in die Kälte des Nordens folgen. Der\nAschenklafter Berg ist tückisch und berüchtigt für\ndas Verschwinden unachtsamer Wanderer.',
+        msg24   = 'Sieht aus wie ein heidnisches Ritual. Ich frage mich\nwas hier wohl geopfert wurde. Mensch, Tier oder gar\nbeides. Sollen die Bauern glauben woran sie wollen,\nich glaube an die Stärke meines Schwertarms.',
+        msg25   = 'Ein weiteres geplündertes Lager. Diese Tiere machen\nvor nichts halt. Auch hier sind keine Leichen zu\nfinden - oder sie sind unter den Trümmern begraben.',
+        msg26   = 'Was ist hier passiert. Eigentlich sollte hier ein\nkleiner Wachposten stehen. Ist die Einheit des Diebes\nso groß, dass sie eine königliche Garnison überrennen\nkönnen? Auch hier gibt es keine Leichen.',
+        msg27   = 'Das Material die Berge hinauf zu schleppen ist\nbeschwerlich und nimmt viel Zeit in Anspruch. ich\nsollte einige Verbesserungen vornehmen und entlang\ndes Weges Lager errichten. So sollte es mir möglich\nsein schneller zu agieren und mir einen taktischen\nVorteil zu verschaffen.',
+
+        hosttitle = 'Wichtig',
+        hosthint = 'PBitte überprüfe die Einstellungen der Addons, einige können individuell angepasst werden. Durch eine Anpassung kann sich der Schwierigkeitsgrad ändern was zu einer anderen Spielerfahrung als erwartet führen kann.\n\n\nBitte melde alle Fehler die auftreten!\n'
     }
 })
 
@@ -148,7 +232,7 @@ function MissionText(e, silent)
 
     if(msg ~= ('msg' .. tostring(e))) then
         if not silent then
-            rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n' .. _('logbook'), IM_RIDER, true)
+            rttr:MissionStatement(0, _('Diary'), _('title2').. '\n\n' ..msg .. '\n\n\n\n\n\n\n' .. _('logbook'), IM_RIDER, true)
         end
     else
         rttr:Log("Error: no Translation found!" .. msg)
@@ -162,8 +246,6 @@ eIdx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2
 
 function onSettingsReady()
     rttr:Log("-----------------------\n Mission Script loaded... \n-----------------------\n")
-   -- rttr:MsgBox('Information', 'You can change some addons. They have been set to the original intention, so keep that in mind.', false)
-
     rttr:SetAddon(ADDON_AI_DEBUG_WINDOW, false)
     rttr:SetAddon(ADDON_ADJUST_MILITARY_STRENGTH, 1)
     rttr:SetAddon(ADDON_DEFENDER_BEHAVIOR, 2)
@@ -890,8 +972,6 @@ function MissionEvent(e, onLoad)
             rttr:GetPlayer(0):AddWares({[GD_COAL] = 20})
             rttr:PostMessageWithLocation(0, _('salvageCoal'), 91, 84)
         end
-    elseif(e == 99) then
-        rttr:GetWorld():AddStaticObject(72, 28, 561, 0xFFFF, 2)
     end
 
     -- update event state
@@ -1251,8 +1331,8 @@ function addPlayerRes(p, onLoad)
             [JOB_BUILDER            ] = 1,
             [JOB_PLANER             ] = 1,
             [JOB_GEOLOGIST          ] = 0,
-            [JOB_PRIVATE            ] = 20,
-            [JOB_PRIVATEFIRSTCLASS  ] = 10,
+            [JOB_PRIVATE            ] = 24,
+            [JOB_PRIVATEFIRSTCLASS  ] = 16,
             [JOB_SERGEANT           ] = 1,
             [JOB_OFFICER            ] = 0,
             [JOB_GENERAL            ] = 0,
