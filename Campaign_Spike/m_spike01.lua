@@ -232,7 +232,7 @@ function MissionText(e, silent)
 
     if(msg ~= ('msg' .. tostring(e))) then
         if not silent then
-            rttr:MissionStatement(0, _('Diary'), _('title2').. '\n\n' ..msg .. '\n\n\n\n\n\n\n' .. _('logbook'), IM_RIDER, true)
+            rttr:MissionStatement(0, _('Diary'), _('title2').. '\n\n' ..msg .. '\n\n\n\n\n\n\n' .. _('textLogbook'), IM_RIDER, true)
         end
     else
         rttr:Log("Error: no Translation found!" .. msg)
@@ -633,7 +633,7 @@ function onGameFrame(gf)
         MissionEvent(2)
     end
     
-    if (eState[10] == 1 and (rttr:GetPlayer(1):GetNumBuildings(BLD_HARBORBUILDING) + rttr:GetPlayer(1):GetNumBuildings(BLD_HEADQUARTERS) <= 0)) then
+    if (eState[10] == 1 and ((rttr:GetPlayer(1):GetNumBuildings(BLD_HARBORBUILDING) + rttr:GetPlayer(1):GetNumBuildings(BLD_HEADQUARTERS)) <= 0)) then
         MissionEvent(10)
     end
     
@@ -875,7 +875,7 @@ function MissionEvent(e, onLoad)
             rttr:GetPlayer(0):AddWares({[GD_COAL] = 20, [GD_FISH] = 200})
         end
     elseif(e == 10) then
-        task[6] = 104
+        tasks[6] = 104
         
         if(not onLoad) then
             rttr:GetPlayer(0):AddWares({[GD_COAL] = 40, [GD_FISH] = 100})
