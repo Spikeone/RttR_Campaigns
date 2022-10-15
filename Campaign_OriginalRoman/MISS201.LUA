@@ -432,9 +432,16 @@ end
 -------------------------------- mission events -------------------------------
 function onGameFrame(gf)
     -- events called by GetBuildingCount(), GetWareCount() or GetPeopleCount()
-    
+    if((gf%20)~=0) then
+        return
+    end
+
     if(rttr:GetPlayer(1):GetNumBuildings(BLD_CATAPULT) + rttr:GetPlayer(1):GetNumBuildingSites(BLD_CATAPULT) > 0) then
         MissionEvent(98)
+    end
+
+    if(rttr:GetPlayer(0):GetStatisticsValue(STAT_COUNTRY) > 800) then
+        MissionEvent(7)
     end
 
 end
@@ -445,9 +452,7 @@ function onOccupied(p, x, y)
         return
     end
 
-    if(     (x == 37) and (y == 67) ) then MissionEvent(7)      -- onMapsize() not implemented
-    elseif( (x == 31) and (y == 66) ) then MissionEvent(7)      -- onMapsize() not implemented
-    elseif( (x == 41) and (y == 16) ) then MissionEvent(10)
+    if( (x == 41) and (y == 16) ) then MissionEvent(10)
     elseif( (x == 48) and (y ==  9) ) then MissionEvent(99)
     end
 end
