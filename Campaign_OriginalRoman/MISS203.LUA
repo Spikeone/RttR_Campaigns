@@ -23,9 +23,9 @@ end
 eIdx = {1, 2, 3, 98, 99}
 
 rttr:RegisterTranslations(
-{ 
-    cs = 
-    { 
+{
+    cs =
+    {
         Diary   = 'Deník',
 
         msg1    = 'Devátý den devátého měsíce čtvrtého roku.\n\nVčera jsme potkali cizince se skutečně děsivým vzhledem. Vypadá jako obr, má světle modré oči a zářící žluté vlasy. Kdysi dávno jsem v jedné krčmě v římském přístavu slyšel vyprávění od starého mořského vlka o obrech žijíchích na severu se světlou pletí, modrými oči a vlasech ze zlata. No, ty histroky byly trochu přehnané, ale jinak ten popis dost odpovídá. Jak se sem asi dostal? Je hodně podezíravý a odmítá s námi mluvit. Zkusíme se k němu chovat jako k našemu hostovi a za pár dní třeba změní svůj postoj. Zdá se, že je hladový, chudák.',
@@ -40,7 +40,7 @@ rttr:RegisterTranslations(
         msg99   = 'Dostali jsme se k bráně a aktivovali ji. Cesta je volná.',
         msgh99  = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
-    de = 
+    de =
     {
         Diary   = 'Tagebuch',
 
@@ -56,8 +56,8 @@ rttr:RegisterTranslations(
         msg99   = 'Wir haben das Tor erreicht und aktiviert. Der Weg\nist frei.\n\n\n\n\n',
         msgh99  = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet schon auf Sie...'
     },
-    en = 
-    { 
+    en =
+    {
         Diary   = 'Diary',
 
         msg1    = 'The Ninth Day of the Ninth Month of the Fourth Year.\n\nYesterday we met a stranger of truly frightening\nappearance. He is huge in size, has light blue eyes\nand glowing golden hair. Long ago in a Roman harbor\ntavern I once heard stories of such people who live\nin the far north. How did he get here? He is\nsuspicious and refuses to talk to us. We shall treat\nhim as our guest for a few days (the poor fellow\nappears to be starving). Perhaps then he will change\nhis attitude.',
@@ -84,6 +84,8 @@ function MissionText(e)
         rttr:SetMissionGoal(0, msgh)
     elseif(msg ~= ('msg' .. tostring(e))) then
         rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+    else
+        rttr:Log("Error: no Translation found: " .. _('msg' .. tostring(e))
     end
 end
 
@@ -93,7 +95,7 @@ function onSettingsReady()
     rttr:Log("-----------------------\n MISS203.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
-    rttr:SetGameSettings({                      -- TEST
+    rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
         ["lockedTeams"] = false
@@ -106,15 +108,13 @@ function onSettingsReady()
     rttr:GetPlayer(1):SetNation(NAT_VIKINGS)    -- nation
     rttr:GetPlayer(1):SetColor(1)               -- yellow
     rttr:GetPlayer(1):SetName('Erik')           -- Enemy Name
+    rttr:GetPlayer(1):SetTeam(TM_TEAM1)
 
     rttr:GetPlayer(2):SetAI(3)                  -- hard AI
     rttr:GetPlayer(2):SetNation(NAT_VIKINGS)    -- nation
     rttr:GetPlayer(2):SetColor(2)               -- red
     rttr:GetPlayer(2):SetName('Knut')           -- Enemy Name
-
-    rttr:GetPlayer(1):SetTeam(TM_TEAM1)         -- TEST
     rttr:GetPlayer(2):SetTeam(TM_TEAM1)
-    -- 
 end
 
 function getAllowedChanges()    
@@ -126,29 +126,29 @@ function getAllowedChanges()
         ["aiNation"]    = false, 
         ["aiColor"]     = false,
         ["aiTeam"]      = false
-            }    
+    }
 end
 
 -- start callback
 function onStart(isFirstStart)
-    for i = 0, 2 do                             -- set resources and buildings
+    for i = 0, 2 do                         -- set resources and buildings
         addPlayerRes(i, not isFirstStart)
         addPlayerBld(i, not isFirstStart)
     end
 
-    eState = {}                                 -- enable all events
+    eState = {}                             -- enable all events
     for _, i in ipairs(eIdx) do
         eState[i] = 1
     end
 
-    if not isFirstStart then                    -- initialize history of all called events, event counter at ["n"]
+    if not isFirstStart then                -- initialize history of all called events, event counter at ["n"]
         for i = 1, eHist["n"] do
-            MissionEvent(eHist[i], true)        -- call events without mission text to activate all achievements
+            MissionEvent(eHist[i], true)    -- call events without mission text to activate all achievements
         end
 
     else
         eHist = {["n"] = 0}
-        MissionEvent(1)                         -- initial event / start screen
+        MissionEvent(1)                     -- initial event / start screen
     end
     
     if isFirstStart then
@@ -469,7 +469,7 @@ function onOccupied(p, x, y)
     if(     (x == 10) and (y == 37) ) then MissionEvent(2)
     elseif( (x == 97) and (y == 68) ) then MissionEvent(99)
     end
-    
+
     if(not rttr:GetPlayer(1):IsInRestrictedArea(x, y)) then 
         MissionEvent(98) -- for lifting restrictions
     end
@@ -500,7 +500,7 @@ function MissionEvent(e, onLoad)
     elseif(e == 98) then
         rttr:GetPlayer(1):SetRestrictedArea()
         rttr:GetPlayer(2):SetRestrictedArea()
-        
+
     elseif(e == 99) then
         -- TODO: EnableNextMissions()
         -- Show opened arc

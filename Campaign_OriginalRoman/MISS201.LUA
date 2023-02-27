@@ -263,7 +263,6 @@ function addPlayerBld(p, onLoad)
         --rttr:GetPlayer(p):AIConstructionOrder(36,30, BLD_GUARDHOUSE)
         --rttr:GetPlayer(p):AIConstructionOrder(35,24, BLD_GUARDHOUSE)
         rttr:GetPlayer(p):AIConstructionOrder(37,27, BLD_QUARRY)
-
     end
 end
 
@@ -432,7 +431,6 @@ function onGameFrame(gf)
     if(rttr:GetPlayer(0):GetStatisticsValue(STAT_COUNTRY) > 800) then
         MissionEvent(7)
     end
-
 end
 
 function onOccupied(p, x, y)

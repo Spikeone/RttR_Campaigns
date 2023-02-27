@@ -88,7 +88,6 @@ function MissionText(e)
     else
         rttr:Log("Error: no Translation found: " .. _('msg' .. tostring(e))
     end
-
 end
 
 
@@ -152,7 +151,7 @@ function onStart(isFirstStart)
         eHist = {["n"] = 0}
         MissionEvent(1)                     -- initial event / start screen
     end
-    
+
     if isFirstStart then
         -- type 8 == 7 in rttr
         rttr:GetWorld():AddAnimal( 70,  72, SPEC_DUCK)
@@ -486,7 +485,6 @@ function onOccupied(p, x, y)
     if(not rttr:GetPlayer(1):IsInRestrictedArea(x, y)) then 
         MissionEvent(98) -- for lifting restrictions
     end
-
 end
 
 function onExplored(p, x, y, o)
