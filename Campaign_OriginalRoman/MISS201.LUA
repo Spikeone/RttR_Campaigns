@@ -134,7 +134,7 @@ function MissionText(e)
     elseif(msg ~= ('msg' .. tostring(e))) then
         rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
     else
-        rttr:Log("Error: no Translation found: " .. _('msg' .. tostring(e))
+        rttr:Log("Error: no Translation found: " .. _('msg' .. tostring(e)))
     end
 end
 
