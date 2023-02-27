@@ -336,7 +336,7 @@ function addPlayerRes(p, onLoad)
         [JOB_ARMORER            ] = 4,
         [JOB_BUILDER            ] = 4,
         [JOB_PLANER             ] = 4,
-        [JOB_GEOLOGIST          ] = 4,
+        [JOB_GEOLOGIST          ] = 0,
         [JOB_PRIVATE            ] = 8,
         [JOB_PRIVATEFIRSTCLASS  ] = 0,
         [JOB_SERGEANT           ] = 0,
@@ -426,6 +426,7 @@ function MissionEvent(e, onLoad)
 
     elseif(e == 4) then
         rttr:GetPlayer(0):DisableBuilding(BLD_BARRACKS, not onLoad)
+        rttr:GetPlayer(0):AddPeople({[JOB_GEOLOGIST] = 4})
         eState[5] = 1
 
     elseif(e == 5) then
