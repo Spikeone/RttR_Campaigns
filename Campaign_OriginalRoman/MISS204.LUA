@@ -111,8 +111,8 @@ function onSettingsReady()
     rttr:GetPlayer(2):SetTeam(TM_TEAM1)
 end
 
-function getAllowedChanges()    
-    return  { 
+function getAllowedChanges()
+    return  {
         ["addonsAll"]   = false,
         ["ownNation"]   = false,
         ["ownColor"]    = false,
@@ -120,7 +120,7 @@ function getAllowedChanges()
         ["aiNation"]    = false, 
         ["aiColor"]     = false,
         ["aiTeam"]      = false
-            }    
+    }
 end
 
 -- start callback
