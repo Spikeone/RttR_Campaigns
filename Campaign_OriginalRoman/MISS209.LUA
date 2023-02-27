@@ -23,8 +23,34 @@ end
 eIdx = {1, 2, 98, 99}
 
 rttr:RegisterTranslations(
-{ 
-    en = 
+{
+    cs =
+    { 
+        Diary   = 'Deník',
+
+        msg1    = 'Když se schiluje k poslední a nejnebezpečnější kapitole naší dlouhé cesty domů, vzduch je cítit očekávání a dokonce i malá neochota. Uvidíme ještě někdy Řím? Musíme zmobilizovat všechny své síly, protože tento ostrov se zdá být naší nejlepší šancí ...',
+        msgh1   = 'Buď opatrný. Neútoč, dokud si nebudeš jist zda můžeš porazit oba nepřátele.',
+
+        msg2    = '17. den šestého měsíce 10. roku.\n\nVe skutečnosti to jsou římané kdo nám stojí v cestě k desáté bráně. Nejsou vůbec přátelští. Možná to je druhá strana mince, nepřátelský bratr Remus. Možná je jejich brána ta, která nás konečně zavede zpět do našeho milovaného Říma. Jak říká stará legenda: \"Kvůli Římu bude bratr bojovat proti bratrovi.\" Téměř deset let neustále sníme o své vlasti. Teď se nevzdáme.',
+        msgh2   = 'Shromážděte všechny své síly, abyste je mohli prorazit! Zajměte bránu!',
+
+        msg99   = 'Poslední den 10. roku. Poslední záznam Oktaviána v tomto deníku\n\nUspěli jsme. Zítra se vracíme do Říma přesně deset let poté, co jsme se stali trosečníky na tomto ostrově. Deset let, během nichž jsme cestovali ve stopách našich předků. Deset let, během nichž jsme se dozvěděli, co dělalo Řím tak skvělým. Nabídneme bohům velkou hostinu a znovu uvidíme naše rodiny a přátele. Už se nemůžu dočkat.',
+        msgh99  = 'Uspěl jsi!'
+    },
+    de =
+    {
+        Diary   = 'Tagebuch',
+
+        msg1    = 'Die Aura der Entscheidung liegt über diesem Ort.\nWerden wir Rom jemals wiedersehen? Wir müssen alle\nunsere Kraft zusammennehmen, denn diese Insel\nscheint unsere große Chance zu sein...',
+        msgh1   = 'Seien Sie vorsichtig. Sie sollten den Feind erst\nangreifen, wenn sie es mit beiden Gegnern aufnehmen\nkönnen.',
+
+        msg2    = '17.Tag im 6.Monat des 10.Jahres\n\nRömer. Vor dem zehnten Tor stehen tatsächlich Römer.\nAber sie sind uns keineswegs freundlich gesinnt.\nVielleicht sind sie die andere Seite derselben\nMünze, der verfeindete Bruder Remus. Vielleicht ist\nihr Tor dasjenige, welches uns in unser geliebtes\nRom zurückbringt.\nEs ist wie die alte Sage:\nUm Roms Willen müssen wir den Bruderkampf aufnehmen.\nSeit fast zehn Jahren träumen wir tagtäglich von\nunserer Heimat. Wir werden jetzt nicht aufgeben.',
+        msgh2   = 'Sammeln Sie Ihre Kräfte um durchzubrechen! Suchen\nSie nach dem Tor!',
+
+        msg99   = 'Letzter Tag des 10.Jahres.\nDes Octavius letzter Eintrag in dieses Tagebuch\n\nWir haben es geschafft. Morgen werden wir nach Rom\nzurückkehren. Genau zehn Jahre, nachdem es uns in\ndiese Inselwelt verschlagen hat. Zehn Jahre, in\ndenen wir auf den Spuren unserer Väter wandelten.\nZehn Jahre, in denen wir lernten, was Rom groß\ngemacht hat. Wir werden den Göttern ein großes\nDankesfest bieten und unsere Familien und Freunde\nwiedersehen.\nIch kann es kaum erwarten.',
+        msgh99  = 'Sie haben es geschafft!'
+    },
+    en =
     { 
         Diary   = 'Diary',
 
@@ -37,19 +63,7 @@ rttr:RegisterTranslations(
         msg99   = 'Last Day of the 10th Year.\nLast entry of Octavius in this Diary\n\nWe have succeeded. Tomorrow we shall return to Rome\nexactly ten years after becoming castaways on this\nisland. Ten years during which we traveled in the\nfootsteps of our forefathers. Ten years during which\nwe learned what made Rome so great. We shall offer a\ngreat feast of thanks to the gods and will see our\nfamilies and friends again.\nI can hardly wait.',
         msgh99  = 'You have succeeded!'
     },
-    de = 
-    {
-        Diary   = 'Tagebuch',
-
-        msg1    = 'Die Aura der Entscheidung liegt über diesem Ort.\nWerden wir Rom jemals wiedersehen? Wir müssen alle\nunsere Kraft zusammennehmen, denn diese Insel\nscheint unsere große Chance zu sein...',
-        msgh1   = 'Seien Sie vorsichtig. Sie sollten den Feind erst\nangreifen, wenn sie es mit beiden Gegnern aufnehmen\nkönnen.',
-
-        msg2    = '17.Tag im 6.Monat des 10.Jahres\n\nRömer. Vor dem zehnten Tor stehen tatsächlich Römer.\nAber sie sind uns keineswegs freundlich gesinnt.\nVielleicht sind sie die andere Seite derselben\nMünze, der verfeindete Bruder Remus. Vielleicht ist\nihr Tor dasjenige, welches uns in unser geliebtes\nRom zurückbringt.\nEs ist wie die alte Sage:\nUm Roms Willen müssen wir den Bruderkampf aufnehmen.\nSeit fast zehn Jahren träumen wir tagtäglich von\nunserer Heimat. Wir werden jetzt nicht aufgeben.',
-        msgh2   = 'Sammeln Sie Ihre Kräfte um durchzubrechen! Suchen\nSie nach dem Tor!',
-
-        msg99   = 'Letzter Tag des 10.Jahres.\nDes Octavius letzter Eintrag in dieses Tagebuch\n\nWir haben es geschafft. Morgen werden wir nach Rom\nzurückkehren. Genau zehn Jahre, nachdem es uns in\ndiese Inselwelt verschlagen hat. Zehn Jahre, in\ndenen wir auf den Spuren unserer Väter wandelten.\nZehn Jahre, in denen wir lernten, was Rom groß\ngemacht hat. Wir werden den Göttern ein großes\nDankesfest bieten und unsere Familien und Freunde\nwiedersehen.\nIch kann es kaum erwarten.',
-        msgh99  = 'Sie haben es geschafft!'
-} })
+})
 
 -- format mission texts
 function MissionText(e)
@@ -61,6 +75,8 @@ function MissionText(e)
         rttr:SetMissionGoal(0, msgh)
     elseif(msg ~= ('msg' .. tostring(e))) then
         rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+    else
+        rttr:Log("Error: no Translation found: " .. _('msg' .. tostring(e))
     end
 end
 
@@ -68,7 +84,7 @@ end
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
     rttr:Log("-----------------------\n MISS209.lua loaded... \n-----------------------\n")
-    rttr:ResetAddons()                          -- S2-settings
+    rttr:ResetAddons()
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
     rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
@@ -83,13 +99,12 @@ function onSettingsReady()
     rttr:GetPlayer(1):SetNation(NAT_ROMANS)     -- nation
     rttr:GetPlayer(1):SetColor(1)               -- yellow
     rttr:GetPlayer(1):SetName('Brutus')         -- Enemy Name
+    rttr:GetPlayer(1):SetTeam(TM_TEAM1)
 
     rttr:GetPlayer(2):SetAI(3)                  -- hard AI
     rttr:GetPlayer(2):SetNation(NAT_VIKINGS)    -- nation
     rttr:GetPlayer(2):SetColor(2)               -- red
     rttr:GetPlayer(2):SetName('Olof')           -- Enemy Name
-
-    rttr:GetPlayer(1):SetTeam(TM_TEAM1)
     rttr:GetPlayer(2):SetTeam(TM_TEAM1)
 end
 
@@ -116,8 +131,8 @@ function onStart(isFirstStart)
     end
 end
 
-function getAllowedChanges()    
-    return  { 
+function getAllowedChanges()
+    return {
         ["addonsAll"]   = false,
         ["ownNation"]   = false,
         ["ownColor"]    = false,
@@ -125,7 +140,7 @@ function getAllowedChanges()
         ["aiNation"]    = false, 
         ["aiColor"]     = false,
         ["aiTeam"]      = false
-            }    
+    }
 end
 
 -- save callback
@@ -418,7 +433,7 @@ function onOccupied(p, x, y)
 
     if( (x == 75) and (y == 40) ) then MissionEvent(99)
     end
-    
+
     if(not rttr:GetPlayer(1):IsInRestrictedArea(x, y)) then 
         MissionEvent(98) -- for lifting restrictions
     end
