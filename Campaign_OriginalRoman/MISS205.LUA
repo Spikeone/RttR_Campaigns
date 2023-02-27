@@ -24,7 +24,7 @@ eIdx = {1, 2, 3, 98, 99}
 
 rttr:RegisterTranslations(
 {
-    cs = 
+    cs =
     { 
         Diary   = 'Deník',
 
@@ -38,7 +38,7 @@ rttr:RegisterTranslations(
         msg99   = 'Našli jsme bránu a obsadili ji.',
         msgh99  = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
-    de = 
+    de =
     {
         Diary   = 'Tagebuch',
 
@@ -52,7 +52,7 @@ rttr:RegisterTranslations(
         msg99   = 'Wir haben das Tor gefunden und besetzt.',
         msgh99  = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet auf Sie...'
     },
-    en = 
+    en =
     { 
         Diary   = 'Diary',
 

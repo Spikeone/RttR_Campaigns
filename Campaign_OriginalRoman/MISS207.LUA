@@ -34,7 +34,7 @@ rttr:RegisterTranslations(
         msg99   = 'Našli jsme bránu a obsadili ji. Kdy dorazíme do cíle?',
         msg99   = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
-    de = 
+    de =
     {
         Diary   = 'Tagebuch',
 
@@ -44,7 +44,7 @@ rttr:RegisterTranslations(
         msg99   = 'Wir haben das Tor gefunden und besetzt. Wann werden\nwir unser Ziel wohl erreichen?',
         msg99   = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet auf Sie...'
     },
-    en = 
+    en =
     { 
         Diary   = 'Diary',
 

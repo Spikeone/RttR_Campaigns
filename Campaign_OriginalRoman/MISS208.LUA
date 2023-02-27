@@ -23,18 +23,18 @@ end
 eIdx = {1, 98, 99}
 
 rttr:RegisterTranslations(
-{ 
-    en = 
-    { 
-        Diary   = 'Diary',
+{
+    cs =
+    {
+        Diary   = 'Deník',
 
-        msg1    = 'Once again we find ourselves in a world that consists\nof ash and lava. The atmosphere carries the putrid\nsmell of sulphur. It all originates from the nearby\nvolcano which bellows out its vile contents across\nthe land.\n\nMy men are insisting we leave soon; I can only hope\nthat the gods will guide our steps.',
-        msgh1   = 'Find and occupy the gateway! Consider opportunities\nto build a harbor.',
-        
-        msg99   = 'We have found the gateway and occupied it. Let us\nremain here no longer than is necessary.',
-        msg99   = 'You have completed this mission. The next Chapter\nawaits you...'
+        msg1    = 'Opět se ocitáme ve světě, který se skládá z popela a lávy. Vzduchem se nese hnilobný zápach síry. Všechno pochází z nedaleké sopky, která chrlí svůj odporný obsah po celé zemi.\n\nMoji muži trvají na tom aby jsme brzy odešli; Mohu jen doufat, že bohové povedou naše kroky správnám směrem.',
+        msgh1   = 'Najdi a obsaďt bránu! Zvaž vhodné příležitosti k vybudování přístavu.',
+
+        msg99   = 'Našli jsme bránu a obsadili ji. Nezůstávejme tady déle, než je nezbytně nutné.',
+        msg99   = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
-    de = 
+    de =
     {
         Diary   = 'Tagebuch',
 
@@ -43,7 +43,18 @@ rttr:RegisterTranslations(
 
         msg99   = 'Wir haben das Tor gefunden und besetzt. Laßt uns\nhier nicht länger bleiben als nötig.',
         msgh99  = 'Sie haben diese Mission erfüllt. Das letzte Kapitel\nwartet jetzt auf Sie...'
-} })
+    },
+    en =
+    {
+        Diary   = 'Diary',
+
+        msg1    = 'Once again we find ourselves in a world that consists\nof ash and lava. The atmosphere carries the putrid\nsmell of sulphur. It all originates from the nearby\nvolcano which bellows out its vile contents across\nthe land.\n\nMy men are insisting we leave soon; I can only hope\nthat the gods will guide our steps.',
+        msgh1   = 'Find and occupy the gateway! Consider opportunities\nto build a harbor.',
+
+        msg99   = 'We have found the gateway and occupied it. Let us\nremain here no longer than is necessary.',
+        msg99   = 'You have completed this mission. The next Chapter\nawaits you...'
+    }
+})
 
 -- format mission texts
 function MissionText(e)
@@ -55,6 +66,8 @@ function MissionText(e)
         rttr:SetMissionGoal(0, msgh)
     elseif(msg ~= ('msg' .. tostring(e))) then
         rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+    else
+        rttr:Log("Error: no Translation found: " .. _('msg' .. tostring(e))
     end
 end
 
@@ -62,9 +75,9 @@ end
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
     rttr:Log("-----------------------\n MISS208.lua loaded... \n-----------------------\n")
-    rttr:ResetAddons()                          -- S2-settings
+    rttr:ResetAddons()
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
-    rttr:SetGameSettings({                      -- TEST
+    rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
         ["lockedTeams"] = false
@@ -77,13 +90,12 @@ function onSettingsReady()
     rttr:GetPlayer(1):SetNation(NAT_JAPANESE)   -- nation
     rttr:GetPlayer(1):SetColor(1)               -- yellow
     rttr:GetPlayer(1):SetName('Yamauchi')       -- Enemy Name
+    rttr:GetPlayer(1):SetTeam(TM_TEAM1)
 
     rttr:GetPlayer(2):SetAI(3)                  -- hard AI
     rttr:GetPlayer(2):SetNation(NAT_JAPANESE)   -- nation
     rttr:GetPlayer(2):SetColor(2)               -- red
     rttr:GetPlayer(2):SetName('Tsunami')        -- Enemy Name
-
-    rttr:GetPlayer(1):SetTeam(TM_TEAM1)
     rttr:GetPlayer(2):SetTeam(TM_TEAM1)
 end
 
@@ -110,8 +122,8 @@ function onStart(isFirstStart)
     end
 end
 
-function getAllowedChanges()    
-    return  { 
+function getAllowedChanges()
+    return {
         ["addonsAll"]   = false,
         ["ownNation"]   = false,
         ["ownColor"]    = false,
@@ -119,7 +131,7 @@ function getAllowedChanges()
         ["aiNation"]    = false, 
         ["aiColor"]     = false,
         ["aiTeam"]      = false
-            }    
+    }
 end
 
 -- save callback
@@ -139,7 +151,6 @@ function onLoad(saveGame)
     end
     return true
 end
-
 
 -------------------------------- set buildings --------------------------------
 function addPlayerBld(p, onLoad)
@@ -400,7 +411,7 @@ function onOccupied(p, x, y)
 
     if( (x == 127) and (y == 48) ) then MissionEvent(99)
     end
-    
+
     if(not rttr:GetPlayer(1):IsInRestrictedArea(x, y)) then 
         MissionEvent(98) -- for lifting restrictions
     end
@@ -417,7 +428,7 @@ function MissionEvent(e, onLoad)
     if(e == 98) then
         rttr:GetPlayer(1):SetRestrictedArea()
         rttr:GetPlayer(2):SetRestrictedArea()
-        
+
     elseif(e == 99) then
         -- TODO: EnableNextMissions()
         -- Show opened arc - Done

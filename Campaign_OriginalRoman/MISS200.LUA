@@ -24,8 +24,8 @@ eIdx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 99}
 
 rttr:RegisterTranslations(
 {
-    cs = 
-    { 
+    cs =
+    {
         Diary   = 'Deník',
 
         msg1    = 'Deník Oktaviána:\n\n\nČtvrtý den po ztroskotání lodi.\n\n\nVčera se všichni přeživší setkali, aby diskutovali o situaci. Protože nenašli žádné východisko na včasnou záchranu, rozhodli se usadit na tomto cizím ostrově. Zachráněné zboží z lodi nám bude velkou pomocí do začátku. Nejdůležitější věcí je využití místních suroviny k založení osady. Naléhavě potřebujeme vybudovat dílnu pro dřevorubce, pilaře a kameníka.', 
@@ -70,7 +70,7 @@ rttr:RegisterTranslations(
         msg99   = 'Druhý den třináctého měsíce po stroskotání u břehů tohoto ostrova.\n\n\nVčera začal druhý rok a zdá se, že se nám tento ostrov podařilo osídlit. Naši učenci hlásí podivné události u brány. Vypadá to, že se brána otevřela a může nás zavést na cestu, která nás vyvede z tohoto ostrova. Významem hádanky byl zřejmě takovýto: „Aby se člověk dostal dál musí oběvovat a osidlovat nové území“. No uvydíme, snad skutečně všechny cesty vedou do Říma.',
         msgh99  = 'Dokončili jste tuto misi. Čeká na tebe druhá kapitola...\n\nDalší misi můžeš zahájit z hlavní nabídky kdykoli budeš chtít.',
     },
-    de = 
+    de =
     {
         Diary   = 'Tagebuch',
 
@@ -116,7 +116,7 @@ rttr:RegisterTranslations(
         msg99   = 'Zweiter Tag des dreizehnten Monats nach der Landung.\n\n\nGestern begann das zweite Jahr, und wir scheinen es\ngeschafft zu haben. Die Gelehrten berichten von\nseltsamen Aktivitäten am Tor. Es sieht so aus, als\nhabe sich ein Weg geöffnet, der uns von dieser Insel\nwegführen kann. Das scheint der Sinn des Rätsels zu\nsein: Man muß sich niederlassen und siedeln, um\nweiterzukommen. Mal sehen. Vielleicht führen ja\nwirklich alle Wege nach Rom.',
         msgh99  = 'Sie haben diese Mission erfüllt. Das zweite Kapitel\nwartet schon auf Sie... \n\nWann immer Sie wollen, können Sie im Hauptmenü die\nnächste Mission starten.'
     },
-    en = 
+    en =
     {
         Diary   = 'Diary',
 
