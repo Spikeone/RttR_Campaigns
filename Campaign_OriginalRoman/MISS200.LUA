@@ -195,7 +195,7 @@ function onSettingsReady()
     rttr:GetPlayer(0):SetColor(0)               -- 0:blue, 1:read, 2:yellow, 
 end
 
-function getAllowedChanges()    
+function getAllowedChanges()
     return  { 
         ["addonsAll"]   = false,
         ["ownNation"]   = false,
