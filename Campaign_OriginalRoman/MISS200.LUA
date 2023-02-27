@@ -426,7 +426,9 @@ function MissionEvent(e, onLoad)
 
     elseif(e == 4) then
         rttr:GetPlayer(0):DisableBuilding(BLD_BARRACKS, not onLoad)
-        rttr:GetPlayer(0):AddPeople({[JOB_GEOLOGIST] = 4})
+        if not onLoad then 
+            rttr:GetPlayer(0):AddPeople({[JOB_GEOLOGIST] = 4}) 
+        end
         eState[5] = 1
 
     elseif(e == 5) then
