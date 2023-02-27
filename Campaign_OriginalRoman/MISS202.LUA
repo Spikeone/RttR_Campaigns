@@ -94,7 +94,7 @@ end
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
     rttr:Log("-----------------------\n MISS202.lua loaded... \n-----------------------\n")
-    rttr:ResetAddons()                          -- S2-settings
+    rttr:ResetAddons()
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
     rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
@@ -118,8 +118,8 @@ function onSettingsReady()
     rttr:GetPlayer(2):SetTeam(TM_TEAM1)
 end
 
-function getAllowedChanges()    
-    return  { 
+function getAllowedChanges()
+    return {
         ["addonsAll"]   = false,
         ["ownNation"]   = false,
         ["ownColor"]    = false,

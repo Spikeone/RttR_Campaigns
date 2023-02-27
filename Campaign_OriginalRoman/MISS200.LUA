@@ -183,7 +183,7 @@ end
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
     rttr:Log("-----------------------\n MISS200.lua loaded... \n-----------------------\n")
-    rttr:ResetAddons()                          -- S2-settings
+    rttr:ResetAddons()
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
     rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
@@ -192,11 +192,11 @@ function onSettingsReady()
     })
 
     rttr:GetPlayer(0):SetNation(NAT_ROMANS)     -- nation
-    rttr:GetPlayer(0):SetColor(0)               -- 0:blue, 1:read, 2:yellow, 
+    rttr:GetPlayer(0):SetColor(0)               -- 0:blue, 1:red, 2:yellow, 
 end
 
 function getAllowedChanges()
-    return  {
+    return {
         ["addonsAll"]   = false,
         ["ownNation"]   = false,
         ["ownColor"]    = false,
@@ -231,7 +231,7 @@ function onStart(isFirstStart)
         eHist = {["n"] = 0}
         MissionEvent(1)                         -- initial event / start screen
     end
-    
+
     if isFirstStart then
         rttr:GetWorld():AddAnimal(41, 44, SPEC_DUCK)
         rttr:GetWorld():AddAnimal(41, 44, SPEC_DUCK)
@@ -276,7 +276,7 @@ end
 function addPlayerRes(p, onLoad)
     if onLoad then return end
 
-    if(p == 0) then                 -- Map activates 7 players!
+    if(p == 0) then
         -- goods
         rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
