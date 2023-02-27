@@ -23,16 +23,16 @@ end
 eIdx = {1, 98, 99}
 
 rttr:RegisterTranslations(
-{ 
-    en = 
-    { 
-        Diary   = 'Diary',
+{
+    cs =
+    {
+        Diary   = 'deník',
 
-        msg1    = 'Scouts have told me of a mighty enemy in the west. We\nmust try and stay here as long as possible. In an\nemergency we can always escape to the east or by\nsea...',
-        msgh1   = 'Search for a gateway. Consider opportunities to build\na harbor.',
-        
-        msg99   = 'We have found the gateway and occupied it. When will\nwe reach our destination?',
-        msg99   = 'You have completed this mission. The next Chapter\nawaits you...'
+        msg1    = 'Skauti mi řekli o mocném nepříteli na západě. Musíme se tu pokusit zůstat co nejdéle. V případě nouze můžeme vždy uniknout na východ nebo po moři ...',
+        msgh1   = 'Vyhledej bránu. Zvaž vhodné příležitosti k vybudování přístavu.',
+
+        msg99   = 'Našli jsme bránu a obsadili ji. Kdy dorazíme do cíle?',
+        msg99   = 'Dokončil jsi tuto misi. Další kapitola na tebe čeká ...'
     },
     de = 
     {
@@ -40,10 +40,21 @@ rttr:RegisterTranslations(
 
         msg1    = 'Späher berichteten mir von einem übermächtigem Feind\nim Westen. Wir müssen versuchen, uns hier solange\nwie möglich zu halten. Aber im Notfall bliebe uns\nimmer noch die Flucht nach Osten oder übers Meer...',
         msgh1   = 'Suchen Sie nach einem Tor. Achten Sie auf eventuell\nvorhandene Möglichkeiten zum Hafenbau.',
-        
+
         msg99   = 'Wir haben das Tor gefunden und besetzt. Wann werden\nwir unser Ziel wohl erreichen?',
         msg99   = 'Sie haben diese Mission erfüllt. Das nächste Kapitel\nwartet auf Sie...'
-} })
+    },
+    en = 
+    { 
+        Diary   = 'Diary',
+
+        msg1    = 'Scouts have told me of a mighty enemy in the west. We\nmust try and stay here as long as possible. In an\nemergency we can always escape to the east or by\nsea...',
+        msgh1   = 'Search for a gateway. Consider opportunities to build\na harbor.',
+
+        msg99   = 'We have found the gateway and occupied it. When will\nwe reach our destination?',
+        msg99   = 'You have completed this mission. The next Chapter\nawaits you...'
+    }
+})
 
 -- format mission texts
 function MissionText(e)
@@ -55,6 +66,8 @@ function MissionText(e)
         rttr:SetMissionGoal(0, msgh)
     elseif(msg ~= ('msg' .. tostring(e))) then
         rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+    else
+        rttr:Log("Error: no Translation found: " .. _('msg' .. tostring(e))
     end
 end
 
@@ -62,9 +75,9 @@ end
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
     rttr:Log("-----------------------\n MISS207.lua loaded... \n-----------------------\n")
-    rttr:ResetAddons()                          -- S2-settings
+    rttr:ResetAddons()
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
-    rttr:SetGameSettings({                      -- TEST
+    rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
         ["lockedTeams"] = false
@@ -77,13 +90,12 @@ function onSettingsReady()
     rttr:GetPlayer(1):SetNation(NAT_AFRICANS)   -- nation
     rttr:GetPlayer(1):SetColor(1)               -- yellow
     rttr:GetPlayer(1):SetName('Mnga Tscha')     -- Enemy Name
+    rttr:GetPlayer(1):SetTeam(TM_TEAM1)
 
     rttr:GetPlayer(2):SetAI(3)                  -- hard AI
     rttr:GetPlayer(2):SetNation(NAT_AFRICANS)   -- nation
     rttr:GetPlayer(2):SetColor(2)               -- red
     rttr:GetPlayer(2):SetName('Todo')           -- Enemy Name
-
-    rttr:GetPlayer(1):SetTeam(TM_TEAM1)
     rttr:GetPlayer(2):SetTeam(TM_TEAM1)
 end
 
@@ -110,8 +122,8 @@ function onStart(isFirstStart)
     end
 end
 
-function getAllowedChanges()    
-    return  { 
+function getAllowedChanges()
+    return {
         ["addonsAll"]   = false,
         ["ownNation"]   = false,
         ["ownColor"]    = false,
@@ -119,7 +131,7 @@ function getAllowedChanges()
         ["aiNation"]    = false, 
         ["aiColor"]     = false,
         ["aiTeam"]      = false
-            }    
+    }
 end
 
 -- save callback
@@ -416,7 +428,7 @@ function MissionEvent(e, onLoad)
     if(e == 98) then
         rttr:GetPlayer(1):SetRestrictedArea()
         rttr:GetPlayer(2):SetRestrictedArea()
-    
+
     elseif(e == 99) then
         -- TODO: EnableNextMissions()
         -- Show opened arc
