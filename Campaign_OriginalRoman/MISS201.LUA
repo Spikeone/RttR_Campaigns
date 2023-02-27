@@ -157,7 +157,6 @@ function onSettingsReady()
     rttr:GetPlayer(1):SetNation(NAT_AFRICANS)   -- nation
     rttr:GetPlayer(1):SetColor(1)               -- yellow
     rttr:GetPlayer(1):SetName('Shaka')          -- Enemy Name
-
     rttr:GetPlayer(1):SetTeam(TM_TEAM1)
 end
 

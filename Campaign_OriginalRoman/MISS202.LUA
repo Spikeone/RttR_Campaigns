@@ -85,6 +85,8 @@ function MissionText(e)
         rttr:SetMissionGoal(0, msgh)
     elseif(msg ~= ('msg' .. tostring(e))) then
         rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+    else
+        rttr:Log("Error: no Translation found: " .. _('msg' .. tostring(e))
     end
 
 end
@@ -95,7 +97,7 @@ function onSettingsReady()
     rttr:Log("-----------------------\n MISS202.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
-    rttr:SetGameSettings({                      -- TEST
+    rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
         ["lockedTeams"] = false
@@ -108,13 +110,12 @@ function onSettingsReady()
     rttr:GetPlayer(1):SetNation(NAT_AFRICANS)   -- nation
     rttr:GetPlayer(1):SetColor(1)               -- yellow
     rttr:GetPlayer(1):SetName('Mnga Tscha')     -- Enemy Name
+    rttr:GetPlayer(1):SetTeam(TM_TEAM1)
 
     rttr:GetPlayer(2):SetAI(3)                  -- hard AI
     rttr:GetPlayer(2):SetNation(NAT_AFRICANS)   -- nation
     rttr:GetPlayer(2):SetColor(2)               -- red
     rttr:GetPlayer(2):SetName('Todo')           -- Enemy Name
-
-    rttr:GetPlayer(1):SetTeam(TM_TEAM1)         -- TEST
     rttr:GetPlayer(2):SetTeam(TM_TEAM1)
 end
 
@@ -127,29 +128,29 @@ function getAllowedChanges()
         ["aiNation"]    = false, 
         ["aiColor"]     = false,
         ["aiTeam"]      = false
-            }    
+    }
 end
 
 -- start callback
 function onStart(isFirstStart)
-    for i = 0, 2 do                             -- set resources
+    for i = 0, 2 do                         -- set resources
         addPlayerRes(i, not isFirstStart)
         addPlayerBld(i, not isFirstStart)
     end
 
-    eState = {}                                 -- enable all events
+    eState = {}                             -- enable all events
     for _, i in ipairs(eIdx) do
         eState[i] = 1
     end
 
-    if not isFirstStart then                    -- initialize history of all called events, event counter at ["n"]
+    if not isFirstStart then                -- initialize history of all called events, event counter at ["n"]
         for i = 1, eHist["n"] do
-            MissionEvent(eHist[i], true)        -- call events without mission text to activate all achievements
+            MissionEvent(eHist[i], true)    -- call events without mission text to activate all achievements
         end
 
     else
         eHist = {["n"] = 0}
-        MissionEvent(1)                         -- initial event / start screen
+        MissionEvent(1)                     -- initial event / start screen
     end
     
     if isFirstStart then
@@ -481,11 +482,11 @@ function onOccupied(p, x, y)
 
     if( (x == 89) and (y == 20) ) then MissionEvent(99)
     end
-    
+
     if(not rttr:GetPlayer(1):IsInRestrictedArea(x, y)) then 
         MissionEvent(98) -- for lifting restrictions
     end
-    
+
 end
 
 function onExplored(p, x, y, o)
@@ -521,7 +522,7 @@ function MissionEvent(e, onLoad)
 
     -- no history update or mission texts while loading
     if not onLoad then
-        rttr:Log(">> Event: " .. e .. ",\teState[" .. e .. "] = " .. eState[e])         -- TEST
+        rttr:Log(">> Event: " .. e .. ",\teState[" .. e .. "] = " .. eState[e])
         eHist["n"] = eHist["n"] + 1
         eHist[eHist["n"]] = e
         MissionText(e)
