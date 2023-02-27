@@ -25,17 +25,15 @@ eIdx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 98, 99}
 
 rttr:RegisterTranslations(
 {
-    cs = 
-    { 
+    cs =
+    {
         Diary   = 'Deník',
 
         msg1    = 'Třetí den druhého roku.\n\n\nDostali jsme se na druhý ostrov, zdá se, že je neobydlený. Zásoby nástrojů ze staré dobré lodi Tortius pomalu dochází. Zoufale potřebujeme začít vyrábět nové nástroje.',
         msgh1   = 'Postav nářaďovnu a rozšiř naše území do vnitrozemí. Věnuj zvláštní pozornost dodávkám stavebního materiálu a zásob.',
 
-
         msg2    = 'Postoupili jsme zase o kousek na sever a narazili jsme na krajana. Byl jediný, kdo přežil další ztroskotání lodi, a je velmi šťastný, že znovu vidí lidskou tvář. Také nás to potěšilo. Máme veliké štěstí, ten muž je sládek. Pokud se někdy dostaneme do vojenského konfliktu, pivo se nám bude hodit pro verbování nových vojáků. Voják potřebuje mnohem víc než jen štít a meč!\n\nMuž nám také vypráví o ruinách, které objevil na ostrově. Obávám se, že to nebudeme dlouho trvat a budeme se muset bránit.',
         msgh2   = 'Postupuj do vnitrozemí ostrova. Věnuj zvláštní pozornost dodávkám stavebního materiálu a zásob.',
-
 
         msg3    = 'Objevili jsme ruiny stavby. Obsahovaly plány na stavbu strážnice. Nyní bychom měli zvážit stavbu opevnění. Jsem více než kdy jindy přesvědčen, že na tomto ostrově nejsme sami.',
         msgh3   = 'Postupuj do vnitrozemí ostrova. Věnuj zvláštní pozornost dodávkám stavebního materiálu a zásob.',
@@ -59,7 +57,7 @@ rttr:RegisterTranslations(
         msg99   = '27. den devátého měsíce.\n\n\nVítěztví v bitvě je naše a ostrov jsme osídlili. Brána se znovu aktivovala. Jsem nadšený z vyhlídky, na jakou cestu nás zavede.Teď už o tom nemůže být pochyb, svědší o tom i latinské nápisi na bráně a objevené rujny které jsou římské architektury. Před námi tu musely být Římané. Kde ale jsou, jak se sem dostali, proč odešli, je tu mnoho otázek. Dostaneme na ně někdy odpovědí? Doufám, že vystopujeme kroky našich legendárních předků.',
         msgh99  = 'Dokončil jsi tuto misi. Třetí kapitola čeká na tebe ...',
     },
-    de = 
+    de =
     {
         Diary   = 'Tagebuch',
 
@@ -91,17 +89,15 @@ rttr:RegisterTranslations(
         msg99   = '27. Tag im neunten Monat.\n\n\nWir haben den Kampf gewonnen und die Insel ist\nunser. Und wieder ist das Tor aktiv geworden. Ich\nbin gespannt, wohin die Reise jetzt geht. Aber die\nInschrift auf diesem Tor ist wieder latinisch, und\nso hoffe ich, daß wir vielleicht auf jenem Pfad\nwandern, den unsere sagenhaften Vorfahren gingen,\nbis sie nach Rom kamen...',
         msgh99  = 'Sie haben diese Mission erfüllt. Das dritte Kapitel\nwartet schon auf Sie...'
     },
-    en = 
-    { 
+    en =
+    {
         Diary   = 'Diary',
 
         msg1    = 'Third Day of the Second Year.\n\n\nWe have reached a second island which appears to be\nuninhabited. The stock of tools belonging to the\ngood old Tortius is slowly being used up. We\ndesperately need a metalworks to make new tools.',
         msgh1   = 'Build a metalworks and move into the interior of the\nisland. Pay close attention to the supply of\nprovisions and raw materials.',
 
-
         msg2    = 'We advanced a short distance northward and came\nacross a fellow countryman. He was the only survivor\nof another shipwreck and he is very happy to see\nother humans again. We were also pleased; the man is\na brewer. If we ever get into warlike disputes, beer\nwill lift the courage of our people. A soldier needs\nmuch more than just a shield and a sword!\n\nThe man also tells us of ruins that he has\ndiscovered on the island. I fear that before long we\nwill need to be more careful.',
         msgh2   = 'Advance into the interior of the island. Pay close\nattention to the supply of provisions and raw\nmaterials.',
-
 
         msg3    = 'We have found the ruins. They contained building\nplans for a guardhouse. Now we should consider\nbuilding fortifications. I am more convinced than\never that we are not alone on this island.',
         msgh3   = 'Advance into the interior of the island. Pay close\nattention to the supply of provisions and raw\nmaterials.',
@@ -137,14 +133,9 @@ function MissionText(e)
         rttr:SetMissionGoal(0, msgh)
     elseif(msg ~= ('msg' .. tostring(e))) then
         rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+    else
+        rttr:Log("Error: no Translation found: " .. _('msg' .. tostring(e))
     end
-
-
-    --if msg[e] then                              -- mission statement
-    --    rttr:MissionStatement(0, "Tagebuch", msg[e])
-    --end
-
-    -- if msg["h" .. e] then update hints
 end
 
 
@@ -153,7 +144,7 @@ function onSettingsReady()
     rttr:Log("-----------------------\n MISS201.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
-    rttr:SetGameSettings({                      -- TEST
+    rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
         ["lockedTeams"] = false
@@ -167,12 +158,11 @@ function onSettingsReady()
     rttr:GetPlayer(1):SetColor(1)               -- yellow
     rttr:GetPlayer(1):SetName('Shaka')          -- Enemy Name
 
-    --rttr:GetPlayer(0):SetTeam(TM_TEAM1)       -- TEST
     rttr:GetPlayer(1):SetTeam(TM_TEAM1)
 end
 
-function getAllowedChanges()    
-    return  { 
+function getAllowedChanges()
+    return  {
         ["addonsAll"]   = false,
         ["ownNation"]   = false,
         ["ownColor"]    = false,
@@ -180,48 +170,48 @@ function getAllowedChanges()
         ["aiNation"]    = false, 
         ["aiColor"]     = false,
         ["aiTeam"]      = false
-            }    
+    }
 end
 
 -- start callback
 function onStart(isFirstStart)
-    for i = 0, 1 do                             -- set resources
+    for i = 0, 1 do                          -- set resources
         addPlayerRes(i, not isFirstStart)
         addPlayerBld(i, not isFirstStart)
     end
 
-    eState = {}                                 -- enable all events
+    eState = {}                             -- enable all events
     for _, i in ipairs(eIdx) do
         eState[i] = 1
     end
 
-    if not isFirstStart then                    -- initialize history of all called events, event counter at ["n"]
+    if not isFirstStart then                -- initialize history of all called events, event counter at ["n"]
         for i = 1, eHist["n"] do
-            MissionEvent(eHist[i], true)        -- call events without mission text to activate all achievements
+            MissionEvent(eHist[i], true)    -- call events without mission text to activate all achievements
         end
 
     else
         eHist = {["n"] = 0}
-        MissionEvent(1)                         -- initial event / start screen
+        MissionEvent(1)                     -- initial event / start screen
     end
-    
+
     if isFirstStart then
         rttr:GetWorld():AddAnimal(43, 24, SPEC_DUCK)
-        
+
         rttr:GetWorld():AddAnimal(16, 21, SPEC_DUCK)
-        
+
         rttr:GetWorld():AddAnimal(33, 50, SPEC_DUCK)
         rttr:GetWorld():AddAnimal(33, 50, SPEC_DUCK)
         rttr:GetWorld():AddAnimal(33, 50, SPEC_DUCK)
-        
+
         rttr:GetWorld():AddAnimal(29, 29, SPEC_DUCK)
         rttr:GetWorld():AddAnimal(29, 29, SPEC_DUCK)
         rttr:GetWorld():AddAnimal(29, 29, SPEC_DUCK)
-        
+
         rttr:GetWorld():AddAnimal(16, 76, SPEC_RABBITWHITE)
         rttr:GetWorld():AddAnimal(16, 76, SPEC_RABBITWHITE)
         rttr:GetWorld():AddAnimal(16, 76, SPEC_RABBITWHITE)
-        
+
         rttr:GetWorld():AddAnimal(17, 75, SPEC_RABBITGREY)
         rttr:GetWorld():AddAnimal(17, 75, SPEC_RABBITGREY)
         rttr:GetWorld():AddAnimal(17, 75, SPEC_RABBITGREY)

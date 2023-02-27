@@ -176,7 +176,7 @@ function MissionText(e)
     elseif(msg ~= ('msg' .. tostring(e))) then
         rttr:MissionStatement(0, _('Diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
     else
-        rttr:Log("Error: no Translation found!" .. _('msg1'))
+        rttr:Log("Error: no Translation found: " .. _('msg' .. tostring(e))
     end
 end
 
@@ -185,7 +185,7 @@ function onSettingsReady()
     rttr:Log("-----------------------\n MISS200.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
-    rttr:SetGameSettings({                      -- TEST
+    rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
         ["lockedTeams"] = false
@@ -196,7 +196,7 @@ function onSettingsReady()
 end
 
 function getAllowedChanges()
-    return  { 
+    return  {
         ["addonsAll"]   = false,
         ["ownNation"]   = false,
         ["ownColor"]    = false,
