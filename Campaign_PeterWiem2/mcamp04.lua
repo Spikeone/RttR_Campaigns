@@ -96,6 +96,8 @@ end
 function onStart(isFirstStart)
     addPlayerRes(0, not isFirstStart)
     addPlayerRes(1, not isFirstStart)
+    addPlayerRes(2, not isFirstStart)
+    addPlayerRes(3, not isFirstStart)
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}                             -- enable all events
@@ -313,28 +315,6 @@ function addPlayerRes(p, onLoad)
     end
 end
 
-function onExplored(playerIdx, x, y, owner)
-    if(playerIdx ~= 0) then
-        return
-    end
-
-    if (x == 6 and y == 53) then
-        -- EVENT3
-        MissionEvent(3, false)
-    end
-end
-
-function onOccupied(playerIdx, x, y)
-    if(playerIdx ~= 0) then
-        return
-    end
-
-    if (x == 91 and y == 75) then
-        -- EVENT7
-        MissionEvent(7, false)
-    end
-end
-
 function onGameFrame(gf)
     if (gf == 10 and debugTexts) then
         for _, i in ipairs(eIdx) do
@@ -395,7 +375,7 @@ function MissionEvent(e, onLoad)
         -- nothing
 
     elseif(e == 2 and not onLoad) then
-        rttr:GetPlayer(0):EnableBuilding(BLD_LOOKOUTTOWER)
+        rttr:GetPlayer(0):EnableBuilding(BLD_LOOKOUTTOWER, true)
 
     elseif(e == 3 and not onLoad) then
         rttr:GetPlayer(0):AddWares({
