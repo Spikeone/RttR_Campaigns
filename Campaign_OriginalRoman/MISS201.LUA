@@ -428,8 +428,10 @@ function onGameFrame(gf)
         MissionEvent(98)
     end
 
-    if(rttr:GetPlayer(0):GetStatisticsValue(STAT_COUNTRY) > 800) then
-        MissionEvent(7)
+    if (rttr:GetPlayer(0).GetStatisticsValue ~= nil) then 
+        if(rttr:GetPlayer(0):GetStatisticsValue(STAT_COUNTRY) > 800) then
+            MissionEvent(7)
+        end
     end
 end
 
@@ -437,6 +439,14 @@ function onOccupied(p, x, y)
     -- only check human player
     if(p ~= 0) then
         return
+    end
+
+    if (rttr:GetPlayer(0).GetStatisticsValue == nil) then 
+        if(     (x == 37) and (y == 67) ) then 
+            MissionEvent(7)
+        elseif( (x == 31) and (y == 66) ) then
+            MissionEvent(7)
+        end
     end
 
     if( (x == 41) and (y == 16) ) then MissionEvent(10)
