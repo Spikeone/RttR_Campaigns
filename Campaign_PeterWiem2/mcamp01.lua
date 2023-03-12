@@ -157,12 +157,12 @@ function addPlayerRes(p, onLoad)
             [GD_WOOD      ] = 24,
             [GD_BOARDS    ] = 44,
             [GD_STONES    ] = 68,
-            [GD_MEAT      ] = 1,
+            [GD_HAM       ] = 1,
             [GD_GRAIN     ] = 1,
             [GD_FLOUR     ] = 1,
 
             [GD_FISH      ] = 4,
-            [GD_HAM       ] = 6,
+            [GD_MEAT      ] = 6,
             [GD_BREAD     ] = 8,
             [GD_WATER     ] = 2,
             [GD_BEER      ] = 6,
@@ -257,12 +257,12 @@ function addPlayerRes(p, onLoad)
             [GD_WOOD      ] = 6,
             [GD_BOARDS    ] = 11,
             [GD_STONES    ] = 17,
-            [GD_MEAT      ] = 0,
+            [GD_HAM       ] = 0,
             [GD_GRAIN     ] = 0,
             [GD_FLOUR     ] = 0,
 
             [GD_FISH      ] = 1,
-            [GD_HAM       ] = 0,
+            [GD_MEAT      ] = 0,
             [GD_BREAD     ] = 0,
             [GD_WATER     ] = 0,
             [GD_BEER      ] = 0,
@@ -407,6 +407,18 @@ function onGameFrame(gf)
 end
 
 function MissionEvent(e, onLoad)
+    -- event e is invalid
+    if(e == nil) then
+        rttr:Log("Error: Invalid, non existing or uninitialized Event called: nil")
+        return
+    end
+
+    -- event e is invalid
+    if(eState[e] == nil) then
+        rttr:Log("Error: Invalid, non existing or uninitialized Event called: " ..e)
+        return
+    end
+
     -- event e is inactive
     if(eState[e] <= 0) then
         return

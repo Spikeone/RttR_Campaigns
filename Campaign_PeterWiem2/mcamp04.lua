@@ -5,7 +5,7 @@ end
 -- Message-Window (mission statement and hints): 52 chars wide
 eIdx = {1, 2, 3, 4, 5, 6, 99}
 
-local debugTexts = true;
+local debugTexts = false;
 
 rttr:RegisterTranslations(
 {
@@ -135,7 +135,7 @@ end
 function addPlayerRes(p, onLoad)
     if onLoad then return end
 
-    if(p ~= 0) then                 -- Map activates 7 players!
+    if(p ~= 0) then
         -- goods
         rttr:GetPlayer(p):ClearResources()
 
@@ -143,12 +143,12 @@ function addPlayerRes(p, onLoad)
             [GD_WOOD      ] = 24,
             [GD_BOARDS    ] = 44,
             [GD_STONES    ] = 68,
-            [GD_MEAT      ] = 1,
+            [GD_HAM       ] = 1,
             [GD_GRAIN     ] = 1,
             [GD_FLOUR     ] = 1,
 
             [GD_FISH      ] = 4,
-            [GD_HAM       ] = 6,
+            [GD_MEAT      ] = 6,
             [GD_BREAD     ] = 8,
             [GD_WATER     ] = 2,
             [GD_BEER      ] = 6,
@@ -237,12 +237,12 @@ function addPlayerRes(p, onLoad)
             [GD_WOOD      ] = 15,
             [GD_BOARDS    ] = 25,
             [GD_STONES    ] = 25,
-            [GD_MEAT      ] = 0,
+            [GD_HAM       ] = 0,
             [GD_GRAIN     ] = 0,
             [GD_FLOUR     ] = 0,
 
             [GD_FISH      ] = 2,
-            [GD_HAM       ] = 2,
+            [GD_MEAT      ] = 2,
             [GD_BREAD     ] = 2,
             [GD_WATER     ] = 0,
             [GD_BEER      ] = 200,
@@ -341,7 +341,7 @@ function onGameFrame(gf)
         MissionEvent(3, false)
     end
 
-    local milBuildingCount = rttr:GetPlayer(0):GetNumBuildings(BLD_BARRACKS) + rttr:GetPlayer(0):GetNumBuildings(BLD_GUARDHOUSE) + rttr:GetPlayer(0):GetNumBuildings(BLD_WATCHTOWER) + rttr:GetPlayer(0):GetNumBuildings(BLD_FORTRESS)
+    local milBuildingCount = GetNumMilitaryBuilding(0, true)
 
     if (eState[4] > 0 and milBuildingCount >= 5) then
         -- EVENT4
@@ -418,4 +418,12 @@ end
 
 function GetNumStorage(plr)
     return rttr:GetPlayer(plr):GetNumBuildings(BLD_HEADQUARTERS) + rttr:GetPlayer(plr):GetNumBuildings(BLD_HARBORBUILDING) + rttr:GetPlayer(plr):GetNumBuildings(BLD_STOREHOUSE)
+end
+
+function GetNumMilitaryBuilding(plr, withHarbor)
+    if(withHarbor) then
+        return rttr:GetPlayer(plr):GetNumBuildings(BLD_HARBORBUILDING) + rttr:GetPlayer(plr):GetNumBuildings(BLD_BARRACKS) + rttr:GetPlayer(plr):GetNumBuildings(BLD_GUARDHOUSE) + rttr:GetPlayer(plr):GetNumBuildings(BLD_WATCHTOWER) + rttr:GetPlayer(plr):GetNumBuildings(BLD_FORTRESS)
+    else
+        return rttr:GetPlayer(plr):GetNumBuildings(BLD_BARRACKS) + rttr:GetPlayer(plr):GetNumBuildings(BLD_GUARDHOUSE) + rttr:GetPlayer(plr):GetNumBuildings(BLD_WATCHTOWER) + rttr:GetPlayer(plr):GetNumBuildings(BLD_FORTRESS)
+    end
 end

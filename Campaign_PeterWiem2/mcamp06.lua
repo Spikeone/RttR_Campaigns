@@ -5,7 +5,7 @@ end
 -- Message-Window (mission statement and hints): 52 chars wide
 eIdx = {1, 2, 3, 4, 5, 6, 99}
 
-local debugTexts = true;
+local debugTexts = false;
 
 rttr:RegisterTranslations(
 {
@@ -15,17 +15,17 @@ rttr:RegisterTranslations(
         name    = 'Unbekannter Gegner',
         diary   = 'Tagebuch',
 
-    msg1    = 'Halvar hat für uns dieses versteckte Tal als Ausgangspunkt gewählt. Auf unserem Anmarschweg hierher haben wir eine Menge frische Spuren von Menschen entdeckt, deshalb erschien uns ein verborgener Platz sicherer.\n\nDie ganze Insel scheint durchzogen mit Resten von Lagerfeuern und frisch aufgebrochenem Wild. Allerdings sind die Spuren so unterschiedlich, die wir hier gefunden haben, dass wir mit ziemlicher Sicherheit auf mehrere Völker schließen können, die diese unterschiedlichen Spuren hinterlassen haben. Unter anderem haben wir drei völlig verschiedenartige Pfeilspitzen entdeckt, die offensichtlich bei der Jagd nach Wild verwendet worden sind.',
+        msg1    = 'Halvar hat für uns dieses versteckte Tal als Ausgangspunkt gewählt. Auf unserem Anmarschweg hierher haben wir eine Menge frische Spuren von Menschen entdeckt, deshalb erschien uns ein verborgener Platz sicherer.\n\nDie ganze Insel scheint durchzogen mit Resten von Lagerfeuern und frisch aufgebrochenem Wild. Allerdings sind die Spuren so unterschiedlich, die wir hier gefunden haben, dass wir mit ziemlicher Sicherheit auf mehrere Völker schließen können, die diese unterschiedlichen Spuren hinterlassen haben. Unter anderem haben wir drei völlig verschiedenartige Pfeilspitzen entdeckt, die offensichtlich bei der Jagd nach Wild verwendet worden sind.',
 
-    msg2    = 'Halvars Spürsinn ist bisher bewundernswert, was die Wahl unserer Lageplätze angeht – um uns herum hat es genügend Gold, um eine Münzprägerei für lange Zeit auszulasten. Jetzt sollten wir uns schnell nach Süden ausbreiten, damit unser Schmied Elvor, unser Eisengießer Darvi und ihre Zulieferer genug zu tun bekommen. Wir brauchen Kohle, Eisen, Gold, Verpflegung und genügend Platz, um unsere Wirtschaft zum Laufen zu bringen.\n\nAußerdem sind Halvar und Ole zu zweit unterwegs, um sich ein Bild von der Lage hier zu machen. Ole sucht vor allem geeignete Hafenplätze, Halvar will herausfinden, wo die Feinde lagern und wie stark sie sind.\n\nAnsgar hat schon vor längerer Zeit vorgeschlagen, neben Schwert und Schild noch eine Waffe zu konstruieren, die den Gegner auch auf Distanz schaden könnten. Wir sind schon mit gegnerischen Bauwerken konfrontiert worden, die Steine über eine größere Entfernung schleudern können, und die uns sehr zugesetzt haben. Es wäre eine Hilfe, wenn wir genauere Pläne darüber bekommen könnten.',
+        msg2    = 'Halvars Spürsinn ist bisher bewundernswert, was die Wahl unserer Lageplätze angeht – um uns herum hat es genügend Gold, um eine Münzprägerei für lange Zeit auszulasten. Jetzt sollten wir uns schnell nach Süden ausbreiten, damit unser Schmied Elvor, unser Eisengießer Darvi und ihre Zulieferer genug zu tun bekommen. Wir brauchen Kohle, Eisen, Gold, Verpflegung und genügend Platz, um unsere Wirtschaft zum Laufen zu bringen.\n\nAußerdem sind Halvar und Ole zu zweit unterwegs, um sich ein Bild von der Lage hier zu machen. Ole sucht vor allem geeignete Hafenplätze, Halvar will herausfinden, wo die Feinde lagern und wie stark sie sind.\n\nAnsgar hat schon vor längerer Zeit vorgeschlagen, neben Schwert und Schild noch eine Waffe zu konstruieren, die den Gegner auch auf Distanz schaden könnten. Wir sind schon mit gegnerischen Bauwerken konfrontiert worden, die Steine über eine größere Entfernung schleudern können, und die uns sehr zugesetzt haben. Es wäre eine Hilfe, wenn wir genauere Pläne darüber bekommen könnten.',
 
-    msg3    = 'Ymir hat mit Sigvaldi gesprochen und ihm geraten, es einmal mit dem erbeuteten Hopfen aus dem Chinesenlager anstatt mit Brennnesseln beim Brauen zu versuchen. Ymir hat herausgefunden, dass dieser Hopfen auch wächst, wo Wintergerste gedeiht, und schlimmer als das Brennnesselbier kann ein Hopfenbier eigentlich nicht schmecken. Sigvaldi ist etwas skeptisch, aber er will es probieren.\n\nHalvar und Ole sind ziemlich atemlos in der Nacht in Eilmärschen zurückgekehrt, um zu berichten. Es sind drei größere Lager jeweils von Babyloniern, Chinesen und Römern auf der Insel. Sie unterstützen sich gegenseitig, indem sie Handel miteinander treiben, sich schnell ausbreiten und dadurch jederzeit und so gut wie überall in der Lage sind, uns anzugreifen. Selbst unser Hauptquartier sei nicht vor Ihnen sicher, da wir es von Norden nicht verteidigen können.\n\nWir müssen so schnell wie möglich Festungen rund um unser Lager herum bauen, damit wir einigermaßen geschützt sind, wenn ein Gegner angreifen sollte. Unsere Wirtschaft läuft schon ganz gut, aber es gibt eher zu wenig als zu viel Nahrung für unsere Bergarbeiter.',
+        msg3    = 'Ymir hat mit Sigvaldi gesprochen und ihm geraten, es einmal mit dem erbeuteten Hopfen aus dem Chinesenlager anstatt mit Brennnesseln beim Brauen zu versuchen. Ymir hat herausgefunden, dass dieser Hopfen auch wächst, wo Wintergerste gedeiht, und schlimmer als das Brennnesselbier kann ein Hopfenbier eigentlich nicht schmecken. Sigvaldi ist etwas skeptisch, aber er will es probieren.\n\nHalvar und Ole sind ziemlich atemlos in der Nacht in Eilmärschen zurückgekehrt, um zu berichten. Es sind drei größere Lager jeweils von Babyloniern, Chinesen und Römern auf der Insel. Sie unterstützen sich gegenseitig, indem sie Handel miteinander treiben, sich schnell ausbreiten und dadurch jederzeit und so gut wie überall in der Lage sind, uns anzugreifen. Selbst unser Hauptquartier sei nicht vor Ihnen sicher, da wir es von Norden nicht verteidigen können.\n\nWir müssen so schnell wie möglich Festungen rund um unser Lager herum bauen, damit wir einigermaßen geschützt sind, wenn ein Gegner angreifen sollte. Unsere Wirtschaft läuft schon ganz gut, aber es gibt eher zu wenig als zu viel Nahrung für unsere Bergarbeiter.',
 
-    msg4    = 'Hurra, Sigvaldi hat sein erstes Hopfenbier an die Front geschickt – und es schmeckt tatsächlich! Allerdings darf man nicht mehr als fünf Liter davon auf einmal trinken, sonst lassen die Konzentration und das Gleichgewichtsempfinden auf dem Schlachtfeld spürbar nach und man sieht alles doppelt!\n\nAber diese Konzentration brauchen wir im Moment nötig, denn die feindlichen Fronten schieben sich unaufhaltsam auf uns zu und es gibt wenige Rückzugsmöglichkeiten. Also werden wir dort kämpfen, wo die besten Möglichkeiten bestehen, den Feind zu schwächen und ansonsten versuchen, unsere Front zu halten. Vor allem benötigen wir Land, wo Ymir seine Bauernhöfe bauen und auch bewirtschaften kann.',
+        msg4    = 'Hurra, Sigvaldi hat sein erstes Hopfenbier an die Front geschickt – und es schmeckt tatsächlich! Allerdings darf man nicht mehr als fünf Liter davon auf einmal trinken, sonst lassen die Konzentration und das Gleichgewichtsempfinden auf dem Schlachtfeld spürbar nach und man sieht alles doppelt!\n\nAber diese Konzentration brauchen wir im Moment nötig, denn die feindlichen Fronten schieben sich unaufhaltsam auf uns zu und es gibt wenige Rückzugsmöglichkeiten. Also werden wir dort kämpfen, wo die besten Möglichkeiten bestehen, den Feind zu schwächen und ansonsten versuchen, unsere Front zu halten. Vor allem benötigen wir Land, wo Ymir seine Bauernhöfe bauen und auch bewirtschaften kann.',
 
-    msg5    = 'Hier sind wir gefordert bis zum letzten Mann, aber wir geben nicht auf! Wir wollen und wir werden unsere Heimat, die grünen Inseln, wiedersehen.\n\nUnsere starken Soldaten hauen mit dem Schwert drein, das es eine Art hat, aber die Feinde sind militärisch so stark, dass wir eine Vorahnung bekommen, was uns auf den restlichen Inseln erwarten könnte, wenn wir hier siegen.',
+        msg5    = 'Hier sind wir gefordert bis zum letzten Mann, aber wir geben nicht auf! Wir wollen und wir werden unsere Heimat, die grünen Inseln, wiedersehen.\n\nUnsere starken Soldaten hauen mit dem Schwert drein, das es eine Art hat, aber die Feinde sind militärisch so stark, dass wir eine Vorahnung bekommen, was uns auf den restlichen Inseln erwarten könnte, wenn wir hier siegen.',
 
-    msg99   = 'Das war eine Schlacht, aber die Insel ist wieder unser. Im zerstörten römischen Hauptquartier haben wir Pläne für Kriegsmaschinen und weiterverarbeitende Getreidebetriebe gefunden, aber wir können leider nichts damit anfangen, weil uns jemand fehlt, der sie umsetzen kann. Selbst Ansgar hat nur mit dem Kopf geschüttelt, als er einer dieser Pläne  über Steineschleudern genauer studiert hat.\n\nWir werden als nächstes unsere erste grüne Insel betreten. Es ist die Insel des ewigen Schnees, weil die Berge dort so hoch sind, dass der Schnee auf den Gipfeln niemals taut, weil es die nördlichste der grünen Inseln ist. Sie ist der geographische Mittelpunkt unseres Reiches, und wir haben dort einen hochgelegenen versteckten Ruheort, den wir in der wärmeren Jahreszeit gerne aufgesucht haben.\n\nVorher werden wir unseren König Knut und unsere Familien wiedersehen. Auch sie sollen auf die grüne Insel gebracht werden, weil die Luft und die Temperaturen dort wesentlich erträglicher sind. Wie freue ich mich auf das Wiedersehen mit meinem Vater. Ob ich ihm von den Brief über Prainn erzählen soll, der mir im Chinesenlager in die Hände gefallen ist?'
+        msg99   = 'Das war eine Schlacht, aber die Insel ist wieder unser. Im zerstörten römischen Hauptquartier haben wir Pläne für Kriegsmaschinen und weiterverarbeitende Getreidebetriebe gefunden, aber wir können leider nichts damit anfangen, weil uns jemand fehlt, der sie umsetzen kann. Selbst Ansgar hat nur mit dem Kopf geschüttelt, als er einer dieser Pläne  über Steineschleudern genauer studiert hat.\n\nWir werden als nächstes unsere erste grüne Insel betreten. Es ist die Insel des ewigen Schnees, weil die Berge dort so hoch sind, dass der Schnee auf den Gipfeln niemals taut, weil es die nördlichste der grünen Inseln ist. Sie ist der geographische Mittelpunkt unseres Reiches, und wir haben dort einen hochgelegenen versteckten Ruheort, den wir in der wärmeren Jahreszeit gerne aufgesucht haben.\n\nVorher werden wir unseren König Knut und unsere Familien wiedersehen. Auch sie sollen auf die grüne Insel gebracht werden, weil die Luft und die Temperaturen dort wesentlich erträglicher sind. Wie freue ich mich auf das Wiedersehen mit meinem Vater. Ob ich ihm von den Brief über Prainn erzählen soll, der mir im Chinesenlager in die Hände gefallen ist?'
     }
 })
 
@@ -95,6 +95,8 @@ end
 function onStart(isFirstStart)
     addPlayerRes(0, not isFirstStart)
     addPlayerRes(1, not isFirstStart)
+    addPlayerRes(2, not isFirstStart)
+    addPlayerRes(3, not isFirstStart)
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}                             -- enable all events
@@ -140,12 +142,12 @@ function addPlayerRes(p, onLoad)
             [GD_WOOD      ] = 54,
             [GD_BOARDS    ] = 94,
             [GD_STONES    ] = 94,
-            [GD_MEAT      ] = 1,
+            [GD_HAM       ] = 1,
             [GD_GRAIN     ] = 1,
             [GD_FLOUR     ] = 1,
 
             [GD_FISH      ] = 4,
-            [GD_HAM       ] = 6,
+            [GD_MEAT      ] = 6,
             [GD_BREAD     ] = 8,
             [GD_WATER     ] = 2,
             [GD_BEER      ] = 6,
@@ -230,12 +232,12 @@ function addPlayerRes(p, onLoad)
             [GD_WOOD      ] = 20,
             [GD_BOARDS    ] = 20,
             [GD_STONES    ] = 20,
-            [GD_MEAT      ] = 0,
+            [GD_HAM       ] = 0,
             [GD_GRAIN     ] = 0,
             [GD_FLOUR     ] = 0,
 
             [GD_FISH      ] = 8,
-            [GD_HAM       ] = 8,
+            [GD_MEAT      ] = 8,
             [GD_BREAD     ] = 8,
             [GD_WATER     ] = 0,
             [GD_BEER      ] = 8,
@@ -329,7 +331,7 @@ function onGameFrame(gf)
         MissionEvent(2, false)
     end
 
-    local milBuildingCount = rttr:GetPlayer(0):GetNumBuildings(BLD_BARRACKS) + rttr:GetPlayer(0):GetNumBuildings(BLD_GUARDHOUSE) + rttr:GetPlayer(0):GetNumBuildings(BLD_WATCHTOWER) + rttr:GetPlayer(0):GetNumBuildings(BLD_FORTRESS)
+    local milBuildingCount = GetNumMilitaryBuilding(0, true)
 
     if (eState[3] > 0 and milBuildingCount >= 5) then
         -- EVENT3
@@ -393,4 +395,12 @@ end
 
 function GetNumStorage(plr)
     return rttr:GetPlayer(plr):GetNumBuildings(BLD_HEADQUARTERS) + rttr:GetPlayer(plr):GetNumBuildings(BLD_HARBORBUILDING) + rttr:GetPlayer(plr):GetNumBuildings(BLD_STOREHOUSE)
+end
+
+function GetNumMilitaryBuilding(plr, withHarbor)
+    if(withHarbor) then
+        return rttr:GetPlayer(plr):GetNumBuildings(BLD_HARBORBUILDING) + rttr:GetPlayer(plr):GetNumBuildings(BLD_BARRACKS) + rttr:GetPlayer(plr):GetNumBuildings(BLD_GUARDHOUSE) + rttr:GetPlayer(plr):GetNumBuildings(BLD_WATCHTOWER) + rttr:GetPlayer(plr):GetNumBuildings(BLD_FORTRESS)
+    else
+        return rttr:GetPlayer(plr):GetNumBuildings(BLD_BARRACKS) + rttr:GetPlayer(plr):GetNumBuildings(BLD_GUARDHOUSE) + rttr:GetPlayer(plr):GetNumBuildings(BLD_WATCHTOWER) + rttr:GetPlayer(plr):GetNumBuildings(BLD_FORTRESS)
+    end
 end
