@@ -47,6 +47,7 @@ function onSettingsReady()
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
     rttr:SetAddon(ADDON_CATAPULT_GRAPHICS, true)
+    rttr:SetAddon(ADDON_NUM_SCOUTS_EXPLORATION, 4)
     rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
@@ -105,7 +106,6 @@ function onStart(isFirstStart)
         end
     else
         eHist = {["n"] = 0}
-        --MissionEvent(1)                         -- initial event / start screen
     end
 
     if(isFirstStart) then
@@ -275,7 +275,7 @@ function addPlayerRes(p, onLoad)
             [GD_SCYTHE    ] = 0,
             [GD_CLEAVER   ] = 0,
             [GD_ROLLINGPIN] = 0,
-            [GD_BOW       ] = 5,
+            [GD_BOW       ] = 0,
             [GD_SWORD     ] = 0,
             [GD_SHIELD    ] = 0,
 
@@ -292,7 +292,7 @@ function addPlayerRes(p, onLoad)
             [JOB_STONEMASON         ] = 3,
 
             [JOB_FISHER             ] = 1,
-            [JOB_HUNTER             ] = 1,
+            [JOB_HUNTER             ] = 5,
             [JOB_CARPENTER          ] = 2,
             [JOB_FARMER             ] = 0,
             [JOB_PIGBREEDER         ] = 0,
@@ -314,7 +314,6 @@ function addPlayerRes(p, onLoad)
 
             [JOB_PACKDONKEY         ] = 2,
             [JOB_CHARBURNER         ] = 0,
-    
 
             [JOB_PRIVATE            ] = 20,
             [JOB_PRIVATEFIRSTCLASS  ] = 10,

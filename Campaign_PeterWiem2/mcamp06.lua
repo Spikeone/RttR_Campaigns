@@ -17,11 +17,11 @@ rttr:RegisterTranslations(
 
         msg1    = 'Halvar hat für uns dieses versteckte Tal als Ausgangspunkt gewählt. Auf unserem Anmarschweg hierher haben wir eine Menge frische Spuren von Menschen entdeckt, deshalb erschien uns ein verborgener Platz sicherer.\n\nDie ganze Insel scheint durchzogen mit Resten von Lagerfeuern und frisch aufgebrochenem Wild. Allerdings sind die Spuren so unterschiedlich, die wir hier gefunden haben, dass wir mit ziemlicher Sicherheit auf mehrere Völker schließen können, die diese unterschiedlichen Spuren hinterlassen haben. Unter anderem haben wir drei völlig verschiedenartige Pfeilspitzen entdeckt, die offensichtlich bei der Jagd nach Wild verwendet worden sind.',
 
-        msg2    = 'Halvars Spürsinn ist bisher bewundernswert, was die Wahl unserer Lageplätze angeht – um uns herum hat es genügend Gold, um eine Münzprägerei für lange Zeit auszulasten. Jetzt sollten wir uns schnell nach Süden ausbreiten, damit unser Schmied Elvor, unser Eisengießer Darvi und ihre Zulieferer genug zu tun bekommen. Wir brauchen Kohle, Eisen, Gold, Verpflegung und genügend Platz, um unsere Wirtschaft zum Laufen zu bringen.\n\nAußerdem sind Halvar und Ole zu zweit unterwegs, um sich ein Bild von der Lage hier zu machen. Ole sucht vor allem geeignete Hafenplätze, Halvar will herausfinden, wo die Feinde lagern und wie stark sie sind.\n\nAnsgar hat schon vor längerer Zeit vorgeschlagen, neben Schwert und Schild noch eine Waffe zu konstruieren, die den Gegner auch auf Distanz schaden könnten. Wir sind schon mit gegnerischen Bauwerken konfrontiert worden, die Steine über eine größere Entfernung schleudern können, und die uns sehr zugesetzt haben. Es wäre eine Hilfe, wenn wir genauere Pläne darüber bekommen könnten.',
+        msg2    = 'Halvars Spürsinn ist bisher bewundernswert, was die Wahl unserer Lageplätze angeht, um uns herum hat es genügend Gold, um eine Münzprägerei für lange Zeit auszulasten. Jetzt sollten wir uns schnell nach Süden ausbreiten, damit unser Schmied Elvor, unser Eisengießer Darvi und ihre Zulieferer genug zu tun bekommen. Wir brauchen Kohle, Eisen, Gold, Verpflegung und genügend Platz, um unsere Wirtschaft zum Laufen zu bringen.\n\nAußerdem sind Halvar und Ole zu zweit unterwegs, um sich ein Bild von der Lage hier zu machen. Ole sucht vor allem geeignete Hafenplätze, Halvar will herausfinden, wo die Feinde lagern und wie stark sie sind.\n\nAnsgar hat schon vor längerer Zeit vorgeschlagen, neben Schwert und Schild noch eine Waffe zu konstruieren, die den Gegner auch auf Distanz schaden könnten. Wir sind schon mit gegnerischen Bauwerken konfrontiert worden, die Steine über eine größere Entfernung schleudern können, und die uns sehr zugesetzt haben. Es wäre eine Hilfe, wenn wir genauere Pläne darüber bekommen könnten.',
 
         msg3    = 'Ymir hat mit Sigvaldi gesprochen und ihm geraten, es einmal mit dem erbeuteten Hopfen aus dem Chinesenlager anstatt mit Brennnesseln beim Brauen zu versuchen. Ymir hat herausgefunden, dass dieser Hopfen auch wächst, wo Wintergerste gedeiht, und schlimmer als das Brennnesselbier kann ein Hopfenbier eigentlich nicht schmecken. Sigvaldi ist etwas skeptisch, aber er will es probieren.\n\nHalvar und Ole sind ziemlich atemlos in der Nacht in Eilmärschen zurückgekehrt, um zu berichten. Es sind drei größere Lager jeweils von Babyloniern, Chinesen und Römern auf der Insel. Sie unterstützen sich gegenseitig, indem sie Handel miteinander treiben, sich schnell ausbreiten und dadurch jederzeit und so gut wie überall in der Lage sind, uns anzugreifen. Selbst unser Hauptquartier sei nicht vor Ihnen sicher, da wir es von Norden nicht verteidigen können.\n\nWir müssen so schnell wie möglich Festungen rund um unser Lager herum bauen, damit wir einigermaßen geschützt sind, wenn ein Gegner angreifen sollte. Unsere Wirtschaft läuft schon ganz gut, aber es gibt eher zu wenig als zu viel Nahrung für unsere Bergarbeiter.',
 
-        msg4    = 'Hurra, Sigvaldi hat sein erstes Hopfenbier an die Front geschickt – und es schmeckt tatsächlich! Allerdings darf man nicht mehr als fünf Liter davon auf einmal trinken, sonst lassen die Konzentration und das Gleichgewichtsempfinden auf dem Schlachtfeld spürbar nach und man sieht alles doppelt!\n\nAber diese Konzentration brauchen wir im Moment nötig, denn die feindlichen Fronten schieben sich unaufhaltsam auf uns zu und es gibt wenige Rückzugsmöglichkeiten. Also werden wir dort kämpfen, wo die besten Möglichkeiten bestehen, den Feind zu schwächen und ansonsten versuchen, unsere Front zu halten. Vor allem benötigen wir Land, wo Ymir seine Bauernhöfe bauen und auch bewirtschaften kann.',
+        msg4    = 'Hurra, Sigvaldi hat sein erstes Hopfenbier an die Front geschickt, und es schmeckt tatsächlich! Allerdings darf man nicht mehr als fünf Liter davon auf einmal trinken, sonst lassen die Konzentration und das Gleichgewichtsempfinden auf dem Schlachtfeld spürbar nach und man sieht alles doppelt!\n\nAber diese Konzentration brauchen wir im Moment nötig, denn die feindlichen Fronten schieben sich unaufhaltsam auf uns zu und es gibt wenige Rückzugsmöglichkeiten. Also werden wir dort kämpfen, wo die besten Möglichkeiten bestehen, den Feind zu schwächen und ansonsten versuchen, unsere Front zu halten. Vor allem benötigen wir Land, wo Ymir seine Bauernhöfe bauen und auch bewirtschaften kann.',
 
         msg5    = 'Hier sind wir gefordert bis zum letzten Mann, aber wir geben nicht auf! Wir wollen und wir werden unsere Heimat, die grünen Inseln, wiedersehen.\n\nUnsere starken Soldaten hauen mit dem Schwert drein, das es eine Art hat, aber die Feinde sind militärisch so stark, dass wir eine Vorahnung bekommen, was uns auf den restlichen Inseln erwarten könnte, wenn wir hier siegen.',
 
@@ -49,6 +49,7 @@ function onSettingsReady()
     rttr:ResetAddons()
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
     rttr:SetAddon(ADDON_CATAPULT_GRAPHICS, true)
+    rttr:SetAddon(ADDON_NUM_SCOUTS_EXPLORATION, 4)
     rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
@@ -110,7 +111,12 @@ function onStart(isFirstStart)
         end
     else
         eHist = {["n"] = 0}
-        --MissionEvent(1)                   -- initial event / start screen
+    end
+
+    if(isFirstStart) then
+        rttr:GetWorld():AddStaticObject(62, 12, 0, 0, 1)
+        rttr:GetWorld():AddStaticObject( 7, 26, 0, 0, 1)
+        rttr:GetWorld():AddStaticObject(17,  6, 0, 0, 1)
     end
 end
 
@@ -260,7 +266,7 @@ function addPlayerRes(p, onLoad)
             [GD_SCYTHE    ] = 0,
             [GD_CLEAVER   ] = 0,
             [GD_ROLLINGPIN] = 0,
-            [GD_BOW       ] = 3,
+            [GD_BOW       ] = 0,
             [GD_SWORD     ] = 0,
             [GD_SHIELD    ] = 0,
 
@@ -277,7 +283,7 @@ function addPlayerRes(p, onLoad)
             [JOB_STONEMASON         ] = 8,
 
             [JOB_FISHER             ] = 4,
-            [JOB_HUNTER             ] = 4,
+            [JOB_HUNTER             ] = 6,
             [JOB_CARPENTER          ] = 3,
             [JOB_FARMER             ] = 2,
             [JOB_PIGBREEDER         ] = 0,

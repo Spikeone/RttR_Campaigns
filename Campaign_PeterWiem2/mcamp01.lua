@@ -55,6 +55,7 @@ function onSettingsReady()
     rttr:ResetAddons()                          -- S2-settings
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
     rttr:SetAddon(ADDON_CATAPULT_GRAPHICS, true)
+    rttr:SetAddon(ADDON_NUM_SCOUTS_EXPLORATION, 4)
     rttr:SetGameSettings({
         ["fow"] = EXP_CLASSIC,
         ["teamView"] = false,
@@ -112,7 +113,6 @@ function onStart(isFirstStart)
         end
     else
         eHist = {["n"] = 0}
-        --MissionEvent(1)                         -- initial event / start screen
     end
 
     if(isFirstStart) then
@@ -125,7 +125,6 @@ function onStart(isFirstStart)
 
         rttr:GetWorld():AddStaticObject(6, 34, 0, 0, 1)
         rttr:GetWorld():AddStaticObject(53, 17, 0, 0, 1)
-        rttr:GetWorld():AddStaticObject(90, 95, 0, 0, 1)
     end
 end
 
@@ -302,7 +301,7 @@ function addPlayerRes(p, onLoad)
             [JOB_STONEMASON         ] = 1,
 
             [JOB_FISHER             ] = 0,
-            [JOB_HUNTER             ] = 0,
+            [JOB_HUNTER             ] = 3,
             [JOB_CARPENTER          ] = 1,
             [JOB_FARMER             ] = 0,
             [JOB_PIGBREEDER         ] = 0,
@@ -324,7 +323,6 @@ function addPlayerRes(p, onLoad)
 
             [JOB_PACKDONKEY         ] = 2,
             [JOB_CHARBURNER         ] = 0,
-    
 
             [JOB_PRIVATE            ] = 30,
             [JOB_PRIVATEFIRSTCLASS  ] = 15,
@@ -442,8 +440,10 @@ function MissionEvent(e, onLoad)
             [GD_HAMMER] = 10,
             [GD_AXE] = 10,
             [GD_PICKAXE] = 10,
-            [GD_BOW] = 5,
             [GD_RODANDLINE] = 5
+            })
+        rttr:GetPlayer(0):AddPeople({
+            [JOB_HUNTER] = 5
             })
 
     elseif(e == 6 and not onLoad) then
