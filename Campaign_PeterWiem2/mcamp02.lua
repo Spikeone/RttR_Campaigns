@@ -423,9 +423,11 @@ function MissionEvent(e, onLoad)
 
     elseif(e == 6 and not onLoad) then
         rttr:GetPlayer(0):AddWares({
-            [GD_BEER] = 100,
+            [GD_BEER] = 200,
             [GD_PICKAXE] = 10,
-            [GD_AXE] = 10
+            [GD_AXE] = 10,
+            [GD_SWORD] = 15,
+            [GD_SHIELD] = 15
             })
 
     elseif(e == 7) then
