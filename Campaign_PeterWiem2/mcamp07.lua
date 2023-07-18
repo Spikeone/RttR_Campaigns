@@ -259,7 +259,7 @@ function addPlayerRes(p, onLoad)
             [GD_CRUCIBLE  ] = 4,
             [GD_RODANDLINE] = 8,
 
-            [GD_SCYTHE    ] = 0,
+            [GD_SCYTHE    ] = 2,
             [GD_CLEAVER   ] = 0,
             [GD_ROLLINGPIN] = 0,
             [GD_BOW       ] = 0,
@@ -373,7 +373,7 @@ function MissionEvent(e, onLoad)
     elseif(e == 2) then
         if(not onLoad) then
             rttr:GetPlayer(0):AddWares({
-                [GD_ROLLINGPIN] = 2
+                [GD_ROLLINGPIN] = 3
             })
         end
         rttr:GetPlayer(0):EnableBuilding(BLD_BAKERY, not onLoad)
