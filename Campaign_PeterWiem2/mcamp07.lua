@@ -39,6 +39,10 @@ function MissionText(e, silent)
     end
 end
 
+function isMapPreviewEnabled()
+    return false;
+end
+
 function onSettingsReady()
     rttr:Log("-----------------------\n Mission Script loaded... \n-----------------------\n")
 

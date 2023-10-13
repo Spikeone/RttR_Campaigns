@@ -16,21 +16,13 @@ rttr:RegisterTranslations(
         diary   = 'Tagebuch',
 
         msg1    = 'Wie Hunde haben sie uns gehetzt! Wie die Heuschrecken sind unsere Feinde, die Babylonier, mit ihren Verbündeten über uns hergefallen. Wir waren im tiefsten Frieden, als von allen Seiten die Feinde uns angegriffen haben. Sie ließen uns keine Zeit, um Luft zu holen – in immer neuen Schlachten haben sie uns von Insel zu Insel getrieben. Wir wurden gejagt wie Hasen und Einzelne von uns haben sich in den Wäldern verstecken können. Alle anderen mussten fliehen, um ihre Haut zu retten.\n\nEs blieb uns Übriggebliebenen von unserem Volk zuletzt nur noch der Rückzug auf eine Insel im hohen Norden, die wir uns für Notfälle als Zuflucht angelegt haben. Den einzige Hafen haben wir unbrauchbar gemacht, und uns in unseren Schlupfwinkel in der Mitte dieser Insel zurückgezogen.\n\nNach gemeinsamer Absprache haben wir uns entschlossen, ein Sägewerk zu bauen, weil wir fast kein Bauholz mehr haben. Auch ein Holzfällerhäuschen und eine Jagdhütte sollten wir bauen, damit wir nicht verhungern und stets etwas Brennholz haben. Es ist eiskalt hier und ohne ein Feuer nicht auszuhalten.',
-
         msg2    = 'Mein Vater Knut, unser großer und weiser König, ist vor Kummer und Herzeleid sprachlos geworden. Er sitzt in einem Raum in unserer Zuflucht, trauert und ist für nichts und niemandem zu sprechen. Meine Freunde und Kameraden haben mich, Eric, gebeten, so lange für meinen Vater Entscheidungen zu treffen, bis er wieder im Vollbesitz seiner seelischen und körperlichen Kräfte ist.\n\nMein guter Ansgar ist mein bester Freund und gleichzeitig der Älteste aller Wikinger, die es hierher geschafft haben. Er ist Goldschmied von Beruf und kennt diese Gegend viel besser als ich, weil er vor etwa vierzig Jahren diesen Schlupfwinkel entdeckt und ausgebaut hat. Außerdem kennt er mich besser als ich mich selbst, weil er meine Erziehung von Kindesbeinen an verantwortlich begleitet hat.\n\nEr hat mir erzählt, dass in der Nähe ein Trainingslager für junge babylonische Soldaten errichtet wurde, die von unserer Gegenwart hier nichts ahnen. Allzu lange könnten wir unsere Gegenwart hier nicht verbergen, da vor allem unsere Feuerstätten im Haus und im Freien uns verraten werden. Ansgar weiß um einen möglichen Hafenplatz im Südwesten unserer Insel und riet mir, diesen Platz aufzusuchen.',
-
         msg3    = 'Der mögliche Hafenplatz ist gefunden und er ist gar nicht so schlecht. Da Ole, mein Gefährte aus Kindertagen, sich für den Schiffsbau interessiert, hat er jedes Schiffswrack, das er entdecken konnte, genau besehen. Er würde sich zutrauen, ein Schiff zu bauen, das laut seinen Worten den Vergleich mit anderen Schiffen nicht scheuen müsste. Nur braucht er dazu ein Hafengebäude, eine Werft, viel Bauholz und einige Leute zur Handreichung. Ich denke, wir wagen diesen Schritt, um mit dem Schiff die Umgebung zu erkundigen. Natürlich müssen wir dabei vorsichtig sein. Außerdem brauchen wir Fischer.',
-
         msg4    = 'Das Trainingsgelände in der Nähe ist manchmal zu hören und zu riechen. Die Wahrscheinlichkeit ist deshalb groß, irgendwann ebenfalls entdeckt zu werden. Unseres Bleibens ist hier auf Dauer nicht sicher! Daher sollten wir uns nach Rohstoffen umschauen, um uns Münzen prägen zu können. Die dunkle Oberfläche unseres Inselgebirges lässt reichlich Kohle darunter vermuten, aber wir brauchen auch Gold, damit Ansgar etwas zu tun bekommt. Ein Soldat, der Anerkennung und Wertschätzung durch seinen Sold erfährt, kämpft besser als ein Soldat ohne Münzen. Schauen wir also, dass wir einen Platz für eine Münzprägerei bekommen, und dass wir Gold finden können, um Ansgar beschäftigen zu können.',
-
         msg5    = 'Wir haben eine große Kiste gefunden, die fast vollständig eingegraben war. Darin befanden sich Äxte und Spitzhacken und anderes Werkzeug, die wir sehr gut gebrauchen können.',
-
         msg6    = 'Oles Schiffsbaukunst ist wirklich bewundernswert – alle Achtung! Seine Schiffe machen uns beweglicher und flexibler. Es gibt scheinbar genug Hafenplätze in der Umgebung aber mit jedem gefundenen Hafenplatz steigt die Gefahr, selbst entdeckt zu werden. Allerdings steigt auch die Möglichkeit, Gold zu finden, da die neuentdeckten kleinen Insel alle recht bergig sind. Wir werden bei Bedarf Geologen hinschicken, die gelernt haben, an dem Geräusch ihrer Hammerschläge das jeweilig vorhandene Metall herauszufinden. Leider können wir mit Eisen nichts anfangen, da uns sowohl die notwendigen Werkzeuge zur Bearbeitung, als auch die nötigen Leute fehlen, die damit umgehen können. Das müssen wir baldmöglichst ändern.',
-
         msg7    = 'Die kleineren Inseln sind allermeist erkundet und ziemlich ausgebeutet, was die vorhandenen Rohstoffe anbetrifft. Nur die große Insel ist noch übrig, und die dürfte das Trainingsgelände der Babylonier beherbergen. Hier sollten wir die Rohstoffe, beide Sägewerke, unseren Ansgar mit seiner Goldschmiede und vor allem sämtliche zur Verfügung stehende Soldaten hier zusammenziehen und sie ausreichend mit Sold ausstatten. Das funktioniert am besten in einem größeren Militärgebäude, weil dort die Münzen gleichmäßiger verteilt werden können. Dazu brauchen wir kürzere Wege, als wir sie bisher haben.',
-
         msg8    = 'Wir sind tatsächlich an dem Punkt angelangt, wo sich unsere Zukunft als Volk entscheiden wird. Die Babylonier wollten uns ausrotten, deshalb müssen wir sie hier und jetzt besiegen. Darum brauchen wir jeden einzelnen verfügbaren Soldaten an vorderster Front und bestens ausgerüstet. Der ausgezahlte Sold hat einige von unseren jungen Kämpfern geradezu wie verwandelt – ihre Zuversicht und ihre Schlagfertigkeit sind wirklich beeindruckend. Wir können uns ausrechnen, dass wir es mit einer Übermacht von feindlichen Kämpfern zu tun haben werden, deshalb sollte es keinem Soldat an seinem Sold bis zur letzten Münze fehlen.',
-
         msg99   = 'Wir haben es geschafft, das dortige Hauptgebäude der Babylonier und alle ihre Lagerhäuser vollständig zu zerstören. Was noch übriggeblieben ist von dem Trainingsgelände schauen wir uns genau an, ob für uns etwas Verwertbares darunter ist. Besonders Ansgar sucht nach herumliegenden Werkzeugen.',
     }
 })
@@ -47,6 +39,10 @@ function MissionText(e, silent)
     else
         rttr:Log("Error: no Translation found!" .. _(msg))
     end
+end
+
+function isMapPreviewEnabled()
+    return false;
 end
 
 function onSettingsReady()
@@ -148,10 +144,10 @@ end
 function addPlayerRes(p, onLoad)
     if onLoad then return end
 
-    if(p ~= 0) then                 -- Map activates 7 players!
-        -- goods
-        rttr:GetPlayer(p):ClearResources()
+    if(p ~= 0) then
+        if onLoad then return end
 
+        rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 24,
             [GD_BOARDS    ] = 44,
@@ -231,14 +227,11 @@ function addPlayerRes(p, onLoad)
             [JOB_GENERAL            ] = 0
         })
     elseif (p == 0) then
-        rttr:GetPlayer(p):ClearResources()
-
         rttr:GetPlayer(p):DisableBuilding(BLD_GUARDHOUSE)
         rttr:GetPlayer(p):DisableBuilding(BLD_WATCHTOWER)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORTRESS)
         rttr:GetPlayer(p):DisableBuilding(BLD_CATAPULT)
         rttr:GetPlayer(p):DisableBuilding(BLD_LOOKOUTTOWER)
-
         rttr:GetPlayer(p):DisableBuilding(BLD_WELL)
         rttr:GetPlayer(p):DisableBuilding(BLD_MILL)
         rttr:GetPlayer(p):DisableBuilding(BLD_BAKERY)
@@ -251,7 +244,9 @@ function addPlayerRes(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
         rttr:GetPlayer(p):DisableBuilding(BLD_ARMORY)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
+        if onLoad then return end
 
+        rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 6,
             [GD_BOARDS    ] = 11,

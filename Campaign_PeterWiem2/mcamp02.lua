@@ -15,7 +15,6 @@ rttr:RegisterTranslations(
         name    = 'Unbekannter Gegner',
         diary   = 'Tagebuch',
 
-        --msg1    = 'Wir haben die Nachbarinsel im Westen mit dem Schiff erreicht. Den großen Felsen am Ufer kenne ich aus Kindertagen, weil wir früher dort einen Außenposten hatten. Der Fels ist reich an kostbaren Rohstoffen, außerdem kann man von dort relativ geschützt die Umgegend überblicken. Aber zuerst brauchen wir ein Sägewerk, um genügend Bauholz zu bekommen.\n\nAnsgar hat ein Gespräch mit meinem Vater Knut und mir geführt. Zuerst erklärte er, daß er Bjarki, den handwerklich Geschicktesten von uns, die Münzprägerei beigebracht hätte. Daraufhin bat er mich, für einen Waffenschmied und eine Eisengießerei die richtigen Leute dafür auszusuchen. Er hat auf der letzten Insel eine Schmelzpfanne, einen Schmiedehammer und einen Ambos gefunden und mitgenommen. Wir brauchen Münzen, Schwerter und Schilde, damit wir uns im Nahkampf besser verteidigen können.\n\nDann bat er unsern König Knut, mit Ihm zu Schiff mitzukommen, und die grauen Inseln im Südwesten zu erkunden. Mein Vater kennt die grauen Inseln gut, weil er dort ab und zu Trupps zum Jagen, Angeln und zum Baumfällen befehligt hat. Aber wohnen tun dort nur Einzelne von unserem Volk, da diese Inseln sich nicht gut zum Besiedeln eignen. Es dampft dort beständig und stinkt durchdringend nach Lava und faulen Eiern. Die Sonne bekommt man dort nie zu sehen, weil der Himmel dort stets bedeckt ist.\n\nAber wir müssen damit rechnen, dass unsere Feinde auch diese Inseln besetzt halten. Und für meinen Vater, der nach wie vor nicht redet, ist diese Aufgabe wie geschaffen. Er kennt die Inseln und er hat dabei Gemeinschaft mit Ansgar – der wird ihn schon zum Reden bringen!',
         msg1    = 'Wir haben die Nachbarinsel im Westen mit dem Schiff erreicht. Ansgar hat dort ein Gespräch mit meinem Vater Knut und mir geführt. Zuerst erklärte er, dass er Bjarki, den handwerklich Geschicktesten von uns, die Münzprägerei beigebracht hätte. Daraufhin bat er mich, für einen Waffenschmied und eine Eisengießerei die richtigen Leute dafür auszusuchen. Er hat auf der letzten Insel im zerstörten Römerlager eine Schmelzpfanne, einen Schmiedehammer und einen Ambos gefunden und mitgenommen. Wir brauchen Münzen, Schwerter und Schilde, damit wir uns im Nahkampf besser verteidigen können. Aber zuerst brauchen wir ein Sägewerk, um genügend Bauholz zu bekommen.\n\nDann bat er unsern König Knut, mit Ihm zu Schiff mitzukommen, und die grauen Inseln im Südwesten zu erkunden. Mein Vater kennt alle grauen Inseln gut, weil er dort ab und zu Trupps zum Jagen, Angeln und zum Baumfällen befehligt hat. Wir müssen damit rechnen, dass unsere Feinde auch diese Inseln besetzt halten. Und für meinen Vater, der nach wie vor nicht redet, ist diese Aufgabe wie geschaffen. Er kennt die Inseln und er hat dabei Gemeinschaft mit Ansgar, der wird ihn schon zum Reden bringen!',
         msg2    = 'Elvor ist ein Bär von einem Mann. Er ist etwas über zwei Meter groß, wiegt weit über hundert Kilo und hat kein Gramm Fett auf den Rippen. Wir nennen ihn deshalb Bär, weil er etwas tapsig erscheint, ähnlich wie ein Riesenbaby. Aber wo er hinhaut, wächst kein Gras mehr, ich kann mir keinen besseren Schmied vorstellen. Elvor hat nur gelacht, als ich ihm mein Anliegen vorgebracht habe, ob er in nächster Zeit mit einem Schmiedehammer hantieren könnte.\n\nDarvi dagegen ist klein, zäh und taut erst bei hohen Außentemperaturen richtig auf. Ihn habe ich gefragt, ob er mit einer Schmelzpfanne sich zu arbeiten traut? Er hat mich groß angeschaut, weil er sich nichts darunter vorstellen kann. Daraufhin habe ich ihm erklärt, daß wir nach Kohlen und Eisenerz Ausschau halten werden, und er es zu Roheisen umschmelzen sollte. Als ich ihm erklärt habe, dass in einer Eisengießerei Temperaturen über 40 Grad vorkommen können, war er für unsere Sache gewonnen.',
         msg3    = 'Jetzt schauen wir, dass wir genügend Schwerter, Schilde und Münzen zusammenbekommen, um für eventuelle Schlachten besser gewappnet zu sein. Elvor haut auf den Ambos, als ob es kein Morgen mehr gäbe. Und Darvi blüht richtig auf in seiner Hochtemperaturwerkstatt. Unsere Jäger und Fischer werden gut zu tun haben, damit unsere Bergwerker fit und motiviert ihrer Arbeit unter Tage nachkommen können. Ich kenne niemanden, der so einen Appetit hat, wie sie.',
@@ -39,6 +38,10 @@ function MissionText(e, silent)
     else
         rttr:Log("Error: no Translation found!" .. _(msg))
     end
+end
+
+function isMapPreviewEnabled()
+    return false;
 end
 
 function onSettingsReady()
@@ -139,12 +142,10 @@ function onLoad(saveGame)
 end
 
 function addPlayerRes(p, onLoad)
-    if onLoad then return end
+    if(p ~= 0) then
+        if onLoad then return end
 
-    if(p ~= 0) then                 -- Map activates 7 players!
-        -- goods
         rttr:GetPlayer(p):ClearResources()
-
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 24,
             [GD_BOARDS    ] = 44,
@@ -224,12 +225,9 @@ function addPlayerRes(p, onLoad)
             [JOB_GENERAL            ] = 0
         })
     elseif (p == 0) then
-        rttr:GetPlayer(p):ClearResources()
-
         rttr:GetPlayer(p):DisableBuilding(BLD_FORTRESS)
         rttr:GetPlayer(p):DisableBuilding(BLD_CATAPULT)
         rttr:GetPlayer(p):DisableBuilding(BLD_LOOKOUTTOWER)
-
         rttr:GetPlayer(p):DisableBuilding(BLD_WELL)
         rttr:GetPlayer(p):DisableBuilding(BLD_MILL)
         rttr:GetPlayer(p):DisableBuilding(BLD_BAKERY)
@@ -242,7 +240,9 @@ function addPlayerRes(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
         rttr:GetPlayer(p):DisableBuilding(BLD_ARMORY)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
+        if onLoad then return end
 
+        rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 6,
             [GD_BOARDS    ] = 20,

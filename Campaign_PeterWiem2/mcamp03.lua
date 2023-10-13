@@ -40,6 +40,10 @@ function MissionText(e, silent)
     end
 end
 
+function isMapPreviewEnabled()
+    return false;
+end
+
 function onSettingsReady()
     rttr:Log("-----------------------\n Mission Script loaded... \n-----------------------\n")
 
@@ -140,8 +144,8 @@ end
 function addPlayerRes(p, onLoad)
     if onLoad then return end
 
-    if(p ~= 0) then                 -- Map activates 7 players!
-        -- goods
+    if(p ~= 0) then
+        if onLoad then return end
         rttr:GetPlayer(p):ClearResources()
 
         rttr:GetPlayer(p):AddWares({
@@ -223,12 +227,9 @@ function addPlayerRes(p, onLoad)
             [JOB_GENERAL            ] = 0
         })
     elseif (p == 0) then
-        rttr:GetPlayer(p):ClearResources()
-
         rttr:GetPlayer(p):DisableBuilding(BLD_FORTRESS)
         rttr:GetPlayer(p):DisableBuilding(BLD_CATAPULT)
         rttr:GetPlayer(p):DisableBuilding(BLD_LOOKOUTTOWER)
-
         rttr:GetPlayer(p):DisableBuilding(BLD_WELL)
         rttr:GetPlayer(p):DisableBuilding(BLD_MILL)
         rttr:GetPlayer(p):DisableBuilding(BLD_BAKERY)
@@ -239,7 +240,9 @@ function addPlayerRes(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_SLAUGHTERHOUSE)
         rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
+        if onLoad then return end
 
+        rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 6,
             [GD_BOARDS    ] = 20,

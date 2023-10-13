@@ -136,8 +136,6 @@ function onPlayerLeft(playerIdx)
 end
 
 function onStart(isFirstStart)
-    
-
     if (isFirstStart) then
         addPlayerRes()
     end

@@ -16,17 +16,11 @@ rttr:RegisterTranslations(
         diary   = 'Tagebuch',
 
         msg1    = 'Durch eine Untiefe wurde unser Schiff stark beschädigt, und wir mussten notgedrungen an Land. Eigentlich gehen wir davon aus, dass es auf dieser kleinen Insel keine Feinde gibt. Trotzdem haben wir einen recht gut verborgenen Hafen gesucht und gefunden, und uns erst einmal hier niedergelassen.\n\nAnsgar war schon einmal auf dieser Insel, um nach Gold zu suchen, und er weiß im äußersten Südwesten um einen abgelegenen Vulkan, der reichliche Bodenschätze verspricht. Normalerweise machen unsere Feinde einen großen Bogen um aktive Vulkane, aber nach meinen Erfahrungen auf unseren letzten Inseln bin ich mir da nicht mehr so sicher.\n\nUnser pflichtbewusster Ymir hat gleich seine Wintergerste ausgesät und wartet nun gespannt auf das Ergebnis. Halvar ist auch schon fleißig dabei, die Gegend zu erkunden. Nur Ole, Bjarki, Elvor, Darvi und Aron machen lange Gesichter, da es hier bis auf ein Hafengebäude momentan keinen Platz für größere Gebäude zu haben scheint.',
-
         msg2    = 'Halvar fasst seine bisherigen Erkundungen mit dem Gedanken zusammen, das ihm selten eine solche unwirtliche und lebensfeindliche Insel begegnet ist. Man könne quasi keine hundert Meter geradeaus laufen, weil entweder ein Steinhaufen, ein Baum oder ein Wasserlauf im Weg sei.\n\nHier wird wohl das Schiff eine große Rolle spielen müssen. Allerdings scheint beileibe nicht jeder Wasserweg schiffbar, es gibt immer mal wieder Engstellen, Untiefen und Landzungen, wo ein Schiff stranden könnte. Ole überlegt indessen schon laut, wo er gerne seine Werft hinhaben möchte.\n\nNebenbei bemerkt ist diese Insel voll von Hasen und die zahlreichen Gewässer darin voller Fische. Wir schauen, dass wir den großen Kohlefelsen im Süden gewinnen und gründlich ausräumen. Leider ist der Weg nach Süden und nach Osten recht schwierig und hindernisreich.',
-
         msg3    = 'Diese Insel steckt wirklich voller Überraschungen! Wir sind uns nicht sicher, ob unsere nördliche Anlegestelle bemerkt worden ist, weil wir Schiffsbewegungen in der näheren Umgebung bemerkt haben. Wir wissen auch nicht, ob es klug ist, auf dieser Wasserstraße mit dem Schiff nach geeigneten Häfen Ausschau zu halten, weil wir wahrscheinlich nicht die einzigen Schiffe wären, die dort entlangsegeln.\n\nAber im Süden blieb es bisher ruhig, und vielleicht hilft uns dort ein zweiter Hafen, um Land zu gewinnen? Außerdem habe ich im Hinterkopf, dem Vulkan und seinen Bodenschätze einen Besuch abzustatten. Die könnten ungefähr in der Richtung liegen, die wir weiter verfolgen wollen.',
-
         msg4    = 'Wir sind längst entdeckt worden, aber wir konnten uns bisher ganz gut einrichten. Ymir hat zu meiner Freude erklärt, dass die Wintergerste und auch der Hopfen auf geeigneten Böden gut wächst und auch guten Ertrag verspricht. Er würde den Versuch wagen, diese Gerste im größeren Stil anzubauen. Außerdem vermisst er, wie wir alle, das Bier, welches ihm gut gemundet hat, und was auch zur Stärkung unserer militärischen Schlagkraft beigetragen hat.\n\nYmir würde es sich zutrauen, jemanden zum Bierbrauen einzulernen, da er damit auf unseren grünen Inseln schon etwas Erfahrung sammeln durfte. Nur bräuchte er ein geeigneten Platz, wo man auch Getreidefelder anlegen könnte, einen Wasserbrunnen und ein Gebäude, welches er als Brauhaus nützen könnte. Gesagt, getan!',
-
         msg5    = 'Viel Platz gibt es hier nicht, deshalb haben wir schon ein handverlesenes Stückchen Land gebraucht, um hier eine erfolgversprechende Landwirtschaft aufbauen zu können. Dagegen ist der Bau einer Brauerei geradezu ein Kinderspiel.\n\nYmir hat sich Sigvaldi als zukünftigen Brauer ausgeguckt. Sigvaldi ist unter seinem Spitznamen Walross unter uns ein Begriff, gibt es bei uns doch niemand sonst, der solch eine Leibesfülle hat. Wir werden sehen, was er zustande bringt.\n\nEin Brunnen war schnell gebohrt, Kristjan darf ihn jetzt Tag und Nacht bedienen, damit Sigvaldi seine Gerste auch wässern kann.',
-
         msg6    = 'Inzwischen wissen wir mit Sicherheit, dass die Insel besetzt ist und wo die feindlichen babylonischen Hauptquartiere sich befinden müssen. Sie liegen auf einer östlich gelegenen Ebene, von wo sie sich vor allem per Schiff quasi überallhin ausgebreitet haben. Aber wir müssen und wir werden sie besiegen, wir wissen nur nicht, wie dieser Weg im Detail aussehen wird.\n\nAus meinem eigenen Sold habe ich meine Münzen an die Soldaten verschenkt, damit sie standhalten können, wenn es darauf ankommt. Sigvaldis Gebräu schäumt und schmeckt schrecklich, aber es wirkt.',
-
         msg99   = 'Und wieder ist eine Insel weniger in Feindeshand. Dabei waren wir uns anfangs gar nicht sicher, ob diese Insel vom Feind besetzt worden ist, oder nicht. Der östliche Teil der Insel ist tatsächlich der einzige Platz hier, wo man nicht andauernd um Hindernisse herumlaufen muss. Aber so viele Fische und Hasen auf einem Haufen muss es auch erst einmal geben.\n\nJetzt wollen wir uns eine größere graue Insel in der Nähe genauer anschauen, von der wir wissen, dass sie ausgezeichnete Hafenplätze in Menge vorweisen kann. Es würde uns nach den bisher gemachten Erfahrungen wundern, wenn ausgerechnet diese Insel nicht besetzt worden wäre.',
     }
 })
@@ -43,6 +37,10 @@ function MissionText(e, silent)
     else
         rttr:Log("Error: no Translation found!" .. _(msg))
     end
+end
+
+function isMapPreviewEnabled()
+    return false;
 end
 
 function onSettingsReady()
@@ -138,10 +136,8 @@ function onLoad(saveGame)
 end
 
 function addPlayerRes(p, onLoad)
-    if onLoad then return end
-
     if(p ~= 0) then
-        -- goods
+        if onLoad then return end
         rttr:GetPlayer(p):ClearResources()
 
         rttr:GetPlayer(p):AddWares({
@@ -236,6 +232,7 @@ function addPlayerRes(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
         rttr:GetPlayer(p):DisableBuilding(BLD_DONKEYBREEDER)
         rttr:GetPlayer(p):DisableBuilding(BLD_WELL)
+        if onLoad then return end
 
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 15,
@@ -395,9 +392,9 @@ function MissionEvent(e, onLoad)
             })
 
     elseif(e == 4) then
-        rttr:GetPlayer(0):EnableBuilding(BLD_FARM, true)
-        rttr:GetPlayer(0):EnableBuilding(BLD_BREWERY, true)
-        rttr:GetPlayer(0):EnableBuilding(BLD_WELL, true)
+        rttr:GetPlayer(0):EnableBuilding(BLD_FARM, not onLoad)
+        rttr:GetPlayer(0):EnableBuilding(BLD_BREWERY, not onLoad)
+        rttr:GetPlayer(0):EnableBuilding(BLD_WELL, not onLoad)
 
         if(not onLoad) then
             rttr:GetPlayer(0):AddWares({
