@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------
 -- LUA-Script for MISS200.WLD (mission 1 of the original "Roman Campaign"   --
 --                                                                          --
--- Author: CrazyL   (v0.4)                                                  --
+-- Authors: CrazyL, Spikeone, ArthurMurray47                                --
 ------------------------------------------------------------------------------
 
 
@@ -14,9 +14,20 @@
 
 -------------------------------- Lua Version used -----------------------------
 function getRequiredLuaVersion()
-    return 1.3
+    return 1
 end
 
+function isMapPreviewEnabled()
+    return false
+end
+
+local requiredFeature = 4
+function checkVersion()
+    local featureLevel = rttr:GetFeatureLevel()
+    if(featureLevel < requiredFeature) then
+        rttr:MsgBox("LUA-Version Error", "Your Return to the Roots version is outdated. The required LUA-Feature level is " ..requiredFeature.. ", your version is "..featureLevel..". The script can possibly crash or run unexpectedly!\n\nPlease update the game!", true)
+    end
+end
 
 -------------------------------- mission events and texts ---------------------
 -- Message-Window (mission statement and hints): 52 chars wide
@@ -182,6 +193,7 @@ end
 
 -------------------------------- general settings -----------------------------
 function onSettingsReady()
+    checkVersion()
     rttr:Log("-----------------------\n MISS200.lua loaded... \n-----------------------\n")
     rttr:ResetAddons()
     rttr:SetAddon(ADDON_FRONTIER_DISTANCE_REACHABLE, true)
