@@ -62,7 +62,7 @@ function onSettingsReady()
 
     rttr:GetPlayer(0):SetNation(NAT_VIKINGS)
 
-    for p = 1, 1 do
+    for p = 1, rttr:GetNumPlayers() - 1 do
         rttr:GetPlayer(p):SetNation(NAT_BABYLONIANS)
         rttr:GetPlayer(p):SetTeam(TM_TEAM1)
         rttr:GetPlayer(p):SetAI(3)
@@ -94,8 +94,9 @@ function getAllowedAddons()
 end
 
 function onStart(isFirstStart)
-    addPlayerRes(0, not isFirstStart)
-    addPlayerRes(1, not isFirstStart)
+    for p = 0, rttr:GetNumPlayers() - 1 do
+        addPlayerRes(p, not isFirstStart)
+    end
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}                                 -- enable all events
@@ -244,6 +245,7 @@ function addPlayerRes(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
         rttr:GetPlayer(p):DisableBuilding(BLD_ARMORY)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
+        
         if onLoad then return end
 
         rttr:GetPlayer(p):ClearResources()

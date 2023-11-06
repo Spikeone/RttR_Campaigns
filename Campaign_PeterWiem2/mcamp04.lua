@@ -55,10 +55,11 @@ function onSettingsReady()
     })
 
     rttr:GetPlayer(0):SetNation(NAT_VIKINGS)
+    rttr:GetPlayer(1):SetNation(NAT_JAPANESE)
+    rttr:GetPlayer(2):SetNation(NAT_BABYLONIANS)
+    rttr:GetPlayer(3):SetNation(NAT_BABYLONIANS)
 
-    for p = 1, 3 do
-        if(p == 1) then rttr:GetPlayer(p):SetNation(NAT_JAPANESE)
-        else rttr:GetPlayer(p):SetNation(NAT_BABYLONIANS) end
+    for p = 1, rttr:GetNumPlayers() - 1 do
         rttr:GetPlayer(p):SetTeam(TM_TEAM1)
         rttr:GetPlayer(p):SetAI(3)
         rttr:GetPlayer(p):SetName(_('name'))
@@ -89,10 +90,9 @@ function getAllowedAddons()
 end
 
 function onStart(isFirstStart)
-    addPlayerRes(0, not isFirstStart)
-    addPlayerRes(1, not isFirstStart)
-    addPlayerRes(2, not isFirstStart)
-    addPlayerRes(3, not isFirstStart)
+    for p = 0, rttr:GetNumPlayers() - 1 do
+        addPlayerRes(p, not isFirstStart)
+    end
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}                             -- enable all events
@@ -215,8 +215,6 @@ function addPlayerRes(p, onLoad)
             [JOB_GENERAL            ] = 1
         })
     elseif (p == 0) then
-        rttr:GetPlayer(p):ClearResources()
-
         rttr:GetPlayer(p):DisableBuilding(BLD_LOOKOUTTOWER)
         rttr:GetPlayer(p):DisableBuilding(BLD_CATAPULT)
         rttr:GetPlayer(p):DisableBuilding(BLD_MILL)
@@ -229,8 +227,10 @@ function addPlayerRes(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
         rttr:GetPlayer(p):DisableBuilding(BLD_DONKEYBREEDER)
         rttr:GetPlayer(p):DisableBuilding(BLD_WELL)
+        
         if onLoad then return end
 
+        rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 15,
             [GD_BOARDS    ] = 25,
@@ -372,7 +372,7 @@ function MissionEvent(e, onLoad)
     if(e == 1 and not onLoad) then
         -- nothing
 
-    elseif(e == 2 and not onLoad) then
+    elseif(e == 2) then
         rttr:GetPlayer(0):EnableBuilding(BLD_LOOKOUTTOWER, not onLoad)
 
     elseif(e == 3 and not onLoad) then

@@ -3,7 +3,7 @@ function getRequiredLuaVersion()
 end
 
 -- Message-Window (mission statement and hints): 52 chars wide
-eIdx = {1, 2, 3, 4, 5, 6, 7, 99}
+eIdx = {1, 2, 3, 4, 5, 6, 99}
 
 local debugTexts = false;
 
@@ -11,18 +11,17 @@ rttr:RegisterTranslations(
 {
     en =
     {
-        title   = 'Halldor, der Fleischer',
+        title   = 'Lars, der Schlosser',
         name    = 'Unbekannter Gegner',
         diary   = 'Tagebuch',
 
-        msg1    = 'Ansgar war nicht untätig während seiner Zeit zusammen mit unseren Familien. Vor allem hat er sich unter den Jünglingen unter 25 Jahren umgeschaut, wer mit seinen Gaben uns im Krieg gegen die Feinde voranbringen könnte.\n\nDabei ist seine Wahl auf Halldor gefallen, einen stämmigen Teenager aus einer Bauernfamilie. Er ist ein wahrer Künstler, wenn es darum geht, ein Schwein in seine Einzelteile zu zerlegen und jeden nur denkbaren Körperteil in eine schmackhafte Delikatesse zu verwandeln. Damit unser Fleischer auf unserem Kriegszug nicht untätig sein muss, wurden uns dreißig frisch geschlachtete Schweine mitgegeben. Damit wird Halldor eine Weile zu tun haben.\n\nDer Lageplatz auf dieser eiskalten Insel wurde von Halvar und Ansgar gemeinsam ausgesucht. Ich persönlich habe ein ungutes Gefühl, was diese Platzwahl anbetrifft, aber vielleicht täusche ich mich da. Vor allem weiß ich nicht, wie gut das Hauptquartier vor Angriffen aus nördlicher und östlicher Richtung geschützt ist. Aber bisher hatte Halvar einen guten Riecher, vor allem wenn es um verwertbare  Bodenschätze in der Umgebung ging.',
-        msg2    = 'Leider hat mich mein ungutes Gefühl nicht getäuscht. Im Osten haben wir nicht weit entfernt ein Chinesenlager entdeckt, und sie uns ebenfalls. Da wir keinen Platz für wirkungsvolle Verteidigungs-bauwerke haben, bleibt uns nur der Rückzug nach Süden. Dort müssen wir uns zügig nach einem geeigneten Platz für ein Lagerhaus oder Lagergebäude umsehen und dann schnellstmöglich alle Waren aus unserem Hauptquartier dorthin schaffen.\n\nAlles, was wir nicht in Sicherheit bringen können, kann für uns verloren sein, denn ich bin mir ziemlich sicher, dass wir unser Zeltlager bei einem gegnerischen Angriff entweder gar nicht, oder nur mit großen Verlusten halten können. Also schnell eine Wachstube oder Baracke im Süden gebaut und einen Platz für ein Lagergebäude gesucht, um dann den geordneten Rückzug von hier anzutreten.',
-        msg3    = 'Dieser Hafenplatz kommt uns wie gerufen! Wir werden sehen, ob dieser Hafen weit genug entfernt vom chinesischen Lager ist, oder ob wir noch weiter entfernt ein zusätzliches Lagerhaus bauen müssen. Aber zuerst einmal sichern wir diesen Platz durch ein Hafengebäude ab und lagern alles aus dem Zeltlager aus, was nicht niet- und nagelfest ist.',
-        msg4    = 'Unser König Knut ist uns per Schiff nachgereist, um uns Fleisch, Werkzeug und Münzen zu überbringen, die unsere Familien auf ihrer grünen Insel des ewigen Schnees für uns gespendet haben. Wir haben uns herzlich dafür bedankt, aber meinem Vater geraten, so schnell wie möglich wieder zu verschwinden, da die Lage hier nicht ganz geheuer ist. Das hat er dann auch prompt getan.',
-        msg5    = 'Wir wissen nicht, ob wir das Zeltlager gegen die feindlichen Chinesen halten können, aber das Hafengebäude muss unser bleiben! Wir sind eifrig dabei, dort alle Waren einzulagern. Gleichzeitig vermuten wir hinter dem südlichen Gebirgskamm weitere Feinde, da dort nachts ein beständiger Feuerschein herrscht, der leuchtend über den Bergen schimmert.\n\nWir werden uns also ab jetzt vorwiegend nach Westen ausbreiten und unsere Wirtschaft in Gang bringen, Hier hat es Platz und genügend Bodenschätze um militärisch stark werden zu können. Und auch Schiffe werden wir gut gebrauchen können, um einen eventuell noch freien Hafenplatz finden zu können, um dort eine neue Front aufbauen zu können.\n\nUnsere Bergarbeiter haben um einen ausgewogeneren Speiseplan als bisher gebeten. Bei ihrer schweren Arbeit würden sie Fleisch als hauptsächliche Nahrung bevorzugen. Deshalb werden wir schauen, dass Halldor so schnell wie möglich seine Arbeit aufnehmen kann. Seine Spezialität ist die Herstellung von Schweineschinken, was meine Leibspeise ist. Ich habe mir schon den ersten Schinken von ihm reservieren lassen.',
-        msg6    = 'Eine weitere gegnerische Front taucht im Westen vor uns auf, es ist sehr wahrscheinlich ein Ausläufer des größeren Römerstützpunktes, von dem wir wissen, dass es ihn auf dieser Insel geben muss. Das römische Militär scheint wesentlich stärker als alles andere, mit dem wir uns bisher hier haben auseinandersetzen müssen.\n\nGut, dass Elvor, Bjarki und Darvi fleißig ihrer Arbeit nachgehen und uns mit Waffen und Münzen versorgen. Und auch Thorben leistet uns wertvolle Hilfe durch sein Katapult und seine gute Ideen, wo man diese Waffe jeweils am besten einsetzen könnte. Leider haben wir nur wenig starke und gleichzeitig geschickte Leute, die mit dieser Waffe wirklich umgehen können, deshalb sollten wir vielleicht die älteren Katapulte abreißen, um unsere Katapultisten an den besten Plätzen einsetzen zu können.',
-        msg7    = 'In unmittelbarer Nähe haben wir im Gebirge eine Höhle gefunden, die recht lang und lausig kalt ist. Sie muss den gegnerischen Truppen als Vorratslager gedient haben, weil wir an ihrem Ende ein umfangreiches Fleischlager entdeckt haben.\n\nWir vermuten im Norden noch ein feindliches Lager, weil wir Feuerschein und Rauch aus dieser Richtung bemerkt haben. Es scheint ein gut verborgener Stützpunkt zu sein, weil wir es bisher hauptsächlich mit Chinesen und Römern zu tun gehabt haben.\n\nDer nächste Amboss ist dem Tatendrang Elvors zum Opfer gefallen. Bjarki hat mir später lachend erzählt, dass sie gemeinsam während einer Arbeitspause ausgiebig Sigvaldis Bier und Halldors Schinken genossen hätten und unser Schmied anschließend etwas aus sich heraus gegangen sei. Und solch einer hemmungslosen Kraftentfaltung ist auf die Dauer niemand und nichts gewachsen.',
-        msg99   = 'Nach dem großen Chinesenstützpunkt im Felsenmeer haben wir auch diesen Römerstützpunkt bezwungen. Auch dieser Stützpunkt koordinierte die Aktionen der Römer gegen uns, wie einige noch erhaltene Unterlagen bezeugten, und auch in diesem Stützpunkt fanden wir einen Steckbrief eines Mannes namens Ahasversos, welcher auch von den Römern gesucht wird.\n\nIch kann mir nicht erklären, wer oder was damit gemeint sein könnte, habe aber entdeckt, dass Ansgar in dieser Geschichte mehr weiß, als er sagt. Ich habe bemerkt, wie er zusammengezuckt ist, als er diesen Suchbefehl zu Gesicht bekam.\n\nNebenan im Osten liegt unsere kleinste grüne Insel. Nach allem, was wir bisher erlebt haben, wäre es fahrlässig, diese Insel auszulassen, wenn es anschließend zu unseren zwei großen grünen Inseln im Süden gehen soll. Ihre Befreiung rückt naher und ich freue mich schon sehr auf das Wiedersehen mit meiner Heimat.'
+        msg1    = 'Ansgar und Knut haben sich auf unserer Insel des ewigen Schnees abgesprochen, dass diesmal mein Vater mit mir auf die letzte graue Insel zieht, und Ansgar bei unseren Frauen und Kinder bleibt. Knut hat Lars mitgenommen, der zwar schon im fortgeschrittenen Alter ist und eigentlich keinen Kriegsdienst mehr leisten muss. Lars hat aber um Mitnahme gebeten und meinen Vater dadurch überzeugt, dass er so gut wie jedes beliebige Handwerkszeug aus Holz und Eisen herstellen kann.\n\nBin ich froh, wenn wir die grauen Inseln hinter uns haben. Es gibt hier kein direktes Sonnenlicht, keine grüne Landschaft, keine blauen Gewässer, nur einen diesigen und stinkenden Mix aus braunen und dunkelroten Elementen. Aber es wäre die erste Insel, auf der keine Feinde wären.\n\nAuf dieser geräumigen Insel sind wir alle drei Monate für einen Tag unsere Lieblingsbeschäftigung nachgegangen, dem Filzkugelkicken. Ein mit Stoffen prall gefüllter Filzsack von etwa einem Meter Durchmesser wird dabei von zwei Mannschaften von jeweils 200 Mann mit den Füßen vorwärts getreten. Jede Mannschaft versucht dabei, ihre Filzkugel jeweils zwischen zwei markierten Bäumen per Fuß durch zu kicken.',
+        msg2    = 'Mein Vater hat mir aufgrund meiner Frage an Ihn etwas über seinem Amtsvorgänger Prainn erzählt. Er war ein junger, aber kluger Kopf und ein strategisch außerordentlich begabter König. Leider war er jähzornig und auch etwas hochmütig, deshalb war er bei allen Taten, die er zum Besten für uns Wikinger gewirkt hat, nicht sonderlich beliebt beim Volk.\n\nAls er aus Wut einen Menschen erschlug, dessen Botschaft er nicht hören wollte, musste er sein Amt niederlegen und unser Volk verlassen. Es sind Viele mit ihm gegangen, die ähnlich dachten wie er. Danach wurde das übrige Volk befragt nach einem neuen König, und auch auf Ansgars Fürsprache wurde der bisherige Bäcker Knut nunmehr zum neuen König Knut gewählt. Für ihn sei das alles sehr überraschend und unerwartet gekommen.\n\nIch habe meinem Vater nichts über den Brief im Chinesenlager erzählt, wo dieser Prainn auf meine Heimatinsel,  die Insel der Versammlung, zu kommen gebeten wurde, um dort etwas zu organisieren. Ich werde das Gefühl nicht los, das wir diesem Menschen noch begegnen werden, und er uns Einiges über den momentanen Krieg erklären könnte.',
+        msg3    = 'Unser Späher Halvar kam ganz aufgeregt von seinem Erkundungsgang zurück! Es wimmle hier geradezu von Feinden, und sie bewegen sich geschlossen auf uns zu. Da das Gelände keinerlei Schutz bietet, sollte sofort der Rückzug angetreten werden mit allem, was sich transportieren lässt.\n\nHalvar hat im Südwesten der Insel einen Ort ausgemacht, der noch unentdeckt sei, und uns dringend geraten, so schnell wie nur möglich dorthin zu flüchten. Dort gäbe es etwas Deckung und genügend Bodenschätze, um sich für eine Schlacht zu rüsten, die hier unweigerlich auf uns zukommen würde.',
+        msg4    = 'Es wird höchste Zeit, von hier zu verschwinden! Von fast allen Seiten rücken Feinde heran und wir sind nicht stark und schon gar nicht geschützt genug, ihnen zu widerstehen. Wir müssen im Südwesten der Insel ein Lagerhaus bauen und hoffen, soviel Werkzeug wie möglich dorthin bekommen zu können.',
+        msg5    = 'Das war eine Hetzerei, aber hier haben wir eine Chance zum Überleben! Das Gelände ist nicht sehr geräumig, bietet aber Rohstoffe und natürlichen Schutz. Hier sollten wir uns erst einmal niederlassen und diesen Platz mit Thorbens Katapulten und Arons Festungen um uns herum bestmöglich verteidigen.\n\nDann müssen wir schauen, was in den Hügeln um uns herum an Kohle, Eisen und Gold vorhanden ist, um unsere Wirtschaft in Gang zu bringen. Darvi, Bajrki und Elvor warten schon sehnsüchtig auf ihre vertrauten Werkstattgebäuden, um sich handwerklich betätigen zu können. Und auch Lars ist bereit, seine Handwerkskunst praktisch unter Beweis zu stellen. Und vor allem brauchen wir Sigvaldis Bier, unser flüssiger Mutmacher in allen Kämpfen gegen unsere Feinde.',
+        msg6    = 'An dieser Stelle standen zwei der vier Bäume, deren Zwischenraum uns als Zielobjekt für unsere Filzsäcke gedient hat, die wir quer über die Ebene gedroschen haben. Mancher von uns Wikinger denkt an die unvergesslichen Stunden während des Spieles und an etliche blaue Flecken, die in dem wilden Getümmel um diese Kugel entstanden sind.\n\nJetzt sind es blutige Kämpfe, die uns hierher geführt haben. Es ist ein Ende der Schlacht abzusehen, obwohl der Widerstand der Feinde noch nicht vollständig gebrochen ist. Aber die weite Ebene ist zum großen Teil zurück erobert und mit den restlichen Gegnern in den umliegenden Hügeln werden wir auch noch ein Hühnchen miteinander rupfen.\n\nAus unserem Lager kam die Mitteilung, dass erneut ein Amboss von Elvor versehentlich zerstört wurde. Ich wies zwei unserer Soldaten an, in den rauchenden Trümmern der feindlichen Gebäude nach einem brauchbaren Ersatz zu suchen und ihn in unser Lager zu bringen.'
+        msg99   = 'Endlich ist auch diese Schlacht zu unseren Gunsten geschlagen worden und die letzte graue Insel zurück erobert. Mein Vater war sichtlich betroffen, als er im letzten zerstörten Hauptquartier eine Suchmeldung über  eine Person namens Ahasversos zu Gesicht bekam. Ansgar und ich waren diese Suchmeldungen ja schon bekannt, wir haben aber nie mit meinem Vater darüber gesprochen.\n\nÜber diesen Ahasversos müsse er mit mir zusammen mit Ansgar reden, meinte er nur. Ich bin ehrlich gespannt, was er mir als Vater und König der Wikinger darüber zu sagen hat.',
     }
 })
 
@@ -61,9 +60,9 @@ function onSettingsReady()
 
     rttr:GetPlayer(0):SetNation(NAT_VIKINGS)
     rttr:GetPlayer(1):SetNation(NAT_JAPANESE)
-    rttr:GetPlayer(2):SetNation(NAT_JAPANESE)
-    rttr:GetPlayer(3):SetNation(NAT_ROMANS)
-    rttr:GetPlayer(4):SetNation(NAT_BABYLONIANS)
+    rttr:GetPlayer(2):SetNation(NAT_BABYLONIANS)
+    rttr:GetPlayer(3):SetNation(NAT_AFRICANS)
+    rttr:GetPlayer(4):SetNation(NAT_ROMANS)
 
     for p = 1, rttr:GetNumPlayers() - 1 do
         rttr:GetPlayer(p):SetTeam(TM_TEAM1)
@@ -115,13 +114,9 @@ function onStart(isFirstStart)
     end
 
     if(isFirstStart) then
-        rttr:GetWorld():AddAnimal( 4, 32, SPEC_POLARBEAR)
-        rttr:GetWorld():AddAnimal(53, 86, SPEC_POLARBEAR)
-        rttr:GetWorld():AddAnimal( 3, 33, SPEC_POLARBEAR)
-
-        rttr:GetWorld():AddStaticObject(92, 11, 0, 0, 1)
-        rttr:GetWorld():AddStaticObject(44, 10, 0, 0, 1)
-        rttr:GetWorld():AddStaticObject(66, 79, 0, 0, 1)
+        rttr:GetWorld():AddStaticObject(13,  8, 0, 0, 1)
+        rttr:GetWorld():AddStaticObject(95, 92, 0, 0, 1)
+        rttr:GetWorld():AddStaticObject( 4, 40, 0, 0, 1)
     end
 end
 
@@ -219,24 +214,21 @@ function addPlayerRes(p, onLoad)
             [JOB_PACKDONKEY         ] = 30,
             [JOB_CHARBURNER         ] = 0,
 
-            [JOB_PRIVATE            ] = 55,
-            [JOB_PRIVATEFIRSTCLASS  ] = 3,
-            [JOB_SERGEANT           ] = 1,
-            [JOB_OFFICER            ] = 1,
+            [JOB_PRIVATE            ] = 40,
+            [JOB_PRIVATEFIRSTCLASS  ] = 6,
+            [JOB_SERGEANT           ] = 4,
+            [JOB_OFFICER            ] = 2,
             [JOB_GENERAL            ] = 1
         })
     elseif (p == 0) then
-        rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
-        rttr:GetPlayer(p):DisableBuilding(BLD_SLAUGHTERHOUSE)
         rttr:GetPlayer(p):DisableBuilding(BLD_METALWORKS)
-        rttr:GetPlayer(p):DisableBuilding(BLD_DONKEYBREEDER)
 
         if onLoad then return end
 
         rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 20,
-            [GD_BOARDS    ] = 20,
+            [GD_BOARDS    ] = 40,
             [GD_STONES    ] = 20,
             [GD_HAM       ] = 30,
             [GD_GRAIN     ] = 4,
@@ -291,7 +283,7 @@ function addPlayerRes(p, onLoad)
 
             [JOB_MILLER             ] = 2,
             [JOB_BAKER              ] = 2,
-            [JOB_BUTCHER            ] = 0,
+            [JOB_BUTCHER            ] = 1,
             [JOB_BREWER             ] = 2,
             [JOB_MINER              ] = 10,
             [JOB_IRONFOUNDER        ] = 2,
@@ -306,11 +298,11 @@ function addPlayerRes(p, onLoad)
             [JOB_PACKDONKEY         ] = 30,
             [JOB_CHARBURNER         ] = 0,
 
-            [JOB_PRIVATE            ] = 25,
-            [JOB_PRIVATEFIRSTCLASS  ] = 25,
-            [JOB_SERGEANT           ] = 5,
-            [JOB_OFFICER            ] = 4,
-            [JOB_GENERAL            ] = 3
+            [JOB_PRIVATE            ] = 50,
+            [JOB_PRIVATEFIRSTCLASS  ] = 1,
+            [JOB_SERGEANT           ] = 1,
+            [JOB_OFFICER            ] = 0,
+            [JOB_GENERAL            ] = 0
         })
     end
 end
@@ -338,9 +330,9 @@ function onGameFrame(gf)
         MissionEvent(2, false)
     end
 
-    if (eState[4] > 0 and rttr:GetPlayer(0):GetNumBuildings(BLD_HARBORBUILDING) > 0) then
-        -- EVENT4
-        MissionEvent(4, false)
+    if (eState[3] > 0 and GetNumMilitaryBuilding(0, true) == 2) then
+        -- EVENT3
+        MissionEvent(3, false)
     end
 
     if ((GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4)) < 1) then
@@ -352,24 +344,19 @@ end
 function onOccupied(p, x, y)
     if(p ~= 0) then return end
 
-    if(eState[3] > 0 and x == 48 and y == 55) then
-        -- EVENT3
-        MissionEvent(3, false)
+    if(eState[4] > 0 and x == 22 and y == 63) then
+        -- EVENT4
+        MissionEvent(4, false)
     end
 
-    if(eState[5] > 0 and x == 42 and y == 69) then
+    if(eState[5] > 0 and x == 12 and y == 75) then
         -- EVENT5
         MissionEvent(5, false)
     end
 
-    if(eState[6] > 0 and x == 15 and y == 65) then
+    if(eState[6] > 0 and x == 73 and y == 48) then
         -- EVENT6
         MissionEvent(6, false)
-    end
-
-    if(eState[7] > 0 and x == 3 and y == 50) then
-        -- EVENT7
-        MissionEvent(7, false)
     end
 end
 
@@ -383,56 +370,33 @@ function MissionEvent(e, onLoad)
     if(e == 1 and not onLoad) then
         -- nothing
 
-    elseif(e == 2) then
-        if(not onLoad) then
-            rttr:GetPlayer(0):AddWares({
-                [GD_BOARDS] = 20,
-                [GD_STONES] = 10
-            })
-        end
-
-    elseif(e == 3 and not onLoad) then
+    elseif(e == 2 and not onLoad) then
         -- nothing
 
-    elseif(e == 4) then
-        if(not onLoad) then
-            rttr:GetPlayer(0):AddWares({
-                [GD_MEAT]       = 20,
-                [GD_COINS]      = 10,
-                [GD_AXE]        = 10,
-                [GD_PICKAXE]    = 10,
-                [GD_SWORD]      = 5,
-                [GD_SHIELD]     = 5
-            })
-        end
+    elseif(e == 3 and not onLoad) then
+        rttr:GetPlayer(0):AddWares({
+            [GD_PICKAXE ] = 10
+        })
+
+    elseif(e == 4 and not onLoad) then
+        rttr:GetPlayer(0):AddWares({
+            [GD_FISH    ] = 10,
+            [GD_MEAT    ] = 10
+        })
 
     elseif(e == 5) then
-        rttr:GetPlayer(0):EnableBuilding(BLD_SLAUGHTERHOUSE, not onLoad)
+        rttr:GetPlayer(0):EnableBuilding(BLD_METALWORKS, not onLoad)
 
         if(not onLoad) then
-            rttr:GetPlayer(0):AddWares({
-                [GD_MEAT] = 5,
-                [GD_FISH] = 5
-            })
-
             rttr:GetPlayer(0):AddPeople({
-                [JOB_BUTCHER] = 2
+                [JOB_METALWORKER] = 1
             })
         end
-
-    elseif(e == 6) then
-        if(not onLoad) then
-            rttr:GetPlayer(0):AddWares({
-                [GD_ROLLINGPIN] = 2
-            })
-        end
-
-    elseif(e == 6) then
-        if(not onLoad) then
-            rttr:GetPlayer(0):AddWares({
-                [GD_MEAT] = 40
-            })
-        end
+    elseif(e == 6 and not onLoad) then
+        rttr:GetPlayer(0):AddWares({
+            [GD_COAL    ] = 10,
+            [GD_GOLD    ] = 10
+        })
 
     elseif(e == 99) then
         -- TODO: EnableNextMissions()

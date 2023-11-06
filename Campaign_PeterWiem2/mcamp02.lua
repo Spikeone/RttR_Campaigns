@@ -60,9 +60,9 @@ function onSettingsReady()
     })
 
     rttr:GetPlayer(0):SetNation(NAT_VIKINGS)
+    rttr:GetPlayer(p):SetNation(NAT_BABYLONIANS)
 
-    for p = 1, 2 do
-        rttr:GetPlayer(p):SetNation(NAT_BABYLONIANS)
+    for p = 1, rttr:GetNumPlayers() - 1 do
         rttr:GetPlayer(p):SetTeam(TM_TEAM1)
         rttr:GetPlayer(p):SetAI(3)
         rttr:GetPlayer(p):SetName(_('name'))
@@ -93,9 +93,9 @@ function getAllowedAddons()
 end
 
 function onStart(isFirstStart)
-    addPlayerRes(0, not isFirstStart)
-    addPlayerRes(1, not isFirstStart)
-    addPlayerRes(2, not isFirstStart)
+    for p = 0, rttr:GetNumPlayers() - 1 do
+        addPlayerRes(p, not isFirstStart)
+    end
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}                                 -- enable all events
@@ -240,6 +240,7 @@ function addPlayerRes(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
         rttr:GetPlayer(p):DisableBuilding(BLD_ARMORY)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
+
         if onLoad then return end
 
         rttr:GetPlayer(p):ClearResources()
@@ -405,7 +406,7 @@ function MissionEvent(e, onLoad)
     if(e == 1 and not onLoad) then
         -- nothing
 
-    elseif(e == 2 and not onLoad) then
+    elseif(e == 2) then
         rttr:GetPlayer(0):EnableBuilding(BLD_ARMORY, not onLoad)
         rttr:GetPlayer(0):EnableBuilding(BLD_IRONSMELTER, not onLoad)
 

@@ -62,7 +62,7 @@ function onSettingsReady()
     rttr:GetPlayer(2):SetNation(NAT_ROMANS)
     rttr:GetPlayer(3):SetNation(NAT_BABYLONIANS)
 
-    for p = 1, 3 do
+    for p = 1, rttr:GetNumPlayers() - 1 do
         rttr:GetPlayer(p):SetTeam(TM_TEAM1)
         rttr:GetPlayer(p):SetAI(3)
         rttr:GetPlayer(p):SetName(_('name'))
@@ -93,10 +93,9 @@ function getAllowedAddons()
 end
 
 function onStart(isFirstStart)
-    addPlayerRes(0, not isFirstStart)
-    addPlayerRes(1, not isFirstStart)
-    addPlayerRes(2, not isFirstStart)
-    addPlayerRes(3, not isFirstStart)
+    for p = 0, rttr:GetNumPlayers() - 1 do
+        addPlayerRes(p, not isFirstStart)
+    end
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}                             -- enable all events
@@ -225,6 +224,7 @@ function addPlayerRes(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_METALWORKS)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
         rttr:GetPlayer(p):DisableBuilding(BLD_DONKEYBREEDER)
+
         if onLoad then return end
 
         rttr:GetPlayer(p):ClearResources()

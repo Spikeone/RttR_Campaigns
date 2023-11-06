@@ -60,16 +60,14 @@ function onSettingsReady()
     })
 
     rttr:GetPlayer(0):SetNation(NAT_VIKINGS)
+    rttr:GetPlayer(1):SetNation(NAT_ROMANS)
+    rttr:GetPlayer(2):SetNation(NAT_BABYLONIANS)
 
-    for p = 1, 2 do
-        --rttr:GetPlayer(p):SetNation(NAT_BABYLONIANS)
+    for p = 1, rttr:GetNumPlayers() - 1 do
         rttr:GetPlayer(p):SetTeam(TM_TEAM1)
         rttr:GetPlayer(p):SetAI(3)
         rttr:GetPlayer(p):SetName(_('name'))
     end
-    
-    rttr:GetPlayer(1):SetNation(NAT_ROMANS)
-    rttr:GetPlayer(2):SetNation(NAT_BABYLONIANS)
 end
 
 function getAllowedChanges()
@@ -96,9 +94,9 @@ function getAllowedAddons()
 end
 
 function onStart(isFirstStart)
-    addPlayerRes(0, not isFirstStart)
-    addPlayerRes(1, not isFirstStart)
-    addPlayerRes(2, not isFirstStart)
+    for p = 0, rttr:GetNumPlayers() - 1 do
+        addPlayerRes(p, not isFirstStart)
+    end
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}                                 -- enable all events
@@ -240,6 +238,7 @@ function addPlayerRes(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_SLAUGHTERHOUSE)
         rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
+
         if onLoad then return end
 
         rttr:GetPlayer(p):ClearResources()
@@ -425,14 +424,17 @@ function MissionEvent(e, onLoad)
             [GD_PICKAXE] = 10
             })
 
-    elseif(e == 5 and not onLoad) then
+    elseif(e == 5) then
         rttr:GetPlayer(0):EnableBuilding(BLD_FORTRESS, not onLoad)
 
     elseif(e == 6 and not onLoad) then
         -- nothing
 
     elseif(e == 7) then
-        rttr:GetPlayer(0):AddPeople({[JOB_FISHER] = 2, [JOB_HUNTER] = 2})
+        rttr:GetPlayer(0):AddPeople({
+            [JOB_FISHER] = 2,
+            [JOB_HUNTER] = 2
+            })
 
     elseif(e == 99) then
         -- TODO: EnableNextMissions()

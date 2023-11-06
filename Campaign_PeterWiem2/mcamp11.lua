@@ -429,7 +429,7 @@ function MissionEvent(e, onLoad)
             [GD_COINS] = 10
         })
 
-    elseif(e == 9 and not onLoad) then
+    elseif(e == 9) then
          rttr:GetPlayer(0):EnableBuilding(BLD_PIGFARM, not onLoad)
 
         if(not onLoad) then

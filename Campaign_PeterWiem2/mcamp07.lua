@@ -62,7 +62,7 @@ function onSettingsReady()
     rttr:GetPlayer(1):SetNation(NAT_JAPANESE)
     rttr:GetPlayer(2):SetNation(NAT_BABYLONIANS)
 
-    for p = 1, 2 do
+    for p = 1, rttr:GetNumPlayers() - 1 do
         rttr:GetPlayer(p):SetTeam(TM_TEAM1)
         rttr:GetPlayer(p):SetAI(3)
         rttr:GetPlayer(p):SetName(_('name'))
@@ -93,9 +93,9 @@ function getAllowedAddons()
 end
 
 function onStart(isFirstStart)
-    addPlayerRes(0, not isFirstStart)
-    addPlayerRes(1, not isFirstStart)
-    addPlayerRes(2, not isFirstStart)
+    for p = 0, rttr:GetNumPlayers() - 1 do
+        addPlayerRes(p, not isFirstStart)
+    end
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}                             -- enable all events
@@ -231,6 +231,7 @@ function addPlayerRes(p, onLoad)
         rttr:GetPlayer(p):DisableBuilding(BLD_METALWORKS)
         rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
         rttr:GetPlayer(p):DisableBuilding(BLD_DONKEYBREEDER)
+
         if onLoad then return end
 
         rttr:GetPlayer(p):ClearResources()
@@ -375,13 +376,14 @@ function MissionEvent(e, onLoad)
         -- nothing
 
     elseif(e == 2) then
+        rttr:GetPlayer(0):EnableBuilding(BLD_BAKERY, not onLoad)
+        rttr:GetPlayer(0):EnableBuilding(BLD_MILL, not onLoad)
+
         if(not onLoad) then
             rttr:GetPlayer(0):AddWares({
                 [GD_ROLLINGPIN] = 3
             })
         end
-        rttr:GetPlayer(0):EnableBuilding(BLD_BAKERY, not onLoad)
-        rttr:GetPlayer(0):EnableBuilding(BLD_MILL, not onLoad)
 
     elseif(e == 3) then
         if(not onLoad) then
