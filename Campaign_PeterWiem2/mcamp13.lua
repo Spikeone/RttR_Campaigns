@@ -2,6 +2,14 @@ function getRequiredLuaVersion()
     return 1
 end
 
+local requiredFeature = 4
+function checkVersion()
+    local featureLevel = rttr:GetFeatureLevel()
+    if(featureLevel < requiredFeature) then
+        rttr:MsgBox("LUA-Version Error", "Your Return to the Roots version is outdated. The required LUA-Feature level is " ..requiredFeature.. ", your version is "..featureLevel..". The script can possibly crash or run unexpectedly!\n\nPlease update the game!", true)
+    end
+end
+
 -- Message-Window (mission statement and hints): 52 chars wide
 eIdx = {1, 2, 3, 4, 5, 6, 99}
 
@@ -20,8 +28,8 @@ rttr:RegisterTranslations(
         msg3    = 'Unser Späher Halvar kam ganz aufgeregt von seinem Erkundungsgang zurück! Es wimmle hier geradezu von Feinden, und sie bewegen sich geschlossen auf uns zu. Da das Gelände keinerlei Schutz bietet, sollte sofort der Rückzug angetreten werden mit allem, was sich transportieren lässt.\n\nHalvar hat im Südwesten der Insel einen Ort ausgemacht, der noch unentdeckt sei, und uns dringend geraten, so schnell wie nur möglich dorthin zu flüchten. Dort gäbe es etwas Deckung und genügend Bodenschätze, um sich für eine Schlacht zu rüsten, die hier unweigerlich auf uns zukommen würde.',
         msg4    = 'Es wird höchste Zeit, von hier zu verschwinden! Von fast allen Seiten rücken Feinde heran und wir sind nicht stark und schon gar nicht geschützt genug, ihnen zu widerstehen. Wir müssen im Südwesten der Insel ein Lagerhaus bauen und hoffen, soviel Werkzeug wie möglich dorthin bekommen zu können.',
         msg5    = 'Das war eine Hetzerei, aber hier haben wir eine Chance zum Überleben! Das Gelände ist nicht sehr geräumig, bietet aber Rohstoffe und natürlichen Schutz. Hier sollten wir uns erst einmal niederlassen und diesen Platz mit Thorbens Katapulten und Arons Festungen um uns herum bestmöglich verteidigen.\n\nDann müssen wir schauen, was in den Hügeln um uns herum an Kohle, Eisen und Gold vorhanden ist, um unsere Wirtschaft in Gang zu bringen. Darvi, Bajrki und Elvor warten schon sehnsüchtig auf ihre vertrauten Werkstattgebäuden, um sich handwerklich betätigen zu können. Und auch Lars ist bereit, seine Handwerkskunst praktisch unter Beweis zu stellen. Und vor allem brauchen wir Sigvaldis Bier, unser flüssiger Mutmacher in allen Kämpfen gegen unsere Feinde.',
-        msg6    = 'An dieser Stelle standen zwei der vier Bäume, deren Zwischenraum uns als Zielobjekt für unsere Filzsäcke gedient hat, die wir quer über die Ebene gedroschen haben. Mancher von uns Wikinger denkt an die unvergesslichen Stunden während des Spieles und an etliche blaue Flecken, die in dem wilden Getümmel um diese Kugel entstanden sind.\n\nJetzt sind es blutige Kämpfe, die uns hierher geführt haben. Es ist ein Ende der Schlacht abzusehen, obwohl der Widerstand der Feinde noch nicht vollständig gebrochen ist. Aber die weite Ebene ist zum großen Teil zurück erobert und mit den restlichen Gegnern in den umliegenden Hügeln werden wir auch noch ein Hühnchen miteinander rupfen.\n\nAus unserem Lager kam die Mitteilung, dass erneut ein Amboss von Elvor versehentlich zerstört wurde. Ich wies zwei unserer Soldaten an, in den rauchenden Trümmern der feindlichen Gebäude nach einem brauchbaren Ersatz zu suchen und ihn in unser Lager zu bringen.'
-        msg99   = 'Endlich ist auch diese Schlacht zu unseren Gunsten geschlagen worden und die letzte graue Insel zurück erobert. Mein Vater war sichtlich betroffen, als er im letzten zerstörten Hauptquartier eine Suchmeldung über  eine Person namens Ahasversos zu Gesicht bekam. Ansgar und ich waren diese Suchmeldungen ja schon bekannt, wir haben aber nie mit meinem Vater darüber gesprochen.\n\nÜber diesen Ahasversos müsse er mit mir zusammen mit Ansgar reden, meinte er nur. Ich bin ehrlich gespannt, was er mir als Vater und König der Wikinger darüber zu sagen hat.',
+        msg6    = 'An dieser Stelle standen zwei der vier Bäume, deren Zwischenraum uns als Zielobjekt für unsere Filzsäcke gedient hat, die wir quer über die Ebene gedroschen haben. Mancher von uns Wikinger denkt an die unvergesslichen Stunden während des Spieles und an etliche blaue Flecken, die in dem wilden Getümmel um diese Kugel entstanden sind.\n\nJetzt sind es blutige Kämpfe, die uns hierher geführt haben. Es ist ein Ende der Schlacht abzusehen, obwohl der Widerstand der Feinde noch nicht vollständig gebrochen ist. Aber die weite Ebene ist zum großen Teil zurück erobert und mit den restlichen Gegnern in den umliegenden Hügeln werden wir auch noch ein Hühnchen miteinander rupfen.\n\nAus unserem Lager kam die Mitteilung, dass erneut ein Amboss von Elvor versehentlich zerstört wurde. Ich wies zwei unserer Soldaten an, in den rauchenden Trümmern der feindlichen Gebäude nach einem brauchbaren Ersatz zu suchen und ihn in unser Lager zu bringen.',
+        msg99   = 'Endlich ist auch diese Schlacht zu unseren Gunsten geschlagen worden und die letzte graue Insel zurück erobert. Mein Vater war sichtlich betroffen, als er im letzten zerstörten Hauptquartier eine Suchmeldung über  eine Person namens Ahasversos zu Gesicht bekam. Ansgar und ich waren diese Suchmeldungen ja schon bekannt, wir haben aber nie mit meinem Vater darüber gesprochen.\n\nÜber diesen Ahasversos müsse er mit mir zusammen mit Ansgar reden, meinte er nur. Ich bin ehrlich gespannt, was er mir als Vater und König der Wikinger darüber zu sagen hat.'
     }
 })
 
@@ -44,6 +52,7 @@ function isMapPreviewEnabled()
 end
 
 function onSettingsReady()
+    checkVersion()
     rttr:Log("-----------------------\n Mission Script loaded... \n-----------------------\n")
 
     rttr:ResetAddons()
@@ -98,6 +107,13 @@ function onStart(isFirstStart)
     for p = 0, rttr:GetNumPlayers() - 1 do
         addPlayerRes(p, not isFirstStart)
     end
+    if isFirstStart then
+        addExtraBoards(1, 50)
+        addExtraSoldiers(2, 10)
+        addExtraBoards(3, 100)
+        addExtraSoldiers(4, 10)
+        addExtraBoards(4, 50)
+    end
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}
@@ -138,10 +154,12 @@ function onLoad(saveGame)
 end
 
 function addPlayerRes(p, onLoad)
-    if(p ~= 0) then
-        if onLoad then return end
-        rttr:GetPlayer(p):ClearResources()
+    if (p == 0) then
+        rttr:GetPlayer(p):DisableBuilding(BLD_METALWORKS)
+    end
 
+    if (p ~= 0 and not onLoad) then
+        rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 50,
             [GD_BOARDS    ] = 30,
@@ -220,11 +238,7 @@ function addPlayerRes(p, onLoad)
             [JOB_OFFICER            ] = 2,
             [JOB_GENERAL            ] = 1
         })
-    elseif (p == 0) then
-        rttr:GetPlayer(p):DisableBuilding(BLD_METALWORKS)
-
-        if onLoad then return end
-
+    elseif (p == 0 and not onLoad) then
         rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 20,
@@ -435,4 +449,12 @@ function enforceBuildingCount(player, building, limit, notify)
     else
         rttr:GetPlayer(player):EnableBuilding(building, notify)
     end
+end
+
+function addExtraBoards(plrId, amount)
+    rttr:GetPlayer(plrId):AddWares({[GD_BOARDS] = amount})
+end
+
+function addExtraSoldiers(plrId, amount)
+    rttr:GetPlayer(plrId):AddPeople({[JOB_PRIVATE] = amount})
 end

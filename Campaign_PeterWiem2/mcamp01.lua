@@ -2,6 +2,13 @@ function getRequiredLuaVersion()
     return 1
 end
 
+local requiredFeature = 4
+function checkVersion()
+    local featureLevel = rttr:GetFeatureLevel()
+    if(featureLevel < requiredFeature) then
+        rttr:MsgBox("LUA-Version Error", "Your Return to the Roots version is outdated. The required LUA-Feature level is " ..requiredFeature.. ", your version is "..featureLevel..". The script can possibly crash or run unexpectedly!\n\nPlease update the game!", true)
+    end
+end
 -- Message-Window (mission statement and hints): 52 chars wide
 eIdx = {1, 2, 3, 4, 5, 6, 7, 8, 99}
 
@@ -33,7 +40,7 @@ function MissionText(e, silent)
 
     if(msg ~= ('msg' .. tostring(e))) then
         if not silent then
-            rttr:MissionStatement(0, _('diary'), msg .. '\n\n\n\n\n\n\n', IM_SWORDSMAN, true)
+            rttr:MissionStatement(0, _('diary'), msg .. '\n\n\n\n\n\n\n', IM_AVATAR6, true)
         end
         rttr:SetMissionGoal(0, msg)
     else
@@ -46,6 +53,7 @@ function isMapPreviewEnabled()
 end
 
 function onSettingsReady()
+    checkVersion()
     rttr:Log("-----------------------\n Mission Script loaded... \n-----------------------\n")
 
     rttr:ResetAddons()                          -- S2-settings
@@ -97,6 +105,9 @@ function onStart(isFirstStart)
     for p = 0, rttr:GetNumPlayers() - 1 do
         addPlayerRes(p, not isFirstStart)
     end
+    if isFirstStart then
+        addExtraBoards(1, 50)
+    end
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}                                 -- enable all events
@@ -143,11 +154,27 @@ function onLoad(saveGame)
 end
 
 function addPlayerRes(p, onLoad)
-    if onLoad then return end
+    if (p == 0) then
+        rttr:GetPlayer(p):DisableBuilding(BLD_GUARDHOUSE)
+        rttr:GetPlayer(p):DisableBuilding(BLD_WATCHTOWER)
+        rttr:GetPlayer(p):DisableBuilding(BLD_FORTRESS)
+        rttr:GetPlayer(p):DisableBuilding(BLD_CATAPULT)
+        rttr:GetPlayer(p):DisableBuilding(BLD_LOOKOUTTOWER)
+        rttr:GetPlayer(p):DisableBuilding(BLD_WELL)
+        rttr:GetPlayer(p):DisableBuilding(BLD_MILL)
+        rttr:GetPlayer(p):DisableBuilding(BLD_BAKERY)
+        rttr:GetPlayer(p):DisableBuilding(BLD_FARM)
+        rttr:GetPlayer(p):DisableBuilding(BLD_DONKEYBREEDER)
+        rttr:GetPlayer(p):DisableBuilding(BLD_IRONSMELTER)
+        rttr:GetPlayer(p):DisableBuilding(BLD_METALWORKS)
+        rttr:GetPlayer(p):DisableBuilding(BLD_BREWERY)
+        rttr:GetPlayer(p):DisableBuilding(BLD_SLAUGHTERHOUSE)
+        rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
+        rttr:GetPlayer(p):DisableBuilding(BLD_ARMORY)
+        rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
+    end
 
-    if(p ~= 0) then
-        if onLoad then return end
-
+    if (p ~= 0 and not onLoad) then
         rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 24,
@@ -227,27 +254,7 @@ function addPlayerRes(p, onLoad)
             [JOB_OFFICER            ] = 0,
             [JOB_GENERAL            ] = 0
         })
-    elseif (p == 0) then
-        rttr:GetPlayer(p):DisableBuilding(BLD_GUARDHOUSE)
-        rttr:GetPlayer(p):DisableBuilding(BLD_WATCHTOWER)
-        rttr:GetPlayer(p):DisableBuilding(BLD_FORTRESS)
-        rttr:GetPlayer(p):DisableBuilding(BLD_CATAPULT)
-        rttr:GetPlayer(p):DisableBuilding(BLD_LOOKOUTTOWER)
-        rttr:GetPlayer(p):DisableBuilding(BLD_WELL)
-        rttr:GetPlayer(p):DisableBuilding(BLD_MILL)
-        rttr:GetPlayer(p):DisableBuilding(BLD_BAKERY)
-        rttr:GetPlayer(p):DisableBuilding(BLD_FARM)
-        rttr:GetPlayer(p):DisableBuilding(BLD_DONKEYBREEDER)
-        rttr:GetPlayer(p):DisableBuilding(BLD_IRONSMELTER)
-        rttr:GetPlayer(p):DisableBuilding(BLD_METALWORKS)
-        rttr:GetPlayer(p):DisableBuilding(BLD_BREWERY)
-        rttr:GetPlayer(p):DisableBuilding(BLD_SLAUGHTERHOUSE)
-        rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
-        rttr:GetPlayer(p):DisableBuilding(BLD_ARMORY)
-        rttr:GetPlayer(p):DisableBuilding(BLD_FORESTER)
-        
-        if onLoad then return end
-
+    elseif (p == 0 and not onLoad) then
         rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 6,
@@ -468,4 +475,12 @@ function MissionEvent(e, onLoad)
     end
 
     MissionText(e, onLoad)
+end
+
+function addExtraBoards(plrId, amount)
+    rttr:GetPlayer(plrId):AddWares({[GD_BOARDS] = amount})
+end
+
+function addExtraSoldiers(plrId, amount)
+    rttr:GetPlayer(plrId):AddPeople({[JOB_PRIVATE] = amount})
 end

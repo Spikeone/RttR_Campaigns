@@ -2,6 +2,14 @@ function getRequiredLuaVersion()
     return 1
 end
 
+local requiredFeature = 4
+function checkVersion()
+    local featureLevel = rttr:GetFeatureLevel()
+    if(featureLevel < requiredFeature) then
+        rttr:MsgBox("LUA-Version Error", "Your Return to the Roots version is outdated. The required LUA-Feature level is " ..requiredFeature.. ", your version is "..featureLevel..". The script can possibly crash or run unexpectedly!\n\nPlease update the game!", true)
+    end
+end
+
 -- Message-Window (mission statement and hints): 52 chars wide
 eIdx = {1, 2, 3, 4, 5, 6, 7, 8, 9, 99}
 
@@ -47,6 +55,7 @@ function isMapPreviewEnabled()
 end
 
 function onSettingsReady()
+    checkVersion()
     rttr:Log("-----------------------\n Mission Script loaded... \n-----------------------\n")
 
     rttr:ResetAddons()
@@ -101,6 +110,12 @@ function onStart(isFirstStart)
     for p = 0, rttr:GetNumPlayers() - 1 do
         addPlayerRes(p, not isFirstStart)
     end
+    if isFirstStart then
+        addExtraSoldiers(1, 20)
+        addExtraBoards(2, 50)
+        addExtraSoldiers(3, 10)
+        addExtraSoldiers(4, 20)
+    end
     rttr:GetPlayer(0):ModifyHQ(true)
 
     eState = {}
@@ -144,10 +159,14 @@ function onLoad(saveGame)
 end
 
 function addPlayerRes(p, onLoad)
-    if(p ~= 0) then
-        if onLoad then return end
-        rttr:GetPlayer(p):ClearResources()
+    if (p == 0) then
+        rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
+        rttr:GetPlayer(p):DisableBuilding(BLD_METALWORKS)
+        rttr:GetPlayer(p):DisableBuilding(BLD_DONKEYBREEDER)
+    end
 
+    if (p ~= 0 and not onLoad) then
+        rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 30,
             [GD_BOARDS    ] = 50,
@@ -226,12 +245,7 @@ function addPlayerRes(p, onLoad)
             [JOB_OFFICER            ] = 2,
             [JOB_GENERAL            ] = 2
         })
-    elseif (p == 0) then
-        rttr:GetPlayer(p):DisableBuilding(BLD_PIGFARM)
-        rttr:GetPlayer(p):DisableBuilding(BLD_METALWORKS)
-        rttr:GetPlayer(p):DisableBuilding(BLD_DONKEYBREEDER)
-        if onLoad then return end
-
+    elseif (p == 0 and not onLoad) then
         rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
             [GD_WOOD      ] = 10,
@@ -479,4 +493,12 @@ function enforceBuildingCount(player, building, limit, notify)
     else
         rttr:GetPlayer(player):EnableBuilding(building, notify)
     end
+end
+
+function addExtraBoards(plrId, amount)
+    rttr:GetPlayer(plrId):AddWares({[GD_BOARDS] = amount})
+end
+
+function addExtraSoldiers(plrId, amount)
+    rttr:GetPlayer(plrId):AddPeople({[JOB_PRIVATE] = amount})
 end

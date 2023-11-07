@@ -2,6 +2,14 @@ function getRequiredLuaVersion()
     return 1
 end
 
+local requiredFeature = 4
+function checkVersion()
+    local featureLevel = rttr:GetFeatureLevel()
+    if(featureLevel < requiredFeature) then
+        rttr:MsgBox("LUA-Version Error", "Your Return to the Roots version is outdated. The required LUA-Feature level is " ..requiredFeature.. ", your version is "..featureLevel..". The script can possibly crash or run unexpectedly!\n\nPlease update the game!", true)
+    end
+end
+
 -- Message-Window (mission statement and hints): 52 chars wide
 eIdx = {1, 2, 3, 4, 5, 6, 7, 99}
 
@@ -45,6 +53,7 @@ function isMapPreviewEnabled()
 end
 
 function onSettingsReady()
+    checkVersion()
     rttr:Log("-----------------------\n Mission Script loaded... \n-----------------------\n")
 
     rttr:ResetAddons()
@@ -431,4 +440,12 @@ function enforceBuildingCount(player, building, limit, notify)
     else
         rttr:GetPlayer(player):EnableBuilding(building, notify)
     end
+end
+
+function addExtraBoards(plrId, amount)
+    rttr:GetPlayer(plrId):AddWares({[GD_BOARDS] = amount})
+end
+
+function addExtraSoldiers(plrId, amount)
+    rttr:GetPlayer(plrId):AddPeople({[JOB_PRIVATE] = amount})
 end
