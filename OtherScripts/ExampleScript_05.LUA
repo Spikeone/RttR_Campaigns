@@ -35,24 +35,13 @@ function onStart(isFirstStart)
 end
 
 function addPlayerRes()
-
-    local numPlayers = rttr:GetNumPlayers()
-    
-    rttr:Log("Num Players: " ..numPlayers)
-    
-    --rttr:GetPlayer(playerIdx)
-    
-    -- IsHuman()
-    -- IsAI()
-    -- IsClosed()
-
-    for p=0,numPlayers - 1 do
+    for p=0, rttr:GetNumPlayers() - 1 do
         local player = rttr:GetPlayer(p)
 
         -- player only
         if ((player:IsHuman() or player:IsAI()) and not player:IsClosed()) then
             player:ClearResources()
-        
+
             player:AddWares({
                 [GD_WOOD      ] = 3,
                 [GD_BOARDS    ] = 5,
@@ -66,11 +55,11 @@ function addPlayerRes()
                 [GD_BREAD     ] = 1,
                 [GD_WATER     ] = 0,
                 [GD_BEER      ] = 0,
-                [GD_COAL      ] = 0,
+                [GD_COAL      ] = 2,
 
                 [GD_IRONORE   ] = 2,
                 [GD_GOLD      ] = 0,
-                [GD_IRON      ] = 2,
+                [GD_IRON      ] = 0,
                 [GD_COINS     ] = 0,
                 [GD_TONGS     ] = 1,
                 [GD_AXE       ] = 0,
@@ -91,7 +80,7 @@ function addPlayerRes()
 
                 [GD_BOAT      ] = 0
             })
-       
+
             player:AddPeople({
                 [JOB_HELPER             ] = 6,
                 [JOB_BUILDER            ] = 1,
