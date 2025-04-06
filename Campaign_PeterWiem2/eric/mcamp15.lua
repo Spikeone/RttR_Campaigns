@@ -23,14 +23,14 @@ rttr:RegisterTranslations(
         name    = 'Unbekannter Gegner',
         diary   = 'Tagebuch',
 
-        msg1    = 'Wir haben unsere Familien zusammen mit Aron und Thorben im Hauptquartier auf der Schlossinsel zurückgelassen und an diesem verschwiegenen Ort unser Zeltlager aufgeschlagen. Wie gut, dass ich die Gegend hier kenne wie meine Westentasche.\nMeine Heimatinsel ist unsere größte und in meinen Augen unsere schönste Insel. Genau in ihrer Mitte liegt ein idyllischer See, um den wir immer unsere Versammlungszelte herum gelagert haben, wenn es als Volk etwas gemeinsam zu feiern oder zu besprechen gab. Sie ist nur über einen schmalen und gebirgigen Landrücken oder zu Schiff erreichbar.\n\nDa unsere Feinde wahrscheinlich an diesem See zu suchen sind, habe ich diesmal unseren Lagerplatz ausgewählt mit Zustimmung von Knut, Ansgar und Halvar. Da die Insel der Zusammenkunft als Organisationsmittelpunkt aller Feldzüge gegen uns dient, vermuten wir von jedem Volk, dass diesen Krieg gegen uns führt, mindestens ein Lager auf dieser Insel. Wir werden sehen, was wir dort vorfinden werden. Die Entscheidung naht, und wir werden alles geben, um auch meine Heimatinsel wieder in unsere Gewalt zu bekommen.',
-        msg2    = 'Wir scheinen noch unentdeckt zu sein, da dieser Platz sehr abgelegen ist, aber das kann uns nur recht sein. Wir wollen Richtung Osten zu der Landzunge kommen, die diesen Flecken Erde mit der Hauptinsel verbindet und uns da einen Weg über das Gebirge suchen. Außerdem müsste dort in der Nähe ein Hafenplatz sein, den wir dringend brauchen, um per Schiff eventuell eine zweite Front aufbauen könnten.\n\nKnut und Ansgar haben mich am kommenden Tag um ein Gespräch gebeten. Vermutlich wird es um Prainn oder Ahasversos gehen, über die ich noch weitere Information erhalten soll. Ich bin schon ganz gespannt auf den Austausch.',
-        msg3    = 'Die Wirtschaft läuft zufriedenstellend, allerdings scheint es hier nur Kohlen im Gebirge zu geben. Wir benötigen dringend Eisen und Gold, um Soldaten in ausreichender Anzahl und in kampffähigen Zustand zu bekommen. Bjarki, Elvor und Darvi schauen ganz bedrückt drein. Sie wissen, dass ihr Dienst gebraucht wird, aber ohne Eisen und Gold ist kein Schwert zu schmieden und keine Münze zu prägen.\n\nAnsgar und Knut hatten einen ganz feierlichen und trotzdem ernsten Eindruck gemacht, als wir uns zu dritt zu einem gemeinsamen Gespräch trafen. Mein Vater erklärte mir, dass er nach erfolgreicher Beendigung dieses Kriegszuges sich wieder seinem geliebten Bäckerberuf widmen würde. Ansgar und er hätten mich gewissenhaft beobachtet und sie könnten sich, was meine persönlichen und militärischen Fähigkeiten anbetrifft, keinen besseren König für unser Volk vorstellen, als mich.\n\nIch musste mich erst einmal setzen, als ich das hörte. Ich erbat mir Bedenkzeit, umarmte aber meinen Vater und Ansgar, und dankte ihnen für ihr Vertrauen.',
-        msg4    = 'Halvar und ich haben bei einem Erkundungsgang einen feindlichen Kundschafter gefangen, der den Auftrag hatte, jede feindliche Invasion hier sofort zu melden. Er wurde von uns überrascht, als er gerade in ein Boot steigen wollte, um Meldung über uns zu machen. Der Kundschafter ist babylonischer Herkunft, recht jung und auch recht verängstigt. Auf unsere Fragen erzählte er uns folgende Geschichte:\n\n"Vor etwa dreißig Jahren kam ein Mann namens Prainn in ein Dorf der Babylonier und bat dort um Asyl. Es wurde ihm und seinen Anhängern gewährt. Er verstand es sehr gut, sich beliebt und unentbehrlich zu machen. Schon nach wenigen Jahren bekleidete er den Rang eines Feldherrn und hat in vielen Schlachten den Babyloniern unschätzbare Dienste erwiesen und viele Siege errungen. Er hat im Krieg gegen uns Wikinger die Befehlsgewalt und dabei mehrere Völker an seiner Seite. Auch seine Anhänger kämpfen gegen uns."\n\nHalvar und ich sahen uns gegenseitig stumm an. Das war also des Rätsels Lösung! Prainns Rachedurst war der Grund des Vernichtungsfeldzugs gegen uns.',
-        msg5    = 'Gerade kommt Halvar zurück, und meldet uns, dass ein Hafenplatz gefunden worden sei. Wir werden dort so schnell wie möglich ein Hafengebäude und Schiffe bauen, um die Gegend zur See zu erkunden.\n\nUnser gefangener Kundschafter setzte im Beisein von Ansgar, Knut und mir seinen Bericht fort:\n\n"Vor über dreißig Jahren ist unser geliebter und geachteter Priester Ahasversos aus Babylon mit dem Schiff aufgebrochen, um auch anderen Völkern seinen Glauben zu bezeugen, und kam nie wieder zurück. Er hat durch einen gottesfürchtigen Fischer von einem Messias erfahren und ist dadurch ein anderer Mensch geworden. Prainn hatte kürzlich behauptet, unser Priester wäre von den Wikingern gefangengenommen worden. Da Ahasversos weit bekannt und geschätzt war, waren wir und unsere befreundeten Völker sofort bereit, ihn zu befreien und die Wikinger zu bestrafen."\n\nAnsgar, Knut und ich schwiegen über dem Gehörten. Mein Vater seufzte, Ansgar schüttelte den Kopf, und ich dachte für mich, wie die rachsüchtigen Lügen eines Einzelnen ganze Völker ins Unglück stürzen können.',
-        msg6    = 'Goldstaub auf dem Boden lässt auf eine ergiebige Fundstelle hoffen. Also rasch die Geologen und  Spitzhacken geholt und nachgeschaut, was sich hier finden lässt. Außerdem ist die Insel der Zusammenkunft recht nahe gelegen, vielleicht ist ein Zugang über Land von hier möglich?',
-        msg7    = 'Es ist genauso gekommen, wie wir es vermutet haben. Es sind tatsächlich alle Völker mit mindestens einem Lager auf meiner Heimatinsel vertreten, sogar Prainns Anhänger haben hier ihr Hauptquartier.\n\nHalvar ist, wie so oft in unseren bisherigen Schlachten, an meiner Seite. Ich habe ihm hier und jetzt versprochen, ihn zum Feldherren aller Wikinger zu befördern, wenn dieser letzte Kampf hier gewonnen wird. Halvar nickte nur ernst, und wir musterten kurz gemeinsam die vorhandenen Gegebenheiten.\n\nUnsere Feinde haben sich allesamt ringförmig um den See im Südosten gelagert und sind in heller Aufregung, weil wir von Nordwesten in ihren gemeinsamen Stützpunkt eingedrungen sind. Ab jetzt kann es kein Zaudern und Zögern im Kampf mit ihnen mehr geben, weil unsere Gegner nunmehr gemeinsam gegen uns mobil machen.',
-        msg99   = 'Nach einer beispiellosen Schlacht ist dieser Krieg endlich vorbei. Prainn ist im Kampf gefallen, er hat den blutigen Lohn seiner Taten erhalten mitsamt allen seinen Anhängern und Mitstreitern. Staunend betrachten wir das Mahnmal, welches die Babylonier zu Ehren Ahasversos im See errichtet haben. Auf dem Torbogen steht der Spruch, der sein Zeugnis geprägt und sein Leben verändert hat:\n\n"Gottesfürchtigkeit ist die Tür; so jemand durch sie eingeht, der wird gerettet werden."\n\nDiese Aussage bewegt mich zutiefst, ich werde gründlicher darüber nachdenken. Zunächst aber habe ich mich entschlossen, die Königswürde anzunehmen, die mir mein Vater und Ansgar angetragen haben. Es kommen also verantwortungsvolle Zeiten auf mich und auf unser Volk zu. Aber ich bin guter Zuversicht, unser gemeinsam angefangenes Werk vollenden zu können, nämlich als Volk der Wikinger wieder in Frieden und Freiheit leben zu können. Die Aussage des Mahnmals soll uns dabei helfen.'
+        msg1    = '',
+        msg2    = '',
+        msg3    = '',
+        msg4    = '',
+        msg5    = '',
+        msg6    = '',
+        msg7    = '',
+        msg99   = ''
     }
 })
 
@@ -240,37 +240,37 @@ function addPlayerRes(p, onLoad)
 
         rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
-            [GD_WOOD      ] = 20,
-            [GD_BOARDS    ] = 30,
-            [GD_STONES    ] = 30,
+            [GD_WOOD      ] = 10,
+            [GD_BOARDS    ] = 10,
+            [GD_STONES    ] = 20,
             [GD_HAM       ] = 3,
             [GD_GRAIN     ] = 3,
             [GD_FLOUR     ] = 3,
 
             [GD_FISH      ] = 3,
-            [GD_MEAT      ] = 4,
-            [GD_BREAD     ] = 5,
+            [GD_MEAT      ] = 3,
+            [GD_BREAD     ] = 3,
             [GD_WATER     ] = 3,
             [GD_BEER      ] = 0,
-            [GD_COAL      ] = 20,
+            [GD_COAL      ] = 0,
 
-            [GD_IRONORE   ] = 20,
+            [GD_IRONORE   ] = 40,
             [GD_GOLD      ] = 4,
-            [GD_IRON      ] = 20,
-            [GD_COINS     ] = 3,
-            [GD_TONGS     ] = 0,
-            [GD_AXE       ] = 3,
+            [GD_IRON      ] = 40,
+            [GD_COINS     ] = 4,
+            [GD_TONGS     ] = 3,
+            [GD_AXE       ] = 1,
 
-            [GD_SAW       ] = 4,
-            [GD_PICKAXE   ] = 8,
-            [GD_HAMMER    ] = 18,
-            [GD_SHOVEL    ] = 2,
-            [GD_CRUCIBLE  ] = 4,
-            [GD_RODANDLINE] = 3,
+            [GD_SAW       ] = 1,
+            [GD_PICKAXE   ] = 2,
+            [GD_HAMMER    ] = 5,
+            [GD_SHOVEL    ] = 3,
+            [GD_CRUCIBLE  ] = 1,
+            [GD_RODANDLINE] = 1,
 
-            [GD_SCYTHE    ] = 4,
-            [GD_CLEAVER   ] = 3,
-            [GD_ROLLINGPIN] = 2,
+            [GD_SCYTHE    ] = 0,
+            [GD_CLEAVER   ] = 0,
+            [GD_ROLLINGPIN] = 0,
             [GD_BOW       ] = 0,
             [GD_SWORD     ] = 2,
             [GD_SHIELD    ] = 2,
@@ -280,39 +280,39 @@ function addPlayerRes(p, onLoad)
 
         -- people
         rttr:GetPlayer(p):AddPeople({
-            [JOB_HELPER             ] = 80,
-            [JOB_BUILDER            ] = 15,
-            [JOB_PLANER             ] = 8,
-            [JOB_WOODCUTTER         ] = 8,
-            [JOB_FORESTER           ] = 2,
-            [JOB_STONEMASON         ] = 8,
+            [JOB_HELPER             ] = 90,
+            [JOB_BUILDER            ] = 20,
+            [JOB_PLANER             ] = 10,
+            [JOB_WOODCUTTER         ] = 2,
+            [JOB_FORESTER           ] = 4,
+            [JOB_STONEMASON         ] = 3,
 
-            [JOB_FISHER             ] = 4,
-            [JOB_HUNTER             ] = 6,
-            [JOB_CARPENTER          ] = 3,
-            [JOB_FARMER             ] = 3,
-            [JOB_PIGBREEDER         ] = 2,
-            [JOB_DONKEYBREEDER      ] = 0,
+            [JOB_FISHER             ] = 1,
+            [JOB_HUNTER             ] = 3,
+            [JOB_CARPENTER          ] = 1,
+            [JOB_FARMER             ] = 1,
+            [JOB_PIGBREEDER         ] = 1,
+            [JOB_DONKEYBREEDER      ] = 1,
 
-            [JOB_MILLER             ] = 2,
-            [JOB_BAKER              ] = 2,
-            [JOB_BUTCHER            ] = 2,
-            [JOB_BREWER             ] = 2,
-            [JOB_MINER              ] = 10,
-            [JOB_IRONFOUNDER        ] = 2,
+            [JOB_MILLER             ] = 1,
+            [JOB_BAKER              ] = 1,
+            [JOB_BUTCHER            ] = 1,
+            [JOB_BREWER             ] = 1,
+            [JOB_MINER              ] = 2,
+            [JOB_IRONFOUNDER        ] = 1,
 
-            [JOB_ARMORER            ] = 2,
+            [JOB_ARMORER            ] = 1,
             [JOB_MINTER             ] = 1,
-            [JOB_METALWORKER        ] = 0,
+            [JOB_METALWORKER        ] = 1,
             [JOB_SHIPWRIGHT         ] = 1,
-            [JOB_GEOLOGIST          ] = 5,
-            [JOB_SCOUT              ] = 2,
+            [JOB_GEOLOGIST          ] = 10,
+            [JOB_SCOUT              ] = 4,
 
-            [JOB_PACKDONKEY         ] = 30,
+            [JOB_PACKDONKEY         ] = 50,
             [JOB_CHARBURNER         ] = 0,
 
-            [JOB_PRIVATE            ] = 55,
-            [JOB_PRIVATEFIRSTCLASS  ] = 5,
+            [JOB_PRIVATE            ] = 60,
+            [JOB_PRIVATEFIRSTCLASS  ] = 1,
             [JOB_SERGEANT           ] = 1,
             [JOB_OFFICER            ] = 0,
             [JOB_GENERAL            ] = 0
@@ -343,7 +343,7 @@ function onGameFrame(gf)
         MissionEvent(2, false)
     end
 
-    if ((GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4) + GetNumStorage(5) + GetNumStorage(6) + GetNumStorage(7)) < 1) then
+    if (eState[99] > 0 (GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4) + GetNumStorage(5) + GetNumStorage(6) + GetNumStorage(7)) < 1) then
         -- EVENT8 (maps to 99)
         MissionEvent(99, false)
     end
@@ -385,23 +385,61 @@ function MissionEvent(e, onLoad)
     end
 
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
-    if(e == 1 and not onLoad) then
+    if(e == 1) then
         -- nothing
 
-    elseif(e == 2 and not onLoad) then
-        -- nothing
+    elseif(e == 2) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_WOOD] = 20
+            })
+        end
 
-    elseif(e == 3 and not onLoad) then
-        -- nothing
+    elseif(e == 3) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_AXE] = 2,
+                [GD_PICKAXE] = 2
+            })
+        end
 
-    elseif(e == 4 and not onLoad) then
-        -- nothing
+    elseif(e == 4) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddPeople({
+                [JOB_HUNTER] = 2,
+                [JOB_FISHER] = 2,
+                [JOB_CARPENTER] = 2
+            })
+        end
 
-    elseif(e == 5 and not onLoad) then
-        -- nothing
+    elseif(e == 5) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_IRONORE] = 10,
+                [GD_BREAD] = 10,
+                [GD_FISH] = 10,
+                [GD_MEAT] = 10
+            })
+        end
 
-    elseif(e == 6 and not onLoad) then
-        -- nothing
+    elseif(e == 6) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_AXE] = 5,
+                [GD_PICKAXE] = 5,
+                [GD_SCYTHE] = 5,
+                [GD_ROLLINGPIN] = 2
+            })
+        end
+
+    elseif(e == 7) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_COINS] = 20,
+                [GD_SHIELD] = 10,
+                [GD_SWORD] = 10
+            })
+        end
 
     elseif(e == 99) then
         -- TODO: EnableNextMissions()

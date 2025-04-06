@@ -356,7 +356,7 @@ function onGameFrame(gf)
     end
 
 
-    if ((GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3)) < 1) then
+    if (eState[99] > 0 and (GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3)) < 1) then
         -- EVENT6 (maps to 99)
         MissionEvent(99, false)
     end
@@ -378,7 +378,7 @@ function MissionEvent(e, onLoad)
     end
 
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
-    if(e == 1 and not onLoad) then
+    if(e == 1) then
         -- nothing
 
     elseif(e == 2) then
@@ -402,10 +402,10 @@ function MissionEvent(e, onLoad)
             })
         end
 
-    elseif(e == 5 and not onLoad) then
+    elseif(e == 5) then
         if(not onLoad) then
             rttr:GetPlayer(0):AddWares({
-                [GD_COINS] = 5
+                [GD_COINS] = 20
             })
         end
 

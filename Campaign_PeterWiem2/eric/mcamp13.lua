@@ -312,7 +312,7 @@ function addPlayerRes(p, onLoad)
             [JOB_PACKDONKEY         ] = 30,
             [JOB_CHARBURNER         ] = 0,
 
-            [JOB_PRIVATE            ] = 50,
+            [JOB_PRIVATE            ] = 60,
             [JOB_PRIVATEFIRSTCLASS  ] = 1,
             [JOB_SERGEANT           ] = 1,
             [JOB_OFFICER            ] = 0,
@@ -344,12 +344,12 @@ function onGameFrame(gf)
         MissionEvent(2, false)
     end
 
-    if (eState[3] > 0 and GetNumMilitaryBuilding(0, true) == 2) then
+    if (eState[3] > 0 and GetNumMilitaryBuilding(0, true) >= 2) then
         -- EVENT3
         MissionEvent(3, false)
     end
 
-    if ((GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4)) < 1) then
+    if (eState[99] > 0 and (GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4)) < 1) then
         -- EVENT8 (maps to 99)
         MissionEvent(99, false)
     end
@@ -381,21 +381,27 @@ function MissionEvent(e, onLoad)
     end
 
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
-    if(e == 1 and not onLoad) then
+    if(e == 1) then
         -- nothing
 
-    elseif(e == 2 and not onLoad) then
-        -- nothing
+    elseif(e == 2) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_SWORD] = 5,
+                [GD_SHIELD] = 5
+            })
+        end
 
     elseif(e == 3 and not onLoad) then
         rttr:GetPlayer(0):AddWares({
-            [GD_PICKAXE ] = 10
+            [GD_PICKAXE ] = 10,
+            [GD_BEER ] = 20
         })
 
     elseif(e == 4 and not onLoad) then
         rttr:GetPlayer(0):AddWares({
-            [GD_FISH    ] = 10,
-            [GD_MEAT    ] = 10
+            [GD_FISH    ] = 20,
+            [GD_MEAT    ] = 20
         })
 
     elseif(e == 5) then
@@ -404,6 +410,10 @@ function MissionEvent(e, onLoad)
         if(not onLoad) then
             rttr:GetPlayer(0):AddPeople({
                 [JOB_METALWORKER] = 1
+            })
+    
+            rttr:GetPlayer(0):AddWares({
+                [GD_IRONORE] = 30
             })
         end
     elseif(e == 6 and not onLoad) then

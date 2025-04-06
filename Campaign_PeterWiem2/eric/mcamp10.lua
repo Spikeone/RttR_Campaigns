@@ -199,8 +199,8 @@ function addPlayerRes(p, onLoad)
             [GD_CLEAVER   ] = 2,
             [GD_ROLLINGPIN] = 2,
             [GD_BOW       ] = 5,
-            [GD_SWORD     ] = 5,
-            [GD_SHIELD    ] = 5,
+            [GD_SWORD     ] = 2,
+            [GD_SHIELD    ] = 2,
 
             [GD_BOAT      ] = 8
         })
@@ -238,10 +238,10 @@ function addPlayerRes(p, onLoad)
             [JOB_PACKDONKEY         ] = 30,
             [JOB_CHARBURNER         ] = 0,
 
-            [JOB_PRIVATE            ] = 55,
-            [JOB_PRIVATEFIRSTCLASS  ] = 3,
-            [JOB_SERGEANT           ] = 1,
-            [JOB_OFFICER            ] = 1,
+            [JOB_PRIVATE            ] = 20,
+            [JOB_PRIVATEFIRSTCLASS  ] = 20,
+            [JOB_SERGEANT           ] = 15,
+            [JOB_OFFICER            ] = 15,
             [JOB_GENERAL            ] = 1
         })
     elseif (p == 0 and not onLoad) then
@@ -259,11 +259,11 @@ function addPlayerRes(p, onLoad)
             [GD_BREAD     ] = 8,
             [GD_WATER     ] = 0,
             [GD_BEER      ] = 0,
-            [GD_COAL      ] = 15,
+            [GD_COAL      ] = 20,
 
             [GD_IRONORE   ] = 8,
             [GD_GOLD      ] = 8,
-            [GD_IRON      ] = 15,
+            [GD_IRON      ] = 12,
             [GD_COINS     ] = 2,
             [GD_TONGS     ] = 0,
             [GD_AXE       ] = 2,
@@ -279,8 +279,8 @@ function addPlayerRes(p, onLoad)
             [GD_CLEAVER   ] = 0,
             [GD_ROLLINGPIN] = 2,
             [GD_BOW       ] = 0,
-            [GD_SWORD     ] = 2,
-            [GD_SHIELD    ] = 2,
+            [GD_SWORD     ] = 5,
+            [GD_SHIELD    ] = 5,
 
             [GD_BOAT      ] = 0
         })
@@ -318,10 +318,10 @@ function addPlayerRes(p, onLoad)
             [JOB_PACKDONKEY         ] = 30,
             [JOB_CHARBURNER         ] = 0,
 
-            [JOB_PRIVATE            ] = 25,
-            [JOB_PRIVATEFIRSTCLASS  ] = 25,
-            [JOB_SERGEANT           ] = 5,
-            [JOB_OFFICER            ] = 4,
+            [JOB_PRIVATE            ] = 60,
+            [JOB_PRIVATEFIRSTCLASS  ] = 1,
+            [JOB_SERGEANT           ] = 1,
+            [JOB_OFFICER            ] = 1,
             [JOB_GENERAL            ] = 3
         })
     end
@@ -355,7 +355,7 @@ function onGameFrame(gf)
         MissionEvent(4, false)
     end
 
-    if ((GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4)) < 1) then
+    if (eState[99] > 0 and (GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4)) < 1) then
         -- EVENT8 (maps to 99)
         MissionEvent(99, false)
     end
@@ -392,7 +392,7 @@ function MissionEvent(e, onLoad)
     end
 
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
-    if(e == 1 and not onLoad) then
+    if(e == 1) then
         -- nothing
 
     elseif(e == 2) then
@@ -403,7 +403,7 @@ function MissionEvent(e, onLoad)
             })
         end
 
-    elseif(e == 3 and not onLoad) then
+    elseif(e == 3) then
         -- nothing
 
     elseif(e == 4) then
@@ -439,10 +439,10 @@ function MissionEvent(e, onLoad)
             })
         end
 
-    elseif(e == 6) then
+    elseif(e == 7) then
         if(not onLoad) then
             rttr:GetPlayer(0):AddWares({
-                [GD_MEAT] = 40
+                [GD_MEAT] = 50
             })
         end
 

@@ -381,7 +381,7 @@ function onGameFrame(gf)
         MissionEvent(8, false)
     end
 
-    if ((GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4)) < 1) then
+    if (eState[99] > 0 and (GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4)) < 1) then
         -- EVENT8 (maps to 99)
         MissionEvent(99, false)
     end

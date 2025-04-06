@@ -242,9 +242,9 @@ function addPlayerRes(p, onLoad)
     elseif (p == 0 and not onLoad) then
         rttr:GetPlayer(p):ClearResources()
         rttr:GetPlayer(p):AddWares({
-            [GD_WOOD      ] = 20,
-            [GD_BOARDS    ] = 30,
-            [GD_STONES    ] = 30,
+            [GD_WOOD      ] = 10,
+            [GD_BOARDS    ] = 10,
+            [GD_STONES    ] = 20,
             [GD_HAM       ] = 3,
             [GD_GRAIN     ] = 3,
             [GD_FLOUR     ] = 3,
@@ -260,19 +260,19 @@ function addPlayerRes(p, onLoad)
             [GD_GOLD      ] = 4,
             [GD_IRON      ] = 20,
             [GD_COINS     ] = 3,
-            [GD_TONGS     ] = 0,
-            [GD_AXE       ] = 3,
+            [GD_TONGS     ] = 1,
+            [GD_AXE       ] = 2,
 
-            [GD_SAW       ] = 4,
+            [GD_SAW       ] = 1,
             [GD_PICKAXE   ] = 8,
-            [GD_HAMMER    ] = 18,
+            [GD_HAMMER    ] = 2,
             [GD_SHOVEL    ] = 2,
-            [GD_CRUCIBLE  ] = 4,
-            [GD_RODANDLINE] = 3,
+            [GD_CRUCIBLE  ] = 1,
+            [GD_RODANDLINE] = 2,
 
-            [GD_SCYTHE    ] = 4,
-            [GD_CLEAVER   ] = 3,
-            [GD_ROLLINGPIN] = 2,
+            [GD_SCYTHE    ] = 2,
+            [GD_CLEAVER   ] = 1,
+            [GD_ROLLINGPIN] = 1,
             [GD_BOW       ] = 0,
             [GD_SWORD     ] = 2,
             [GD_SHIELD    ] = 2,
@@ -285,27 +285,27 @@ function addPlayerRes(p, onLoad)
             [JOB_HELPER             ] = 80,
             [JOB_BUILDER            ] = 15,
             [JOB_PLANER             ] = 8,
-            [JOB_WOODCUTTER         ] = 8,
+            [JOB_WOODCUTTER         ] = 1,
             [JOB_FORESTER           ] = 2,
-            [JOB_STONEMASON         ] = 8,
+            [JOB_STONEMASON         ] = 1,
 
-            [JOB_FISHER             ] = 4,
-            [JOB_HUNTER             ] = 6,
-            [JOB_CARPENTER          ] = 3,
-            [JOB_FARMER             ] = 3,
-            [JOB_PIGBREEDER         ] = 2,
+            [JOB_FISHER             ] = 1,
+            [JOB_HUNTER             ] = 1,
+            [JOB_CARPENTER          ] = 1,
+            [JOB_FARMER             ] = 1,
+            [JOB_PIGBREEDER         ] = 1,
             [JOB_DONKEYBREEDER      ] = 0,
 
-            [JOB_MILLER             ] = 2,
-            [JOB_BAKER              ] = 2,
-            [JOB_BUTCHER            ] = 2,
-            [JOB_BREWER             ] = 2,
-            [JOB_MINER              ] = 10,
-            [JOB_IRONFOUNDER        ] = 2,
+            [JOB_MILLER             ] = 1,
+            [JOB_BAKER              ] = 1,
+            [JOB_BUTCHER            ] = 1,
+            [JOB_BREWER             ] = 1,
+            [JOB_MINER              ] = 1,
+            [JOB_IRONFOUNDER        ] = 1,
 
-            [JOB_ARMORER            ] = 2,
+            [JOB_ARMORER            ] = 1,
             [JOB_MINTER             ] = 1,
-            [JOB_METALWORKER        ] = 0,
+            [JOB_METALWORKER        ] = 1,
             [JOB_SHIPWRIGHT         ] = 1,
             [JOB_GEOLOGIST          ] = 5,
             [JOB_SCOUT              ] = 2,
@@ -313,8 +313,8 @@ function addPlayerRes(p, onLoad)
             [JOB_PACKDONKEY         ] = 30,
             [JOB_CHARBURNER         ] = 0,
 
-            [JOB_PRIVATE            ] = 55,
-            [JOB_PRIVATEFIRSTCLASS  ] = 5,
+            [JOB_PRIVATE            ] = 65,
+            [JOB_PRIVATEFIRSTCLASS  ] = 2,
             [JOB_SERGEANT           ] = 1,
             [JOB_OFFICER            ] = 0,
             [JOB_GENERAL            ] = 0
@@ -350,7 +350,7 @@ function onGameFrame(gf)
         MissionEvent(5, false)
     end
 
-    if ((GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4) + GetNumStorage(5)) < 1) then
+    if (eState[99] > 0 and (GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4) + GetNumStorage(5)) < 1) then
         -- EVENT8 (maps to 99)
         MissionEvent(99, false)
     end
@@ -382,23 +382,59 @@ function MissionEvent(e, onLoad)
     end
 
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
-    if(e == 1 and not onLoad) then
+    if(e == 1) then
         -- nothing
 
-    elseif(e == 2 and not onLoad) then
-        -- nothing
+    elseif(e == 2) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_GOLD] = 10
+            })
+        end
 
-    elseif(e == 3 and not onLoad) then
-        -- nothing
+    elseif(e == 3) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_BOARDS] = 20,
+                [GD_COINS] = 10,
+                [GD_COAL] = 20
+            })
+        end
 
-    elseif(e == 4 and not onLoad) then
-        -- nothing
+    elseif(e == 4) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_MEAT] = 10,
+                [GD_FISH] = 10,
+                [GD_BREAD] = 10
+            })
+        end
 
-    elseif(e == 5 and not onLoad) then
-        -- nothing
+    elseif(e == 5) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_SWORD] = 10,
+                [GD_SHIELD] = 10
+            })
+        end
 
-    elseif(e == 6 and not onLoad) then
-        -- nothing
+    elseif(e == 6) then
+        if(not onLoad) then
+            rttr:GetPlayer(0):AddWares({
+                [GD_RODANDLINE] = 5,
+                [GD_BOW] = 5,
+                [GD_SCYTHE] = 5,
+                [GD_SHIELD] = 5,
+                [GD_SWORD] = 5,
+                [GD_GOLD] = 5,
+                [GD_IRONORE] = 20,
+                [GD_ROLLINGPIN] = 2
+            })
+            rttr:GetPlayer(0):AddPeople({
+                [JOB_PRIVATE] = 5,
+                [JOB_PACKDONKEY] = 20
+            })
+        end
 
     elseif(e == 99) then
         -- TODO: EnableNextMissions()

@@ -359,7 +359,7 @@ function onGameFrame(gf)
         MissionEvent(5, false)
     end
 
-    if ((GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4)) < 1) then
+    if (eState[99] > 0 and (GetNumStorage(1) + GetNumStorage(2) + GetNumStorage(3) + GetNumStorage(4)) < 1) then
         -- EVENT8 (maps to 99)
         MissionEvent(99, false)
     end
@@ -381,7 +381,7 @@ function MissionEvent(e, onLoad)
     end
 
     -- call side effects for active events, check "eState[e] == 1" for multiple call events!
-    if(e == 1 and not onLoad) then
+    if(e == 1) then
         -- nothing
 
     elseif(e == 2 and not onLoad) then
@@ -405,7 +405,7 @@ function MissionEvent(e, onLoad)
             [GD_SHIELD  ] = 10
         })
 
-    elseif(e == 6 and not onLoad) then
+    elseif(e == 6) then
         rttr:GetPlayer(0):EnableBuilding(BLD_DONKEYBREEDER, not onLoad)
 
         if(not onLoad) then

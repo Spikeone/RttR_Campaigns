@@ -7,9 +7,9 @@ rttr:RegisterTranslations(
 {
     en =
     {
-        name = 'Eric Kampagne',
-        shortDescription = 'Eric Kampagne',
-        longDescription= 'TODO'
+        name = 'Die Rückkehr der Wikinger',
+        shortDescription = 'Die Rückkehr der Wikinger',
+        longDescription= 'Mitten im tiefsten Frieden wird das Volk der Wikinger von den Babyloniern und ihren Verbündeten überfallen und von ihren Inseln vertrieben. Nur eine Zuflucht im äußersten Norden ihres ursprünglichen Reiches bleibt ihnen übrig. Dem König der Wikinger bricht darüber das Herz und seine Trauer über diesen Krieg macht ihn sprachlos und mutlos.\n\nErleben wir miteinander, wie die Wikinger sich unter der Regie von Erik neu erfinden, und Insel um Insel ihres Reiches zurückerobern.'
     }
 })
 
