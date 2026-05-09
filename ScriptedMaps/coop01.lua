@@ -1473,7 +1473,7 @@ function MissionEvent(e, onLoad)
             -- this check should be true anyway
             if(generalsPlayer5 <= generalsPlayerTeam * 1.25) then 
                 local addGeneralsPlayer5 = math.floor((generalsPlayerTeam * 1.25) - generalsPlayer5)
-                rttr:Log("66 P5 add: " + addGeneralsPlayer5)
+                rttr:Log("66 P5 add: " ..addGeneralsPlayer5)
                 rttr:GetPlayer(5):AddPeople({[JOB_GENERAL] = addGeneralsPlayer5})
             end
         end
